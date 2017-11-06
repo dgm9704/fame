@@ -11,23 +11,22 @@ namespace Diwen.Aifmd.Test
         [Fact]
         public void ExportManager()
         {
-            var path = "manager.xml";
+            var path = "manager_out.xml";
             var manager = new AIFMReportingInfo();
             var serializer = new XmlSerializer(typeof(AIFMReportingInfo));
             using (var file = new FileStream(path, FileMode.Create))
                 serializer.Serialize(file, manager);
         }
 
-        // [Fact]
-        // public void ImportManager()
-        // {
-        //     var path = "manager.xml";
-        //     var serializer = new XmlSerializer(typeof(AIFMReportingInfo));
+        [Fact]
+        public void ImportManager()
+        {
+            var path = "AIFMSample.xml";
+            var serializer = new XmlSerializer(typeof(AIFMReportingInfo));
+            AIFMReportingInfo manager = null;
+            using (var file = new FileStream(path, FileMode.Open))
+                manager = (AIFMReportingInfo)serializer.Deserialize(file);
 
-        //     using (var file = new FileStream(path, FileMode.Create))
-        //         serializer.Serialize(file, manager);
-
-        //     var manager = new AIFMReportingInfo();
-        // }
+        }
     }
 }
