@@ -2,7 +2,7 @@ namespace Schemas
 {
     using System;
     [Serializable]
-    public partial class ComplexAIFNationalIdentifierType
+    public partial class ComplexAIFNationalIdentifier
     {
         public string ReportingMemberState {get; set;}
 

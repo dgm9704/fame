@@ -4,7 +4,7 @@ namespace Schemas
     using System.Xml.Serialization;
     [Serializable]
     [XmlType(TypeName = "ComplexAIFLeverageArticle24-2Type")]
-    public partial class ComplexAIFLeverageArticle242Type
+    public partial class ComplexAIFLeverageArticle242
     {
         public bool AllCounterpartyCollateralRehypothecationFlag {get; set;}
 
@@ -15,14 +15,14 @@ namespace Schemas
 
         public ComplexSecuritiesCashBorrowing SecuritiesCashBorrowing {get; set;}
 
-        public ComplexFinancialInstrumentBorrowingType FinancialInstrumentBorrowing {get; set;}
+        public ComplexFinancialInstrumentBorrowing FinancialInstrumentBorrowing {get; set;}
 
         [XmlElement(DataType = "integer")]
         public string ShortPositionBorrowedSecuritiesValue {get; set;}
 
         [XmlArrayItem("ControlledStructure", IsNullable = false)]
-        public ComplexControlledStructureType[] ControlledStructures {get; set;}
+        public ComplexControlledStructure[] ControlledStructures {get; set;}
 
-        public ComplexLeverageAIFType LeverageAIF {get; set;}
+        public ComplexLeverageAIF LeverageAIF {get; set;}
     }
 }

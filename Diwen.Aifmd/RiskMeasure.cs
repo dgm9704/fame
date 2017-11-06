@@ -2,7 +2,7 @@ namespace Schemas
 {
     using System;
     [Serializable]
-    public enum RiskMeasureType
+    public enum RiskMeasure
     {
 
         NET_EQTY_DELTA,

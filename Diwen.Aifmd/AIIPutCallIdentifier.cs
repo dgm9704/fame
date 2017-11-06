@@ -2,7 +2,7 @@ namespace Schemas
 {
     using System;
     [Serializable]
-    public enum AIIPutCallIdentifierType
+    public enum AIIPutCallIdentifier
     {
 
         P,

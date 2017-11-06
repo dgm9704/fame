@@ -3,7 +3,7 @@ namespace Schemas
     using System;
     using System.Xml.Serialization;
     [Serializable]
-    public partial class ComplexHedgeFundStrategyType
+    public partial class ComplexHedgeFundStrategy
     {
         public HedgeFundStrategyType HedgeFundStrategyType {get; set;}
         public bool PrimaryStrategyFlag {get; set;}

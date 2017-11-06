@@ -17,7 +17,7 @@ namespace Schemas
 
         public string InstrumentName {get; set;}
 
-        [XmlElement("AIIInstrumentIdentification", typeof(ComplexAIIInstrumentIdentificationType))]
+        [XmlElement("AIIInstrumentIdentification", typeof(ComplexAIIInstrumentIdentification))]
         [XmlElement("ISINInstrumentIdentification", typeof(string))]
         public object Item {get; set;}
 

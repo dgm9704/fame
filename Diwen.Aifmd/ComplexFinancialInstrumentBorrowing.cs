@@ -3,7 +3,7 @@ namespace Schemas
     using System;
     using System.Xml.Serialization;
     [Serializable]
-    public partial class ComplexFinancialInstrumentBorrowingType
+    public partial class ComplexFinancialInstrumentBorrowing
     {
         [XmlElement(DataType = "integer")]
         public string ExchangedTradedDerivativesExposureValue {get; set;}

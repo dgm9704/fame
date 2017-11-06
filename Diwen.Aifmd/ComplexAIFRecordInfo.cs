@@ -3,7 +3,7 @@ namespace Schemas
     using System;
     using System.Xml.Serialization;
     [Serializable]
-    public partial class ComplexAIFRecordInfoType
+    public partial class ComplexAIFRecordInfo
     {
         public FilingType FilingType {get; set;}
 
@@ -20,7 +20,7 @@ namespace Schemas
         [XmlElement(DataType = "gYear")]
         public string ReportingPeriodYear {get; set;}
 
-        public ReportingObligationChangeFrequencyCodeType AIFReportingObligationChangeFrequencyCode {get; set;}
+        public ReportingObligationChangeFrequencyCode AIFReportingObligationChangeFrequencyCode {get; set;}
 
         [XmlIgnore]
         public bool AIFReportingObligationChangeFrequencyCodeSpecified {get; set;}
@@ -29,14 +29,14 @@ namespace Schemas
         [XmlIgnore]
         public bool AIFReportingObligationChangeContentsCodeSpecified {get; set;}
 
-        public ReportingObligationChangeQuarterType AIFReportingObligationChangeQuarter {get; set;}
+        public ReportingObligationChangeQuarter AIFReportingObligationChangeQuarter {get; set;}
 
         [XmlIgnore]
         public bool AIFReportingObligationChangeQuarterSpecified {get; set;}
         public bool LastReportingFlag {get; set;}
 
         [XmlArrayItem("Assumption", IsNullable = false)]
-        public ComplexAssumptionType[] Assumptions {get; set;}
+        public ComplexAssumption[] Assumptions {get; set;}
 
         public string AIFMNationalCode {get; set;}
 
@@ -45,7 +45,7 @@ namespace Schemas
 
         public bool AIFEEAFlag {get; set;}
 
-        public AIFReportingCodeType AIFReportingCode {get; set;}
+        public AIFReportingCode AIFReportingCode {get; set;}
 
         public string AIFDomicile {get; set;}
 
@@ -54,6 +54,6 @@ namespace Schemas
 
         public bool AIFNoReportingFlag {get; set;}
 
-        public ComplexAIFCompleteDescriptionType AIFCompleteDescription {get; set;}
+        public ComplexAIFCompleteDescription AIFCompleteDescription {get; set;}
     }
 }

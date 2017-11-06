@@ -21,7 +21,7 @@ namespace Schemas
         [XmlIgnore]
         public bool DealingSuspensionRateSpecified {get; set;}
 
-        public ComplexOtherArrangementType OtherArrangement {get; set;}
+        public ComplexOtherArrangement OtherArrangement {get; set;}
 
         public decimal TotalArrangementRate {get; set;}
 

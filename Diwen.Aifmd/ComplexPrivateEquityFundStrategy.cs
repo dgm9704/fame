@@ -3,7 +3,7 @@ namespace Schemas
     using System;
     using System.Xml.Serialization;
     [Serializable]
-    public partial class ComplexPrivateEquityFundStrategyType
+    public partial class ComplexPrivateEquityFundStrategy
     {
         public PrivateEquityFundStrategyType PrivateEquityFundStrategyType {get; set;}
 

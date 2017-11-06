@@ -2,7 +2,7 @@ namespace Schemas
 {
     using System;
     [Serializable]
-    public partial class ComplexEntityIdentificationType
+    public partial class ComplexEntityIdentification
     {
         public string EntityName {get; set;}
 

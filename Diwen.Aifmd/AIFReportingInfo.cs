@@ -8,8 +8,8 @@ namespace Schemas
     public partial class AIFReportingInfo
     {
 
-        [XmlElement("AIFRecordInfo", typeof(ComplexAIFRecordInfoType))]
-        [XmlElement("CancellationAIFRecordInfo", typeof(ComplexCancellationAIFRecordInfoType))]
+        [XmlElement("AIFRecordInfo", typeof(ComplexAIFRecordInfo))]
+        [XmlElement("CancellationAIFRecordInfo", typeof(ComplexCancellationAIFRecordInfo))]
         public object[] Items {get; set;}
 
         [XmlAttribute]

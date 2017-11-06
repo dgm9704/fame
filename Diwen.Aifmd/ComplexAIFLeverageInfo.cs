@@ -3,13 +3,13 @@ namespace Schemas
     using System;
     using System.Xml.Serialization;
     [Serializable]
-    public partial class ComplexAIFLeverageInfoType
+    public partial class ComplexAIFLeverageInfo
     {
         [XmlElement("AIFLeverageArticle24-2")]
-        public ComplexAIFLeverageArticle242Type AIFLeverageArticle242 {get; set;}
+        public ComplexAIFLeverageArticle242 AIFLeverageArticle242 {get; set;}
 
         [XmlArray("AIFLeverageArticle24-4")]
         [XmlArrayItem("BorrowingSource", IsNullable = false)]
-        public ComplexBorrowingSourceType[] AIFLeverageArticle244 {get; set;}
+        public ComplexBorrowingSource[] AIFLeverageArticle244 {get; set;}
     }
 }

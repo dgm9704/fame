@@ -2,11 +2,11 @@ namespace Schemas
 {
     using System;
     [Serializable]
-    public partial class ComplexAIFCompleteDescriptionType
+    public partial class ComplexAIFCompleteDescription
     {
-        public ComplexAIFPrincipalInfoType AIFPrincipalInfo {get; set;}
-        public ComplexAIFIndividualInfoType AIFIndividualInfo {get; set;}
+        public ComplexAIFPrincipalInfo AIFPrincipalInfo {get; set;}
+        public ComplexAIFIndividualInfo AIFIndividualInfo {get; set;}
 
-        public ComplexAIFLeverageInfoType AIFLeverageInfo {get; set;}
+        public ComplexAIFLeverageInfo AIFLeverageInfo {get; set;}
     }
 }

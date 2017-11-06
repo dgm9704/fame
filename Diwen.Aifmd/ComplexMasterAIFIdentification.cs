@@ -2,10 +2,10 @@ namespace Schemas
 {
     using System;
     [Serializable]
-    public partial class ComplexMasterAIFIdentificationType
+    public partial class ComplexMasterAIFIdentification
     {
         public string AIFName {get; set;}
 
-        public ComplexAIFNationalIdentifierType AIFIdentifierNCA {get; set;}
+        public ComplexAIFNationalIdentifier AIFIdentifierNCA {get; set;}
     }
 }

@@ -3,9 +3,9 @@ namespace Schemas
     using System;
     using System.Xml.Serialization;
     [Serializable]
-    public partial class ComplexControlledStructureType
+    public partial class ComplexControlledStructure
     {
-        public ComplexEntityIdentificationType ControlledStructureIdentification {get; set;}
+        public ComplexEntityIdentification ControlledStructureIdentification {get; set;}
 
         [XmlElement(DataType = "integer")]
         public string ControlledStructureExposureValue {get; set;}

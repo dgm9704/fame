@@ -6,7 +6,7 @@ namespace Schemas
     public partial class ComplexCCPExposure
     {
 
-        public ThreeRankingType Ranking {get; set;}
+        public ThreeRanking Ranking {get; set;}
 
         public ComplexEntityIdentification CCPIdentification {get; set;}
 

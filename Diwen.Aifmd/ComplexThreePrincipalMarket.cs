@@ -6,7 +6,7 @@ namespace Schemas
     public partial class ComplexThreePrincipalMarket
     {
 
-        public ThreeRankingType Ranking {get; set;}
+        public ThreeRanking Ranking {get; set;}
 
         public ComplexMarketIdentificationWithNOT MarketIdentification {get; set;}
 

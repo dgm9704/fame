@@ -3,7 +3,7 @@ namespace Schemas
     using System;
     using System.Xml.Serialization;
     [Serializable]
-    public enum AIFReportingCodeType
+    public enum AIFReportingCode
     {
 
         [XmlEnum("1")]

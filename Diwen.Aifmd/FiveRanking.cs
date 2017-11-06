@@ -3,7 +3,7 @@ namespace Schemas
     using System;
     using System.Xml.Serialization;
     [Serializable]
-    public enum FiveRankingType
+    public enum FiveRanking
     {
 
         [XmlEnum("1")]

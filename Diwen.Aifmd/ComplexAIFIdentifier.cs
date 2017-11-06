@@ -2,7 +2,7 @@ namespace Schemas
 {
     using System;
     [Serializable]
-    public partial class ComplexAIFIdentifierType
+    public partial class ComplexAIFIdentifier
     {
         public string AIFIdentifierLEI {get; set;}
 
@@ -17,6 +17,6 @@ namespace Schemas
 
         public string AIFIdentifierECB {get; set;}
 
-        public ComplexAIFNationalIdentifierType OldAIFIdentifierNCA {get; set;}
+        public ComplexAIFNationalIdentifier OldAIFIdentifierNCA {get; set;}
     }
 }

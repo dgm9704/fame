@@ -15,7 +15,7 @@ namespace Schemas
         public ComplexInvestorArrangement InvestorArrangement {get; set;}
 
         [XmlArrayItem("InvestorGroup", IsNullable = false)]
-        public ComplexInvestorGroupType[] InvestorGroups {get; set;}
+        public ComplexInvestorGroup[] InvestorGroups {get; set;}
 
         public ComplexFinancingLiquidityProfile FinancingLiquidityProfile {get; set;}
     }

@@ -39,7 +39,7 @@ namespace Schemas
         public bool LastReportingFlag {get; set;}
 
         [XmlArrayItem("Assumption", IsNullable = false)]
-        public ComplexAssumptionType[] Assumptions {get; set;}
+        public ComplexAssumption[] Assumptions {get; set;}
 
         public AIFMReportingCode AIFMReportingCode {get; set;}
 

@@ -3,17 +3,17 @@ namespace Schemas
     using System;
     using System.Xml.Serialization;
     [Serializable]
-    public partial class ComplexAIFDescriptionType
+    public partial class ComplexAIFDescription
     {
-        public AIFMasterFeederStatusType AIFMasterFeederStatus {get; set;}
+        public AIFMasterFeederStatus AIFMasterFeederStatus {get; set;}
 
         [XmlArrayItem("MasterAIFIdentification", IsNullable = false)]
-        public ComplexMasterAIFIdentificationType[] MasterAIFsIdentification {get; set;}
+        public ComplexMasterAIFIdentification[] MasterAIFsIdentification {get; set;}
 
         [XmlArrayItem("PrimeBrokerIdentification", IsNullable = false)]
-        public ComplexEntityIdentificationType[] PrimeBrokers {get; set;}
+        public ComplexEntityIdentification[] PrimeBrokers {get; set;}
 
-        public ComplexBaseCurrencyDescriptionType AIFBaseCurrencyDescription {get; set;}
+        public ComplexBaseCurrencyDescription AIFBaseCurrencyDescription {get; set;}
         [XmlElement(DataType = "integer")]
         public string AIFNetAssetValue {get; set;}
 
@@ -24,19 +24,19 @@ namespace Schemas
 
         public AIFType PredominantAIFType {get; set;}
         [XmlArrayItem("HedgeFundStrategy", IsNullable = false)]
-        public ComplexHedgeFundStrategyType[] HedgeFundInvestmentStrategies {get; set;}
+        public ComplexHedgeFundStrategy[] HedgeFundInvestmentStrategies {get; set;}
 
         [XmlArrayItem("PrivateEquityFundInvestmentStrategy", IsNullable = false)]
-        public ComplexPrivateEquityFundStrategyType[] PrivateEquityFundInvestmentStrategies {get; set;}
+        public ComplexPrivateEquityFundStrategy[] PrivateEquityFundInvestmentStrategies {get; set;}
 
         [XmlArrayItem("RealEstateFundStrategy", IsNullable = false)]
-        public ComplexRealEstateFundStrategyType[] RealEstateFundInvestmentStrategies {get; set;}
+        public ComplexRealEstateFundStrategy[] RealEstateFundInvestmentStrategies {get; set;}
 
         [XmlArrayItem("FundOfFundsStrategy", IsNullable = false)]
-        public ComplexFundOfFundsStrategyType[] FundOfFundsInvestmentStrategies {get; set;}
+        public ComplexFundOfFundsStrategy[] FundOfFundsInvestmentStrategies {get; set;}
 
         [XmlArrayItem("OtherFundStrategy", IsNullable = false)]
-        public ComplexOtherFundStrategyType[] OtherFundInvestmentStrategies {get; set;}
+        public ComplexOtherFundStrategy[] OtherFundInvestmentStrategies {get; set;}
         [XmlElement(DataType = "integer")]
         public string HFTTransactionNumber {get; set;}
 

@@ -3,7 +3,7 @@ namespace Schemas
     using System;
     using System.Xml.Serialization;
     [Serializable]
-    public partial class ComplexCancellationAIFRecordInfo
+    public partial class ComplexCancellationAIFRecordInfoType
     {
         public string CancelledAIFNationalCode {get; set;}
         public string CancelledAIFMNationalCode {get; set;}
