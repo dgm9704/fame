@@ -1,4 +1,4 @@
-namespace Schemas
+namespace Diwen.Aifmd
 {
     using System;
     [Serializable]
