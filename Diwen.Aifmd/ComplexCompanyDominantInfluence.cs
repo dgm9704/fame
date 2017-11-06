@@ -5,12 +5,12 @@ namespace Schemas
     public partial class ComplexCompanyDominantInfluence
     {
 
-        public ComplexEntityIdentification CompanyIdentification {get; set;}
+        public ComplexEntityIdentification CompanyIdentification { get; set; }
 
-        public TransactionType TransactionType {get; set;}
+        public TransactionType TransactionType { get; set; }
 
-        public string OtherTransactionTypeDescription {get; set;}
+        public string OtherTransactionTypeDescription { get; set; }
 
-        public decimal VotingRightsRate {get; set;}
+        public decimal VotingRightsRate { get; set; }
     }
 }
