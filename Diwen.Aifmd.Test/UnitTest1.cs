@@ -3,7 +3,6 @@ namespace Diwen.Aifmd.Test
     using System;
     using Xunit;
     using Diwen.Aifmd;
-    using Schemas;
     using System.Xml.Serialization;
     using System.IO;
 
