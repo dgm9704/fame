@@ -16,4 +16,12 @@
     <ProjectReference Include="..\Diwen.Aifmd\Diwen.Aifmd.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="*.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="*.xml" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
 </Project>
