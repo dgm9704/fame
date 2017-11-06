@@ -328,14 +328,6 @@ namespace Schemas {
     }
     
     [Serializable]
-    public enum FilingTypeType {
-        
-        AMND,
-        
-        INIT,
-    }
-    
-    [Serializable]
     public enum AIFContentTypeType {
         
         [XmlEnum("1")]
@@ -352,50 +344,6 @@ namespace Schemas {
         
         [XmlEnum("5")]
         Item5,
-    }
-    
-    [Serializable]
-    public enum ReportingPeriodTypeType {
-        
-        Q1,
-        
-        Q2,
-        
-        Q3,
-        
-        Q4,
-        
-        H1,
-        
-        H2,
-        
-        Y1,
-        
-        X1,
-        
-        X2,
-    }
-    
-    [Serializable]
-    public enum ReportingObligationChangeFrequencyCodeType {
-        
-        YH,
-        
-        YQ,
-        
-        HY,
-        
-        HQ,
-        
-        QY,
-        
-        QH,
-        
-        NQ,
-        
-        NH,
-        
-        NY,
     }
     
     [Serializable]
@@ -475,45 +423,6 @@ namespace Schemas {
         
         [XmlEnum("25")]
         Item25,
-    }
-    
-    [Serializable]
-    public enum ReportingObligationChangeQuarterType {
-        
-        Q1,
-        
-        Q2,
-        
-        Q3,
-        
-        Q4,
-    }
-    
-    [Serializable]
-    public partial class ComplexAssumptionType {
-        
-        private string questionNumberField;
-        
-        private string assumptionDescriptionField;
-        
-        [XmlElement(DataType="integer")]
-        public string QuestionNumber {
-            get {
-                return this.questionNumberField;
-            }
-            set {
-                this.questionNumberField = value;
-            }
-        }
-        
-        public string AssumptionDescription {
-            get {
-                return this.assumptionDescriptionField;
-            }
-            set {
-                this.assumptionDescriptionField = value;
-            }
-        }
     }
     
     [Serializable]
@@ -3204,154 +3113,6 @@ namespace Schemas {
     }
     
     [Serializable]
-    public enum SubAssetTypeType {
-        
-        SEC_CSH_CODP,
-        
-        SEC_CSH_COMP,
-        
-        SEC_CSH_OTHD,
-        
-        SEC_CSH_OTHC,
-        
-        SEC_LEQ_IFIN,
-        
-        SEC_LEQ_OTHR,
-        
-        SEC_UEQ_UEQY,
-        
-        SEC_CPN_INVG,
-        
-        SEC_CPN_NIVG,
-        
-        SEC_CPI_INVG,
-        
-        SEC_CPI_NIVG,
-        
-        SEC_SBD_EUBY,
-        
-        SEC_SBD_EUBM,
-        
-        SEC_SBD_NOGY,
-        
-        SEC_SBD_NOGM,
-        
-        SEC_SBD_EUGY,
-        
-        SEC_SBD_EUGM,
-        
-        SEC_MBN_MNPL,
-        
-        SEC_CBN_INVG,
-        
-        SEC_CBN_NIVG,
-        
-        SEC_CBI_INVG,
-        
-        SEC_CBI_NIVG,
-        
-        SEC_LON_LEVL,
-        
-        SEC_LON_OTHL,
-        
-        SEC_SSP_SABS,
-        
-        SEC_SSP_RMBS,
-        
-        SEC_SSP_CMBS,
-        
-        SEC_SSP_AMBS,
-        
-        SEC_SSP_ABCP,
-        
-        SEC_SSP_CDOC,
-        
-        SEC_SSP_STRC,
-        
-        SEC_SSP_SETP,
-        
-        SEC_SSP_OTHS,
-        
-        DER_EQD_FINI,
-        
-        DER_EQD_OTHD,
-        
-        DER_FID_FIXI,
-        
-        DER_CDS_SNFI,
-        
-        DER_CDS_SNSO,
-        
-        DER_CDS_SNOT,
-        
-        DER_CDS_INDX,
-        
-        DER_CDS_EXOT,
-        
-        DER_CDS_OTHR,
-        
-        DER_FEX_INVT,
-        
-        DER_FEX_HEDG,
-        
-        DER_IRD_INTR,
-        
-        DER_CTY_ECOL,
-        
-        DER_CTY_ENNG,
-        
-        DER_CTY_ENPW,
-        
-        DER_CTY_ENOT,
-        
-        DER_CTY_PMGD,
-        
-        DER_CTY_PMOT,
-        
-        DER_CTY_OTIM,
-        
-        DER_CTY_OTLS,
-        
-        DER_CTY_OTAP,
-        
-        DER_CTY_OTHR,
-        
-        DER_OTH_OTHR,
-        
-        PHY_RES_RESL,
-        
-        PHY_RES_COML,
-        
-        PHY_RES_OTHR,
-        
-        PHY_CTY_PCTY,
-        
-        PHY_TIM_PTIM,
-        
-        PHY_ART_PART,
-        
-        PHY_TPT_PTPT,
-        
-        PHY_OTH_OTHR,
-        
-        CIU_OAM_MMFC,
-        
-        CIU_OAM_AETF,
-        
-        CIU_OAM_OTHR,
-        
-        CIU_NAM_MMFC,
-        
-        CIU_NAM_AETF,
-        
-        CIU_NAM_OTHR,
-        
-        OTH_OTH_OTHR,
-        
-        NTA_NTA_NOTA,
-    }
-    
-    [Serializable]
     public partial class ComplexIndividualExposureType {
         
         private ComplexAssetTypeExposureType[] assetTypeExposuresField;
@@ -3476,45 +3237,7 @@ namespace Schemas {
             }
         }
     }
-    
-    [Serializable]
-    public partial class ComplexMarketIdentificationWithNOTType {
-        
-        private MarketCodeTypeWithNOTType marketCodeTypeField;
-        
-        private string marketCodeField;
-        
-        public MarketCodeTypeWithNOTType MarketCodeType {
-            get {
-                return this.marketCodeTypeField;
-            }
-            set {
-                this.marketCodeTypeField = value;
-            }
-        }
-        
-        public string MarketCode {
-            get {
-                return this.marketCodeField;
-            }
-            set {
-                this.marketCodeField = value;
-            }
-        }
-    }
-    
-    [Serializable]
-    public enum MarketCodeTypeWithNOTType {
-        
-        NOT,
-        
-        MIC,
-        
-        OTC,
-        
-        XXX,
-    }
-    
+     
     [Serializable]
     public partial class ComplexThreePrincipalMarketType {
         
@@ -4814,98 +4537,6 @@ namespace Schemas {
     }
     
     [Serializable]
-    public partial class ComplexBaseCurrencyDescriptionType {
-        
-        private string baseCurrencyField;
-        
-        private string aUMAmountInBaseCurrencyField;
-        
-        private FXEURReferenceRateTypeType fXEURReferenceRateTypeField;
-        
-        private bool fXEURReferenceRateTypeFieldSpecified;
-        
-        private decimal fXEURRateField;
-        
-        private bool fXEURRateFieldSpecified;
-        
-        private string fXEUROtherReferenceRateDescriptionField;
-        
-        public string BaseCurrency {
-            get {
-                return this.baseCurrencyField;
-            }
-            set {
-                this.baseCurrencyField = value;
-            }
-        }
-        
-        [XmlElement(DataType="integer")]
-        public string AUMAmountInBaseCurrency {
-            get {
-                return this.aUMAmountInBaseCurrencyField;
-            }
-            set {
-                this.aUMAmountInBaseCurrencyField = value;
-            }
-        }
-        
-        public FXEURReferenceRateTypeType FXEURReferenceRateType {
-            get {
-                return this.fXEURReferenceRateTypeField;
-            }
-            set {
-                this.fXEURReferenceRateTypeField = value;
-            }
-        }
-        
-        [XmlIgnore]
-        public bool FXEURReferenceRateTypeSpecified {
-            get {
-                return this.fXEURReferenceRateTypeFieldSpecified;
-            }
-            set {
-                this.fXEURReferenceRateTypeFieldSpecified = value;
-            }
-        }
-        
-        public decimal FXEURRate {
-            get {
-                return this.fXEURRateField;
-            }
-            set {
-                this.fXEURRateField = value;
-            }
-        }
-        
-        [XmlIgnore]
-        public bool FXEURRateSpecified {
-            get {
-                return this.fXEURRateFieldSpecified;
-            }
-            set {
-                this.fXEURRateFieldSpecified = value;
-            }
-        }
-        
-        public string FXEUROtherReferenceRateDescription {
-            get {
-                return this.fXEUROtherReferenceRateDescriptionField;
-            }
-            set {
-                this.fXEUROtherReferenceRateDescriptionField = value;
-            }
-        }
-    }
-    
-    [Serializable]
-    public enum FXEURReferenceRateTypeType {
-        
-        ECB,
-        
-        OTH,
-    }
-    
-    [Serializable]
     public partial class ComplexMasterAIFIdentificationType {
         
         private string aIFNameField;
@@ -5549,14 +5180,7 @@ namespace Schemas {
         }
     }
     
-    [Serializable]
-    public enum CancelledRecordFlagType {
-        
-        C,
-        
-        D,
-    }
-    
+   
     [Serializable]
     public enum AIFReportingCodeType {
         
