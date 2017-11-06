@@ -2,7 +2,7 @@ namespace Schemas
 {
     using System;
     [Serializable]
-    public enum PrivateEquityFundStrategyTypeType
+    public enum PrivateEquityFundStrategyType
     {
 
         VENT_CAPL,

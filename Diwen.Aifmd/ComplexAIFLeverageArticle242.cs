@@ -13,7 +13,7 @@ namespace Schemas
         [XmlIgnore]
         public bool AllCounterpartyCollateralRehypothecatedRateSpecified {get; set;}
 
-        public ComplexSecuritiesCashBorrowingType SecuritiesCashBorrowing {get; set;}
+        public ComplexSecuritiesCashBorrowing SecuritiesCashBorrowing {get; set;}
 
         public ComplexFinancialInstrumentBorrowingType FinancialInstrumentBorrowing {get; set;}
 

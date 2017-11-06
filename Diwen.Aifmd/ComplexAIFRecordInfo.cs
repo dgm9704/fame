@@ -5,7 +5,7 @@ namespace Schemas
     [Serializable]
     public partial class ComplexAIFRecordInfoType
     {
-        public FilingTypeType FilingType {get; set;}
+        public FilingType FilingType {get; set;}
 
         public AIFContentType AIFContentType {get; set;}
 
@@ -15,7 +15,7 @@ namespace Schemas
         [XmlElement(DataType = "date")]
         public DateTime ReportingPeriodEndDate {get; set;}
 
-        public ReportingPeriodTypeType ReportingPeriodType {get; set;}
+        public ReportingPeriodType ReportingPeriodType {get; set;}
 
         [XmlElement(DataType = "gYear")]
         public string ReportingPeriodYear {get; set;}

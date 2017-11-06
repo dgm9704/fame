@@ -9,10 +9,6 @@ namespace Schemas
     public partial class AIFMReportingInfo
     {
 
-
-
-
-
         [XmlElement("AIFMRecordInfo", typeof(ComplexAIFMRecordInfoType))]
         [XmlElement("CancellationAIFMRecordInfo", typeof(ComplexCancellationAIFMRecordInfoType))]
         public object[] Items {get; set;}
@@ -31,30 +27,9 @@ namespace Schemas
     public partial class ComplexAIFMRecordInfoType
     {
 
+        public FilingType FilingType {get; set;}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        public FilingTypeType FilingType {get; set;}
-
-        public AIFMContentTypeType AIFMContentType {get; set;}
+        public AIFMContentType AIFMContentType {get; set;}
 
         [XmlElement(DataType = "date")]
         public DateTime ReportingPeriodStartDate {get; set;}
@@ -62,7 +37,7 @@ namespace Schemas
         [XmlElement(DataType = "date")]
         public DateTime ReportingPeriodEndDate {get; set;}
 
-        public ReportingPeriodTypeType ReportingPeriodType {get; set;}
+        public ReportingPeriodType ReportingPeriodType {get; set;}
 
         [XmlElement(DataType = "gYear")]
         public string ReportingPeriodYear {get; set;}
@@ -103,7 +78,7 @@ namespace Schemas
     }
 
     [Serializable]
-    public enum FilingTypeType
+    public enum FilingType
     {
 
         AMND,
@@ -112,7 +87,7 @@ namespace Schemas
     }
 
     [Serializable]
-    public enum AIFMContentTypeType
+    public enum AIFMContentType
     {
 
         [XmlEnum("1")]
@@ -126,7 +101,7 @@ namespace Schemas
     }
 
     [Serializable]
-    public enum ReportingPeriodTypeType
+    public enum ReportingPeriodType
     {
 
         Q1,
@@ -211,8 +186,6 @@ namespace Schemas
     public partial class ComplexAssumptionType
     {
 
-
-
         [XmlElement(DataType = "integer")]
         public string QuestionNumber {get; set;}
 
@@ -223,19 +196,12 @@ namespace Schemas
     public partial class ComplexBaseCurrencyDescriptionType
     {
 
-
-
-
-
-
-
-
         public string BaseCurrency {get; set;}
 
         [XmlElement(DataType = "integer")]
         public string AUMAmountInBaseCurrency {get; set;}
 
-        public FXEURReferenceRateTypeType FXEURReferenceRateType {get; set;}
+        public FXEURReferenceRateType FXEURReferenceRateType {get; set;}
 
         [XmlIgnore]
         public bool FXEURReferenceRateTypeSpecified {get; set;}
@@ -249,7 +215,7 @@ namespace Schemas
     }
 
     [Serializable]
-    public enum FXEURReferenceRateTypeType
+    public enum FXEURReferenceRateType
     {
 
         ECB,
@@ -261,19 +227,16 @@ namespace Schemas
     public partial class ComplexPrincipalInstrumentType
     {
 
-
-
-
         public FiveRankingType Ranking {get; set;}
 
-        public SubAssetTypeType SubAssetType {get; set;}
+        public SubAssetType SubAssetType {get; set;}
 
         [XmlElement(DataType = "integer")]
         public string AggregatedValueAmount {get; set;}
     }
 
     [Serializable]
-    public enum SubAssetTypeType
+    public enum SubAssetType
     {
 
         SEC_CSH_CODP,
@@ -425,8 +388,6 @@ namespace Schemas
     public partial class ComplexMarketIdentificationWithNOTType
     {
 
-
-
         public MarketCodeTypeWithNOTType MarketCodeType {get; set;}
 
         public string MarketCode {get; set;}
@@ -449,9 +410,6 @@ namespace Schemas
     public partial class ComplexFivePrincipalMarketType
     {
 
-
-
-
         public FiveRankingType Ranking {get; set;}
 
         public ComplexMarketIdentificationWithNOTType MarketIdentification {get; set;}
@@ -464,8 +422,6 @@ namespace Schemas
     public partial class ComplexAIFMNationalIdentifierType
     {
 
-
-
         public string ReportingMemberState {get; set;}
 
         public string AIFMNationalCode {get; set;}
@@ -474,9 +430,6 @@ namespace Schemas
     [Serializable]
     public partial class ComplexAIFMIdentifierType
     {
-
-
-
 
         public string AIFMIdentifierLEI {get; set;}
 
@@ -488,11 +441,6 @@ namespace Schemas
     [Serializable]
     public partial class ComplexAIFMCompleteDescriptionType
     {
-
-
-
-
-
 
         public ComplexAIFMIdentifierType AIFMIdentifier {get; set;}
 
@@ -512,13 +460,9 @@ namespace Schemas
     public partial class ComplexCancellationAIFMRecordInfoType
     {
 
-
-
-
-
         public string CancelledAIFMNationalCode {get; set;}
 
-        public ReportingPeriodTypeType CancelledReportingPeriodType {get; set;}
+        public ReportingPeriodType CancelledReportingPeriodType {get; set;}
 
         [XmlElement(DataType = "gYear")]
         public string CancelledReportingPeriodYear {get; set;}

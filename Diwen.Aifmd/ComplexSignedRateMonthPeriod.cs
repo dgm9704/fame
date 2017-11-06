@@ -2,8 +2,9 @@ namespace Schemas
 {
     using System;
     using System.Xml.Serialization;
+    
     [Serializable]
-    public partial class ComplexSignedRateMonthPeriodType
+    public partial class ComplexSignedRateMonthPeriod
     {
         public decimal RateJanuary {get; set;}
 

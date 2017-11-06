@@ -4,639 +4,12 @@ namespace Schemas
     using System.Xml.Serialization;
 
     [Serializable]
-    public partial class ComplexHistoricalRiskProfileType
-    {
-
-
-
-
-
-
-        public ComplexSignedRateMonthPeriodType GrossInvestmentReturnsRate {get; set;}
-
-        public ComplexSignedRateMonthPeriodType NetInvestmentReturnsRate {get; set;}
-
-        public ComplexSignedRateMonthPeriodType NAVChangeRate {get; set;}
-
-        public ComplexQuantityMonthPeriodType Subscription {get; set;}
-
-        public ComplexQuantityMonthPeriodType Redemption {get; set;}
-    }
-
-    [Serializable]
-    public partial class ComplexOperationalRiskType
-    {
-
-
-
-        [XmlElement(DataType = "integer")]
-        public string TotalOpenPositions {get; set;}
-
-        public ComplexHistoricalRiskProfileType HistoricalRiskProfile {get; set;}
-    }
-
-    [Serializable]
-    public partial class ComplexFinancingLiquidityProfileType
-    {
-
-
-
-
-
-
-
-
-
-        [XmlElement(DataType = "integer")]
-        public string TotalFinancingAmount {get; set;}
-
-        public decimal TotalFinancingInDays0to1Rate {get; set;}
-
-        public decimal TotalFinancingInDays2to7Rate {get; set;}
-
-        public decimal TotalFinancingInDays8to30Rate {get; set;}
-
-        public decimal TotalFinancingInDays31to90Rate {get; set;}
-
-        public decimal TotalFinancingInDays91to180Rate {get; set;}
-
-        public decimal TotalFinancingInDays181to365Rate {get; set;}
-
-        public decimal TotalFinancingInDays365MoreRate {get; set;}
-    }
-
-    [Serializable]
-    public partial class ComplexInvestorGroupType
-    {
-
-
-
-        public InvestorGroupTypeType InvestorGroupType {get; set;}
-
-        public decimal InvestorGroupRate {get; set;}
-    }
-
-    [Serializable]
-    public enum InvestorGroupTypeType
-    {
-
-        NFCO,
-
-        BANK,
-
-        INSC,
-
-        OFIN,
-
-        PFND,
-
-        GENG,
-
-        OCIU,
-
-        HHLD,
-
-        UNKN,
-
-        NONE,
-    }
-
-    [Serializable]
-    public partial class ComplexInvestorPreferentialTreatmentType
-    {
-
-
-
-
-
-
-
-
-
-
-        public bool InvestorPreferentialTreatmentFlag {get; set;}
-
-        public bool DisclosureTermsPreferentialTreatmentFlag {get; set;}
-
-        [XmlIgnore]
-        public bool DisclosureTermsPreferentialTreatmentFlagSpecified {get; set;}
-
-        public bool LiquidityTermsPreferentialTreatmentFlag {get; set;}
-
-        [XmlIgnore]
-        public bool LiquidityTermsPreferentialTreatmentFlagSpecified {get; set;}
-
-        public bool FeeTermsPreferentialTreatmentFlag {get; set;}
-
-        [XmlIgnore]
-        public bool FeeTermsPreferentialTreatmentFlagSpecified {get; set;}
-
-        public bool OtherTermsPreferentialTreatmentFlag {get; set;}
-
-        [XmlIgnore]
-        public bool OtherTermsPreferentialTreatmentFlagSpecified {get; set;}
-    }
-
-    [Serializable]
-    public partial class ComplexOtherArrangementType
-    {
-
-
-
-        public string OtherArrangementType {get; set;}
-
-        public decimal OtherArrangementRate {get; set;}
-    }
-
-    [Serializable]
-    public partial class ComplexInvestorIlliquidAssetArrangementType
-    {
-
-
-
-
-
-
-
-
-
-
-        public decimal SidePocketRate {get; set;}
-
-        [XmlIgnore]
-        public bool SidePocketRateSpecified {get; set;}
-
-        public decimal GatesRate {get; set;}
-
-        [XmlIgnore]
-        public bool GatesRateSpecified {get; set;}
-
-        public decimal DealingSuspensionRate {get; set;}
-
-        [XmlIgnore]
-        public bool DealingSuspensionRateSpecified {get; set;}
-
-        public ComplexOtherArrangementType OtherArrangement {get; set;}
-
-        public decimal TotalArrangementRate {get; set;}
-
-        [XmlIgnore]
-        public bool TotalArrangementRateSpecified {get; set;}
-    }
-
-    [Serializable]
-    public partial class ComplexInvestorArrangementType
-    {
-
-
-
-        public ComplexInvestorIlliquidAssetArrangementType InvestorIlliquidAssetArrangement {get; set;}
-
-        public ComplexInvestorPreferentialTreatmentType InvestorPreferentialTreatment {get; set;}
-    }
-
-    [Serializable]
-    public partial class ComplexInvestorRedemptionType
-    {
-
-
-
-
-
-
-        public bool ProvideWithdrawalRightsFlag {get; set;}
-
-        public InvestorRedemptionFrequencyType InvestorRedemptionFrequency {get; set;}
-
-        [XmlIgnore]
-        public bool InvestorRedemptionFrequencySpecified {get; set;}
-
-        [XmlElement(DataType = "integer")]
-        public string InvestorRedemptionNoticePeriod {get; set;}
-
-        [XmlElement(DataType = "integer")]
-        public string InvestorRedemptionLockUpPeriod {get; set;}
-    }
-
-    [Serializable]
-    public enum InvestorRedemptionFrequencyType
-    {
-
-        D,
-
-        W,
-
-        F,
-
-        M,
-
-        Q,
-
-        H,
-
-        Y,
-
-        O,
-
-        N,
-    }
-
-    [Serializable]
-    public partial class ComplexInvestorLiquidityProfileType
-    {
-
-
-
-
-
-
-
-
-        public decimal InvestorLiquidityInDays0to1Rate {get; set;}
-
-        public decimal InvestorLiquidityInDays2to7Rate {get; set;}
-
-        public decimal InvestorLiquidityInDays8to30Rate {get; set;}
-
-        public decimal InvestorLiquidityInDays31to90Rate {get; set;}
-
-        public decimal InvestorLiquidityInDays91to180Rate {get; set;}
-
-        public decimal InvestorLiquidityInDays181to365Rate {get; set;}
-
-        public decimal InvestorLiquidityInDays365MoreRate {get; set;}
-    }
-
-    [Serializable]
-    public partial class ComplexPortfolioLiquidityProfileType
-    {
-
-
-
-
-
-
-
-
-
-        public decimal PortfolioLiquidityInDays0to1Rate {get; set;}
-
-        public decimal PortfolioLiquidityInDays2to7Rate {get; set;}
-
-        public decimal PortfolioLiquidityInDays8to30Rate {get; set;}
-
-        public decimal PortfolioLiquidityInDays31to90Rate {get; set;}
-
-        public decimal PortfolioLiquidityInDays91to180Rate {get; set;}
-
-        public decimal PortfolioLiquidityInDays181to365Rate {get; set;}
-
-        public decimal PortfolioLiquidityInDays365MoreRate {get; set;}
-
-        [XmlElement(DataType = "integer")]
-        public string UnencumberedCash {get; set;}
-    }
-
-    [Serializable]
-    public partial class ComplexLiquidityRiskProfileType
-    {
-
-
-
-
-
-
-
-        public ComplexPortfolioLiquidityProfileType PortfolioLiquidityProfile {get; set;}
-
-        public ComplexInvestorLiquidityProfileType InvestorLiquidityProfile {get; set;}
-
-        public ComplexInvestorRedemptionType InvestorRedemption {get; set;}
-
-        public ComplexInvestorArrangementType InvestorArrangement {get; set;}
-
-        [XmlArrayItem("InvestorGroup", IsNullable = false)]
-        public ComplexInvestorGroupType[] InvestorGroups {get; set;}
-
-        public ComplexFinancingLiquidityProfileType FinancingLiquidityProfile {get; set;}
-    }
-
-    [Serializable]
-    public partial class ComplexCCPExposureType
-    {
-
-
-
-
-        public ThreeRankingType Ranking {get; set;}
-
-        public ComplexEntityIdentificationType CCPIdentification {get; set;}
-
-        [XmlElement(DataType = "integer")]
-        public string CCPExposureValue {get; set;}
-    }
-
-    [Serializable]
-    public enum ThreeRankingType
-    {
-
-        [XmlEnum("1")]
-        Item1,
-
-        [XmlEnum("2")]
-        Item2,
-
-        [XmlEnum("3")]
-        Item3,
-    }
-
-    [Serializable]
-    public partial class ComplexCounterpartyExposureType
-    {
-
-
-
-
-
-
-        public FiveRankingType Ranking {get; set;}
-
-        public bool CounterpartyExposureFlag {get; set;}
-
-        public ComplexEntityIdentificationType CounterpartyIdentification {get; set;}
-
-        public decimal CounterpartyTotalExposureRate {get; set;}
-
-        [XmlIgnore]
-        public bool CounterpartyTotalExposureRateSpecified {get; set;}
-    }
-
-    [Serializable]
-    public partial class ComplexAllCounterpartyCollateralType
-    {
-
-
-
-
-        [XmlElement(DataType = "integer")]
-        public string AllCounterpartyCollateralCash {get; set;}
-
-        [XmlElement(DataType = "integer")]
-        public string AllCounterpartyCollateralSecurities {get; set;}
-
-        [XmlElement(DataType = "integer")]
-        public string AllCounterpartyOtherCollateralPosted {get; set;}
-    }
-
-    [Serializable]
-    public partial class ComplexClearedReposRateType
-    {
-
-
-
-
-
-
-
-        public decimal CCPRate {get; set;}
-
-        [XmlIgnore]
-        public bool CCPRateSpecified {get; set;}
-
-        public decimal BilateralClearingRate {get; set;}
-
-        [XmlIgnore]
-        public bool BilateralClearingRateSpecified {get; set;}
-
-        public decimal TriPartyRepoClearingRate {get; set;}
-
-        [XmlIgnore]
-        public bool TriPartyRepoClearingRateSpecified {get; set;}
-    }
-
-    [Serializable]
-    public partial class ComplexClearedDerivativesRateType
-    {
-
-
-
-
-
-        public decimal CCPRate {get; set;}
-
-        [XmlIgnore]
-        public bool CCPRateSpecified {get; set;}
-
-        public decimal BilateralClearingRate {get; set;}
-
-        [XmlIgnore]
-        public bool BilateralClearingRateSpecified {get; set;}
-    }
-
-    [Serializable]
-    public partial class ComplexMarketRate3p2Type
-    {
-
-
-
-
-
-        public decimal RegulatedMarketRate {get; set;}
-
-        [XmlIgnore]
-        public bool RegulatedMarketRateSpecified {get; set;}
-
-        public decimal OTCRate {get; set;}
-
-        [XmlIgnore]
-        public bool OTCRateSpecified {get; set;}
-    }
-
-    [Serializable]
-    public partial class ComplexTradingClearingMechanismType
-    {
-
-
-
-
-
-        public ComplexMarketRate3p2Type TradedSecurities {get; set;}
-
-        public ComplexMarketRate3p2Type TradedDerivatives {get; set;}
-
-        public ComplexClearedDerivativesRateType ClearedDerivativesRate {get; set;}
-
-        public ComplexClearedReposRateType ClearedReposRate {get; set;}
-    }
-
-    [Serializable]
-    public partial class ComplexCounterpartyRiskProfileType
-    {
-
-
-
-
-
-
-
-        public ComplexTradingClearingMechanismType TradingClearingMechanism {get; set;}
-
-        public ComplexAllCounterpartyCollateralType AllCounterpartyCollateral {get; set;}
-
-        [XmlArrayItem("FundToCounterpartyExposure", IsNullable = false)]
-        public ComplexCounterpartyExposureType[] FundToCounterpartyExposures {get; set;}
-
-        [XmlArrayItem("CounterpartyToFundExposure", IsNullable = false)]
-        public ComplexCounterpartyExposureType[] CounterpartyToFundExposures {get; set;}
-
-        public bool ClearTransactionsThroughCCPFlag {get; set;}
-
-        [XmlArrayItem("CCPExposure", IsNullable = false)]
-        public ComplexCCPExposureType[] CCPExposures {get; set;}
-    }
-
-    [Serializable]
-    public partial class ComplexVARRiskMeasureValuesType
-    {
-
-
-
-
-
-        public decimal VARValue {get; set;}
-
-        [XmlIgnore]
-        public bool VARValueSpecified {get; set;}
-
-        public VARCalculationMethodCodeTypeType VARCalculationMethodCodeType {get; set;}
-
-        [XmlIgnore]
-        public bool VARCalculationMethodCodeTypeSpecified {get; set;}
-    }
-
-    [Serializable]
-    public enum VARCalculationMethodCodeTypeType
-    {
-
-        HISTO,
-
-        CARLO,
-
-        PARAM,
-    }
-
-    [Serializable]
-    public partial class ComplexVegaRiskMeasureValuesType
-    {
-
-
-
-
-
-
-
-        public decimal CurrentMarketRiskMeasureValue {get; set;}
-
-        [XmlIgnore]
-        public bool CurrentMarketRiskMeasureValueSpecified {get; set;}
-
-        public decimal LowerMarketRiskMeasureValue {get; set;}
-
-        [XmlIgnore]
-        public bool LowerMarketRiskMeasureValueSpecified {get; set;}
-
-        public decimal HigherMarketRiskMeasureValue {get; set;}
-
-        [XmlIgnore]
-        public bool HigherMarketRiskMeasureValueSpecified {get; set;}
-    }
-
-    [Serializable]
-    public partial class ComplexBucketRiskMeasureValuesType
-    {
-
-
-
-
-
-
-
-        public decimal LessFiveYearsRiskMeasureValue {get; set;}
-
-        [XmlIgnore]
-        public bool LessFiveYearsRiskMeasureValueSpecified {get; set;}
-
-        public decimal FifthteenYearsRiskMeasureValue {get; set;}
-
-        [XmlIgnore]
-        public bool FifthteenYearsRiskMeasureValueSpecified {get; set;}
-
-        public decimal MoreFifthteenYearsRiskMeasureValue {get; set;}
-
-        [XmlIgnore]
-        public bool MoreFifthteenYearsRiskMeasureValueSpecified {get; set;}
-    }
-
-    [Serializable]
-    public partial class ComplexMarketRiskMeasureType
-    {
-
-
-
-
-        public RiskMeasureTypeType RiskMeasureType {get; set;}
-
-        [XmlElement("BucketRiskMeasureValues", typeof(ComplexBucketRiskMeasureValuesType))]
-        [XmlElement("RiskMeasureValue", typeof(decimal))]
-        [XmlElement("VARRiskMeasureValues", typeof(ComplexVARRiskMeasureValuesType))]
-        [XmlElement("VegaRiskMeasureValues", typeof(ComplexVegaRiskMeasureValuesType))]
-        public object Item {get; set;}
-
-        public string RiskMeasureDescription {get; set;}
-    }
-
-    [Serializable]
-    public enum RiskMeasureTypeType
-    {
-
-        NET_EQTY_DELTA,
-
-        NET_DV01,
-
-        NET_CS01,
-
-        VAR,
-
-        VEGA_EXPO,
-
-        NET_FX_DELTA,
-
-        NET_CTY_DELTA,
-    }
-
-    [Serializable]
-    public partial class ComplexMarketRiskProfileType
-    {
-
-
-
-        public string AnnualInvestmentReturnRate {get; set;}
-
-        [XmlArrayItem("MarketRiskMeasure", IsNullable = false)]
-        public ComplexMarketRiskMeasureType[] MarketRiskMeasures {get; set;}
-    }
-
-    [Serializable]
     public partial class ComplexRiskProfileType
     {
 
-
-
-
-
         public ComplexMarketRiskProfileType MarketRiskProfile {get; set;}
 
-        public ComplexCounterpartyRiskProfileType CounterpartyRiskProfile {get; set;}
+        public ComplexCounterpartyRiskProfile CounterpartyRiskProfile {get; set;}
 
         public ComplexLiquidityRiskProfileType LiquidityRiskProfile {get; set;}
 
@@ -647,13 +20,9 @@ namespace Schemas
     public partial class ComplexCompanyDominantInfluenceType
     {
 
-
-
-
-
         public ComplexEntityIdentificationType CompanyIdentification {get; set;}
 
-        public TransactionTypeType TransactionType {get; set;}
+        public TransactionType TransactionType {get; set;}
 
         public string OtherTransactionTypeDescription {get; set;}
 
@@ -661,7 +30,7 @@ namespace Schemas
     }
 
     [Serializable]
-    public enum TransactionTypeType
+    public enum TransactionType
     {
 
         ACAP,
@@ -689,9 +58,6 @@ namespace Schemas
     public partial class ComplexCurrencyExposureType
     {
 
-
-
-
         public string ExposureCurrency {get; set;}
 
         [XmlElement(DataType = "integer")]
@@ -705,10 +71,7 @@ namespace Schemas
     public partial class ComplexAssetTypeTurnoverType
     {
 
-
-
-
-        public TurnoverSubAssetTypeType TurnoverSubAssetType {get; set;}
+        public TurnoverSubAssetType TurnoverSubAssetType {get; set;}
 
         [XmlElement(DataType = "integer")]
         public string MarketValue {get; set;}
@@ -718,7 +81,7 @@ namespace Schemas
     }
 
     [Serializable]
-    public enum TurnoverSubAssetTypeType
+    public enum TurnoverSubAssetType
     {
 
         SEC_CSH_CSH,
@@ -782,11 +145,7 @@ namespace Schemas
     public partial class ComplexAssetTypeExposureType
     {
 
-
-
-
-
-        public SubAssetTypeType SubAssetType {get; set;}
+        public SubAssetType SubAssetType {get; set;}
 
         [XmlElement(DataType = "integer")]
         public string GrossValue {get; set;}
@@ -801,10 +160,6 @@ namespace Schemas
     [Serializable]
     public partial class ComplexIndividualExposureType
     {
-
-
-
-
 
         [XmlArrayItem("AssetTypeExposure", IsNullable = false)]
         public ComplexAssetTypeExposureType[] AssetTypeExposures {get; set;}
@@ -823,22 +178,16 @@ namespace Schemas
     public partial class ComplexAIFIndividualInfoType
     {
 
-
-
-
         public ComplexIndividualExposureType IndividualExposure {get; set;}
 
         public ComplexRiskProfileType RiskProfile {get; set;}
 
-        public ComplexStressTestsType StressTests {get; set;}
+        public ComplexStressTests StressTests {get; set;}
     }
 
     [Serializable]
     public partial class ComplexInvestorConcentrationType
     {
-
-
-
 
         public decimal MainBeneficialOwnersRate {get; set;}
 
@@ -851,9 +200,6 @@ namespace Schemas
     public partial class ComplexThreePrincipalMarketType
     {
 
-
-
-
         public ThreeRankingType Ranking {get; set;}
 
         public ComplexMarketIdentificationWithNOTType MarketIdentification {get; set;}
@@ -865,8 +211,6 @@ namespace Schemas
     [Serializable]
     public partial class ComplexMarketIdentificationWithoutNOTType
     {
-
-
 
         public MarketCodeTypeWithoutNOTType MarketCodeType {get; set;}
 
@@ -888,20 +232,11 @@ namespace Schemas
     public partial class ComplexPortfolioConcentrationType
     {
 
+        public FiveRanking Ranking {get; set;}
 
+        public AssetType AssetType {get; set;}
 
-
-
-
-
-
-
-
-        public FiveRankingType Ranking {get; set;}
-
-        public AssetTypeType AssetType {get; set;}
-
-        public PositionTypeType PositionType {get; set;}
+        public PositionType PositionType {get; set;}
 
         [XmlIgnore]
         public bool PositionTypeSpecified {get; set;}
@@ -920,7 +255,7 @@ namespace Schemas
     }
 
     [Serializable]
-    public enum AssetTypeType
+    public enum AssetType
     {
 
         SEC_CSH,
@@ -981,7 +316,7 @@ namespace Schemas
     }
 
     [Serializable]
-    public enum PositionTypeType
+    public enum PositionType
     {
 
         L,
@@ -992,11 +327,6 @@ namespace Schemas
     [Serializable]
     public partial class ComplexMostImportantConcentrationType
     {
-
-
-
-
-
 
         [XmlArrayItem("PortfolioConcentration", IsNullable = false)]
         public ComplexPortfolioConcentrationType[] PortfolioConcentrations {get; set;}
@@ -1033,26 +363,16 @@ namespace Schemas
     public partial class ComplexPrincipalExposureType
     {
 
-
-
-
-
-
-
-
-
-
-
         public TenRankingType Ranking {get; set;}
 
-        public AssetMacroTypeType AssetMacroType {get; set;}
+        public AssetMacroType AssetMacroType {get; set;}
 
-        public SubAssetTypeType SubAssetType {get; set;}
+        public SubAssetType SubAssetType {get; set;}
 
         [XmlIgnore]
         public bool SubAssetTypeSpecified {get; set;}
 
-        public PositionTypeType PositionType {get; set;}
+        public PositionType PositionType {get; set;}
 
         [XmlIgnore]
         public bool PositionTypeSpecified {get; set;}
@@ -1104,7 +424,7 @@ namespace Schemas
     }
 
     [Serializable]
-    public enum AssetMacroTypeType
+    public enum AssetMacroType
     {
 
         SEC,
@@ -1123,14 +443,6 @@ namespace Schemas
     [Serializable]
     public partial class ComplexAUMGeographicalFocusType
     {
-
-
-
-
-
-
-
-
 
         public decimal AfricaAUMRate {get; set;}
 
@@ -1153,14 +465,6 @@ namespace Schemas
     public partial class ComplexNAVGeographicalFocusType
     {
 
-
-
-
-
-
-
-
-
         public decimal AfricaNAVRate {get; set;}
 
         public decimal AsiaPacificNAVRate {get; set;}
@@ -1182,17 +486,11 @@ namespace Schemas
     public partial class ComplexAIIInstrumentIdentificationType
     {
 
-
-
-
-
-
-
         public string AIIExchangeCode {get; set;}
 
         public string AIIProductCode {get; set;}
 
-        public AIIDerivativeTypeType AIIDerivativeType {get; set;}
+        public AIIDerivativeType AIIDerivativeType {get; set;}
 
         public AIIPutCallIdentifierType AIIPutCallIdentifier {get; set;}
 
@@ -1206,22 +504,11 @@ namespace Schemas
     public partial class ComplexMainInstrumentTradedType
     {
 
+        public FiveRanking Ranking {get; set;}
 
+        public SubAssetType SubAssetType {get; set;}
 
-
-
-
-
-
-
-
-
-
-        public FiveRankingType Ranking {get; set;}
-
-        public SubAssetTypeType SubAssetType {get; set;}
-
-        public InstrumentCodeTypeType InstrumentCodeType {get; set;}
+        public InstrumentCodeType InstrumentCodeType {get; set;}
 
         [XmlIgnore]
         public bool InstrumentCodeTypeSpecified {get; set;}
@@ -1235,7 +522,7 @@ namespace Schemas
         [XmlElement(DataType = "integer")]
         public string PositionValue {get; set;}
 
-        public PositionTypeType PositionType {get; set;}
+        public PositionType PositionType {get; set;}
 
         [XmlIgnore]
         public bool PositionTypeSpecified {get; set;}
@@ -1250,12 +537,7 @@ namespace Schemas
     public partial class ComplexOtherFundStrategyType
     {
 
-
-
-
-
-
-        public OtherFundStrategyTypeType OtherFundStrategyType {get; set;}
+        public OtherFundStrategyType OtherFundStrategyType {get; set;}
 
         public bool PrimaryStrategyFlag {get; set;}
 
@@ -1268,7 +550,7 @@ namespace Schemas
     }
 
     [Serializable]
-    public enum OtherFundStrategyTypeType
+    public enum OtherFundStrategyType
     {
 
         OTHR_COMF,
@@ -1286,12 +568,7 @@ namespace Schemas
     public partial class ComplexFundOfFundsStrategyType
     {
 
-
-
-
-
-
-        public FundOfFundsStrategyTypeType FundOfFundsStrategyType {get; set;}
+        public FundOfFundsStrategyType FundOfFundsStrategyType {get; set;}
 
         public bool PrimaryStrategyFlag {get; set;}
 
@@ -1307,12 +584,7 @@ namespace Schemas
     public partial class ComplexRealEstateFundStrategyType
     {
 
-
-
-
-
-
-        public RealEstateFundStrategyTypeType RealEstateFundStrategyType {get; set;}
+        public RealEstateFundStrategyType RealEstateFundStrategyType {get; set;}
 
         public bool PrimaryStrategyFlag {get; set;}
 

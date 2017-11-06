@@ -3,10 +3,9 @@ namespace Schemas
     using System;
     using System.Xml.Serialization;
     [Serializable]
-    public partial class ComplexPrivateEquityFundStrategyType
+    public partial class ComplexHedgeFundStrategyType
     {
-        public PrivateEquityFundStrategyTypeType PrivateEquityFundStrategyType {get; set;}
-
+        public HedgeFundStrategyType HedgeFundStrategyType {get; set;}
         public bool PrimaryStrategyFlag {get; set;}
 
         public decimal StrategyNAVRate {get; set;}

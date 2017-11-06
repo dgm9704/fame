@@ -2,7 +2,7 @@ namespace Schemas
 {
     using System;
     [Serializable]
-    public enum AIIDerivativeTypeType
+    public enum AIIDerivativeType
     {
 
         O,

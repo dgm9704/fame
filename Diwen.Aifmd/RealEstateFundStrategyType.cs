@@ -2,7 +2,7 @@ namespace Schemas
 {
     using System;
     [Serializable]
-    public enum RealEstateFundStrategyTypeType
+    public enum RealEstateFundStrategyType
     {
 
         RESL_REST,

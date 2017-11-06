@@ -2,7 +2,7 @@ namespace Schemas
 {
     using System;
     [Serializable]
-    public partial class ComplexShareClassIdentifierType
+    public partial class ComplexShareClassIdentifier
     {
         public string ShareClassNationalCode {get; set;}
 

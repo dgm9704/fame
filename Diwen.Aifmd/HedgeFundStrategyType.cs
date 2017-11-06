@@ -2,7 +2,7 @@ namespace Schemas
 {
     using System;
     [Serializable]
-    public enum HedgeFundStrategyTypeType
+    public enum HedgeFundStrategyType
     {
 
         EQTY_LGBS,

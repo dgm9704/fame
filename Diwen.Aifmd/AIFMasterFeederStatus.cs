@@ -2,7 +2,7 @@ namespace Schemas
 {
     using System;
     [Serializable]
-    public enum AIFMasterFeederStatusType
+    public enum AIFMasterFeederStatus
     {
 
         MASTER,

@@ -2,7 +2,7 @@ namespace Schemas
 {
     using System;
     [Serializable]
-    public enum AIFTypeType
+    public enum AIFType
     {
 
         HFND,

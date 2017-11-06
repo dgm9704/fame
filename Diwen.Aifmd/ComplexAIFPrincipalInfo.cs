@@ -9,7 +9,7 @@ namespace Schemas
         public bool ShareClassFlag {get; set;}
 
         [XmlArrayItem("ShareClassIdentifier", IsNullable = false)]
-        public ComplexShareClassIdentifierType[] ShareClassIdentification {get; set;}
+        public ComplexShareClassIdentifier[] ShareClassIdentification {get; set;}
 
         public ComplexAIFDescriptionType AIFDescription {get; set;}
 

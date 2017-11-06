@@ -22,7 +22,7 @@ namespace Schemas
         public string SecondFundingSourceCountry {get; set;}
         public string ThirdFundingSourceCountry {get; set;}
 
-        public AIFTypeType PredominantAIFType {get; set;}
+        public AIFType PredominantAIFType {get; set;}
         [XmlArrayItem("HedgeFundStrategy", IsNullable = false)]
         public ComplexHedgeFundStrategyType[] HedgeFundInvestmentStrategies {get; set;}
 

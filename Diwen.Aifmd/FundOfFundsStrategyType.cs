@@ -2,7 +2,7 @@ namespace Schemas
 {
     using System;
     [Serializable]
-    public enum FundOfFundsStrategyTypeType
+    public enum FundOfFundsStrategyType
     {
 
         FOFS_FHFS,

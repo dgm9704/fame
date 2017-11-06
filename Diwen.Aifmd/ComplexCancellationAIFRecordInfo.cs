@@ -8,7 +8,7 @@ namespace Schemas
         public string CancelledAIFNationalCode {get; set;}
         public string CancelledAIFMNationalCode {get; set;}
 
-        public ReportingPeriodTypeType CancelledReportingPeriodType {get; set;}
+        public ReportingPeriodType CancelledReportingPeriodType {get; set;}
 
         [XmlElement(DataType = "gYear")]
         public string CancelledReportingPeriodYear {get; set;}
