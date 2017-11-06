@@ -4,45 +4,10 @@ namespace Schemas
     using System.Xml.Serialization;
 
     [Serializable]
-    public partial class ComplexMostImportantConcentrationType
+    public partial class ComplexPrincipalExposure
     {
 
-        [XmlArrayItem("PortfolioConcentration", IsNullable = false)]
-        public ComplexPortfolioConcentrationType[] PortfolioConcentrations {get; set;}
-
-        public TypicalPositionSizeType TypicalPositionSize {get; set;}
-
-        [XmlIgnore]
-        public bool TypicalPositionSizeSpecified {get; set;}
-
-        [XmlArrayItem("AIFPrincipalMarket", IsNullable = false)]
-        public ComplexThreePrincipalMarketType[] AIFPrincipalMarkets {get; set;}
-
-        public ComplexInvestorConcentrationType InvestorConcentration {get; set;}
-    }
-
-    [Serializable]
-    public enum TypicalPositionSizeType
-    {
-
-        V_SMALL,
-
-        SMALL,
-
-        LOW_MID_MKT,
-
-        UP_MID_MKT,
-
-        L_CAP,
-
-        M_CAP,
-    }
-
-    [Serializable]
-    public partial class ComplexPrincipalExposureType
-    {
-
-        public TenRankingType Ranking {get; set;}
+        public TenRanking Ranking {get; set;}
 
         public AssetMacroType AssetMacroType {get; set;}
 
@@ -64,7 +29,7 @@ namespace Schemas
         [XmlIgnore]
         public bool AggregatedValueRateSpecified {get; set;}
 
-        public ComplexEntityIdentificationType CounterpartyIdentification {get; set;}
+        public ComplexEntityIdentification CounterpartyIdentification {get; set;}
     }
 
     [Serializable]
