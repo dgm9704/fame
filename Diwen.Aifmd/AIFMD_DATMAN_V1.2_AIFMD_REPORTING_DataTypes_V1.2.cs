@@ -9,372 +9,97 @@ namespace Schemas
     public partial class AIFMReportingInfo
     {
 
-        private object[] itemsField;
 
-        private string reportingMemberStateField;
 
-        private string versionField;
 
-        private DateTime creationDateAndTimeField;
 
         [XmlElement("AIFMRecordInfo", typeof(ComplexAIFMRecordInfoType))]
         [XmlElement("CancellationAIFMRecordInfo", typeof(ComplexCancellationAIFMRecordInfoType))]
-        public object[] Items
-        {
-            get
-            {
-                return this.itemsField;
-            }
-            set
-            {
-                this.itemsField = value;
-            }
-        }
+        public object[] Items {get; set;}
 
         [XmlAttribute]
-        public string ReportingMemberState
-        {
-            get
-            {
-                return this.reportingMemberStateField;
-            }
-            set
-            {
-                this.reportingMemberStateField = value;
-            }
-        }
+        public string ReportingMemberState {get; set;}
 
         [XmlAttribute]
-        public string Version
-        {
-            get
-            {
-                return this.versionField;
-            }
-            set
-            {
-                this.versionField = value;
-            }
-        }
+        public string Version {get; set;}
 
         [XmlAttribute]
-        public DateTime CreationDateAndTime
-        {
-            get
-            {
-                return this.creationDateAndTimeField;
-            }
-            set
-            {
-                this.creationDateAndTimeField = value;
-            }
-        }
+        public DateTime CreationDateAndTime {get; set;}
     }
 
     [Serializable]
     public partial class ComplexAIFMRecordInfoType
     {
 
-        private FilingTypeType filingTypeField;
 
-        private AIFMContentTypeType aIFMContentTypeField;
 
-        private DateTime reportingPeriodStartDateField;
 
-        private DateTime reportingPeriodEndDateField;
 
-        private ReportingPeriodTypeType reportingPeriodTypeField;
 
-        private string reportingPeriodYearField;
 
-        private ReportingObligationChangeFrequencyCodeType aIFMReportingObligationChangeFrequencyCodeField;
 
-        private bool aIFMReportingObligationChangeFrequencyCodeFieldSpecified;
 
-        private AIFMReportingObligationChangeContentsCodeType aIFMReportingObligationChangeContentsCodeField;
 
-        private bool aIFMReportingObligationChangeContentsCodeFieldSpecified;
 
-        private ReportingObligationChangeQuarterType aIFMReportingObligationChangeQuarterField;
 
-        private bool aIFMReportingObligationChangeQuarterFieldSpecified;
 
-        private bool lastReportingFlagField;
 
-        private ComplexAssumptionType[] assumptionsField;
 
-        private AIFMReportingCodeType aIFMReportingCodeField;
 
-        private string aIFMJurisdictionField;
 
-        private string aIFMNationalCodeField;
 
-        private string aIFMNameField;
 
-        private bool aIFMEEAFlagField;
 
-        private bool aIFMNoReportingFlagField;
 
-        private ComplexAIFMCompleteDescriptionType aIFMCompleteDescriptionField;
 
-        public FilingTypeType FilingType
-        {
-            get
-            {
-                return this.filingTypeField;
-            }
-            set
-            {
-                this.filingTypeField = value;
-            }
-        }
+        public FilingTypeType FilingType {get; set;}
 
-        public AIFMContentTypeType AIFMContentType
-        {
-            get
-            {
-                return this.aIFMContentTypeField;
-            }
-            set
-            {
-                this.aIFMContentTypeField = value;
-            }
-        }
+        public AIFMContentTypeType AIFMContentType {get; set;}
 
         [XmlElement(DataType = "date")]
-        public DateTime ReportingPeriodStartDate
-        {
-            get
-            {
-                return this.reportingPeriodStartDateField;
-            }
-            set
-            {
-                this.reportingPeriodStartDateField = value;
-            }
-        }
+        public DateTime ReportingPeriodStartDate {get; set;}
 
         [XmlElement(DataType = "date")]
-        public DateTime ReportingPeriodEndDate
-        {
-            get
-            {
-                return this.reportingPeriodEndDateField;
-            }
-            set
-            {
-                this.reportingPeriodEndDateField = value;
-            }
-        }
+        public DateTime ReportingPeriodEndDate {get; set;}
 
-        public ReportingPeriodTypeType ReportingPeriodType
-        {
-            get
-            {
-                return this.reportingPeriodTypeField;
-            }
-            set
-            {
-                this.reportingPeriodTypeField = value;
-            }
-        }
+        public ReportingPeriodTypeType ReportingPeriodType {get; set;}
 
         [XmlElement(DataType = "gYear")]
-        public string ReportingPeriodYear
-        {
-            get
-            {
-                return this.reportingPeriodYearField;
-            }
-            set
-            {
-                this.reportingPeriodYearField = value;
-            }
-        }
+        public string ReportingPeriodYear {get; set;}
 
-        public ReportingObligationChangeFrequencyCodeType AIFMReportingObligationChangeFrequencyCode
-        {
-            get
-            {
-                return this.aIFMReportingObligationChangeFrequencyCodeField;
-            }
-            set
-            {
-                this.aIFMReportingObligationChangeFrequencyCodeField = value;
-            }
-        }
+        public ReportingObligationChangeFrequencyCodeType AIFMReportingObligationChangeFrequencyCode {get; set;}
 
         [XmlIgnore]
-        public bool AIFMReportingObligationChangeFrequencyCodeSpecified
-        {
-            get
-            {
-                return this.aIFMReportingObligationChangeFrequencyCodeFieldSpecified;
-            }
-            set
-            {
-                this.aIFMReportingObligationChangeFrequencyCodeFieldSpecified = value;
-            }
-        }
+        public bool AIFMReportingObligationChangeFrequencyCodeSpecified {get; set;}
 
-        public AIFMReportingObligationChangeContentsCodeType AIFMReportingObligationChangeContentsCode
-        {
-            get
-            {
-                return this.aIFMReportingObligationChangeContentsCodeField;
-            }
-            set
-            {
-                this.aIFMReportingObligationChangeContentsCodeField = value;
-            }
-        }
+        public AIFMReportingObligationChangeContentsCodeType AIFMReportingObligationChangeContentsCode {get; set;}
 
         [XmlIgnore]
-        public bool AIFMReportingObligationChangeContentsCodeSpecified
-        {
-            get
-            {
-                return this.aIFMReportingObligationChangeContentsCodeFieldSpecified;
-            }
-            set
-            {
-                this.aIFMReportingObligationChangeContentsCodeFieldSpecified = value;
-            }
-        }
+        public bool AIFMReportingObligationChangeContentsCodeSpecified {get; set;}
 
-        public ReportingObligationChangeQuarterType AIFMReportingObligationChangeQuarter
-        {
-            get
-            {
-                return this.aIFMReportingObligationChangeQuarterField;
-            }
-            set
-            {
-                this.aIFMReportingObligationChangeQuarterField = value;
-            }
-        }
+        public ReportingObligationChangeQuarterType AIFMReportingObligationChangeQuarter {get; set;}
 
         [XmlIgnore]
-        public bool AIFMReportingObligationChangeQuarterSpecified
-        {
-            get
-            {
-                return this.aIFMReportingObligationChangeQuarterFieldSpecified;
-            }
-            set
-            {
-                this.aIFMReportingObligationChangeQuarterFieldSpecified = value;
-            }
-        }
+        public bool AIFMReportingObligationChangeQuarterSpecified {get; set;}
 
-        public bool LastReportingFlag
-        {
-            get
-            {
-                return this.lastReportingFlagField;
-            }
-            set
-            {
-                this.lastReportingFlagField = value;
-            }
-        }
+        public bool LastReportingFlag {get; set;}
 
         [XmlArrayItem("Assumption", IsNullable = false)]
-        public ComplexAssumptionType[] Assumptions
-        {
-            get
-            {
-                return this.assumptionsField;
-            }
-            set
-            {
-                this.assumptionsField = value;
-            }
-        }
+        public ComplexAssumptionType[] Assumptions {get; set;}
 
-        public AIFMReportingCodeType AIFMReportingCode
-        {
-            get
-            {
-                return this.aIFMReportingCodeField;
-            }
-            set
-            {
-                this.aIFMReportingCodeField = value;
-            }
-        }
+        public AIFMReportingCodeType AIFMReportingCode {get; set;}
 
-        public string AIFMJurisdiction
-        {
-            get
-            {
-                return this.aIFMJurisdictionField;
-            }
-            set
-            {
-                this.aIFMJurisdictionField = value;
-            }
-        }
+        public string AIFMJurisdiction {get; set;}
 
-        public string AIFMNationalCode
-        {
-            get
-            {
-                return this.aIFMNationalCodeField;
-            }
-            set
-            {
-                this.aIFMNationalCodeField = value;
-            }
-        }
+        public string AIFMNationalCode {get; set;}
 
-        public string AIFMName
-        {
-            get
-            {
-                return this.aIFMNameField;
-            }
-            set
-            {
-                this.aIFMNameField = value;
-            }
-        }
+        public string AIFMName {get; set;}
 
-        public bool AIFMEEAFlag
-        {
-            get
-            {
-                return this.aIFMEEAFlagField;
-            }
-            set
-            {
-                this.aIFMEEAFlagField = value;
-            }
-        }
+        public bool AIFMEEAFlag {get; set;}
 
-        public bool AIFMNoReportingFlag
-        {
-            get
-            {
-                return this.aIFMNoReportingFlagField;
-            }
-            set
-            {
-                this.aIFMNoReportingFlagField = value;
-            }
-        }
+        public bool AIFMNoReportingFlag {get; set;}
 
-        public ComplexAIFMCompleteDescriptionType AIFMCompleteDescription
-        {
-            get
-            {
-                return this.aIFMCompleteDescriptionField;
-            }
-            set
-            {
-                this.aIFMCompleteDescriptionField = value;
-            }
-        }
+        public ComplexAIFMCompleteDescriptionType AIFMCompleteDescription {get; set;}
     }
 
     [Serializable]
@@ -486,140 +211,41 @@ namespace Schemas
     public partial class ComplexAssumptionType
     {
 
-        private string questionNumberField;
 
-        private string assumptionDescriptionField;
 
         [XmlElement(DataType = "integer")]
-        public string QuestionNumber
-        {
-            get
-            {
-                return this.questionNumberField;
-            }
-            set
-            {
-                this.questionNumberField = value;
-            }
-        }
+        public string QuestionNumber {get; set;}
 
-        public string AssumptionDescription
-        {
-            get
-            {
-                return this.assumptionDescriptionField;
-            }
-            set
-            {
-                this.assumptionDescriptionField = value;
-            }
-        }
+        public string AssumptionDescription {get; set;}
     }
 
     [Serializable]
     public partial class ComplexBaseCurrencyDescriptionType
     {
 
-        private string baseCurrencyField;
 
-        private string aUMAmountInBaseCurrencyField;
 
-        private FXEURReferenceRateTypeType fXEURReferenceRateTypeField;
 
-        private bool fXEURReferenceRateTypeFieldSpecified;
 
-        private decimal fXEURRateField;
 
-        private bool fXEURRateFieldSpecified;
 
-        private string fXEUROtherReferenceRateDescriptionField;
 
-        public string BaseCurrency
-        {
-            get
-            {
-                return this.baseCurrencyField;
-            }
-            set
-            {
-                this.baseCurrencyField = value;
-            }
-        }
+        public string BaseCurrency {get; set;}
 
         [XmlElement(DataType = "integer")]
-        public string AUMAmountInBaseCurrency
-        {
-            get
-            {
-                return this.aUMAmountInBaseCurrencyField;
-            }
-            set
-            {
-                this.aUMAmountInBaseCurrencyField = value;
-            }
-        }
+        public string AUMAmountInBaseCurrency {get; set;}
 
-        public FXEURReferenceRateTypeType FXEURReferenceRateType
-        {
-            get
-            {
-                return this.fXEURReferenceRateTypeField;
-            }
-            set
-            {
-                this.fXEURReferenceRateTypeField = value;
-            }
-        }
+        public FXEURReferenceRateTypeType FXEURReferenceRateType {get; set;}
 
         [XmlIgnore]
-        public bool FXEURReferenceRateTypeSpecified
-        {
-            get
-            {
-                return this.fXEURReferenceRateTypeFieldSpecified;
-            }
-            set
-            {
-                this.fXEURReferenceRateTypeFieldSpecified = value;
-            }
-        }
+        public bool FXEURReferenceRateTypeSpecified {get; set;}
 
-        public decimal FXEURRate
-        {
-            get
-            {
-                return this.fXEURRateField;
-            }
-            set
-            {
-                this.fXEURRateField = value;
-            }
-        }
+        public decimal FXEURRate {get; set;}
 
         [XmlIgnore]
-        public bool FXEURRateSpecified
-        {
-            get
-            {
-                return this.fXEURRateFieldSpecified;
-            }
-            set
-            {
-                this.fXEURRateFieldSpecified = value;
-            }
-        }
+        public bool FXEURRateSpecified {get; set;}
 
-        public string FXEUROtherReferenceRateDescription
-        {
-            get
-            {
-                return this.fXEUROtherReferenceRateDescriptionField;
-            }
-            set
-            {
-                this.fXEUROtherReferenceRateDescriptionField = value;
-            }
-        }
+        public string FXEUROtherReferenceRateDescription {get; set;}
     }
 
     [Serializable]
@@ -635,48 +261,15 @@ namespace Schemas
     public partial class ComplexPrincipalInstrumentType
     {
 
-        private FiveRankingType rankingField;
 
-        private SubAssetTypeType subAssetTypeField;
 
-        private string aggregatedValueAmountField;
 
-        public FiveRankingType Ranking
-        {
-            get
-            {
-                return this.rankingField;
-            }
-            set
-            {
-                this.rankingField = value;
-            }
-        }
+        public FiveRankingType Ranking {get; set;}
 
-        public SubAssetTypeType SubAssetType
-        {
-            get
-            {
-                return this.subAssetTypeField;
-            }
-            set
-            {
-                this.subAssetTypeField = value;
-            }
-        }
+        public SubAssetTypeType SubAssetType {get; set;}
 
         [XmlElement(DataType = "integer")]
-        public string AggregatedValueAmount
-        {
-            get
-            {
-                return this.aggregatedValueAmountField;
-            }
-            set
-            {
-                this.aggregatedValueAmountField = value;
-            }
-        }
+        public string AggregatedValueAmount {get; set;}
     }
 
     [Serializable]
@@ -832,33 +425,11 @@ namespace Schemas
     public partial class ComplexMarketIdentificationWithNOTType
     {
 
-        private MarketCodeTypeWithNOTType marketCodeTypeField;
 
-        private string marketCodeField;
 
-        public MarketCodeTypeWithNOTType MarketCodeType
-        {
-            get
-            {
-                return this.marketCodeTypeField;
-            }
-            set
-            {
-                this.marketCodeTypeField = value;
-            }
-        }
+        public MarketCodeTypeWithNOTType MarketCodeType {get; set;}
 
-        public string MarketCode
-        {
-            get
-            {
-                return this.marketCodeField;
-            }
-            set
-            {
-                this.marketCodeField = value;
-            }
-        }
+        public string MarketCode {get; set;}
     }
 
     [Serializable]
@@ -878,268 +449,81 @@ namespace Schemas
     public partial class ComplexFivePrincipalMarketType
     {
 
-        private FiveRankingType rankingField;
 
-        private ComplexMarketIdentificationWithNOTType marketIdentificationField;
 
-        private string aggregatedValueAmountField;
 
-        public FiveRankingType Ranking
-        {
-            get
-            {
-                return this.rankingField;
-            }
-            set
-            {
-                this.rankingField = value;
-            }
-        }
+        public FiveRankingType Ranking {get; set;}
 
-        public ComplexMarketIdentificationWithNOTType MarketIdentification
-        {
-            get
-            {
-                return this.marketIdentificationField;
-            }
-            set
-            {
-                this.marketIdentificationField = value;
-            }
-        }
+        public ComplexMarketIdentificationWithNOTType MarketIdentification {get; set;}
 
         [XmlElement(DataType = "integer")]
-        public string AggregatedValueAmount
-        {
-            get
-            {
-                return this.aggregatedValueAmountField;
-            }
-            set
-            {
-                this.aggregatedValueAmountField = value;
-            }
-        }
+        public string AggregatedValueAmount {get; set;}
     }
 
     [Serializable]
     public partial class ComplexAIFMNationalIdentifierType
     {
 
-        private string reportingMemberStateField;
 
-        private string aIFMNationalCodeField;
 
-        public string ReportingMemberState
-        {
-            get
-            {
-                return this.reportingMemberStateField;
-            }
-            set
-            {
-                this.reportingMemberStateField = value;
-            }
-        }
+        public string ReportingMemberState {get; set;}
 
-        public string AIFMNationalCode
-        {
-            get
-            {
-                return this.aIFMNationalCodeField;
-            }
-            set
-            {
-                this.aIFMNationalCodeField = value;
-            }
-        }
+        public string AIFMNationalCode {get; set;}
     }
 
     [Serializable]
     public partial class ComplexAIFMIdentifierType
     {
 
-        private string aIFMIdentifierLEIField;
 
-        private string aIFMIdentifierBICField;
 
-        private ComplexAIFMNationalIdentifierType oldAIFMIdentifierNCAField;
 
-        public string AIFMIdentifierLEI
-        {
-            get
-            {
-                return this.aIFMIdentifierLEIField;
-            }
-            set
-            {
-                this.aIFMIdentifierLEIField = value;
-            }
-        }
+        public string AIFMIdentifierLEI {get; set;}
 
-        public string AIFMIdentifierBIC
-        {
-            get
-            {
-                return this.aIFMIdentifierBICField;
-            }
-            set
-            {
-                this.aIFMIdentifierBICField = value;
-            }
-        }
+        public string AIFMIdentifierBIC {get; set;}
 
-        public ComplexAIFMNationalIdentifierType OldAIFMIdentifierNCA
-        {
-            get
-            {
-                return this.oldAIFMIdentifierNCAField;
-            }
-            set
-            {
-                this.oldAIFMIdentifierNCAField = value;
-            }
-        }
+        public ComplexAIFMNationalIdentifierType OldAIFMIdentifierNCA {get; set;}
     }
 
     [Serializable]
     public partial class ComplexAIFMCompleteDescriptionType
     {
 
-        private ComplexAIFMIdentifierType aIFMIdentifierField;
 
-        private ComplexFivePrincipalMarketType[] aIFMPrincipalMarketsField;
 
-        private ComplexPrincipalInstrumentType[] aIFMPrincipalInstrumentsField;
 
-        private string aUMAmountInEuroField;
 
-        private ComplexBaseCurrencyDescriptionType aIFMBaseCurrencyDescriptionField;
 
-        public ComplexAIFMIdentifierType AIFMIdentifier
-        {
-            get
-            {
-                return this.aIFMIdentifierField;
-            }
-            set
-            {
-                this.aIFMIdentifierField = value;
-            }
-        }
+        public ComplexAIFMIdentifierType AIFMIdentifier {get; set;}
 
         [XmlArrayItem("AIFMFivePrincipalMarket", IsNullable = false)]
-        public ComplexFivePrincipalMarketType[] AIFMPrincipalMarkets
-        {
-            get
-            {
-                return this.aIFMPrincipalMarketsField;
-            }
-            set
-            {
-                this.aIFMPrincipalMarketsField = value;
-            }
-        }
+        public ComplexFivePrincipalMarketType[] AIFMPrincipalMarkets {get; set;}
 
         [XmlArrayItem("AIFMPrincipalInstrument", IsNullable = false)]
-        public ComplexPrincipalInstrumentType[] AIFMPrincipalInstruments
-        {
-            get
-            {
-                return this.aIFMPrincipalInstrumentsField;
-            }
-            set
-            {
-                this.aIFMPrincipalInstrumentsField = value;
-            }
-        }
+        public ComplexPrincipalInstrumentType[] AIFMPrincipalInstruments {get; set;}
 
         [XmlElement(DataType = "integer")]
-        public string AUMAmountInEuro
-        {
-            get
-            {
-                return this.aUMAmountInEuroField;
-            }
-            set
-            {
-                this.aUMAmountInEuroField = value;
-            }
-        }
+        public string AUMAmountInEuro {get; set;}
 
-        public ComplexBaseCurrencyDescriptionType AIFMBaseCurrencyDescription
-        {
-            get
-            {
-                return this.aIFMBaseCurrencyDescriptionField;
-            }
-            set
-            {
-                this.aIFMBaseCurrencyDescriptionField = value;
-            }
-        }
+        public ComplexBaseCurrencyDescriptionType AIFMBaseCurrencyDescription {get; set;}
     }
 
     [Serializable]
     public partial class ComplexCancellationAIFMRecordInfoType
     {
 
-        private string cancelledAIFMNationalCodeField;
 
-        private ReportingPeriodTypeType cancelledReportingPeriodTypeField;
 
-        private string cancelledReportingPeriodYearField;
 
-        private CancelledRecordFlagType cancelledRecordFlagField;
 
-        public string CancelledAIFMNationalCode
-        {
-            get
-            {
-                return this.cancelledAIFMNationalCodeField;
-            }
-            set
-            {
-                this.cancelledAIFMNationalCodeField = value;
-            }
-        }
+        public string CancelledAIFMNationalCode {get; set;}
 
-        public ReportingPeriodTypeType CancelledReportingPeriodType
-        {
-            get
-            {
-                return this.cancelledReportingPeriodTypeField;
-            }
-            set
-            {
-                this.cancelledReportingPeriodTypeField = value;
-            }
-        }
+        public ReportingPeriodTypeType CancelledReportingPeriodType {get; set;}
 
         [XmlElement(DataType = "gYear")]
-        public string CancelledReportingPeriodYear
-        {
-            get
-            {
-                return this.cancelledReportingPeriodYearField;
-            }
-            set
-            {
-                this.cancelledReportingPeriodYearField = value;
-            }
-        }
+        public string CancelledReportingPeriodYear {get; set;}
 
-        public CancelledRecordFlagType CancelledRecordFlag
-        {
-            get
-            {
-                return this.cancelledRecordFlagField;
-            }
-            set
-            {
-                this.cancelledRecordFlagField = value;
-            }
-        }
+        public CancelledRecordFlagType CancelledRecordFlag {get; set;}
     }
 
     [Serializable]
