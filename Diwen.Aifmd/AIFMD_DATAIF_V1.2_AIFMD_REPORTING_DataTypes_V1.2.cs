@@ -1,5321 +1,5622 @@
-using System;
-using System.CodeDom.Compiler;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Xml.Serialization;
+namespace Schemas
+{
+    using System;
+    using System.Xml.Serialization;
 
-namespace Schemas {
-    
-    
     [Serializable]
-    [XmlType(AnonymousType=true)]
-    [XmlRoot(Namespace="", IsNullable=false)]
-    public partial class AIFReportingInfo {
-        
-        private object[] itemsField;
-        
-        private string reportingMemberStateField;
-        
-        private string versionField;
-        
-        private DateTime creationDateAndTimeField;
-        
+    [XmlType(AnonymousType = true)]
+    [XmlRoot(Namespace = "", IsNullable = false)]
+    public partial class AIFReportingInfo
+    {
+
         [XmlElement("AIFRecordInfo", typeof(ComplexAIFRecordInfoType))]
         [XmlElement("CancellationAIFRecordInfo", typeof(ComplexCancellationAIFRecordInfoType))]
-        public object[] Items {
-            get {
-                return this.itemsField;
-            }
-            set {
-                this.itemsField = value;
-            }
-        }
-        
+        public object[] Items {get; set;}
+
         [XmlAttribute]
-        public string ReportingMemberState {
-            get {
-                return this.reportingMemberStateField;
-            }
-            set {
-                this.reportingMemberStateField = value;
-            }
-        }
-        
+        public string ReportingMemberState {get; set;}
+
         [XmlAttribute]
-        public string Version {
-            get {
-                return this.versionField;
-            }
-            set {
-                this.versionField = value;
-            }
-        }
-        
+        public string Version {get; set;}
+
         [XmlAttribute]
-        public DateTime CreationDateAndTime {
-            get {
-                return this.creationDateAndTimeField;
-            }
-            set {
-                this.creationDateAndTimeField = value;
-            }
-        }
+        public DateTime CreationDateAndTime {get; set;}
     }
-    
+
     [Serializable]
-    public partial class ComplexAIFRecordInfoType {
-        
-        private FilingTypeType filingTypeField;
-        
-        private AIFContentTypeType aIFContentTypeField;
-        
-        private DateTime reportingPeriodStartDateField;
-        
-        private DateTime reportingPeriodEndDateField;
-        
-        private ReportingPeriodTypeType reportingPeriodTypeField;
-        
-        private string reportingPeriodYearField;
-        
-        private ReportingObligationChangeFrequencyCodeType aIFReportingObligationChangeFrequencyCodeField;
-        
-        private bool aIFReportingObligationChangeFrequencyCodeFieldSpecified;
-        
-        private AIFReportingObligationChangeContentsCodeType aIFReportingObligationChangeContentsCodeField;
-        
-        private bool aIFReportingObligationChangeContentsCodeFieldSpecified;
-        
-        private ReportingObligationChangeQuarterType aIFReportingObligationChangeQuarterField;
-        
-        private bool aIFReportingObligationChangeQuarterFieldSpecified;
-        
-        private bool lastReportingFlagField;
-        
-        private ComplexAssumptionType[] assumptionsField;
-        
-        private string aIFMNationalCodeField;
-        
-        private string aIFNationalCodeField;
-        
-        private string aIFNameField;
-        
-        private bool aIFEEAFlagField;
-        
-        private AIFReportingCodeType aIFReportingCodeField;
-        
-        private string aIFDomicileField;
-        
-        private DateTime inceptionDateField;
-        
-        private bool aIFNoReportingFlagField;
-        
-        private ComplexAIFCompleteDescriptionType aIFCompleteDescriptionField;
-        
-        public FilingTypeType FilingType {
-            get {
-                return this.filingTypeField;
-            }
-            set {
-                this.filingTypeField = value;
-            }
-        }
-        
-        public AIFContentTypeType AIFContentType {
-            get {
-                return this.aIFContentTypeField;
-            }
-            set {
-                this.aIFContentTypeField = value;
-            }
-        }
-        
-        [XmlElement(DataType="date")]
-        public DateTime ReportingPeriodStartDate {
-            get {
-                return this.reportingPeriodStartDateField;
-            }
-            set {
-                this.reportingPeriodStartDateField = value;
-            }
-        }
-        
-        [XmlElement(DataType="date")]
-        public DateTime ReportingPeriodEndDate {
-            get {
-                return this.reportingPeriodEndDateField;
-            }
-            set {
-                this.reportingPeriodEndDateField = value;
-            }
-        }
-        
-        public ReportingPeriodTypeType ReportingPeriodType {
-            get {
-                return this.reportingPeriodTypeField;
-            }
-            set {
-                this.reportingPeriodTypeField = value;
-            }
-        }
-        
-        [XmlElement(DataType="gYear")]
-        public string ReportingPeriodYear {
-            get {
-                return this.reportingPeriodYearField;
-            }
-            set {
-                this.reportingPeriodYearField = value;
-            }
-        }
-        
-        public ReportingObligationChangeFrequencyCodeType AIFReportingObligationChangeFrequencyCode {
-            get {
-                return this.aIFReportingObligationChangeFrequencyCodeField;
-            }
-            set {
-                this.aIFReportingObligationChangeFrequencyCodeField = value;
-            }
-        }
-        
+    public partial class ComplexAIFRecordInfoType
+    {
+        public FilingTypeType FilingType {get; set;}
+
+        public AIFContentType AIFContentType {get; set;}
+
+        [XmlElement(DataType = "date")]
+        public DateTime ReportingPeriodStartDate {get; set;}
+
+        [XmlElement(DataType = "date")]
+        public DateTime ReportingPeriodEndDate {get; set;}
+
+        public ReportingPeriodTypeType ReportingPeriodType {get; set;}
+
+        [XmlElement(DataType = "gYear")]
+        public string ReportingPeriodYear {get; set;}
+
+        public ReportingObligationChangeFrequencyCodeType AIFReportingObligationChangeFrequencyCode {get; set;}
+
         [XmlIgnore]
-        public bool AIFReportingObligationChangeFrequencyCodeSpecified {
-            get {
-                return this.aIFReportingObligationChangeFrequencyCodeFieldSpecified;
-            }
-            set {
-                this.aIFReportingObligationChangeFrequencyCodeFieldSpecified = value;
-            }
-        }
-        
-        public AIFReportingObligationChangeContentsCodeType AIFReportingObligationChangeContentsCode {
-            get {
-                return this.aIFReportingObligationChangeContentsCodeField;
-            }
-            set {
-                this.aIFReportingObligationChangeContentsCodeField = value;
-            }
-        }
-        
+        public bool AIFReportingObligationChangeFrequencyCodeSpecified {get; set;}
+        public AIFReportingObligationChangeContentsCode AIFReportingObligationChangeContentsCode {get; set;}
+
         [XmlIgnore]
-        public bool AIFReportingObligationChangeContentsCodeSpecified {
-            get {
-                return this.aIFReportingObligationChangeContentsCodeFieldSpecified;
-            }
-            set {
-                this.aIFReportingObligationChangeContentsCodeFieldSpecified = value;
-            }
-        }
-        
-        public ReportingObligationChangeQuarterType AIFReportingObligationChangeQuarter {
-            get {
-                return this.aIFReportingObligationChangeQuarterField;
-            }
-            set {
-                this.aIFReportingObligationChangeQuarterField = value;
-            }
-        }
-        
+        public bool AIFReportingObligationChangeContentsCodeSpecified {get; set;}
+
+        public ReportingObligationChangeQuarterType AIFReportingObligationChangeQuarter {get; set;}
+
         [XmlIgnore]
-        public bool AIFReportingObligationChangeQuarterSpecified {
-            get {
-                return this.aIFReportingObligationChangeQuarterFieldSpecified;
-            }
-            set {
-                this.aIFReportingObligationChangeQuarterFieldSpecified = value;
-            }
-        }
-        
-        public bool LastReportingFlag {
-            get {
-                return this.lastReportingFlagField;
-            }
-            set {
-                this.lastReportingFlagField = value;
-            }
-        }
-        
-        [XmlArrayItem("Assumption", IsNullable=false)]
-        public ComplexAssumptionType[] Assumptions {
-            get {
-                return this.assumptionsField;
-            }
-            set {
-                this.assumptionsField = value;
-            }
-        }
-        
-        public string AIFMNationalCode {
-            get {
-                return this.aIFMNationalCodeField;
-            }
-            set {
-                this.aIFMNationalCodeField = value;
-            }
-        }
-        
-        public string AIFNationalCode {
-            get {
-                return this.aIFNationalCodeField;
-            }
-            set {
-                this.aIFNationalCodeField = value;
-            }
-        }
-        
-        public string AIFName {
-            get {
-                return this.aIFNameField;
-            }
-            set {
-                this.aIFNameField = value;
-            }
-        }
-        
-        public bool AIFEEAFlag {
-            get {
-                return this.aIFEEAFlagField;
-            }
-            set {
-                this.aIFEEAFlagField = value;
-            }
-        }
-        
-        public AIFReportingCodeType AIFReportingCode {
-            get {
-                return this.aIFReportingCodeField;
-            }
-            set {
-                this.aIFReportingCodeField = value;
-            }
-        }
-        
-        public string AIFDomicile {
-            get {
-                return this.aIFDomicileField;
-            }
-            set {
-                this.aIFDomicileField = value;
-            }
-        }
-        
-        [XmlElement(DataType="date")]
-        public DateTime InceptionDate {
-            get {
-                return this.inceptionDateField;
-            }
-            set {
-                this.inceptionDateField = value;
-            }
-        }
-        
-        public bool AIFNoReportingFlag {
-            get {
-                return this.aIFNoReportingFlagField;
-            }
-            set {
-                this.aIFNoReportingFlagField = value;
-            }
-        }
-        
-        public ComplexAIFCompleteDescriptionType AIFCompleteDescription {
-            get {
-                return this.aIFCompleteDescriptionField;
-            }
-            set {
-                this.aIFCompleteDescriptionField = value;
-            }
-        }
+        public bool AIFReportingObligationChangeQuarterSpecified {get; set;}
+        public bool LastReportingFlag {get; set;}
+
+        [XmlArrayItem("Assumption", IsNullable = false)]
+        public ComplexAssumptionType[] Assumptions {get; set;}
+
+        public string AIFMNationalCode {get; set;}
+
+        public string AIFNationalCode {get; set;}
+        public string AIFName {get; set;}
+
+        public bool AIFEEAFlag {get; set;}
+
+        public AIFReportingCodeType AIFReportingCode {get; set;}
+
+        public string AIFDomicile {get; set;}
+
+        [XmlElement(DataType = "date")]
+        public DateTime InceptionDate {get; set;}
+
+        public bool AIFNoReportingFlag {get; set;}
+
+        public ComplexAIFCompleteDescriptionType AIFCompleteDescription {get; set;}
     }
-    
+
     [Serializable]
-    public enum AIFContentTypeType {
-        
+    public partial class ComplexBorrowingSourceType
+    {
+        public FiveRankingType Ranking {get; set;}
+
+        public bool BorrowingSourceFlag {get; set;}
+
+        public ComplexEntityIdentificationType SourceIdentification {get; set;}
+
+        [XmlElement(DataType = "integer")]
+        public string LeverageAmount {get; set;}
+    }
+
+    [Serializable]
+    public enum FiveRankingType
+    {
+
         [XmlEnum("1")]
         Item1,
-        
+
         [XmlEnum("2")]
         Item2,
-        
+
         [XmlEnum("3")]
         Item3,
-        
+
         [XmlEnum("4")]
         Item4,
-        
+
         [XmlEnum("5")]
         Item5,
     }
-    
+
     [Serializable]
-    public enum AIFReportingObligationChangeContentsCodeType {
-        
-        [XmlEnum("1")]
-        Item1,
-        
-        [XmlEnum("2")]
-        Item2,
-        
-        [XmlEnum("3")]
-        Item3,
-        
-        [XmlEnum("4")]
-        Item4,
-        
-        [XmlEnum("5")]
-        Item5,
-        
-        [XmlEnum("6")]
-        Item6,
-        
-        [XmlEnum("7")]
-        Item7,
-        
-        [XmlEnum("8")]
-        Item8,
-        
-        [XmlEnum("9")]
-        Item9,
-        
-        [XmlEnum("10")]
-        Item10,
-        
-        [XmlEnum("11")]
-        Item11,
-        
-        [XmlEnum("12")]
-        Item12,
-        
-        [XmlEnum("13")]
-        Item13,
-        
-        [XmlEnum("14")]
-        Item14,
-        
-        [XmlEnum("15")]
-        Item15,
-        
-        [XmlEnum("16")]
-        Item16,
-        
-        [XmlEnum("17")]
-        Item17,
-        
-        [XmlEnum("18")]
-        Item18,
-        
-        [XmlEnum("19")]
-        Item19,
-        
-        [XmlEnum("20")]
-        Item20,
-        
-        [XmlEnum("21")]
-        Item21,
-        
-        [XmlEnum("22")]
-        Item22,
-        
-        [XmlEnum("23")]
-        Item23,
-        
-        [XmlEnum("24")]
-        Item24,
-        
-        [XmlEnum("25")]
-        Item25,
+    public partial class ComplexEntityIdentificationType
+    {
+        public string EntityName {get; set;}
+
+        public string EntityIdentificationBIC {get; set;}
+
+        public string EntityIdentificationLEI {get; set;}
     }
-    
+
     [Serializable]
-    public partial class ComplexBorrowingSourceType {
-        
-        private FiveRankingType rankingField;
-        
-        private bool borrowingSourceFlagField;
-        
-        private ComplexEntityIdentificationType sourceIdentificationField;
-        
-        private string leverageAmountField;
-        
-        public FiveRankingType Ranking {
-            get {
-                return this.rankingField;
-            }
-            set {
-                this.rankingField = value;
-            }
-        }
-        
-        public bool BorrowingSourceFlag {
-            get {
-                return this.borrowingSourceFlagField;
-            }
-            set {
-                this.borrowingSourceFlagField = value;
-            }
-        }
-        
-        public ComplexEntityIdentificationType SourceIdentification {
-            get {
-                return this.sourceIdentificationField;
-            }
-            set {
-                this.sourceIdentificationField = value;
-            }
-        }
-        
-        [XmlElement(DataType="integer")]
-        public string LeverageAmount {
-            get {
-                return this.leverageAmountField;
-            }
-            set {
-                this.leverageAmountField = value;
-            }
-        }
+    public partial class ComplexLeverageAIFType
+    {
+        public decimal GrossMethodRate {get; set;}
+
+        public decimal CommitmentMethodRate {get; set;}
     }
-    
+
     [Serializable]
-    public enum FiveRankingType {
-        
-        [XmlEnum("1")]
-        Item1,
-        
-        [XmlEnum("2")]
-        Item2,
-        
-        [XmlEnum("3")]
-        Item3,
-        
-        [XmlEnum("4")]
-        Item4,
-        
-        [XmlEnum("5")]
-        Item5,
+    public partial class ComplexControlledStructureType
+    {
+        public ComplexEntityIdentificationType ControlledStructureIdentification {get; set;}
+
+        [XmlElement(DataType = "integer")]
+        public string ControlledStructureExposureValue {get; set;}
     }
-    
+
     [Serializable]
-    public partial class ComplexEntityIdentificationType {
-        
-        private string entityNameField;
-        
-        private string entityIdentificationBICField;
-        
-        private string entityIdentificationLEIField;
-        
-        public string EntityName {
-            get {
-                return this.entityNameField;
-            }
-            set {
-                this.entityNameField = value;
-            }
-        }
-        
-        public string EntityIdentificationBIC {
-            get {
-                return this.entityIdentificationBICField;
-            }
-            set {
-                this.entityIdentificationBICField = value;
-            }
-        }
-        
-        public string EntityIdentificationLEI {
-            get {
-                return this.entityIdentificationLEIField;
-            }
-            set {
-                this.entityIdentificationLEIField = value;
-            }
-        }
+    public partial class ComplexFinancialInstrumentBorrowingType
+    {
+        [XmlElement(DataType = "integer")]
+        public string ExchangedTradedDerivativesExposureValue {get; set;}
+
+        [XmlElement(DataType = "integer")]
+        public string OTCDerivativesAmount {get; set;}
     }
-    
+
     [Serializable]
-    public partial class ComplexLeverageAIFType {
-        
-        private decimal grossMethodRateField;
-        
-        private decimal commitmentMethodRateField;
-        
-        public decimal GrossMethodRate {
-            get {
-                return this.grossMethodRateField;
-            }
-            set {
-                this.grossMethodRateField = value;
-            }
-        }
-        
-        public decimal CommitmentMethodRate {
-            get {
-                return this.commitmentMethodRateField;
-            }
-            set {
-                this.commitmentMethodRateField = value;
-            }
-        }
+    public partial class ComplexSecuritiesCashBorrowingType
+    {
+        [XmlElement(DataType = "integer")]
+        public string UnsecuredBorrowingAmount {get; set;}
+
+        [XmlElement(DataType = "integer")]
+        public string SecuredBorrowingPrimeBrokerageAmount {get; set;}
+
+        [XmlElement(DataType = "integer")]
+        public string SecuredBorrowingReverseRepoAmount {get; set;}
+
+        [XmlElement(DataType = "integer")]
+        public string SecuredBorrowingOtherAmount {get; set;}
     }
-    
+
     [Serializable]
-    public partial class ComplexControlledStructureType {
-        
-        private ComplexEntityIdentificationType controlledStructureIdentificationField;
-        
-        private string controlledStructureExposureValueField;
-        
-        public ComplexEntityIdentificationType ControlledStructureIdentification {
-            get {
-                return this.controlledStructureIdentificationField;
-            }
-            set {
-                this.controlledStructureIdentificationField = value;
-            }
-        }
-        
-        [XmlElement(DataType="integer")]
-        public string ControlledStructureExposureValue {
-            get {
-                return this.controlledStructureExposureValueField;
-            }
-            set {
-                this.controlledStructureExposureValueField = value;
-            }
-        }
-    }
-    
-    [Serializable]
-    public partial class ComplexFinancialInstrumentBorrowingType {
-        
-        private string exchangedTradedDerivativesExposureValueField;
-        
-        private string oTCDerivativesAmountField;
-        
-        [XmlElement(DataType="integer")]
-        public string ExchangedTradedDerivativesExposureValue {
-            get {
-                return this.exchangedTradedDerivativesExposureValueField;
-            }
-            set {
-                this.exchangedTradedDerivativesExposureValueField = value;
-            }
-        }
-        
-        [XmlElement(DataType="integer")]
-        public string OTCDerivativesAmount {
-            get {
-                return this.oTCDerivativesAmountField;
-            }
-            set {
-                this.oTCDerivativesAmountField = value;
-            }
-        }
-    }
-    
-    [Serializable]
-    public partial class ComplexSecuritiesCashBorrowingType {
-        
-        private string unsecuredBorrowingAmountField;
-        
-        private string securedBorrowingPrimeBrokerageAmountField;
-        
-        private string securedBorrowingReverseRepoAmountField;
-        
-        private string securedBorrowingOtherAmountField;
-        
-        [XmlElement(DataType="integer")]
-        public string UnsecuredBorrowingAmount {
-            get {
-                return this.unsecuredBorrowingAmountField;
-            }
-            set {
-                this.unsecuredBorrowingAmountField = value;
-            }
-        }
-        
-        [XmlElement(DataType="integer")]
-        public string SecuredBorrowingPrimeBrokerageAmount {
-            get {
-                return this.securedBorrowingPrimeBrokerageAmountField;
-            }
-            set {
-                this.securedBorrowingPrimeBrokerageAmountField = value;
-            }
-        }
-        
-        [XmlElement(DataType="integer")]
-        public string SecuredBorrowingReverseRepoAmount {
-            get {
-                return this.securedBorrowingReverseRepoAmountField;
-            }
-            set {
-                this.securedBorrowingReverseRepoAmountField = value;
-            }
-        }
-        
-        [XmlElement(DataType="integer")]
-        public string SecuredBorrowingOtherAmount {
-            get {
-                return this.securedBorrowingOtherAmountField;
-            }
-            set {
-                this.securedBorrowingOtherAmountField = value;
-            }
-        }
-    }
-    
-    [Serializable]
-    [XmlType(TypeName="ComplexAIFLeverageArticle24-2Type")]
-    public partial class ComplexAIFLeverageArticle242Type {
-        
-        private bool allCounterpartyCollateralRehypothecationFlagField;
-        
-        private decimal allCounterpartyCollateralRehypothecatedRateField;
-        
-        private bool allCounterpartyCollateralRehypothecatedRateFieldSpecified;
-        
-        private ComplexSecuritiesCashBorrowingType securitiesCashBorrowingField;
-        
-        private ComplexFinancialInstrumentBorrowingType financialInstrumentBorrowingField;
-        
-        private string shortPositionBorrowedSecuritiesValueField;
-        
-        private ComplexControlledStructureType[] controlledStructuresField;
-        
-        private ComplexLeverageAIFType leverageAIFField;
-        
-        public bool AllCounterpartyCollateralRehypothecationFlag {
-            get {
-                return this.allCounterpartyCollateralRehypothecationFlagField;
-            }
-            set {
-                this.allCounterpartyCollateralRehypothecationFlagField = value;
-            }
-        }
-        
-        public decimal AllCounterpartyCollateralRehypothecatedRate {
-            get {
-                return this.allCounterpartyCollateralRehypothecatedRateField;
-            }
-            set {
-                this.allCounterpartyCollateralRehypothecatedRateField = value;
-            }
-        }
-        
+    [XmlType(TypeName = "ComplexAIFLeverageArticle24-2Type")]
+    public partial class ComplexAIFLeverageArticle242Type
+    {
+        public bool AllCounterpartyCollateralRehypothecationFlag {get; set;}
+
+        public decimal AllCounterpartyCollateralRehypothecatedRate {get; set;}
+
         [XmlIgnore]
-        public bool AllCounterpartyCollateralRehypothecatedRateSpecified {
-            get {
-                return this.allCounterpartyCollateralRehypothecatedRateFieldSpecified;
-            }
-            set {
-                this.allCounterpartyCollateralRehypothecatedRateFieldSpecified = value;
-            }
-        }
-        
-        public ComplexSecuritiesCashBorrowingType SecuritiesCashBorrowing {
-            get {
-                return this.securitiesCashBorrowingField;
-            }
-            set {
-                this.securitiesCashBorrowingField = value;
-            }
-        }
-        
-        public ComplexFinancialInstrumentBorrowingType FinancialInstrumentBorrowing {
-            get {
-                return this.financialInstrumentBorrowingField;
-            }
-            set {
-                this.financialInstrumentBorrowingField = value;
-            }
-        }
-        
-        [XmlElement(DataType="integer")]
-        public string ShortPositionBorrowedSecuritiesValue {
-            get {
-                return this.shortPositionBorrowedSecuritiesValueField;
-            }
-            set {
-                this.shortPositionBorrowedSecuritiesValueField = value;
-            }
-        }
-        
-        [XmlArrayItem("ControlledStructure", IsNullable=false)]
-        public ComplexControlledStructureType[] ControlledStructures {
-            get {
-                return this.controlledStructuresField;
-            }
-            set {
-                this.controlledStructuresField = value;
-            }
-        }
-        
-        public ComplexLeverageAIFType LeverageAIF {
-            get {
-                return this.leverageAIFField;
-            }
-            set {
-                this.leverageAIFField = value;
-            }
-        }
+        public bool AllCounterpartyCollateralRehypothecatedRateSpecified {get; set;}
+
+        public ComplexSecuritiesCashBorrowingType SecuritiesCashBorrowing {get; set;}
+
+        public ComplexFinancialInstrumentBorrowingType FinancialInstrumentBorrowing {get; set;}
+
+        [XmlElement(DataType = "integer")]
+        public string ShortPositionBorrowedSecuritiesValue {get; set;}
+
+        [XmlArrayItem("ControlledStructure", IsNullable = false)]
+        public ComplexControlledStructureType[] ControlledStructures {get; set;}
+
+        public ComplexLeverageAIFType LeverageAIF {get; set;}
     }
-    
+
     [Serializable]
-    public partial class ComplexAIFLeverageInfoType {
-        
-        private ComplexAIFLeverageArticle242Type aIFLeverageArticle242Field;
-        
-        private ComplexBorrowingSourceType[] aIFLeverageArticle244Field;
-        
+    public partial class ComplexAIFLeverageInfoType
+    {
         [XmlElement("AIFLeverageArticle24-2")]
-        public ComplexAIFLeverageArticle242Type AIFLeverageArticle242 {
-            get {
-                return this.aIFLeverageArticle242Field;
-            }
-            set {
-                this.aIFLeverageArticle242Field = value;
-            }
-        }
-        
+        public ComplexAIFLeverageArticle242Type AIFLeverageArticle242 {get; set;}
+
         [XmlArray("AIFLeverageArticle24-4")]
-        [XmlArrayItem("BorrowingSource", IsNullable=false)]
-        public ComplexBorrowingSourceType[] AIFLeverageArticle244 {
-            get {
-                return this.aIFLeverageArticle244Field;
-            }
-            set {
-                this.aIFLeverageArticle244Field = value;
-            }
-        }
+        [XmlArrayItem("BorrowingSource", IsNullable = false)]
+        public ComplexBorrowingSourceType[] AIFLeverageArticle244 {get; set;}
     }
-    
+
     [Serializable]
-    public partial class ComplexStressTestsType {
-        
-        private string stressTestsResultArticle15Field;
-        
-        private string stressTestsResultArticle16Field;
-        
-        public string StressTestsResultArticle15 {
-            get {
-                return this.stressTestsResultArticle15Field;
-            }
-            set {
-                this.stressTestsResultArticle15Field = value;
-            }
-        }
-        
-        public string StressTestsResultArticle16 {
-            get {
-                return this.stressTestsResultArticle16Field;
-            }
-            set {
-                this.stressTestsResultArticle16Field = value;
-            }
-        }
+    public partial class ComplexStressTestsType
+    {
+        public string StressTestsResultArticle15 {get; set;}
+        public string StressTestsResultArticle16 {get; set;}
     }
-    
+
     [Serializable]
-    public partial class ComplexQuantityMonthPeriodType {
+    public partial class ComplexQuantityMonthPeriodType
+    {
+        [XmlElement(DataType = "integer")]
+        public string QuantityJanuary {get; set;}
+
+        [XmlElement(DataType = "integer")]
+        public string QuantityFebruary {get; set;}
+
+        [XmlElement(DataType = "integer")]
+        public string QuantityMarch {get; set;}
+
+        [XmlElement(DataType = "integer")]
+        public string QuantityApril {get; set;}
+
+        [XmlElement(DataType = "integer")]
+        public string QuantityMay {get; set;}
+
+        [XmlElement(DataType = "integer")]
+        public string QuantityJune {get; set;}
+
+        [XmlElement(DataType = "integer")]
+        public string QuantityJuly {get; set;}
+
+        [XmlElement(DataType = "integer")]
+        public string QuantityAugust {get; set;}
+
+        [XmlElement(DataType = "integer")]
+        public string QuantitySeptember {get; set;}
+
+        [XmlElement(DataType = "integer")]
+        public string QuantityOctober {get; set;}
+
+        [XmlElement(DataType = "integer")]
+        public string QuantityNovember {get; set;}
+
+        [XmlElement(DataType = "integer")]
+        public string QuantityDecember {get; set;}
         
-        private string quantityJanuaryField;
-        
-        private string quantityFebruaryField;
-        
-        private string quantityMarchField;
-        
-        private string quantityAprilField;
-        
-        private string quantityMayField;
-        
-        private string quantityJuneField;
-        
-        private string quantityJulyField;
-        
-        private string quantityAugustField;
-        
-        private string quantitySeptemberField;
-        
-        private string quantityOctoberField;
-        
-        private string quantityNovemberField;
-        
-        private string quantityDecemberField;
-        
-        [XmlElement(DataType="integer")]
-        public string QuantityJanuary {
-            get {
-                return this.quantityJanuaryField;
-            }
-            set {
-                this.quantityJanuaryField = value;
-            }
-        }
-        
-        [XmlElement(DataType="integer")]
-        public string QuantityFebruary {
-            get {
-                return this.quantityFebruaryField;
-            }
-            set {
-                this.quantityFebruaryField = value;
-            }
-        }
-        
-        [XmlElement(DataType="integer")]
-        public string QuantityMarch {
-            get {
-                return this.quantityMarchField;
-            }
-            set {
-                this.quantityMarchField = value;
-            }
-        }
-        
-        [XmlElement(DataType="integer")]
-        public string QuantityApril {
-            get {
-                return this.quantityAprilField;
-            }
-            set {
-                this.quantityAprilField = value;
-            }
-        }
-        
-        [XmlElement(DataType="integer")]
-        public string QuantityMay {
-            get {
-                return this.quantityMayField;
-            }
-            set {
-                this.quantityMayField = value;
-            }
-        }
-        
-        [XmlElement(DataType="integer")]
-        public string QuantityJune {
-            get {
-                return this.quantityJuneField;
-            }
-            set {
-                this.quantityJuneField = value;
-            }
-        }
-        
-        [XmlElement(DataType="integer")]
-        public string QuantityJuly {
-            get {
-                return this.quantityJulyField;
-            }
-            set {
-                this.quantityJulyField = value;
-            }
-        }
-        
-        [XmlElement(DataType="integer")]
-        public string QuantityAugust {
-            get {
-                return this.quantityAugustField;
-            }
-            set {
-                this.quantityAugustField = value;
-            }
-        }
-        
-        [XmlElement(DataType="integer")]
-        public string QuantitySeptember {
-            get {
-                return this.quantitySeptemberField;
-            }
-            set {
-                this.quantitySeptemberField = value;
-            }
-        }
-        
-        [XmlElement(DataType="integer")]
-        public string QuantityOctober {
-            get {
-                return this.quantityOctoberField;
-            }
-            set {
-                this.quantityOctoberField = value;
-            }
-        }
-        
-        [XmlElement(DataType="integer")]
-        public string QuantityNovember {
-            get {
-                return this.quantityNovemberField;
-            }
-            set {
-                this.quantityNovemberField = value;
-            }
-        }
-        
-        [XmlElement(DataType="integer")]
-        public string QuantityDecember {
-            get {
-                return this.quantityDecemberField;
-            }
-            set {
-                this.quantityDecemberField = value;
-            }
-        }
     }
-    
+
     [Serializable]
-    public partial class ComplexSignedRateMonthPeriodType {
-        
+    public partial class ComplexSignedRateMonthPeriodType
+    {
+
         private decimal rateJanuaryField;
-        
+
         private bool rateJanuaryFieldSpecified;
-        
+
         private decimal rateFebruaryField;
-        
+
         private bool rateFebruaryFieldSpecified;
-        
+
         private decimal rateMarchField;
-        
+
         private bool rateMarchFieldSpecified;
-        
+
         private decimal rateAprilField;
-        
+
         private bool rateAprilFieldSpecified;
-        
+
         private decimal rateMayField;
-        
+
         private bool rateMayFieldSpecified;
-        
+
         private decimal rateJuneField;
-        
+
         private bool rateJuneFieldSpecified;
-        
+
         private decimal rateJulyField;
-        
+
         private bool rateJulyFieldSpecified;
-        
+
         private decimal rateAugustField;
-        
+
         private bool rateAugustFieldSpecified;
-        
+
         private decimal rateSeptemberField;
-        
+
         private bool rateSeptemberFieldSpecified;
-        
+
         private decimal rateOctoberField;
-        
+
         private bool rateOctoberFieldSpecified;
-        
+
         private decimal rateNovemberField;
-        
+
         private bool rateNovemberFieldSpecified;
-        
+
         private decimal rateDecemberField;
-        
+
         private bool rateDecemberFieldSpecified;
-        
-        public decimal RateJanuary {
-            get {
+
+        public decimal RateJanuary
+        {
+            get
+            {
                 return this.rateJanuaryField;
             }
-            set {
+            set
+            {
                 this.rateJanuaryField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool RateJanuarySpecified {
-            get {
+        public bool RateJanuarySpecified
+        {
+            get
+            {
                 return this.rateJanuaryFieldSpecified;
             }
-            set {
+            set
+            {
                 this.rateJanuaryFieldSpecified = value;
             }
         }
-        
-        public decimal RateFebruary {
-            get {
+
+        public decimal RateFebruary
+        {
+            get
+            {
                 return this.rateFebruaryField;
             }
-            set {
+            set
+            {
                 this.rateFebruaryField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool RateFebruarySpecified {
-            get {
+        public bool RateFebruarySpecified
+        {
+            get
+            {
                 return this.rateFebruaryFieldSpecified;
             }
-            set {
+            set
+            {
                 this.rateFebruaryFieldSpecified = value;
             }
         }
-        
-        public decimal RateMarch {
-            get {
+
+        public decimal RateMarch
+        {
+            get
+            {
                 return this.rateMarchField;
             }
-            set {
+            set
+            {
                 this.rateMarchField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool RateMarchSpecified {
-            get {
+        public bool RateMarchSpecified
+        {
+            get
+            {
                 return this.rateMarchFieldSpecified;
             }
-            set {
+            set
+            {
                 this.rateMarchFieldSpecified = value;
             }
         }
-        
-        public decimal RateApril {
-            get {
+
+        public decimal RateApril
+        {
+            get
+            {
                 return this.rateAprilField;
             }
-            set {
+            set
+            {
                 this.rateAprilField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool RateAprilSpecified {
-            get {
+        public bool RateAprilSpecified
+        {
+            get
+            {
                 return this.rateAprilFieldSpecified;
             }
-            set {
+            set
+            {
                 this.rateAprilFieldSpecified = value;
             }
         }
-        
-        public decimal RateMay {
-            get {
+
+        public decimal RateMay
+        {
+            get
+            {
                 return this.rateMayField;
             }
-            set {
+            set
+            {
                 this.rateMayField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool RateMaySpecified {
-            get {
+        public bool RateMaySpecified
+        {
+            get
+            {
                 return this.rateMayFieldSpecified;
             }
-            set {
+            set
+            {
                 this.rateMayFieldSpecified = value;
             }
         }
-        
-        public decimal RateJune {
-            get {
+
+        public decimal RateJune
+        {
+            get
+            {
                 return this.rateJuneField;
             }
-            set {
+            set
+            {
                 this.rateJuneField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool RateJuneSpecified {
-            get {
+        public bool RateJuneSpecified
+        {
+            get
+            {
                 return this.rateJuneFieldSpecified;
             }
-            set {
+            set
+            {
                 this.rateJuneFieldSpecified = value;
             }
         }
-        
-        public decimal RateJuly {
-            get {
+
+        public decimal RateJuly
+        {
+            get
+            {
                 return this.rateJulyField;
             }
-            set {
+            set
+            {
                 this.rateJulyField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool RateJulySpecified {
-            get {
+        public bool RateJulySpecified
+        {
+            get
+            {
                 return this.rateJulyFieldSpecified;
             }
-            set {
+            set
+            {
                 this.rateJulyFieldSpecified = value;
             }
         }
-        
-        public decimal RateAugust {
-            get {
+
+        public decimal RateAugust
+        {
+            get
+            {
                 return this.rateAugustField;
             }
-            set {
+            set
+            {
                 this.rateAugustField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool RateAugustSpecified {
-            get {
+        public bool RateAugustSpecified
+        {
+            get
+            {
                 return this.rateAugustFieldSpecified;
             }
-            set {
+            set
+            {
                 this.rateAugustFieldSpecified = value;
             }
         }
-        
-        public decimal RateSeptember {
-            get {
+
+        public decimal RateSeptember
+        {
+            get
+            {
                 return this.rateSeptemberField;
             }
-            set {
+            set
+            {
                 this.rateSeptemberField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool RateSeptemberSpecified {
-            get {
+        public bool RateSeptemberSpecified
+        {
+            get
+            {
                 return this.rateSeptemberFieldSpecified;
             }
-            set {
+            set
+            {
                 this.rateSeptemberFieldSpecified = value;
             }
         }
-        
-        public decimal RateOctober {
-            get {
+
+        public decimal RateOctober
+        {
+            get
+            {
                 return this.rateOctoberField;
             }
-            set {
+            set
+            {
                 this.rateOctoberField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool RateOctoberSpecified {
-            get {
+        public bool RateOctoberSpecified
+        {
+            get
+            {
                 return this.rateOctoberFieldSpecified;
             }
-            set {
+            set
+            {
                 this.rateOctoberFieldSpecified = value;
             }
         }
-        
-        public decimal RateNovember {
-            get {
+
+        public decimal RateNovember
+        {
+            get
+            {
                 return this.rateNovemberField;
             }
-            set {
+            set
+            {
                 this.rateNovemberField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool RateNovemberSpecified {
-            get {
+        public bool RateNovemberSpecified
+        {
+            get
+            {
                 return this.rateNovemberFieldSpecified;
             }
-            set {
+            set
+            {
                 this.rateNovemberFieldSpecified = value;
             }
         }
-        
-        public decimal RateDecember {
-            get {
+
+        public decimal RateDecember
+        {
+            get
+            {
                 return this.rateDecemberField;
             }
-            set {
+            set
+            {
                 this.rateDecemberField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool RateDecemberSpecified {
-            get {
+        public bool RateDecemberSpecified
+        {
+            get
+            {
                 return this.rateDecemberFieldSpecified;
             }
-            set {
+            set
+            {
                 this.rateDecemberFieldSpecified = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexHistoricalRiskProfileType {
-        
+    public partial class ComplexHistoricalRiskProfileType
+    {
+
         private ComplexSignedRateMonthPeriodType grossInvestmentReturnsRateField;
-        
+
         private ComplexSignedRateMonthPeriodType netInvestmentReturnsRateField;
-        
+
         private ComplexSignedRateMonthPeriodType nAVChangeRateField;
-        
+
         private ComplexQuantityMonthPeriodType subscriptionField;
-        
+
         private ComplexQuantityMonthPeriodType redemptionField;
-        
-        public ComplexSignedRateMonthPeriodType GrossInvestmentReturnsRate {
-            get {
+
+        public ComplexSignedRateMonthPeriodType GrossInvestmentReturnsRate
+        {
+            get
+            {
                 return this.grossInvestmentReturnsRateField;
             }
-            set {
+            set
+            {
                 this.grossInvestmentReturnsRateField = value;
             }
         }
-        
-        public ComplexSignedRateMonthPeriodType NetInvestmentReturnsRate {
-            get {
+
+        public ComplexSignedRateMonthPeriodType NetInvestmentReturnsRate
+        {
+            get
+            {
                 return this.netInvestmentReturnsRateField;
             }
-            set {
+            set
+            {
                 this.netInvestmentReturnsRateField = value;
             }
         }
-        
-        public ComplexSignedRateMonthPeriodType NAVChangeRate {
-            get {
+
+        public ComplexSignedRateMonthPeriodType NAVChangeRate
+        {
+            get
+            {
                 return this.nAVChangeRateField;
             }
-            set {
+            set
+            {
                 this.nAVChangeRateField = value;
             }
         }
-        
-        public ComplexQuantityMonthPeriodType Subscription {
-            get {
+
+        public ComplexQuantityMonthPeriodType Subscription
+        {
+            get
+            {
                 return this.subscriptionField;
             }
-            set {
+            set
+            {
                 this.subscriptionField = value;
             }
         }
-        
-        public ComplexQuantityMonthPeriodType Redemption {
-            get {
+
+        public ComplexQuantityMonthPeriodType Redemption
+        {
+            get
+            {
                 return this.redemptionField;
             }
-            set {
+            set
+            {
                 this.redemptionField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexOperationalRiskType {
-        
+    public partial class ComplexOperationalRiskType
+    {
+
         private string totalOpenPositionsField;
-        
+
         private ComplexHistoricalRiskProfileType historicalRiskProfileField;
-        
-        [XmlElement(DataType="integer")]
-        public string TotalOpenPositions {
-            get {
+
+        [XmlElement(DataType = "integer")]
+        public string TotalOpenPositions
+        {
+            get
+            {
                 return this.totalOpenPositionsField;
             }
-            set {
+            set
+            {
                 this.totalOpenPositionsField = value;
             }
         }
-        
-        public ComplexHistoricalRiskProfileType HistoricalRiskProfile {
-            get {
+
+        public ComplexHistoricalRiskProfileType HistoricalRiskProfile
+        {
+            get
+            {
                 return this.historicalRiskProfileField;
             }
-            set {
+            set
+            {
                 this.historicalRiskProfileField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexFinancingLiquidityProfileType {
-        
+    public partial class ComplexFinancingLiquidityProfileType
+    {
+
         private string totalFinancingAmountField;
-        
+
         private decimal totalFinancingInDays0to1RateField;
-        
+
         private decimal totalFinancingInDays2to7RateField;
-        
+
         private decimal totalFinancingInDays8to30RateField;
-        
+
         private decimal totalFinancingInDays31to90RateField;
-        
+
         private decimal totalFinancingInDays91to180RateField;
-        
+
         private decimal totalFinancingInDays181to365RateField;
-        
+
         private decimal totalFinancingInDays365MoreRateField;
-        
-        [XmlElement(DataType="integer")]
-        public string TotalFinancingAmount {
-            get {
+
+        [XmlElement(DataType = "integer")]
+        public string TotalFinancingAmount
+        {
+            get
+            {
                 return this.totalFinancingAmountField;
             }
-            set {
+            set
+            {
                 this.totalFinancingAmountField = value;
             }
         }
-        
-        public decimal TotalFinancingInDays0to1Rate {
-            get {
+
+        public decimal TotalFinancingInDays0to1Rate
+        {
+            get
+            {
                 return this.totalFinancingInDays0to1RateField;
             }
-            set {
+            set
+            {
                 this.totalFinancingInDays0to1RateField = value;
             }
         }
-        
-        public decimal TotalFinancingInDays2to7Rate {
-            get {
+
+        public decimal TotalFinancingInDays2to7Rate
+        {
+            get
+            {
                 return this.totalFinancingInDays2to7RateField;
             }
-            set {
+            set
+            {
                 this.totalFinancingInDays2to7RateField = value;
             }
         }
-        
-        public decimal TotalFinancingInDays8to30Rate {
-            get {
+
+        public decimal TotalFinancingInDays8to30Rate
+        {
+            get
+            {
                 return this.totalFinancingInDays8to30RateField;
             }
-            set {
+            set
+            {
                 this.totalFinancingInDays8to30RateField = value;
             }
         }
-        
-        public decimal TotalFinancingInDays31to90Rate {
-            get {
+
+        public decimal TotalFinancingInDays31to90Rate
+        {
+            get
+            {
                 return this.totalFinancingInDays31to90RateField;
             }
-            set {
+            set
+            {
                 this.totalFinancingInDays31to90RateField = value;
             }
         }
-        
-        public decimal TotalFinancingInDays91to180Rate {
-            get {
+
+        public decimal TotalFinancingInDays91to180Rate
+        {
+            get
+            {
                 return this.totalFinancingInDays91to180RateField;
             }
-            set {
+            set
+            {
                 this.totalFinancingInDays91to180RateField = value;
             }
         }
-        
-        public decimal TotalFinancingInDays181to365Rate {
-            get {
+
+        public decimal TotalFinancingInDays181to365Rate
+        {
+            get
+            {
                 return this.totalFinancingInDays181to365RateField;
             }
-            set {
+            set
+            {
                 this.totalFinancingInDays181to365RateField = value;
             }
         }
-        
-        public decimal TotalFinancingInDays365MoreRate {
-            get {
+
+        public decimal TotalFinancingInDays365MoreRate
+        {
+            get
+            {
                 return this.totalFinancingInDays365MoreRateField;
             }
-            set {
+            set
+            {
                 this.totalFinancingInDays365MoreRateField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexInvestorGroupType {
-        
+    public partial class ComplexInvestorGroupType
+    {
+
         private InvestorGroupTypeType investorGroupTypeField;
-        
+
         private decimal investorGroupRateField;
-        
-        public InvestorGroupTypeType InvestorGroupType {
-            get {
+
+        public InvestorGroupTypeType InvestorGroupType
+        {
+            get
+            {
                 return this.investorGroupTypeField;
             }
-            set {
+            set
+            {
                 this.investorGroupTypeField = value;
             }
         }
-        
-        public decimal InvestorGroupRate {
-            get {
+
+        public decimal InvestorGroupRate
+        {
+            get
+            {
                 return this.investorGroupRateField;
             }
-            set {
+            set
+            {
                 this.investorGroupRateField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public enum InvestorGroupTypeType {
-        
+    public enum InvestorGroupTypeType
+    {
+
         NFCO,
-        
+
         BANK,
-        
+
         INSC,
-        
+
         OFIN,
-        
+
         PFND,
-        
+
         GENG,
-        
+
         OCIU,
-        
+
         HHLD,
-        
+
         UNKN,
-        
+
         NONE,
     }
-    
+
     [Serializable]
-    public partial class ComplexInvestorPreferentialTreatmentType {
-        
+    public partial class ComplexInvestorPreferentialTreatmentType
+    {
+
         private bool investorPreferentialTreatmentFlagField;
-        
+
         private bool disclosureTermsPreferentialTreatmentFlagField;
-        
+
         private bool disclosureTermsPreferentialTreatmentFlagFieldSpecified;
-        
+
         private bool liquidityTermsPreferentialTreatmentFlagField;
-        
+
         private bool liquidityTermsPreferentialTreatmentFlagFieldSpecified;
-        
+
         private bool feeTermsPreferentialTreatmentFlagField;
-        
+
         private bool feeTermsPreferentialTreatmentFlagFieldSpecified;
-        
+
         private bool otherTermsPreferentialTreatmentFlagField;
-        
+
         private bool otherTermsPreferentialTreatmentFlagFieldSpecified;
-        
-        public bool InvestorPreferentialTreatmentFlag {
-            get {
+
+        public bool InvestorPreferentialTreatmentFlag
+        {
+            get
+            {
                 return this.investorPreferentialTreatmentFlagField;
             }
-            set {
+            set
+            {
                 this.investorPreferentialTreatmentFlagField = value;
             }
         }
-        
-        public bool DisclosureTermsPreferentialTreatmentFlag {
-            get {
+
+        public bool DisclosureTermsPreferentialTreatmentFlag
+        {
+            get
+            {
                 return this.disclosureTermsPreferentialTreatmentFlagField;
             }
-            set {
+            set
+            {
                 this.disclosureTermsPreferentialTreatmentFlagField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool DisclosureTermsPreferentialTreatmentFlagSpecified {
-            get {
+        public bool DisclosureTermsPreferentialTreatmentFlagSpecified
+        {
+            get
+            {
                 return this.disclosureTermsPreferentialTreatmentFlagFieldSpecified;
             }
-            set {
+            set
+            {
                 this.disclosureTermsPreferentialTreatmentFlagFieldSpecified = value;
             }
         }
-        
-        public bool LiquidityTermsPreferentialTreatmentFlag {
-            get {
+
+        public bool LiquidityTermsPreferentialTreatmentFlag
+        {
+            get
+            {
                 return this.liquidityTermsPreferentialTreatmentFlagField;
             }
-            set {
+            set
+            {
                 this.liquidityTermsPreferentialTreatmentFlagField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool LiquidityTermsPreferentialTreatmentFlagSpecified {
-            get {
+        public bool LiquidityTermsPreferentialTreatmentFlagSpecified
+        {
+            get
+            {
                 return this.liquidityTermsPreferentialTreatmentFlagFieldSpecified;
             }
-            set {
+            set
+            {
                 this.liquidityTermsPreferentialTreatmentFlagFieldSpecified = value;
             }
         }
-        
-        public bool FeeTermsPreferentialTreatmentFlag {
-            get {
+
+        public bool FeeTermsPreferentialTreatmentFlag
+        {
+            get
+            {
                 return this.feeTermsPreferentialTreatmentFlagField;
             }
-            set {
+            set
+            {
                 this.feeTermsPreferentialTreatmentFlagField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool FeeTermsPreferentialTreatmentFlagSpecified {
-            get {
+        public bool FeeTermsPreferentialTreatmentFlagSpecified
+        {
+            get
+            {
                 return this.feeTermsPreferentialTreatmentFlagFieldSpecified;
             }
-            set {
+            set
+            {
                 this.feeTermsPreferentialTreatmentFlagFieldSpecified = value;
             }
         }
-        
-        public bool OtherTermsPreferentialTreatmentFlag {
-            get {
+
+        public bool OtherTermsPreferentialTreatmentFlag
+        {
+            get
+            {
                 return this.otherTermsPreferentialTreatmentFlagField;
             }
-            set {
+            set
+            {
                 this.otherTermsPreferentialTreatmentFlagField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool OtherTermsPreferentialTreatmentFlagSpecified {
-            get {
+        public bool OtherTermsPreferentialTreatmentFlagSpecified
+        {
+            get
+            {
                 return this.otherTermsPreferentialTreatmentFlagFieldSpecified;
             }
-            set {
+            set
+            {
                 this.otherTermsPreferentialTreatmentFlagFieldSpecified = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexOtherArrangementType {
-        
+    public partial class ComplexOtherArrangementType
+    {
+
         private string otherArrangementTypeField;
-        
+
         private decimal otherArrangementRateField;
-        
-        public string OtherArrangementType {
-            get {
+
+        public string OtherArrangementType
+        {
+            get
+            {
                 return this.otherArrangementTypeField;
             }
-            set {
+            set
+            {
                 this.otherArrangementTypeField = value;
             }
         }
-        
-        public decimal OtherArrangementRate {
-            get {
+
+        public decimal OtherArrangementRate
+        {
+            get
+            {
                 return this.otherArrangementRateField;
             }
-            set {
+            set
+            {
                 this.otherArrangementRateField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexInvestorIlliquidAssetArrangementType {
-        
+    public partial class ComplexInvestorIlliquidAssetArrangementType
+    {
+
         private decimal sidePocketRateField;
-        
+
         private bool sidePocketRateFieldSpecified;
-        
+
         private decimal gatesRateField;
-        
+
         private bool gatesRateFieldSpecified;
-        
+
         private decimal dealingSuspensionRateField;
-        
+
         private bool dealingSuspensionRateFieldSpecified;
-        
+
         private ComplexOtherArrangementType otherArrangementField;
-        
+
         private decimal totalArrangementRateField;
-        
+
         private bool totalArrangementRateFieldSpecified;
-        
-        public decimal SidePocketRate {
-            get {
+
+        public decimal SidePocketRate
+        {
+            get
+            {
                 return this.sidePocketRateField;
             }
-            set {
+            set
+            {
                 this.sidePocketRateField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool SidePocketRateSpecified {
-            get {
+        public bool SidePocketRateSpecified
+        {
+            get
+            {
                 return this.sidePocketRateFieldSpecified;
             }
-            set {
+            set
+            {
                 this.sidePocketRateFieldSpecified = value;
             }
         }
-        
-        public decimal GatesRate {
-            get {
+
+        public decimal GatesRate
+        {
+            get
+            {
                 return this.gatesRateField;
             }
-            set {
+            set
+            {
                 this.gatesRateField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool GatesRateSpecified {
-            get {
+        public bool GatesRateSpecified
+        {
+            get
+            {
                 return this.gatesRateFieldSpecified;
             }
-            set {
+            set
+            {
                 this.gatesRateFieldSpecified = value;
             }
         }
-        
-        public decimal DealingSuspensionRate {
-            get {
+
+        public decimal DealingSuspensionRate
+        {
+            get
+            {
                 return this.dealingSuspensionRateField;
             }
-            set {
+            set
+            {
                 this.dealingSuspensionRateField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool DealingSuspensionRateSpecified {
-            get {
+        public bool DealingSuspensionRateSpecified
+        {
+            get
+            {
                 return this.dealingSuspensionRateFieldSpecified;
             }
-            set {
+            set
+            {
                 this.dealingSuspensionRateFieldSpecified = value;
             }
         }
-        
-        public ComplexOtherArrangementType OtherArrangement {
-            get {
+
+        public ComplexOtherArrangementType OtherArrangement
+        {
+            get
+            {
                 return this.otherArrangementField;
             }
-            set {
+            set
+            {
                 this.otherArrangementField = value;
             }
         }
-        
-        public decimal TotalArrangementRate {
-            get {
+
+        public decimal TotalArrangementRate
+        {
+            get
+            {
                 return this.totalArrangementRateField;
             }
-            set {
+            set
+            {
                 this.totalArrangementRateField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool TotalArrangementRateSpecified {
-            get {
+        public bool TotalArrangementRateSpecified
+        {
+            get
+            {
                 return this.totalArrangementRateFieldSpecified;
             }
-            set {
+            set
+            {
                 this.totalArrangementRateFieldSpecified = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexInvestorArrangementType {
-        
+    public partial class ComplexInvestorArrangementType
+    {
+
         private ComplexInvestorIlliquidAssetArrangementType investorIlliquidAssetArrangementField;
-        
+
         private ComplexInvestorPreferentialTreatmentType investorPreferentialTreatmentField;
-        
-        public ComplexInvestorIlliquidAssetArrangementType InvestorIlliquidAssetArrangement {
-            get {
+
+        public ComplexInvestorIlliquidAssetArrangementType InvestorIlliquidAssetArrangement
+        {
+            get
+            {
                 return this.investorIlliquidAssetArrangementField;
             }
-            set {
+            set
+            {
                 this.investorIlliquidAssetArrangementField = value;
             }
         }
-        
-        public ComplexInvestorPreferentialTreatmentType InvestorPreferentialTreatment {
-            get {
+
+        public ComplexInvestorPreferentialTreatmentType InvestorPreferentialTreatment
+        {
+            get
+            {
                 return this.investorPreferentialTreatmentField;
             }
-            set {
+            set
+            {
                 this.investorPreferentialTreatmentField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexInvestorRedemptionType {
-        
+    public partial class ComplexInvestorRedemptionType
+    {
+
         private bool provideWithdrawalRightsFlagField;
-        
+
         private InvestorRedemptionFrequencyType investorRedemptionFrequencyField;
-        
+
         private bool investorRedemptionFrequencyFieldSpecified;
-        
+
         private string investorRedemptionNoticePeriodField;
-        
+
         private string investorRedemptionLockUpPeriodField;
-        
-        public bool ProvideWithdrawalRightsFlag {
-            get {
+
+        public bool ProvideWithdrawalRightsFlag
+        {
+            get
+            {
                 return this.provideWithdrawalRightsFlagField;
             }
-            set {
+            set
+            {
                 this.provideWithdrawalRightsFlagField = value;
             }
         }
-        
-        public InvestorRedemptionFrequencyType InvestorRedemptionFrequency {
-            get {
+
+        public InvestorRedemptionFrequencyType InvestorRedemptionFrequency
+        {
+            get
+            {
                 return this.investorRedemptionFrequencyField;
             }
-            set {
+            set
+            {
                 this.investorRedemptionFrequencyField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool InvestorRedemptionFrequencySpecified {
-            get {
+        public bool InvestorRedemptionFrequencySpecified
+        {
+            get
+            {
                 return this.investorRedemptionFrequencyFieldSpecified;
             }
-            set {
+            set
+            {
                 this.investorRedemptionFrequencyFieldSpecified = value;
             }
         }
-        
-        [XmlElement(DataType="integer")]
-        public string InvestorRedemptionNoticePeriod {
-            get {
+
+        [XmlElement(DataType = "integer")]
+        public string InvestorRedemptionNoticePeriod
+        {
+            get
+            {
                 return this.investorRedemptionNoticePeriodField;
             }
-            set {
+            set
+            {
                 this.investorRedemptionNoticePeriodField = value;
             }
         }
-        
-        [XmlElement(DataType="integer")]
-        public string InvestorRedemptionLockUpPeriod {
-            get {
+
+        [XmlElement(DataType = "integer")]
+        public string InvestorRedemptionLockUpPeriod
+        {
+            get
+            {
                 return this.investorRedemptionLockUpPeriodField;
             }
-            set {
+            set
+            {
                 this.investorRedemptionLockUpPeriodField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public enum InvestorRedemptionFrequencyType {
-        
+    public enum InvestorRedemptionFrequencyType
+    {
+
         D,
-        
+
         W,
-        
+
         F,
-        
+
         M,
-        
+
         Q,
-        
+
         H,
-        
+
         Y,
-        
+
         O,
-        
+
         N,
     }
-    
+
     [Serializable]
-    public partial class ComplexInvestorLiquidityProfileType {
-        
+    public partial class ComplexInvestorLiquidityProfileType
+    {
+
         private decimal investorLiquidityInDays0to1RateField;
-        
+
         private decimal investorLiquidityInDays2to7RateField;
-        
+
         private decimal investorLiquidityInDays8to30RateField;
-        
+
         private decimal investorLiquidityInDays31to90RateField;
-        
+
         private decimal investorLiquidityInDays91to180RateField;
-        
+
         private decimal investorLiquidityInDays181to365RateField;
-        
+
         private decimal investorLiquidityInDays365MoreRateField;
-        
-        public decimal InvestorLiquidityInDays0to1Rate {
-            get {
+
+        public decimal InvestorLiquidityInDays0to1Rate
+        {
+            get
+            {
                 return this.investorLiquidityInDays0to1RateField;
             }
-            set {
+            set
+            {
                 this.investorLiquidityInDays0to1RateField = value;
             }
         }
-        
-        public decimal InvestorLiquidityInDays2to7Rate {
-            get {
+
+        public decimal InvestorLiquidityInDays2to7Rate
+        {
+            get
+            {
                 return this.investorLiquidityInDays2to7RateField;
             }
-            set {
+            set
+            {
                 this.investorLiquidityInDays2to7RateField = value;
             }
         }
-        
-        public decimal InvestorLiquidityInDays8to30Rate {
-            get {
+
+        public decimal InvestorLiquidityInDays8to30Rate
+        {
+            get
+            {
                 return this.investorLiquidityInDays8to30RateField;
             }
-            set {
+            set
+            {
                 this.investorLiquidityInDays8to30RateField = value;
             }
         }
-        
-        public decimal InvestorLiquidityInDays31to90Rate {
-            get {
+
+        public decimal InvestorLiquidityInDays31to90Rate
+        {
+            get
+            {
                 return this.investorLiquidityInDays31to90RateField;
             }
-            set {
+            set
+            {
                 this.investorLiquidityInDays31to90RateField = value;
             }
         }
-        
-        public decimal InvestorLiquidityInDays91to180Rate {
-            get {
+
+        public decimal InvestorLiquidityInDays91to180Rate
+        {
+            get
+            {
                 return this.investorLiquidityInDays91to180RateField;
             }
-            set {
+            set
+            {
                 this.investorLiquidityInDays91to180RateField = value;
             }
         }
-        
-        public decimal InvestorLiquidityInDays181to365Rate {
-            get {
+
+        public decimal InvestorLiquidityInDays181to365Rate
+        {
+            get
+            {
                 return this.investorLiquidityInDays181to365RateField;
             }
-            set {
+            set
+            {
                 this.investorLiquidityInDays181to365RateField = value;
             }
         }
-        
-        public decimal InvestorLiquidityInDays365MoreRate {
-            get {
+
+        public decimal InvestorLiquidityInDays365MoreRate
+        {
+            get
+            {
                 return this.investorLiquidityInDays365MoreRateField;
             }
-            set {
+            set
+            {
                 this.investorLiquidityInDays365MoreRateField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexPortfolioLiquidityProfileType {
-        
+    public partial class ComplexPortfolioLiquidityProfileType
+    {
+
         private decimal portfolioLiquidityInDays0to1RateField;
-        
+
         private decimal portfolioLiquidityInDays2to7RateField;
-        
+
         private decimal portfolioLiquidityInDays8to30RateField;
-        
+
         private decimal portfolioLiquidityInDays31to90RateField;
-        
+
         private decimal portfolioLiquidityInDays91to180RateField;
-        
+
         private decimal portfolioLiquidityInDays181to365RateField;
-        
+
         private decimal portfolioLiquidityInDays365MoreRateField;
-        
+
         private string unencumberedCashField;
-        
-        public decimal PortfolioLiquidityInDays0to1Rate {
-            get {
+
+        public decimal PortfolioLiquidityInDays0to1Rate
+        {
+            get
+            {
                 return this.portfolioLiquidityInDays0to1RateField;
             }
-            set {
+            set
+            {
                 this.portfolioLiquidityInDays0to1RateField = value;
             }
         }
-        
-        public decimal PortfolioLiquidityInDays2to7Rate {
-            get {
+
+        public decimal PortfolioLiquidityInDays2to7Rate
+        {
+            get
+            {
                 return this.portfolioLiquidityInDays2to7RateField;
             }
-            set {
+            set
+            {
                 this.portfolioLiquidityInDays2to7RateField = value;
             }
         }
-        
-        public decimal PortfolioLiquidityInDays8to30Rate {
-            get {
+
+        public decimal PortfolioLiquidityInDays8to30Rate
+        {
+            get
+            {
                 return this.portfolioLiquidityInDays8to30RateField;
             }
-            set {
+            set
+            {
                 this.portfolioLiquidityInDays8to30RateField = value;
             }
         }
-        
-        public decimal PortfolioLiquidityInDays31to90Rate {
-            get {
+
+        public decimal PortfolioLiquidityInDays31to90Rate
+        {
+            get
+            {
                 return this.portfolioLiquidityInDays31to90RateField;
             }
-            set {
+            set
+            {
                 this.portfolioLiquidityInDays31to90RateField = value;
             }
         }
-        
-        public decimal PortfolioLiquidityInDays91to180Rate {
-            get {
+
+        public decimal PortfolioLiquidityInDays91to180Rate
+        {
+            get
+            {
                 return this.portfolioLiquidityInDays91to180RateField;
             }
-            set {
+            set
+            {
                 this.portfolioLiquidityInDays91to180RateField = value;
             }
         }
-        
-        public decimal PortfolioLiquidityInDays181to365Rate {
-            get {
+
+        public decimal PortfolioLiquidityInDays181to365Rate
+        {
+            get
+            {
                 return this.portfolioLiquidityInDays181to365RateField;
             }
-            set {
+            set
+            {
                 this.portfolioLiquidityInDays181to365RateField = value;
             }
         }
-        
-        public decimal PortfolioLiquidityInDays365MoreRate {
-            get {
+
+        public decimal PortfolioLiquidityInDays365MoreRate
+        {
+            get
+            {
                 return this.portfolioLiquidityInDays365MoreRateField;
             }
-            set {
+            set
+            {
                 this.portfolioLiquidityInDays365MoreRateField = value;
             }
         }
-        
-        [XmlElement(DataType="integer")]
-        public string UnencumberedCash {
-            get {
+
+        [XmlElement(DataType = "integer")]
+        public string UnencumberedCash
+        {
+            get
+            {
                 return this.unencumberedCashField;
             }
-            set {
+            set
+            {
                 this.unencumberedCashField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexLiquidityRiskProfileType {
-        
+    public partial class ComplexLiquidityRiskProfileType
+    {
+
         private ComplexPortfolioLiquidityProfileType portfolioLiquidityProfileField;
-        
+
         private ComplexInvestorLiquidityProfileType investorLiquidityProfileField;
-        
+
         private ComplexInvestorRedemptionType investorRedemptionField;
-        
+
         private ComplexInvestorArrangementType investorArrangementField;
-        
+
         private ComplexInvestorGroupType[] investorGroupsField;
-        
+
         private ComplexFinancingLiquidityProfileType financingLiquidityProfileField;
-        
-        public ComplexPortfolioLiquidityProfileType PortfolioLiquidityProfile {
-            get {
+
+        public ComplexPortfolioLiquidityProfileType PortfolioLiquidityProfile
+        {
+            get
+            {
                 return this.portfolioLiquidityProfileField;
             }
-            set {
+            set
+            {
                 this.portfolioLiquidityProfileField = value;
             }
         }
-        
-        public ComplexInvestorLiquidityProfileType InvestorLiquidityProfile {
-            get {
+
+        public ComplexInvestorLiquidityProfileType InvestorLiquidityProfile
+        {
+            get
+            {
                 return this.investorLiquidityProfileField;
             }
-            set {
+            set
+            {
                 this.investorLiquidityProfileField = value;
             }
         }
-        
-        public ComplexInvestorRedemptionType InvestorRedemption {
-            get {
+
+        public ComplexInvestorRedemptionType InvestorRedemption
+        {
+            get
+            {
                 return this.investorRedemptionField;
             }
-            set {
+            set
+            {
                 this.investorRedemptionField = value;
             }
         }
-        
-        public ComplexInvestorArrangementType InvestorArrangement {
-            get {
+
+        public ComplexInvestorArrangementType InvestorArrangement
+        {
+            get
+            {
                 return this.investorArrangementField;
             }
-            set {
+            set
+            {
                 this.investorArrangementField = value;
             }
         }
-        
-        [XmlArrayItem("InvestorGroup", IsNullable=false)]
-        public ComplexInvestorGroupType[] InvestorGroups {
-            get {
+
+        [XmlArrayItem("InvestorGroup", IsNullable = false)]
+        public ComplexInvestorGroupType[] InvestorGroups
+        {
+            get
+            {
                 return this.investorGroupsField;
             }
-            set {
+            set
+            {
                 this.investorGroupsField = value;
             }
         }
-        
-        public ComplexFinancingLiquidityProfileType FinancingLiquidityProfile {
-            get {
+
+        public ComplexFinancingLiquidityProfileType FinancingLiquidityProfile
+        {
+            get
+            {
                 return this.financingLiquidityProfileField;
             }
-            set {
+            set
+            {
                 this.financingLiquidityProfileField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexCCPExposureType {
-        
+    public partial class ComplexCCPExposureType
+    {
+
         private ThreeRankingType rankingField;
-        
+
         private ComplexEntityIdentificationType cCPIdentificationField;
-        
+
         private string cCPExposureValueField;
-        
-        public ThreeRankingType Ranking {
-            get {
+
+        public ThreeRankingType Ranking
+        {
+            get
+            {
                 return this.rankingField;
             }
-            set {
+            set
+            {
                 this.rankingField = value;
             }
         }
-        
-        public ComplexEntityIdentificationType CCPIdentification {
-            get {
+
+        public ComplexEntityIdentificationType CCPIdentification
+        {
+            get
+            {
                 return this.cCPIdentificationField;
             }
-            set {
+            set
+            {
                 this.cCPIdentificationField = value;
             }
         }
-        
-        [XmlElement(DataType="integer")]
-        public string CCPExposureValue {
-            get {
+
+        [XmlElement(DataType = "integer")]
+        public string CCPExposureValue
+        {
+            get
+            {
                 return this.cCPExposureValueField;
             }
-            set {
+            set
+            {
                 this.cCPExposureValueField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public enum ThreeRankingType {
-        
+    public enum ThreeRankingType
+    {
+
         [XmlEnum("1")]
         Item1,
-        
+
         [XmlEnum("2")]
         Item2,
-        
+
         [XmlEnum("3")]
         Item3,
     }
-    
+
     [Serializable]
-    public partial class ComplexCounterpartyExposureType {
-        
+    public partial class ComplexCounterpartyExposureType
+    {
+
         private FiveRankingType rankingField;
-        
+
         private bool counterpartyExposureFlagField;
-        
+
         private ComplexEntityIdentificationType counterpartyIdentificationField;
-        
+
         private decimal counterpartyTotalExposureRateField;
-        
+
         private bool counterpartyTotalExposureRateFieldSpecified;
-        
-        public FiveRankingType Ranking {
-            get {
+
+        public FiveRankingType Ranking
+        {
+            get
+            {
                 return this.rankingField;
             }
-            set {
+            set
+            {
                 this.rankingField = value;
             }
         }
-        
-        public bool CounterpartyExposureFlag {
-            get {
+
+        public bool CounterpartyExposureFlag
+        {
+            get
+            {
                 return this.counterpartyExposureFlagField;
             }
-            set {
+            set
+            {
                 this.counterpartyExposureFlagField = value;
             }
         }
-        
-        public ComplexEntityIdentificationType CounterpartyIdentification {
-            get {
+
+        public ComplexEntityIdentificationType CounterpartyIdentification
+        {
+            get
+            {
                 return this.counterpartyIdentificationField;
             }
-            set {
+            set
+            {
                 this.counterpartyIdentificationField = value;
             }
         }
-        
-        public decimal CounterpartyTotalExposureRate {
-            get {
+
+        public decimal CounterpartyTotalExposureRate
+        {
+            get
+            {
                 return this.counterpartyTotalExposureRateField;
             }
-            set {
+            set
+            {
                 this.counterpartyTotalExposureRateField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool CounterpartyTotalExposureRateSpecified {
-            get {
+        public bool CounterpartyTotalExposureRateSpecified
+        {
+            get
+            {
                 return this.counterpartyTotalExposureRateFieldSpecified;
             }
-            set {
+            set
+            {
                 this.counterpartyTotalExposureRateFieldSpecified = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexAllCounterpartyCollateralType {
-        
+    public partial class ComplexAllCounterpartyCollateralType
+    {
+
         private string allCounterpartyCollateralCashField;
-        
+
         private string allCounterpartyCollateralSecuritiesField;
-        
+
         private string allCounterpartyOtherCollateralPostedField;
-        
-        [XmlElement(DataType="integer")]
-        public string AllCounterpartyCollateralCash {
-            get {
+
+        [XmlElement(DataType = "integer")]
+        public string AllCounterpartyCollateralCash
+        {
+            get
+            {
                 return this.allCounterpartyCollateralCashField;
             }
-            set {
+            set
+            {
                 this.allCounterpartyCollateralCashField = value;
             }
         }
-        
-        [XmlElement(DataType="integer")]
-        public string AllCounterpartyCollateralSecurities {
-            get {
+
+        [XmlElement(DataType = "integer")]
+        public string AllCounterpartyCollateralSecurities
+        {
+            get
+            {
                 return this.allCounterpartyCollateralSecuritiesField;
             }
-            set {
+            set
+            {
                 this.allCounterpartyCollateralSecuritiesField = value;
             }
         }
-        
-        [XmlElement(DataType="integer")]
-        public string AllCounterpartyOtherCollateralPosted {
-            get {
+
+        [XmlElement(DataType = "integer")]
+        public string AllCounterpartyOtherCollateralPosted
+        {
+            get
+            {
                 return this.allCounterpartyOtherCollateralPostedField;
             }
-            set {
+            set
+            {
                 this.allCounterpartyOtherCollateralPostedField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexClearedReposRateType {
-        
+    public partial class ComplexClearedReposRateType
+    {
+
         private decimal cCPRateField;
-        
+
         private bool cCPRateFieldSpecified;
-        
+
         private decimal bilateralClearingRateField;
-        
+
         private bool bilateralClearingRateFieldSpecified;
-        
+
         private decimal triPartyRepoClearingRateField;
-        
+
         private bool triPartyRepoClearingRateFieldSpecified;
-        
-        public decimal CCPRate {
-            get {
+
+        public decimal CCPRate
+        {
+            get
+            {
                 return this.cCPRateField;
             }
-            set {
+            set
+            {
                 this.cCPRateField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool CCPRateSpecified {
-            get {
+        public bool CCPRateSpecified
+        {
+            get
+            {
                 return this.cCPRateFieldSpecified;
             }
-            set {
+            set
+            {
                 this.cCPRateFieldSpecified = value;
             }
         }
-        
-        public decimal BilateralClearingRate {
-            get {
+
+        public decimal BilateralClearingRate
+        {
+            get
+            {
                 return this.bilateralClearingRateField;
             }
-            set {
+            set
+            {
                 this.bilateralClearingRateField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool BilateralClearingRateSpecified {
-            get {
+        public bool BilateralClearingRateSpecified
+        {
+            get
+            {
                 return this.bilateralClearingRateFieldSpecified;
             }
-            set {
+            set
+            {
                 this.bilateralClearingRateFieldSpecified = value;
             }
         }
-        
-        public decimal TriPartyRepoClearingRate {
-            get {
+
+        public decimal TriPartyRepoClearingRate
+        {
+            get
+            {
                 return this.triPartyRepoClearingRateField;
             }
-            set {
+            set
+            {
                 this.triPartyRepoClearingRateField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool TriPartyRepoClearingRateSpecified {
-            get {
+        public bool TriPartyRepoClearingRateSpecified
+        {
+            get
+            {
                 return this.triPartyRepoClearingRateFieldSpecified;
             }
-            set {
+            set
+            {
                 this.triPartyRepoClearingRateFieldSpecified = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexClearedDerivativesRateType {
-        
+    public partial class ComplexClearedDerivativesRateType
+    {
+
         private decimal cCPRateField;
-        
+
         private bool cCPRateFieldSpecified;
-        
+
         private decimal bilateralClearingRateField;
-        
+
         private bool bilateralClearingRateFieldSpecified;
-        
-        public decimal CCPRate {
-            get {
+
+        public decimal CCPRate
+        {
+            get
+            {
                 return this.cCPRateField;
             }
-            set {
+            set
+            {
                 this.cCPRateField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool CCPRateSpecified {
-            get {
+        public bool CCPRateSpecified
+        {
+            get
+            {
                 return this.cCPRateFieldSpecified;
             }
-            set {
+            set
+            {
                 this.cCPRateFieldSpecified = value;
             }
         }
-        
-        public decimal BilateralClearingRate {
-            get {
+
+        public decimal BilateralClearingRate
+        {
+            get
+            {
                 return this.bilateralClearingRateField;
             }
-            set {
+            set
+            {
                 this.bilateralClearingRateField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool BilateralClearingRateSpecified {
-            get {
+        public bool BilateralClearingRateSpecified
+        {
+            get
+            {
                 return this.bilateralClearingRateFieldSpecified;
             }
-            set {
+            set
+            {
                 this.bilateralClearingRateFieldSpecified = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexMarketRate3p2Type {
-        
+    public partial class ComplexMarketRate3p2Type
+    {
+
         private decimal regulatedMarketRateField;
-        
+
         private bool regulatedMarketRateFieldSpecified;
-        
+
         private decimal oTCRateField;
-        
+
         private bool oTCRateFieldSpecified;
-        
-        public decimal RegulatedMarketRate {
-            get {
+
+        public decimal RegulatedMarketRate
+        {
+            get
+            {
                 return this.regulatedMarketRateField;
             }
-            set {
+            set
+            {
                 this.regulatedMarketRateField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool RegulatedMarketRateSpecified {
-            get {
+        public bool RegulatedMarketRateSpecified
+        {
+            get
+            {
                 return this.regulatedMarketRateFieldSpecified;
             }
-            set {
+            set
+            {
                 this.regulatedMarketRateFieldSpecified = value;
             }
         }
-        
-        public decimal OTCRate {
-            get {
+
+        public decimal OTCRate
+        {
+            get
+            {
                 return this.oTCRateField;
             }
-            set {
+            set
+            {
                 this.oTCRateField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool OTCRateSpecified {
-            get {
+        public bool OTCRateSpecified
+        {
+            get
+            {
                 return this.oTCRateFieldSpecified;
             }
-            set {
+            set
+            {
                 this.oTCRateFieldSpecified = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexTradingClearingMechanismType {
-        
+    public partial class ComplexTradingClearingMechanismType
+    {
+
         private ComplexMarketRate3p2Type tradedSecuritiesField;
-        
+
         private ComplexMarketRate3p2Type tradedDerivativesField;
-        
+
         private ComplexClearedDerivativesRateType clearedDerivativesRateField;
-        
+
         private ComplexClearedReposRateType clearedReposRateField;
-        
-        public ComplexMarketRate3p2Type TradedSecurities {
-            get {
+
+        public ComplexMarketRate3p2Type TradedSecurities
+        {
+            get
+            {
                 return this.tradedSecuritiesField;
             }
-            set {
+            set
+            {
                 this.tradedSecuritiesField = value;
             }
         }
-        
-        public ComplexMarketRate3p2Type TradedDerivatives {
-            get {
+
+        public ComplexMarketRate3p2Type TradedDerivatives
+        {
+            get
+            {
                 return this.tradedDerivativesField;
             }
-            set {
+            set
+            {
                 this.tradedDerivativesField = value;
             }
         }
-        
-        public ComplexClearedDerivativesRateType ClearedDerivativesRate {
-            get {
+
+        public ComplexClearedDerivativesRateType ClearedDerivativesRate
+        {
+            get
+            {
                 return this.clearedDerivativesRateField;
             }
-            set {
+            set
+            {
                 this.clearedDerivativesRateField = value;
             }
         }
-        
-        public ComplexClearedReposRateType ClearedReposRate {
-            get {
+
+        public ComplexClearedReposRateType ClearedReposRate
+        {
+            get
+            {
                 return this.clearedReposRateField;
             }
-            set {
+            set
+            {
                 this.clearedReposRateField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexCounterpartyRiskProfileType {
-        
+    public partial class ComplexCounterpartyRiskProfileType
+    {
+
         private ComplexTradingClearingMechanismType tradingClearingMechanismField;
-        
+
         private ComplexAllCounterpartyCollateralType allCounterpartyCollateralField;
-        
+
         private ComplexCounterpartyExposureType[] fundToCounterpartyExposuresField;
-        
+
         private ComplexCounterpartyExposureType[] counterpartyToFundExposuresField;
-        
+
         private bool clearTransactionsThroughCCPFlagField;
-        
+
         private ComplexCCPExposureType[] cCPExposuresField;
-        
-        public ComplexTradingClearingMechanismType TradingClearingMechanism {
-            get {
+
+        public ComplexTradingClearingMechanismType TradingClearingMechanism
+        {
+            get
+            {
                 return this.tradingClearingMechanismField;
             }
-            set {
+            set
+            {
                 this.tradingClearingMechanismField = value;
             }
         }
-        
-        public ComplexAllCounterpartyCollateralType AllCounterpartyCollateral {
-            get {
+
+        public ComplexAllCounterpartyCollateralType AllCounterpartyCollateral
+        {
+            get
+            {
                 return this.allCounterpartyCollateralField;
             }
-            set {
+            set
+            {
                 this.allCounterpartyCollateralField = value;
             }
         }
-        
-        [XmlArrayItem("FundToCounterpartyExposure", IsNullable=false)]
-        public ComplexCounterpartyExposureType[] FundToCounterpartyExposures {
-            get {
+
+        [XmlArrayItem("FundToCounterpartyExposure", IsNullable = false)]
+        public ComplexCounterpartyExposureType[] FundToCounterpartyExposures
+        {
+            get
+            {
                 return this.fundToCounterpartyExposuresField;
             }
-            set {
+            set
+            {
                 this.fundToCounterpartyExposuresField = value;
             }
         }
-        
-        [XmlArrayItem("CounterpartyToFundExposure", IsNullable=false)]
-        public ComplexCounterpartyExposureType[] CounterpartyToFundExposures {
-            get {
+
+        [XmlArrayItem("CounterpartyToFundExposure", IsNullable = false)]
+        public ComplexCounterpartyExposureType[] CounterpartyToFundExposures
+        {
+            get
+            {
                 return this.counterpartyToFundExposuresField;
             }
-            set {
+            set
+            {
                 this.counterpartyToFundExposuresField = value;
             }
         }
-        
-        public bool ClearTransactionsThroughCCPFlag {
-            get {
+
+        public bool ClearTransactionsThroughCCPFlag
+        {
+            get
+            {
                 return this.clearTransactionsThroughCCPFlagField;
             }
-            set {
+            set
+            {
                 this.clearTransactionsThroughCCPFlagField = value;
             }
         }
-        
-        [XmlArrayItem("CCPExposure", IsNullable=false)]
-        public ComplexCCPExposureType[] CCPExposures {
-            get {
+
+        [XmlArrayItem("CCPExposure", IsNullable = false)]
+        public ComplexCCPExposureType[] CCPExposures
+        {
+            get
+            {
                 return this.cCPExposuresField;
             }
-            set {
+            set
+            {
                 this.cCPExposuresField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexVARRiskMeasureValuesType {
-        
+    public partial class ComplexVARRiskMeasureValuesType
+    {
+
         private decimal vARValueField;
-        
+
         private bool vARValueFieldSpecified;
-        
+
         private VARCalculationMethodCodeTypeType vARCalculationMethodCodeTypeField;
-        
+
         private bool vARCalculationMethodCodeTypeFieldSpecified;
-        
-        public decimal VARValue {
-            get {
+
+        public decimal VARValue
+        {
+            get
+            {
                 return this.vARValueField;
             }
-            set {
+            set
+            {
                 this.vARValueField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool VARValueSpecified {
-            get {
+        public bool VARValueSpecified
+        {
+            get
+            {
                 return this.vARValueFieldSpecified;
             }
-            set {
+            set
+            {
                 this.vARValueFieldSpecified = value;
             }
         }
-        
-        public VARCalculationMethodCodeTypeType VARCalculationMethodCodeType {
-            get {
+
+        public VARCalculationMethodCodeTypeType VARCalculationMethodCodeType
+        {
+            get
+            {
                 return this.vARCalculationMethodCodeTypeField;
             }
-            set {
+            set
+            {
                 this.vARCalculationMethodCodeTypeField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool VARCalculationMethodCodeTypeSpecified {
-            get {
+        public bool VARCalculationMethodCodeTypeSpecified
+        {
+            get
+            {
                 return this.vARCalculationMethodCodeTypeFieldSpecified;
             }
-            set {
+            set
+            {
                 this.vARCalculationMethodCodeTypeFieldSpecified = value;
             }
         }
     }
-    
+
     [Serializable]
-    public enum VARCalculationMethodCodeTypeType {
-        
+    public enum VARCalculationMethodCodeTypeType
+    {
+
         HISTO,
-        
+
         CARLO,
-        
+
         PARAM,
     }
-    
+
     [Serializable]
-    public partial class ComplexVegaRiskMeasureValuesType {
-        
+    public partial class ComplexVegaRiskMeasureValuesType
+    {
+
         private decimal currentMarketRiskMeasureValueField;
-        
+
         private bool currentMarketRiskMeasureValueFieldSpecified;
-        
+
         private decimal lowerMarketRiskMeasureValueField;
-        
+
         private bool lowerMarketRiskMeasureValueFieldSpecified;
-        
+
         private decimal higherMarketRiskMeasureValueField;
-        
+
         private bool higherMarketRiskMeasureValueFieldSpecified;
-        
-        public decimal CurrentMarketRiskMeasureValue {
-            get {
+
+        public decimal CurrentMarketRiskMeasureValue
+        {
+            get
+            {
                 return this.currentMarketRiskMeasureValueField;
             }
-            set {
+            set
+            {
                 this.currentMarketRiskMeasureValueField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool CurrentMarketRiskMeasureValueSpecified {
-            get {
+        public bool CurrentMarketRiskMeasureValueSpecified
+        {
+            get
+            {
                 return this.currentMarketRiskMeasureValueFieldSpecified;
             }
-            set {
+            set
+            {
                 this.currentMarketRiskMeasureValueFieldSpecified = value;
             }
         }
-        
-        public decimal LowerMarketRiskMeasureValue {
-            get {
+
+        public decimal LowerMarketRiskMeasureValue
+        {
+            get
+            {
                 return this.lowerMarketRiskMeasureValueField;
             }
-            set {
+            set
+            {
                 this.lowerMarketRiskMeasureValueField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool LowerMarketRiskMeasureValueSpecified {
-            get {
+        public bool LowerMarketRiskMeasureValueSpecified
+        {
+            get
+            {
                 return this.lowerMarketRiskMeasureValueFieldSpecified;
             }
-            set {
+            set
+            {
                 this.lowerMarketRiskMeasureValueFieldSpecified = value;
             }
         }
-        
-        public decimal HigherMarketRiskMeasureValue {
-            get {
+
+        public decimal HigherMarketRiskMeasureValue
+        {
+            get
+            {
                 return this.higherMarketRiskMeasureValueField;
             }
-            set {
+            set
+            {
                 this.higherMarketRiskMeasureValueField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool HigherMarketRiskMeasureValueSpecified {
-            get {
+        public bool HigherMarketRiskMeasureValueSpecified
+        {
+            get
+            {
                 return this.higherMarketRiskMeasureValueFieldSpecified;
             }
-            set {
+            set
+            {
                 this.higherMarketRiskMeasureValueFieldSpecified = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexBucketRiskMeasureValuesType {
-        
+    public partial class ComplexBucketRiskMeasureValuesType
+    {
+
         private decimal lessFiveYearsRiskMeasureValueField;
-        
+
         private bool lessFiveYearsRiskMeasureValueFieldSpecified;
-        
+
         private decimal fifthteenYearsRiskMeasureValueField;
-        
+
         private bool fifthteenYearsRiskMeasureValueFieldSpecified;
-        
+
         private decimal moreFifthteenYearsRiskMeasureValueField;
-        
+
         private bool moreFifthteenYearsRiskMeasureValueFieldSpecified;
-        
-        public decimal LessFiveYearsRiskMeasureValue {
-            get {
+
+        public decimal LessFiveYearsRiskMeasureValue
+        {
+            get
+            {
                 return this.lessFiveYearsRiskMeasureValueField;
             }
-            set {
+            set
+            {
                 this.lessFiveYearsRiskMeasureValueField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool LessFiveYearsRiskMeasureValueSpecified {
-            get {
+        public bool LessFiveYearsRiskMeasureValueSpecified
+        {
+            get
+            {
                 return this.lessFiveYearsRiskMeasureValueFieldSpecified;
             }
-            set {
+            set
+            {
                 this.lessFiveYearsRiskMeasureValueFieldSpecified = value;
             }
         }
-        
-        public decimal FifthteenYearsRiskMeasureValue {
-            get {
+
+        public decimal FifthteenYearsRiskMeasureValue
+        {
+            get
+            {
                 return this.fifthteenYearsRiskMeasureValueField;
             }
-            set {
+            set
+            {
                 this.fifthteenYearsRiskMeasureValueField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool FifthteenYearsRiskMeasureValueSpecified {
-            get {
+        public bool FifthteenYearsRiskMeasureValueSpecified
+        {
+            get
+            {
                 return this.fifthteenYearsRiskMeasureValueFieldSpecified;
             }
-            set {
+            set
+            {
                 this.fifthteenYearsRiskMeasureValueFieldSpecified = value;
             }
         }
-        
-        public decimal MoreFifthteenYearsRiskMeasureValue {
-            get {
+
+        public decimal MoreFifthteenYearsRiskMeasureValue
+        {
+            get
+            {
                 return this.moreFifthteenYearsRiskMeasureValueField;
             }
-            set {
+            set
+            {
                 this.moreFifthteenYearsRiskMeasureValueField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool MoreFifthteenYearsRiskMeasureValueSpecified {
-            get {
+        public bool MoreFifthteenYearsRiskMeasureValueSpecified
+        {
+            get
+            {
                 return this.moreFifthteenYearsRiskMeasureValueFieldSpecified;
             }
-            set {
+            set
+            {
                 this.moreFifthteenYearsRiskMeasureValueFieldSpecified = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexMarketRiskMeasureType {
-        
+    public partial class ComplexMarketRiskMeasureType
+    {
+
         private RiskMeasureTypeType riskMeasureTypeField;
-        
+
         private object itemField;
-        
+
         private string riskMeasureDescriptionField;
-        
-        public RiskMeasureTypeType RiskMeasureType {
-            get {
+
+        public RiskMeasureTypeType RiskMeasureType
+        {
+            get
+            {
                 return this.riskMeasureTypeField;
             }
-            set {
+            set
+            {
                 this.riskMeasureTypeField = value;
             }
         }
-        
+
         [XmlElement("BucketRiskMeasureValues", typeof(ComplexBucketRiskMeasureValuesType))]
         [XmlElement("RiskMeasureValue", typeof(decimal))]
         [XmlElement("VARRiskMeasureValues", typeof(ComplexVARRiskMeasureValuesType))]
         [XmlElement("VegaRiskMeasureValues", typeof(ComplexVegaRiskMeasureValuesType))]
-        public object Item {
-            get {
+        public object Item
+        {
+            get
+            {
                 return this.itemField;
             }
-            set {
+            set
+            {
                 this.itemField = value;
             }
         }
-        
-        public string RiskMeasureDescription {
-            get {
+
+        public string RiskMeasureDescription
+        {
+            get
+            {
                 return this.riskMeasureDescriptionField;
             }
-            set {
+            set
+            {
                 this.riskMeasureDescriptionField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public enum RiskMeasureTypeType {
-        
+    public enum RiskMeasureTypeType
+    {
+
         NET_EQTY_DELTA,
-        
+
         NET_DV01,
-        
+
         NET_CS01,
-        
+
         VAR,
-        
+
         VEGA_EXPO,
-        
+
         NET_FX_DELTA,
-        
+
         NET_CTY_DELTA,
     }
-    
+
     [Serializable]
-    public partial class ComplexMarketRiskProfileType {
-        
+    public partial class ComplexMarketRiskProfileType
+    {
+
         private string annualInvestmentReturnRateField;
-        
+
         private ComplexMarketRiskMeasureType[] marketRiskMeasuresField;
-        
-        public string AnnualInvestmentReturnRate {
-            get {
+
+        public string AnnualInvestmentReturnRate
+        {
+            get
+            {
                 return this.annualInvestmentReturnRateField;
             }
-            set {
+            set
+            {
                 this.annualInvestmentReturnRateField = value;
             }
         }
-        
-        [XmlArrayItem("MarketRiskMeasure", IsNullable=false)]
-        public ComplexMarketRiskMeasureType[] MarketRiskMeasures {
-            get {
+
+        [XmlArrayItem("MarketRiskMeasure", IsNullable = false)]
+        public ComplexMarketRiskMeasureType[] MarketRiskMeasures
+        {
+            get
+            {
                 return this.marketRiskMeasuresField;
             }
-            set {
+            set
+            {
                 this.marketRiskMeasuresField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexRiskProfileType {
-        
+    public partial class ComplexRiskProfileType
+    {
+
         private ComplexMarketRiskProfileType marketRiskProfileField;
-        
+
         private ComplexCounterpartyRiskProfileType counterpartyRiskProfileField;
-        
+
         private ComplexLiquidityRiskProfileType liquidityRiskProfileField;
-        
+
         private ComplexOperationalRiskType operationalRiskField;
-        
-        public ComplexMarketRiskProfileType MarketRiskProfile {
-            get {
+
+        public ComplexMarketRiskProfileType MarketRiskProfile
+        {
+            get
+            {
                 return this.marketRiskProfileField;
             }
-            set {
+            set
+            {
                 this.marketRiskProfileField = value;
             }
         }
-        
-        public ComplexCounterpartyRiskProfileType CounterpartyRiskProfile {
-            get {
+
+        public ComplexCounterpartyRiskProfileType CounterpartyRiskProfile
+        {
+            get
+            {
                 return this.counterpartyRiskProfileField;
             }
-            set {
+            set
+            {
                 this.counterpartyRiskProfileField = value;
             }
         }
-        
-        public ComplexLiquidityRiskProfileType LiquidityRiskProfile {
-            get {
+
+        public ComplexLiquidityRiskProfileType LiquidityRiskProfile
+        {
+            get
+            {
                 return this.liquidityRiskProfileField;
             }
-            set {
+            set
+            {
                 this.liquidityRiskProfileField = value;
             }
         }
-        
-        public ComplexOperationalRiskType OperationalRisk {
-            get {
+
+        public ComplexOperationalRiskType OperationalRisk
+        {
+            get
+            {
                 return this.operationalRiskField;
             }
-            set {
+            set
+            {
                 this.operationalRiskField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexCompanyDominantInfluenceType {
-        
+    public partial class ComplexCompanyDominantInfluenceType
+    {
+
         private ComplexEntityIdentificationType companyIdentificationField;
-        
+
         private TransactionTypeType transactionTypeField;
-        
+
         private string otherTransactionTypeDescriptionField;
-        
+
         private decimal votingRightsRateField;
-        
-        public ComplexEntityIdentificationType CompanyIdentification {
-            get {
+
+        public ComplexEntityIdentificationType CompanyIdentification
+        {
+            get
+            {
                 return this.companyIdentificationField;
             }
-            set {
+            set
+            {
                 this.companyIdentificationField = value;
             }
         }
-        
-        public TransactionTypeType TransactionType {
-            get {
+
+        public TransactionTypeType TransactionType
+        {
+            get
+            {
                 return this.transactionTypeField;
             }
-            set {
+            set
+            {
                 this.transactionTypeField = value;
             }
         }
-        
-        public string OtherTransactionTypeDescription {
-            get {
+
+        public string OtherTransactionTypeDescription
+        {
+            get
+            {
                 return this.otherTransactionTypeDescriptionField;
             }
-            set {
+            set
+            {
                 this.otherTransactionTypeDescriptionField = value;
             }
         }
-        
-        public decimal VotingRightsRate {
-            get {
+
+        public decimal VotingRightsRate
+        {
+            get
+            {
                 return this.votingRightsRateField;
             }
-            set {
+            set
+            {
                 this.votingRightsRateField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public enum TransactionTypeType {
-        
+    public enum TransactionTypeType
+    {
+
         ACAP,
-        
+
         BOUT,
-        
+
         CONS,
-        
+
         CDIV,
-        
+
         ESOP,
-        
+
         GCAP,
-        
+
         RCAP,
-        
+
         SLIQ,
-        
+
         TURN,
-        
+
         OTHR,
     }
-    
+
     [Serializable]
-    public partial class ComplexCurrencyExposureType {
-        
+    public partial class ComplexCurrencyExposureType
+    {
+
         private string exposureCurrencyField;
-        
+
         private string longPositionValueField;
-        
+
         private string shortPositionValueField;
-        
-        public string ExposureCurrency {
-            get {
+
+        public string ExposureCurrency
+        {
+            get
+            {
                 return this.exposureCurrencyField;
             }
-            set {
+            set
+            {
                 this.exposureCurrencyField = value;
             }
         }
-        
-        [XmlElement(DataType="integer")]
-        public string LongPositionValue {
-            get {
+
+        [XmlElement(DataType = "integer")]
+        public string LongPositionValue
+        {
+            get
+            {
                 return this.longPositionValueField;
             }
-            set {
+            set
+            {
                 this.longPositionValueField = value;
             }
         }
-        
-        [XmlElement(DataType="integer")]
-        public string ShortPositionValue {
-            get {
+
+        [XmlElement(DataType = "integer")]
+        public string ShortPositionValue
+        {
+            get
+            {
                 return this.shortPositionValueField;
             }
-            set {
+            set
+            {
                 this.shortPositionValueField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexAssetTypeTurnoverType {
-        
+    public partial class ComplexAssetTypeTurnoverType
+    {
+
         private TurnoverSubAssetTypeType turnoverSubAssetTypeField;
-        
+
         private string marketValueField;
-        
+
         private string notionalValueField;
-        
-        public TurnoverSubAssetTypeType TurnoverSubAssetType {
-            get {
+
+        public TurnoverSubAssetTypeType TurnoverSubAssetType
+        {
+            get
+            {
                 return this.turnoverSubAssetTypeField;
             }
-            set {
+            set
+            {
                 this.turnoverSubAssetTypeField = value;
             }
         }
-        
-        [XmlElement(DataType="integer")]
-        public string MarketValue {
-            get {
+
+        [XmlElement(DataType = "integer")]
+        public string MarketValue
+        {
+            get
+            {
                 return this.marketValueField;
             }
-            set {
+            set
+            {
                 this.marketValueField = value;
             }
         }
-        
-        [XmlElement(DataType="integer")]
-        public string NotionalValue {
-            get {
+
+        [XmlElement(DataType = "integer")]
+        public string NotionalValue
+        {
+            get
+            {
                 return this.notionalValueField;
             }
-            set {
+            set
+            {
                 this.notionalValueField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public enum TurnoverSubAssetTypeType {
-        
+    public enum TurnoverSubAssetTypeType
+    {
+
         SEC_CSH_CSH,
-        
+
         SEC_LEQ_LEQ,
-        
+
         SEC_UEQ_UEQ,
-        
+
         SEC_CPN_IVG,
-        
+
         SEC_CPN_NIG,
-        
+
         SEC_CPI_CPI,
-        
+
         SEC_SBD_EUB,
-        
+
         SEC_SBD_NEU,
-        
+
         SEC_MUN_MUN,
-        
+
         SEC_CBD_CBD,
-        
+
         SEC_LON_LON,
-        
+
         SEC_SSP_SSP,
-        
+
         DER_EQD_EQD,
-        
+
         DER_FID_FID,
-        
+
         DER_CDS_CDS,
-        
+
         DER_FEX_INV,
-        
+
         DER_FEX_HED,
-        
+
         DER_IRD_IRD,
-        
+
         DER_CTY_CTY,
-        
+
         DER_OTH_OTH,
-        
+
         PHY_RES_RES,
-        
+
         PHY_CTY_CTY,
-        
+
         PHY_TIM_TIM,
-        
+
         PHY_ART_ART,
-        
+
         PHY_TPT_TPT,
-        
+
         PHY_OTH_OTH,
-        
+
         CIU_CIU_CIU,
-        
+
         OTH_OTH_OTH,
     }
-    
+
     [Serializable]
-    public partial class ComplexAssetTypeExposureType {
-        
+    public partial class ComplexAssetTypeExposureType
+    {
+
         private SubAssetTypeType subAssetTypeField;
-        
+
         private string grossValueField;
-        
+
         private string longValueField;
-        
+
         private string shortValueField;
-        
-        public SubAssetTypeType SubAssetType {
-            get {
+
+        public SubAssetTypeType SubAssetType
+        {
+            get
+            {
                 return this.subAssetTypeField;
             }
-            set {
+            set
+            {
                 this.subAssetTypeField = value;
             }
         }
-        
-        [XmlElement(DataType="integer")]
-        public string GrossValue {
-            get {
+
+        [XmlElement(DataType = "integer")]
+        public string GrossValue
+        {
+            get
+            {
                 return this.grossValueField;
             }
-            set {
+            set
+            {
                 this.grossValueField = value;
             }
         }
-        
-        [XmlElement(DataType="integer")]
-        public string LongValue {
-            get {
+
+        [XmlElement(DataType = "integer")]
+        public string LongValue
+        {
+            get
+            {
                 return this.longValueField;
             }
-            set {
+            set
+            {
                 this.longValueField = value;
             }
         }
-        
-        [XmlElement(DataType="integer")]
-        public string ShortValue {
-            get {
+
+        [XmlElement(DataType = "integer")]
+        public string ShortValue
+        {
+            get
+            {
                 return this.shortValueField;
             }
-            set {
+            set
+            {
                 this.shortValueField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexIndividualExposureType {
-        
+    public partial class ComplexIndividualExposureType
+    {
+
         private ComplexAssetTypeExposureType[] assetTypeExposuresField;
-        
+
         private ComplexAssetTypeTurnoverType[] assetTypeTurnoversField;
-        
+
         private ComplexCurrencyExposureType[] currencyExposuresField;
-        
+
         private ComplexCompanyDominantInfluenceType[] companiesDominantInfluenceField;
-        
-        [XmlArrayItem("AssetTypeExposure", IsNullable=false)]
-        public ComplexAssetTypeExposureType[] AssetTypeExposures {
-            get {
+
+        [XmlArrayItem("AssetTypeExposure", IsNullable = false)]
+        public ComplexAssetTypeExposureType[] AssetTypeExposures
+        {
+            get
+            {
                 return this.assetTypeExposuresField;
             }
-            set {
+            set
+            {
                 this.assetTypeExposuresField = value;
             }
         }
-        
-        [XmlArrayItem("AssetTypeTurnover", IsNullable=false)]
-        public ComplexAssetTypeTurnoverType[] AssetTypeTurnovers {
-            get {
+
+        [XmlArrayItem("AssetTypeTurnover", IsNullable = false)]
+        public ComplexAssetTypeTurnoverType[] AssetTypeTurnovers
+        {
+            get
+            {
                 return this.assetTypeTurnoversField;
             }
-            set {
+            set
+            {
                 this.assetTypeTurnoversField = value;
             }
         }
-        
-        [XmlArrayItem("CurrencyExposure", IsNullable=false)]
-        public ComplexCurrencyExposureType[] CurrencyExposures {
-            get {
+
+        [XmlArrayItem("CurrencyExposure", IsNullable = false)]
+        public ComplexCurrencyExposureType[] CurrencyExposures
+        {
+            get
+            {
                 return this.currencyExposuresField;
             }
-            set {
+            set
+            {
                 this.currencyExposuresField = value;
             }
         }
-        
-        [XmlArrayItem("CompanyDominantInfluence", IsNullable=false)]
-        public ComplexCompanyDominantInfluenceType[] CompaniesDominantInfluence {
-            get {
+
+        [XmlArrayItem("CompanyDominantInfluence", IsNullable = false)]
+        public ComplexCompanyDominantInfluenceType[] CompaniesDominantInfluence
+        {
+            get
+            {
                 return this.companiesDominantInfluenceField;
             }
-            set {
+            set
+            {
                 this.companiesDominantInfluenceField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexAIFIndividualInfoType {
-        
+    public partial class ComplexAIFIndividualInfoType
+    {
+
         private ComplexIndividualExposureType individualExposureField;
-        
+
         private ComplexRiskProfileType riskProfileField;
-        
+
         private ComplexStressTestsType stressTestsField;
-        
-        public ComplexIndividualExposureType IndividualExposure {
-            get {
+
+        public ComplexIndividualExposureType IndividualExposure
+        {
+            get
+            {
                 return this.individualExposureField;
             }
-            set {
+            set
+            {
                 this.individualExposureField = value;
             }
         }
-        
-        public ComplexRiskProfileType RiskProfile {
-            get {
+
+        public ComplexRiskProfileType RiskProfile
+        {
+            get
+            {
                 return this.riskProfileField;
             }
-            set {
+            set
+            {
                 this.riskProfileField = value;
             }
         }
-        
-        public ComplexStressTestsType StressTests {
-            get {
+
+        public ComplexStressTestsType StressTests
+        {
+            get
+            {
                 return this.stressTestsField;
             }
-            set {
+            set
+            {
                 this.stressTestsField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexInvestorConcentrationType {
-        
+    public partial class ComplexInvestorConcentrationType
+    {
+
         private decimal mainBeneficialOwnersRateField;
-        
+
         private decimal professionalInvestorConcentrationRateField;
-        
+
         private decimal retailInvestorConcentrationRateField;
-        
-        public decimal MainBeneficialOwnersRate {
-            get {
+
+        public decimal MainBeneficialOwnersRate
+        {
+            get
+            {
                 return this.mainBeneficialOwnersRateField;
             }
-            set {
+            set
+            {
                 this.mainBeneficialOwnersRateField = value;
             }
         }
-        
-        public decimal ProfessionalInvestorConcentrationRate {
-            get {
+
+        public decimal ProfessionalInvestorConcentrationRate
+        {
+            get
+            {
                 return this.professionalInvestorConcentrationRateField;
             }
-            set {
+            set
+            {
                 this.professionalInvestorConcentrationRateField = value;
             }
         }
-        
-        public decimal RetailInvestorConcentrationRate {
-            get {
+
+        public decimal RetailInvestorConcentrationRate
+        {
+            get
+            {
                 return this.retailInvestorConcentrationRateField;
             }
-            set {
+            set
+            {
                 this.retailInvestorConcentrationRateField = value;
             }
         }
     }
-     
+
     [Serializable]
-    public partial class ComplexThreePrincipalMarketType {
-        
+    public partial class ComplexThreePrincipalMarketType
+    {
+
         private ThreeRankingType rankingField;
-        
+
         private ComplexMarketIdentificationWithNOTType marketIdentificationField;
-        
+
         private string aggregatedValueAmountField;
-        
-        public ThreeRankingType Ranking {
-            get {
+
+        public ThreeRankingType Ranking
+        {
+            get
+            {
                 return this.rankingField;
             }
-            set {
+            set
+            {
                 this.rankingField = value;
             }
         }
-        
-        public ComplexMarketIdentificationWithNOTType MarketIdentification {
-            get {
+
+        public ComplexMarketIdentificationWithNOTType MarketIdentification
+        {
+            get
+            {
                 return this.marketIdentificationField;
             }
-            set {
+            set
+            {
                 this.marketIdentificationField = value;
             }
         }
-        
-        [XmlElement(DataType="integer")]
-        public string AggregatedValueAmount {
-            get {
+
+        [XmlElement(DataType = "integer")]
+        public string AggregatedValueAmount
+        {
+            get
+            {
                 return this.aggregatedValueAmountField;
             }
-            set {
+            set
+            {
                 this.aggregatedValueAmountField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexMarketIdentificationWithoutNOTType {
-        
+    public partial class ComplexMarketIdentificationWithoutNOTType
+    {
+
         private MarketCodeTypeWithoutNOTType marketCodeTypeField;
-        
+
         private string marketCodeField;
-        
-        public MarketCodeTypeWithoutNOTType MarketCodeType {
-            get {
+
+        public MarketCodeTypeWithoutNOTType MarketCodeType
+        {
+            get
+            {
                 return this.marketCodeTypeField;
             }
-            set {
+            set
+            {
                 this.marketCodeTypeField = value;
             }
         }
-        
-        public string MarketCode {
-            get {
+
+        public string MarketCode
+        {
+            get
+            {
                 return this.marketCodeField;
             }
-            set {
+            set
+            {
                 this.marketCodeField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public enum MarketCodeTypeWithoutNOTType {
-        
+    public enum MarketCodeTypeWithoutNOTType
+    {
+
         MIC,
-        
+
         OTC,
-        
+
         XXX,
     }
-    
+
     [Serializable]
-    public partial class ComplexPortfolioConcentrationType {
-        
+    public partial class ComplexPortfolioConcentrationType
+    {
+
         private FiveRankingType rankingField;
-        
+
         private AssetTypeType assetTypeField;
-        
+
         private PositionTypeType positionTypeField;
-        
+
         private bool positionTypeFieldSpecified;
-        
+
         private ComplexMarketIdentificationWithoutNOTType marketIdentificationField;
-        
+
         private string aggregatedValueAmountField;
-        
+
         private decimal aggregatedValueRateField;
-        
+
         private bool aggregatedValueRateFieldSpecified;
-        
+
         private ComplexEntityIdentificationType counterpartyIdentificationField;
-        
-        public FiveRankingType Ranking {
-            get {
+
+        public FiveRankingType Ranking
+        {
+            get
+            {
                 return this.rankingField;
             }
-            set {
+            set
+            {
                 this.rankingField = value;
             }
         }
-        
-        public AssetTypeType AssetType {
-            get {
+
+        public AssetTypeType AssetType
+        {
+            get
+            {
                 return this.assetTypeField;
             }
-            set {
+            set
+            {
                 this.assetTypeField = value;
             }
         }
-        
-        public PositionTypeType PositionType {
-            get {
+
+        public PositionTypeType PositionType
+        {
+            get
+            {
                 return this.positionTypeField;
             }
-            set {
+            set
+            {
                 this.positionTypeField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool PositionTypeSpecified {
-            get {
+        public bool PositionTypeSpecified
+        {
+            get
+            {
                 return this.positionTypeFieldSpecified;
             }
-            set {
+            set
+            {
                 this.positionTypeFieldSpecified = value;
             }
         }
-        
-        public ComplexMarketIdentificationWithoutNOTType MarketIdentification {
-            get {
+
+        public ComplexMarketIdentificationWithoutNOTType MarketIdentification
+        {
+            get
+            {
                 return this.marketIdentificationField;
             }
-            set {
+            set
+            {
                 this.marketIdentificationField = value;
             }
         }
-        
-        [XmlElement(DataType="integer")]
-        public string AggregatedValueAmount {
-            get {
+
+        [XmlElement(DataType = "integer")]
+        public string AggregatedValueAmount
+        {
+            get
+            {
                 return this.aggregatedValueAmountField;
             }
-            set {
+            set
+            {
                 this.aggregatedValueAmountField = value;
             }
         }
-        
-        public decimal AggregatedValueRate {
-            get {
+
+        public decimal AggregatedValueRate
+        {
+            get
+            {
                 return this.aggregatedValueRateField;
             }
-            set {
+            set
+            {
                 this.aggregatedValueRateField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool AggregatedValueRateSpecified {
-            get {
+        public bool AggregatedValueRateSpecified
+        {
+            get
+            {
                 return this.aggregatedValueRateFieldSpecified;
             }
-            set {
+            set
+            {
                 this.aggregatedValueRateFieldSpecified = value;
             }
         }
-        
-        public ComplexEntityIdentificationType CounterpartyIdentification {
-            get {
+
+        public ComplexEntityIdentificationType CounterpartyIdentification
+        {
+            get
+            {
                 return this.counterpartyIdentificationField;
             }
-            set {
+            set
+            {
                 this.counterpartyIdentificationField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public enum AssetTypeType {
-        
+    public enum AssetTypeType
+    {
+
         SEC_CSH,
-        
+
         SEC_LEQ,
-        
+
         SEC_UEQ,
-        
+
         SEC_CPN,
-        
+
         SEC_CPI,
-        
+
         SEC_SBD,
-        
+
         SEC_MBN,
-        
+
         SEC_CBN,
-        
+
         SEC_CBI,
-        
+
         SEC_LON,
-        
+
         SEC_SSP,
-        
+
         DER_EQD,
-        
+
         DER_FID,
-        
+
         DER_CDS,
-        
+
         DER_FEX,
-        
+
         DER_IRD,
-        
+
         DER_CTY,
-        
+
         DER_OTH,
-        
+
         PHY_RES,
-        
+
         PHY_CTY,
-        
+
         PHY_TIM,
-        
+
         PHY_ART,
-        
+
         PHY_TPT,
-        
+
         PHY_OTH,
-        
+
         CIU_OAM,
-        
+
         CIU_NAM,
-        
+
         OTH_OTH,
-        
+
         NTA_NTA,
     }
-    
+
     [Serializable]
-    public enum PositionTypeType {
-        
+    public enum PositionTypeType
+    {
+
         L,
-        
+
         S,
     }
-    
+
     [Serializable]
-    public partial class ComplexMostImportantConcentrationType {
-        
+    public partial class ComplexMostImportantConcentrationType
+    {
+
         private ComplexPortfolioConcentrationType[] portfolioConcentrationsField;
-        
+
         private TypicalPositionSizeType typicalPositionSizeField;
-        
+
         private bool typicalPositionSizeFieldSpecified;
-        
+
         private ComplexThreePrincipalMarketType[] aIFPrincipalMarketsField;
-        
+
         private ComplexInvestorConcentrationType investorConcentrationField;
-        
-        [XmlArrayItem("PortfolioConcentration", IsNullable=false)]
-        public ComplexPortfolioConcentrationType[] PortfolioConcentrations {
-            get {
+
+        [XmlArrayItem("PortfolioConcentration", IsNullable = false)]
+        public ComplexPortfolioConcentrationType[] PortfolioConcentrations
+        {
+            get
+            {
                 return this.portfolioConcentrationsField;
             }
-            set {
+            set
+            {
                 this.portfolioConcentrationsField = value;
             }
         }
-        
-        public TypicalPositionSizeType TypicalPositionSize {
-            get {
+
+        public TypicalPositionSizeType TypicalPositionSize
+        {
+            get
+            {
                 return this.typicalPositionSizeField;
             }
-            set {
+            set
+            {
                 this.typicalPositionSizeField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool TypicalPositionSizeSpecified {
-            get {
+        public bool TypicalPositionSizeSpecified
+        {
+            get
+            {
                 return this.typicalPositionSizeFieldSpecified;
             }
-            set {
+            set
+            {
                 this.typicalPositionSizeFieldSpecified = value;
             }
         }
-        
-        [XmlArrayItem("AIFPrincipalMarket", IsNullable=false)]
-        public ComplexThreePrincipalMarketType[] AIFPrincipalMarkets {
-            get {
+
+        [XmlArrayItem("AIFPrincipalMarket", IsNullable = false)]
+        public ComplexThreePrincipalMarketType[] AIFPrincipalMarkets
+        {
+            get
+            {
                 return this.aIFPrincipalMarketsField;
             }
-            set {
+            set
+            {
                 this.aIFPrincipalMarketsField = value;
             }
         }
-        
-        public ComplexInvestorConcentrationType InvestorConcentration {
-            get {
+
+        public ComplexInvestorConcentrationType InvestorConcentration
+        {
+            get
+            {
                 return this.investorConcentrationField;
             }
-            set {
+            set
+            {
                 this.investorConcentrationField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public enum TypicalPositionSizeType {
-        
+    public enum TypicalPositionSizeType
+    {
+
         V_SMALL,
-        
+
         SMALL,
-        
+
         LOW_MID_MKT,
-        
+
         UP_MID_MKT,
-        
+
         L_CAP,
-        
+
         M_CAP,
     }
-    
+
     [Serializable]
-    public partial class ComplexPrincipalExposureType {
-        
+    public partial class ComplexPrincipalExposureType
+    {
+
         private TenRankingType rankingField;
-        
+
         private AssetMacroTypeType assetMacroTypeField;
-        
+
         private SubAssetTypeType subAssetTypeField;
-        
+
         private bool subAssetTypeFieldSpecified;
-        
+
         private PositionTypeType positionTypeField;
-        
+
         private bool positionTypeFieldSpecified;
-        
+
         private string aggregatedValueAmountField;
-        
+
         private decimal aggregatedValueRateField;
-        
+
         private bool aggregatedValueRateFieldSpecified;
-        
+
         private ComplexEntityIdentificationType counterpartyIdentificationField;
-        
-        public TenRankingType Ranking {
-            get {
+
+        public TenRankingType Ranking
+        {
+            get
+            {
                 return this.rankingField;
             }
-            set {
+            set
+            {
                 this.rankingField = value;
             }
         }
-        
-        public AssetMacroTypeType AssetMacroType {
-            get {
+
+        public AssetMacroTypeType AssetMacroType
+        {
+            get
+            {
                 return this.assetMacroTypeField;
             }
-            set {
+            set
+            {
                 this.assetMacroTypeField = value;
             }
         }
-        
-        public SubAssetTypeType SubAssetType {
-            get {
+
+        public SubAssetTypeType SubAssetType
+        {
+            get
+            {
                 return this.subAssetTypeField;
             }
-            set {
+            set
+            {
                 this.subAssetTypeField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool SubAssetTypeSpecified {
-            get {
+        public bool SubAssetTypeSpecified
+        {
+            get
+            {
                 return this.subAssetTypeFieldSpecified;
             }
-            set {
+            set
+            {
                 this.subAssetTypeFieldSpecified = value;
             }
         }
-        
-        public PositionTypeType PositionType {
-            get {
+
+        public PositionTypeType PositionType
+        {
+            get
+            {
                 return this.positionTypeField;
             }
-            set {
+            set
+            {
                 this.positionTypeField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool PositionTypeSpecified {
-            get {
+        public bool PositionTypeSpecified
+        {
+            get
+            {
                 return this.positionTypeFieldSpecified;
             }
-            set {
+            set
+            {
                 this.positionTypeFieldSpecified = value;
             }
         }
-        
-        [XmlElement(DataType="integer")]
-        public string AggregatedValueAmount {
-            get {
+
+        [XmlElement(DataType = "integer")]
+        public string AggregatedValueAmount
+        {
+            get
+            {
                 return this.aggregatedValueAmountField;
             }
-            set {
+            set
+            {
                 this.aggregatedValueAmountField = value;
             }
         }
-        
-        public decimal AggregatedValueRate {
-            get {
+
+        public decimal AggregatedValueRate
+        {
+            get
+            {
                 return this.aggregatedValueRateField;
             }
-            set {
+            set
+            {
                 this.aggregatedValueRateField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool AggregatedValueRateSpecified {
-            get {
+        public bool AggregatedValueRateSpecified
+        {
+            get
+            {
                 return this.aggregatedValueRateFieldSpecified;
             }
-            set {
+            set
+            {
                 this.aggregatedValueRateFieldSpecified = value;
             }
         }
-        
-        public ComplexEntityIdentificationType CounterpartyIdentification {
-            get {
+
+        public ComplexEntityIdentificationType CounterpartyIdentification
+        {
+            get
+            {
                 return this.counterpartyIdentificationField;
             }
-            set {
+            set
+            {
                 this.counterpartyIdentificationField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public enum TenRankingType {
-        
+    public enum TenRankingType
+    {
+
         [XmlEnum("1")]
         Item1,
-        
+
         [XmlEnum("2")]
         Item2,
-        
+
         [XmlEnum("3")]
         Item3,
-        
+
         [XmlEnum("4")]
         Item4,
-        
+
         [XmlEnum("5")]
         Item5,
-        
+
         [XmlEnum("6")]
         Item6,
-        
+
         [XmlEnum("7")]
         Item7,
-        
+
         [XmlEnum("8")]
         Item8,
-        
+
         [XmlEnum("9")]
         Item9,
-        
+
         [XmlEnum("10")]
         Item10,
     }
-    
+
     [Serializable]
-    public enum AssetMacroTypeType {
-        
+    public enum AssetMacroTypeType
+    {
+
         SEC,
-        
+
         DER,
-        
+
         CIU,
-        
+
         PHY,
-        
+
         OTH,
-        
+
         NTA,
     }
-    
+
     [Serializable]
-    public partial class ComplexAUMGeographicalFocusType {
-        
+    public partial class ComplexAUMGeographicalFocusType
+    {
+
         private decimal africaAUMRateField;
-        
+
         private decimal asiaPacificAUMRateField;
-        
+
         private decimal europeAUMRateField;
-        
+
         private decimal eEAAUMRateField;
-        
+
         private decimal middleEastAUMRateField;
-        
+
         private decimal northAmericaAUMRateField;
-        
+
         private decimal southAmericaAUMRateField;
-        
+
         private decimal supraNationalAUMRateField;
-        
-        public decimal AfricaAUMRate {
-            get {
+
+        public decimal AfricaAUMRate
+        {
+            get
+            {
                 return this.africaAUMRateField;
             }
-            set {
+            set
+            {
                 this.africaAUMRateField = value;
             }
         }
-        
-        public decimal AsiaPacificAUMRate {
-            get {
+
+        public decimal AsiaPacificAUMRate
+        {
+            get
+            {
                 return this.asiaPacificAUMRateField;
             }
-            set {
+            set
+            {
                 this.asiaPacificAUMRateField = value;
             }
         }
-        
-        public decimal EuropeAUMRate {
-            get {
+
+        public decimal EuropeAUMRate
+        {
+            get
+            {
                 return this.europeAUMRateField;
             }
-            set {
+            set
+            {
                 this.europeAUMRateField = value;
             }
         }
-        
-        public decimal EEAAUMRate {
-            get {
+
+        public decimal EEAAUMRate
+        {
+            get
+            {
                 return this.eEAAUMRateField;
             }
-            set {
+            set
+            {
                 this.eEAAUMRateField = value;
             }
         }
-        
-        public decimal MiddleEastAUMRate {
-            get {
+
+        public decimal MiddleEastAUMRate
+        {
+            get
+            {
                 return this.middleEastAUMRateField;
             }
-            set {
+            set
+            {
                 this.middleEastAUMRateField = value;
             }
         }
-        
-        public decimal NorthAmericaAUMRate {
-            get {
+
+        public decimal NorthAmericaAUMRate
+        {
+            get
+            {
                 return this.northAmericaAUMRateField;
             }
-            set {
+            set
+            {
                 this.northAmericaAUMRateField = value;
             }
         }
-        
-        public decimal SouthAmericaAUMRate {
-            get {
+
+        public decimal SouthAmericaAUMRate
+        {
+            get
+            {
                 return this.southAmericaAUMRateField;
             }
-            set {
+            set
+            {
                 this.southAmericaAUMRateField = value;
             }
         }
-        
-        public decimal SupraNationalAUMRate {
-            get {
+
+        public decimal SupraNationalAUMRate
+        {
+            get
+            {
                 return this.supraNationalAUMRateField;
             }
-            set {
+            set
+            {
                 this.supraNationalAUMRateField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexNAVGeographicalFocusType {
-        
+    public partial class ComplexNAVGeographicalFocusType
+    {
+
         private decimal africaNAVRateField;
-        
+
         private decimal asiaPacificNAVRateField;
-        
+
         private decimal europeNAVRateField;
-        
+
         private decimal eEANAVRateField;
-        
+
         private decimal middleEastNAVRateField;
-        
+
         private decimal northAmericaNAVRateField;
-        
+
         private decimal southAmericaNAVRateField;
-        
+
         private decimal supraNationalNAVRateField;
-        
-        public decimal AfricaNAVRate {
-            get {
+
+        public decimal AfricaNAVRate
+        {
+            get
+            {
                 return this.africaNAVRateField;
             }
-            set {
+            set
+            {
                 this.africaNAVRateField = value;
             }
         }
-        
-        public decimal AsiaPacificNAVRate {
-            get {
+
+        public decimal AsiaPacificNAVRate
+        {
+            get
+            {
                 return this.asiaPacificNAVRateField;
             }
-            set {
+            set
+            {
                 this.asiaPacificNAVRateField = value;
             }
         }
-        
-        public decimal EuropeNAVRate {
-            get {
+
+        public decimal EuropeNAVRate
+        {
+            get
+            {
                 return this.europeNAVRateField;
             }
-            set {
+            set
+            {
                 this.europeNAVRateField = value;
             }
         }
-        
-        public decimal EEANAVRate {
-            get {
+
+        public decimal EEANAVRate
+        {
+            get
+            {
                 return this.eEANAVRateField;
             }
-            set {
+            set
+            {
                 this.eEANAVRateField = value;
             }
         }
-        
-        public decimal MiddleEastNAVRate {
-            get {
+
+        public decimal MiddleEastNAVRate
+        {
+            get
+            {
                 return this.middleEastNAVRateField;
             }
-            set {
+            set
+            {
                 this.middleEastNAVRateField = value;
             }
         }
-        
-        public decimal NorthAmericaNAVRate {
-            get {
+
+        public decimal NorthAmericaNAVRate
+        {
+            get
+            {
                 return this.northAmericaNAVRateField;
             }
-            set {
+            set
+            {
                 this.northAmericaNAVRateField = value;
             }
         }
-        
-        public decimal SouthAmericaNAVRate {
-            get {
+
+        public decimal SouthAmericaNAVRate
+        {
+            get
+            {
                 return this.southAmericaNAVRateField;
             }
-            set {
+            set
+            {
                 this.southAmericaNAVRateField = value;
             }
         }
-        
-        public decimal SupraNationalNAVRate {
-            get {
+
+        public decimal SupraNationalNAVRate
+        {
+            get
+            {
                 return this.supraNationalNAVRateField;
             }
-            set {
+            set
+            {
                 this.supraNationalNAVRateField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexAIIInstrumentIdentificationType {
-        
+    public partial class ComplexAIIInstrumentIdentificationType
+    {
+
         private string aIIExchangeCodeField;
-        
+
         private string aIIProductCodeField;
-        
+
         private AIIDerivativeTypeType aIIDerivativeTypeField;
-        
+
         private AIIPutCallIdentifierType aIIPutCallIdentifierField;
-        
+
         private DateTime aIIExpiryDateField;
-        
+
         private decimal aIIStrikePriceField;
-        
-        public string AIIExchangeCode {
-            get {
+
+        public string AIIExchangeCode
+        {
+            get
+            {
                 return this.aIIExchangeCodeField;
             }
-            set {
+            set
+            {
                 this.aIIExchangeCodeField = value;
             }
         }
-        
-        public string AIIProductCode {
-            get {
+
+        public string AIIProductCode
+        {
+            get
+            {
                 return this.aIIProductCodeField;
             }
-            set {
+            set
+            {
                 this.aIIProductCodeField = value;
             }
         }
-        
-        public AIIDerivativeTypeType AIIDerivativeType {
-            get {
+
+        public AIIDerivativeTypeType AIIDerivativeType
+        {
+            get
+            {
                 return this.aIIDerivativeTypeField;
             }
-            set {
+            set
+            {
                 this.aIIDerivativeTypeField = value;
             }
         }
-        
-        public AIIPutCallIdentifierType AIIPutCallIdentifier {
-            get {
+
+        public AIIPutCallIdentifierType AIIPutCallIdentifier
+        {
+            get
+            {
                 return this.aIIPutCallIdentifierField;
             }
-            set {
+            set
+            {
                 this.aIIPutCallIdentifierField = value;
             }
         }
-        
-        [XmlElement(DataType="date")]
-        public DateTime AIIExpiryDate {
-            get {
+
+        [XmlElement(DataType = "date")]
+        public DateTime AIIExpiryDate
+        {
+            get
+            {
                 return this.aIIExpiryDateField;
             }
-            set {
+            set
+            {
                 this.aIIExpiryDateField = value;
             }
         }
-        
-        public decimal AIIStrikePrice {
-            get {
+
+        public decimal AIIStrikePrice
+        {
+            get
+            {
                 return this.aIIStrikePriceField;
             }
-            set {
+            set
+            {
                 this.aIIStrikePriceField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public enum AIIDerivativeTypeType {
-        
+    public enum AIIDerivativeTypeType
+    {
+
         O,
-        
+
         F,
     }
-    
+
     [Serializable]
-    public enum AIIPutCallIdentifierType {
-        
+    public enum AIIPutCallIdentifierType
+    {
+
         P,
-        
+
         C,
-        
+
         F,
     }
-    
+
     [Serializable]
-    public partial class ComplexMainInstrumentTradedType {
-        
+    public partial class ComplexMainInstrumentTradedType
+    {
+
         private FiveRankingType rankingField;
-        
+
         private SubAssetTypeType subAssetTypeField;
-        
+
         private InstrumentCodeTypeType instrumentCodeTypeField;
-        
+
         private bool instrumentCodeTypeFieldSpecified;
-        
+
         private string instrumentNameField;
-        
+
         private object itemField;
-        
+
         private string positionValueField;
-        
+
         private PositionTypeType positionTypeField;
-        
+
         private bool positionTypeFieldSpecified;
-        
+
         private decimal shortPositionHedgingRateField;
-        
+
         private bool shortPositionHedgingRateFieldSpecified;
-        
-        public FiveRankingType Ranking {
-            get {
+
+        public FiveRankingType Ranking
+        {
+            get
+            {
                 return this.rankingField;
             }
-            set {
+            set
+            {
                 this.rankingField = value;
             }
         }
-        
-        public SubAssetTypeType SubAssetType {
-            get {
+
+        public SubAssetTypeType SubAssetType
+        {
+            get
+            {
                 return this.subAssetTypeField;
             }
-            set {
+            set
+            {
                 this.subAssetTypeField = value;
             }
         }
-        
-        public InstrumentCodeTypeType InstrumentCodeType {
-            get {
+
+        public InstrumentCodeTypeType InstrumentCodeType
+        {
+            get
+            {
                 return this.instrumentCodeTypeField;
             }
-            set {
+            set
+            {
                 this.instrumentCodeTypeField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool InstrumentCodeTypeSpecified {
-            get {
+        public bool InstrumentCodeTypeSpecified
+        {
+            get
+            {
                 return this.instrumentCodeTypeFieldSpecified;
             }
-            set {
+            set
+            {
                 this.instrumentCodeTypeFieldSpecified = value;
             }
         }
-        
-        public string InstrumentName {
-            get {
+
+        public string InstrumentName
+        {
+            get
+            {
                 return this.instrumentNameField;
             }
-            set {
+            set
+            {
                 this.instrumentNameField = value;
             }
         }
-        
+
         [XmlElement("AIIInstrumentIdentification", typeof(ComplexAIIInstrumentIdentificationType))]
         [XmlElement("ISINInstrumentIdentification", typeof(string))]
-        public object Item {
-            get {
+        public object Item
+        {
+            get
+            {
                 return this.itemField;
             }
-            set {
+            set
+            {
                 this.itemField = value;
             }
         }
-        
-        [XmlElement(DataType="integer")]
-        public string PositionValue {
-            get {
+
+        [XmlElement(DataType = "integer")]
+        public string PositionValue
+        {
+            get
+            {
                 return this.positionValueField;
             }
-            set {
+            set
+            {
                 this.positionValueField = value;
             }
         }
-        
-        public PositionTypeType PositionType {
-            get {
+
+        public PositionTypeType PositionType
+        {
+            get
+            {
                 return this.positionTypeField;
             }
-            set {
+            set
+            {
                 this.positionTypeField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool PositionTypeSpecified {
-            get {
+        public bool PositionTypeSpecified
+        {
+            get
+            {
                 return this.positionTypeFieldSpecified;
             }
-            set {
+            set
+            {
                 this.positionTypeFieldSpecified = value;
             }
         }
-        
-        public decimal ShortPositionHedgingRate {
-            get {
+
+        public decimal ShortPositionHedgingRate
+        {
+            get
+            {
                 return this.shortPositionHedgingRateField;
             }
-            set {
+            set
+            {
                 this.shortPositionHedgingRateField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool ShortPositionHedgingRateSpecified {
-            get {
+        public bool ShortPositionHedgingRateSpecified
+        {
+            get
+            {
                 return this.shortPositionHedgingRateFieldSpecified;
             }
-            set {
+            set
+            {
                 this.shortPositionHedgingRateFieldSpecified = value;
             }
         }
     }
-    
+
     [Serializable]
-    public enum InstrumentCodeTypeType {
-        
+    public enum InstrumentCodeTypeType
+    {
+
         ISIN,
-        
+
         AII,
-        
+
         NONE,
     }
-    
+
     [Serializable]
-    public partial class ComplexOtherFundStrategyType {
-        
+    public partial class ComplexOtherFundStrategyType
+    {
+
         private OtherFundStrategyTypeType otherFundStrategyTypeField;
-        
+
         private bool primaryStrategyFlagField;
-        
+
         private decimal strategyNAVRateField;
-        
+
         private bool strategyNAVRateFieldSpecified;
-        
+
         private string strategyTypeOtherDescriptionField;
-        
-        public OtherFundStrategyTypeType OtherFundStrategyType {
-            get {
+
+        public OtherFundStrategyTypeType OtherFundStrategyType
+        {
+            get
+            {
                 return this.otherFundStrategyTypeField;
             }
-            set {
+            set
+            {
                 this.otherFundStrategyTypeField = value;
             }
         }
-        
-        public bool PrimaryStrategyFlag {
-            get {
+
+        public bool PrimaryStrategyFlag
+        {
+            get
+            {
                 return this.primaryStrategyFlagField;
             }
-            set {
+            set
+            {
                 this.primaryStrategyFlagField = value;
             }
         }
-        
-        public decimal StrategyNAVRate {
-            get {
+
+        public decimal StrategyNAVRate
+        {
+            get
+            {
                 return this.strategyNAVRateField;
             }
-            set {
+            set
+            {
                 this.strategyNAVRateField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool StrategyNAVRateSpecified {
-            get {
+        public bool StrategyNAVRateSpecified
+        {
+            get
+            {
                 return this.strategyNAVRateFieldSpecified;
             }
-            set {
+            set
+            {
                 this.strategyNAVRateFieldSpecified = value;
             }
         }
-        
-        public string StrategyTypeOtherDescription {
-            get {
+
+        public string StrategyTypeOtherDescription
+        {
+            get
+            {
                 return this.strategyTypeOtherDescriptionField;
             }
-            set {
+            set
+            {
                 this.strategyTypeOtherDescriptionField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public enum OtherFundStrategyTypeType {
-        
+    public enum OtherFundStrategyTypeType
+    {
+
         OTHR_COMF,
-        
+
         OTHR_EQYF,
-        
+
         OTHR_FXIF,
-        
+
         OTHR_INFF,
-        
+
         OTHR_OTHF,
     }
-    
+
     [Serializable]
-    public partial class ComplexFundOfFundsStrategyType {
-        
+    public partial class ComplexFundOfFundsStrategyType
+    {
+
         private FundOfFundsStrategyTypeType fundOfFundsStrategyTypeField;
-        
+
         private bool primaryStrategyFlagField;
-        
+
         private decimal strategyNAVRateField;
-        
+
         private bool strategyNAVRateFieldSpecified;
-        
+
         private string strategyTypeOtherDescriptionField;
-        
-        public FundOfFundsStrategyTypeType FundOfFundsStrategyType {
-            get {
+
+        public FundOfFundsStrategyTypeType FundOfFundsStrategyType
+        {
+            get
+            {
                 return this.fundOfFundsStrategyTypeField;
             }
-            set {
+            set
+            {
                 this.fundOfFundsStrategyTypeField = value;
             }
         }
-        
-        public bool PrimaryStrategyFlag {
-            get {
+
+        public bool PrimaryStrategyFlag
+        {
+            get
+            {
                 return this.primaryStrategyFlagField;
             }
-            set {
+            set
+            {
                 this.primaryStrategyFlagField = value;
             }
         }
-        
-        public decimal StrategyNAVRate {
-            get {
+
+        public decimal StrategyNAVRate
+        {
+            get
+            {
                 return this.strategyNAVRateField;
             }
-            set {
+            set
+            {
                 this.strategyNAVRateField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool StrategyNAVRateSpecified {
-            get {
+        public bool StrategyNAVRateSpecified
+        {
+            get
+            {
                 return this.strategyNAVRateFieldSpecified;
             }
-            set {
+            set
+            {
                 this.strategyNAVRateFieldSpecified = value;
             }
         }
-        
-        public string StrategyTypeOtherDescription {
-            get {
+
+        public string StrategyTypeOtherDescription
+        {
+            get
+            {
                 return this.strategyTypeOtherDescriptionField;
             }
-            set {
+            set
+            {
                 this.strategyTypeOtherDescriptionField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public enum FundOfFundsStrategyTypeType {
-        
+    public enum FundOfFundsStrategyTypeType
+    {
+
         FOFS_FHFS,
-        
+
         FOFS_PRIV,
-        
+
         OTHR_FOFS,
     }
-    
+
     [Serializable]
-    public partial class ComplexRealEstateFundStrategyType {
-        
+    public partial class ComplexRealEstateFundStrategyType
+    {
+
         private RealEstateFundStrategyTypeType realEstateFundStrategyTypeField;
-        
+
         private bool primaryStrategyFlagField;
-        
+
         private decimal strategyNAVRateField;
-        
+
         private bool strategyNAVRateFieldSpecified;
-        
+
         private string strategyTypeOtherDescriptionField;
-        
-        public RealEstateFundStrategyTypeType RealEstateFundStrategyType {
-            get {
+
+        public RealEstateFundStrategyTypeType RealEstateFundStrategyType
+        {
+            get
+            {
                 return this.realEstateFundStrategyTypeField;
             }
-            set {
+            set
+            {
                 this.realEstateFundStrategyTypeField = value;
             }
         }
-        
-        public bool PrimaryStrategyFlag {
-            get {
+
+        public bool PrimaryStrategyFlag
+        {
+            get
+            {
                 return this.primaryStrategyFlagField;
             }
-            set {
+            set
+            {
                 this.primaryStrategyFlagField = value;
             }
         }
-        
-        public decimal StrategyNAVRate {
-            get {
+
+        public decimal StrategyNAVRate
+        {
+            get
+            {
                 return this.strategyNAVRateField;
             }
-            set {
+            set
+            {
                 this.strategyNAVRateField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool StrategyNAVRateSpecified {
-            get {
+        public bool StrategyNAVRateSpecified
+        {
+            get
+            {
                 return this.strategyNAVRateFieldSpecified;
             }
-            set {
+            set
+            {
                 this.strategyNAVRateFieldSpecified = value;
             }
         }
-        
-        public string StrategyTypeOtherDescription {
-            get {
+
+        public string StrategyTypeOtherDescription
+        {
+            get
+            {
                 return this.strategyTypeOtherDescriptionField;
             }
-            set {
+            set
+            {
                 this.strategyTypeOtherDescriptionField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public enum RealEstateFundStrategyTypeType {
-        
+    public enum RealEstateFundStrategyTypeType
+    {
+
         RESL_REST,
-        
+
         COML_REST,
-        
+
         INDL_REST,
-        
+
         MULT_REST,
-        
+
         OTHR_REST,
     }
-    
+
     [Serializable]
-    public partial class ComplexPrivateEquityFundStrategyType {
-        
+    public partial class ComplexPrivateEquityFundStrategyType
+    {
+
         private PrivateEquityFundStrategyTypeType privateEquityFundStrategyTypeField;
-        
+
         private bool primaryStrategyFlagField;
-        
+
         private decimal strategyNAVRateField;
-        
+
         private bool strategyNAVRateFieldSpecified;
-        
+
         private string strategyTypeOtherDescriptionField;
-        
-        public PrivateEquityFundStrategyTypeType PrivateEquityFundStrategyType {
-            get {
+
+        public PrivateEquityFundStrategyTypeType PrivateEquityFundStrategyType
+        {
+            get
+            {
                 return this.privateEquityFundStrategyTypeField;
             }
-            set {
+            set
+            {
                 this.privateEquityFundStrategyTypeField = value;
             }
         }
-        
-        public bool PrimaryStrategyFlag {
-            get {
+
+        public bool PrimaryStrategyFlag
+        {
+            get
+            {
                 return this.primaryStrategyFlagField;
             }
-            set {
+            set
+            {
                 this.primaryStrategyFlagField = value;
             }
         }
-        
-        public decimal StrategyNAVRate {
-            get {
+
+        public decimal StrategyNAVRate
+        {
+            get
+            {
                 return this.strategyNAVRateField;
             }
-            set {
+            set
+            {
                 this.strategyNAVRateField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool StrategyNAVRateSpecified {
-            get {
+        public bool StrategyNAVRateSpecified
+        {
+            get
+            {
                 return this.strategyNAVRateFieldSpecified;
             }
-            set {
+            set
+            {
                 this.strategyNAVRateFieldSpecified = value;
             }
         }
-        
-        public string StrategyTypeOtherDescription {
-            get {
+
+        public string StrategyTypeOtherDescription
+        {
+            get
+            {
                 return this.strategyTypeOtherDescriptionField;
             }
-            set {
+            set
+            {
                 this.strategyTypeOtherDescriptionField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public enum PrivateEquityFundStrategyTypeType {
-        
+    public enum PrivateEquityFundStrategyTypeType
+    {
+
         VENT_CAPL,
-        
+
         GRTH_CAPL,
-        
+
         MZNE_CAPL,
-        
+
         MULT_PEQF,
-        
+
         OTHR_PEQF,
     }
-    
+
     [Serializable]
-    public partial class ComplexHedgeFundStrategyType {
-        
+    public partial class ComplexHedgeFundStrategyType
+    {
+
         private HedgeFundStrategyTypeType hedgeFundStrategyTypeField;
-        
+
         private bool primaryStrategyFlagField;
-        
+
         private decimal strategyNAVRateField;
-        
+
         private bool strategyNAVRateFieldSpecified;
-        
+
         private string strategyTypeOtherDescriptionField;
-        
-        public HedgeFundStrategyTypeType HedgeFundStrategyType {
-            get {
+
+        public HedgeFundStrategyTypeType HedgeFundStrategyType
+        {
+            get
+            {
                 return this.hedgeFundStrategyTypeField;
             }
-            set {
+            set
+            {
                 this.hedgeFundStrategyTypeField = value;
             }
         }
-        
-        public bool PrimaryStrategyFlag {
-            get {
+
+        public bool PrimaryStrategyFlag
+        {
+            get
+            {
                 return this.primaryStrategyFlagField;
             }
-            set {
+            set
+            {
                 this.primaryStrategyFlagField = value;
             }
         }
-        
-        public decimal StrategyNAVRate {
-            get {
+
+        public decimal StrategyNAVRate
+        {
+            get
+            {
                 return this.strategyNAVRateField;
             }
-            set {
+            set
+            {
                 this.strategyNAVRateField = value;
             }
         }
-        
+
         [XmlIgnore]
-        public bool StrategyNAVRateSpecified {
-            get {
+        public bool StrategyNAVRateSpecified
+        {
+            get
+            {
                 return this.strategyNAVRateFieldSpecified;
             }
-            set {
+            set
+            {
                 this.strategyNAVRateFieldSpecified = value;
             }
         }
-        
-        public string StrategyTypeOtherDescription {
-            get {
+
+        public string StrategyTypeOtherDescription
+        {
+            get
+            {
                 return this.strategyTypeOtherDescriptionField;
             }
-            set {
+            set
+            {
                 this.strategyTypeOtherDescriptionField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public enum HedgeFundStrategyTypeType {
-        
+    public enum HedgeFundStrategyTypeType
+    {
+
         EQTY_LGBS,
-        
+
         EQTY_LGST,
-        
+
         EQTY_MTNL,
-        
+
         EQTY_STBS,
-        
+
         RELV_FXIA,
-        
+
         RELV_CBAR,
-        
+
         RELV_VLAR,
-        
+
         EVDR_DSRS,
-        
+
         EVDR_RAMA,
-        
+
         EVDR_EYSS,
-        
+
         CRED_LGST,
-        
+
         CRED_ABLG,
-        
+
         MACR_MACR,
-        
+
         MANF_CTAF,
-        
+
         MANF_CTAQ,
-        
+
         MULT_HFND,
-        
+
         OTHR_HFND,
     }
-    
+
     [Serializable]
-    public partial class ComplexMasterAIFIdentificationType {
-        
+    public partial class ComplexMasterAIFIdentificationType
+    {
+
         private string aIFNameField;
-        
+
         private ComplexAIFNationalIdentifierType aIFIdentifierNCAField;
-        
-        public string AIFName {
-            get {
+
+        public string AIFName
+        {
+            get
+            {
                 return this.aIFNameField;
             }
-            set {
+            set
+            {
                 this.aIFNameField = value;
             }
         }
-        
-        public ComplexAIFNationalIdentifierType AIFIdentifierNCA {
-            get {
+
+        public ComplexAIFNationalIdentifierType AIFIdentifierNCA
+        {
+            get
+            {
                 return this.aIFIdentifierNCAField;
             }
-            set {
+            set
+            {
                 this.aIFIdentifierNCAField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexAIFNationalIdentifierType {
-        
+    public partial class ComplexAIFNationalIdentifierType
+    {
+
         private string reportingMemberStateField;
-        
+
         private string aIFNationalCodeField;
-        
-        public string ReportingMemberState {
-            get {
+
+        public string ReportingMemberState
+        {
+            get
+            {
                 return this.reportingMemberStateField;
             }
-            set {
+            set
+            {
                 this.reportingMemberStateField = value;
             }
         }
-        
-        public string AIFNationalCode {
-            get {
+
+        public string AIFNationalCode
+        {
+            get
+            {
                 return this.aIFNationalCodeField;
             }
-            set {
+            set
+            {
                 this.aIFNationalCodeField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexAIFDescriptionType {
-        
+    public partial class ComplexAIFDescriptionType
+    {
+
         private AIFMasterFeederStatusType aIFMasterFeederStatusField;
-        
+
         private ComplexMasterAIFIdentificationType[] masterAIFsIdentificationField;
-        
+
         private ComplexEntityIdentificationType[] primeBrokersField;
-        
+
         private ComplexBaseCurrencyDescriptionType aIFBaseCurrencyDescriptionField;
-        
+
         private string aIFNetAssetValueField;
-        
+
         private string firstFundingSourceCountryField;
-        
+
         private string secondFundingSourceCountryField;
-        
+
         private string thirdFundingSourceCountryField;
-        
+
         private AIFTypeType predominantAIFTypeField;
-        
+
         private ComplexHedgeFundStrategyType[] hedgeFundInvestmentStrategiesField;
-        
+
         private ComplexPrivateEquityFundStrategyType[] privateEquityFundInvestmentStrategiesField;
-        
+
         private ComplexRealEstateFundStrategyType[] realEstateFundInvestmentStrategiesField;
-        
+
         private ComplexFundOfFundsStrategyType[] fundOfFundsInvestmentStrategiesField;
-        
+
         private ComplexOtherFundStrategyType[] otherFundInvestmentStrategiesField;
-        
+
         private string hFTTransactionNumberField;
-        
+
         private string hFTBuySellMarketValueField;
-        
-        public AIFMasterFeederStatusType AIFMasterFeederStatus {
-            get {
+
+        public AIFMasterFeederStatusType AIFMasterFeederStatus
+        {
+            get
+            {
                 return this.aIFMasterFeederStatusField;
             }
-            set {
+            set
+            {
                 this.aIFMasterFeederStatusField = value;
             }
         }
-        
-        [XmlArrayItem("MasterAIFIdentification", IsNullable=false)]
-        public ComplexMasterAIFIdentificationType[] MasterAIFsIdentification {
-            get {
+
+        [XmlArrayItem("MasterAIFIdentification", IsNullable = false)]
+        public ComplexMasterAIFIdentificationType[] MasterAIFsIdentification
+        {
+            get
+            {
                 return this.masterAIFsIdentificationField;
             }
-            set {
+            set
+            {
                 this.masterAIFsIdentificationField = value;
             }
         }
-        
-        [XmlArrayItem("PrimeBrokerIdentification", IsNullable=false)]
-        public ComplexEntityIdentificationType[] PrimeBrokers {
-            get {
+
+        [XmlArrayItem("PrimeBrokerIdentification", IsNullable = false)]
+        public ComplexEntityIdentificationType[] PrimeBrokers
+        {
+            get
+            {
                 return this.primeBrokersField;
             }
-            set {
+            set
+            {
                 this.primeBrokersField = value;
             }
         }
-        
-        public ComplexBaseCurrencyDescriptionType AIFBaseCurrencyDescription {
-            get {
+
+        public ComplexBaseCurrencyDescriptionType AIFBaseCurrencyDescription
+        {
+            get
+            {
                 return this.aIFBaseCurrencyDescriptionField;
             }
-            set {
+            set
+            {
                 this.aIFBaseCurrencyDescriptionField = value;
             }
         }
-        
-        [XmlElement(DataType="integer")]
-        public string AIFNetAssetValue {
-            get {
+
+        [XmlElement(DataType = "integer")]
+        public string AIFNetAssetValue
+        {
+            get
+            {
                 return this.aIFNetAssetValueField;
             }
-            set {
+            set
+            {
                 this.aIFNetAssetValueField = value;
             }
         }
-        
-        public string FirstFundingSourceCountry {
-            get {
+
+        public string FirstFundingSourceCountry
+        {
+            get
+            {
                 return this.firstFundingSourceCountryField;
             }
-            set {
+            set
+            {
                 this.firstFundingSourceCountryField = value;
             }
         }
-        
-        public string SecondFundingSourceCountry {
-            get {
+
+        public string SecondFundingSourceCountry
+        {
+            get
+            {
                 return this.secondFundingSourceCountryField;
             }
-            set {
+            set
+            {
                 this.secondFundingSourceCountryField = value;
             }
         }
-        
-        public string ThirdFundingSourceCountry {
-            get {
+
+        public string ThirdFundingSourceCountry
+        {
+            get
+            {
                 return this.thirdFundingSourceCountryField;
             }
-            set {
+            set
+            {
                 this.thirdFundingSourceCountryField = value;
             }
         }
-        
-        public AIFTypeType PredominantAIFType {
-            get {
+
+        public AIFTypeType PredominantAIFType
+        {
+            get
+            {
                 return this.predominantAIFTypeField;
             }
-            set {
+            set
+            {
                 this.predominantAIFTypeField = value;
             }
         }
-        
-        [XmlArrayItem("HedgeFundStrategy", IsNullable=false)]
-        public ComplexHedgeFundStrategyType[] HedgeFundInvestmentStrategies {
-            get {
+
+        [XmlArrayItem("HedgeFundStrategy", IsNullable = false)]
+        public ComplexHedgeFundStrategyType[] HedgeFundInvestmentStrategies
+        {
+            get
+            {
                 return this.hedgeFundInvestmentStrategiesField;
             }
-            set {
+            set
+            {
                 this.hedgeFundInvestmentStrategiesField = value;
             }
         }
-        
-        [XmlArrayItem("PrivateEquityFundInvestmentStrategy", IsNullable=false)]
-        public ComplexPrivateEquityFundStrategyType[] PrivateEquityFundInvestmentStrategies {
-            get {
+
+        [XmlArrayItem("PrivateEquityFundInvestmentStrategy", IsNullable = false)]
+        public ComplexPrivateEquityFundStrategyType[] PrivateEquityFundInvestmentStrategies
+        {
+            get
+            {
                 return this.privateEquityFundInvestmentStrategiesField;
             }
-            set {
+            set
+            {
                 this.privateEquityFundInvestmentStrategiesField = value;
             }
         }
-        
-        [XmlArrayItem("RealEstateFundStrategy", IsNullable=false)]
-        public ComplexRealEstateFundStrategyType[] RealEstateFundInvestmentStrategies {
-            get {
+
+        [XmlArrayItem("RealEstateFundStrategy", IsNullable = false)]
+        public ComplexRealEstateFundStrategyType[] RealEstateFundInvestmentStrategies
+        {
+            get
+            {
                 return this.realEstateFundInvestmentStrategiesField;
             }
-            set {
+            set
+            {
                 this.realEstateFundInvestmentStrategiesField = value;
             }
         }
-        
-        [XmlArrayItem("FundOfFundsStrategy", IsNullable=false)]
-        public ComplexFundOfFundsStrategyType[] FundOfFundsInvestmentStrategies {
-            get {
+
+        [XmlArrayItem("FundOfFundsStrategy", IsNullable = false)]
+        public ComplexFundOfFundsStrategyType[] FundOfFundsInvestmentStrategies
+        {
+            get
+            {
                 return this.fundOfFundsInvestmentStrategiesField;
             }
-            set {
+            set
+            {
                 this.fundOfFundsInvestmentStrategiesField = value;
             }
         }
-        
-        [XmlArrayItem("OtherFundStrategy", IsNullable=false)]
-        public ComplexOtherFundStrategyType[] OtherFundInvestmentStrategies {
-            get {
+
+        [XmlArrayItem("OtherFundStrategy", IsNullable = false)]
+        public ComplexOtherFundStrategyType[] OtherFundInvestmentStrategies
+        {
+            get
+            {
                 return this.otherFundInvestmentStrategiesField;
             }
-            set {
+            set
+            {
                 this.otherFundInvestmentStrategiesField = value;
             }
         }
-        
-        [XmlElement(DataType="integer")]
-        public string HFTTransactionNumber {
-            get {
+
+        [XmlElement(DataType = "integer")]
+        public string HFTTransactionNumber
+        {
+            get
+            {
                 return this.hFTTransactionNumberField;
             }
-            set {
+            set
+            {
                 this.hFTTransactionNumberField = value;
             }
         }
-        
-        [XmlElement(DataType="integer")]
-        public string HFTBuySellMarketValue {
-            get {
+
+        [XmlElement(DataType = "integer")]
+        public string HFTBuySellMarketValue
+        {
+            get
+            {
                 return this.hFTBuySellMarketValueField;
             }
-            set {
+            set
+            {
                 this.hFTBuySellMarketValueField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public enum AIFMasterFeederStatusType {
-        
+    public enum AIFMasterFeederStatusType
+    {
+
         MASTER,
-        
+
         FEEDER,
-        
+
         NONE,
     }
-    
+
     [Serializable]
-    public enum AIFTypeType {
-        
+    public enum AIFTypeType
+    {
+
         HFND,
-        
+
         PEQF,
-        
+
         REST,
-        
+
         FOFS,
-        
+
         OTHR,
-        
+
         NONE,
     }
-    
+
     [Serializable]
-    public partial class ComplexShareClassIdentifierType {
-        
+    public partial class ComplexShareClassIdentifierType
+    {
+
         private string shareClassNationalCodeField;
-        
+
         private string shareClassIdentifierISINField;
-        
+
         private string shareClassIdentifierCUSIPField;
-        
+
         private string shareClassIdentifierSEDOLField;
-        
+
         private string shareClassIdentifierTickerField;
-        
+
         private string shareClassIdentifierRICField;
-        
+
         private string shareClassNameField;
-        
-        public string ShareClassNationalCode {
-            get {
+
+        public string ShareClassNationalCode
+        {
+            get
+            {
                 return this.shareClassNationalCodeField;
             }
-            set {
+            set
+            {
                 this.shareClassNationalCodeField = value;
             }
         }
-        
-        public string ShareClassIdentifierISIN {
-            get {
+
+        public string ShareClassIdentifierISIN
+        {
+            get
+            {
                 return this.shareClassIdentifierISINField;
             }
-            set {
+            set
+            {
                 this.shareClassIdentifierISINField = value;
             }
         }
-        
-        public string ShareClassIdentifierCUSIP {
-            get {
+
+        public string ShareClassIdentifierCUSIP
+        {
+            get
+            {
                 return this.shareClassIdentifierCUSIPField;
             }
-            set {
+            set
+            {
                 this.shareClassIdentifierCUSIPField = value;
             }
         }
-        
-        public string ShareClassIdentifierSEDOL {
-            get {
+
+        public string ShareClassIdentifierSEDOL
+        {
+            get
+            {
                 return this.shareClassIdentifierSEDOLField;
             }
-            set {
+            set
+            {
                 this.shareClassIdentifierSEDOLField = value;
             }
         }
-        
-        public string ShareClassIdentifierTicker {
-            get {
+
+        public string ShareClassIdentifierTicker
+        {
+            get
+            {
                 return this.shareClassIdentifierTickerField;
             }
-            set {
+            set
+            {
                 this.shareClassIdentifierTickerField = value;
             }
         }
-        
-        public string ShareClassIdentifierRIC {
-            get {
+
+        public string ShareClassIdentifierRIC
+        {
+            get
+            {
                 return this.shareClassIdentifierRICField;
             }
-            set {
+            set
+            {
                 this.shareClassIdentifierRICField = value;
             }
         }
-        
-        public string ShareClassName {
-            get {
+
+        public string ShareClassName
+        {
+            get
+            {
                 return this.shareClassNameField;
             }
-            set {
+            set
+            {
                 this.shareClassNameField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexAIFIdentifierType {
-        
+    public partial class ComplexAIFIdentifierType
+    {
+
         private string aIFIdentifierLEIField;
-        
+
         private string aIFIdentifierISINField;
-        
+
         private string aIFIdentifierCUSIPField;
-        
+
         private string aIFIdentifierSEDOLField;
-        
+
         private string aIFIdentifierTickerField;
-        
+
         private string aIFIdentifierRICField;
-        
+
         private string aIFIdentifierECBField;
-        
+
         private ComplexAIFNationalIdentifierType oldAIFIdentifierNCAField;
-        
-        public string AIFIdentifierLEI {
-            get {
+
+        public string AIFIdentifierLEI
+        {
+            get
+            {
                 return this.aIFIdentifierLEIField;
             }
-            set {
+            set
+            {
                 this.aIFIdentifierLEIField = value;
             }
         }
-        
-        public string AIFIdentifierISIN {
-            get {
+
+        public string AIFIdentifierISIN
+        {
+            get
+            {
                 return this.aIFIdentifierISINField;
             }
-            set {
+            set
+            {
                 this.aIFIdentifierISINField = value;
             }
         }
-        
-        public string AIFIdentifierCUSIP {
-            get {
+
+        public string AIFIdentifierCUSIP
+        {
+            get
+            {
                 return this.aIFIdentifierCUSIPField;
             }
-            set {
+            set
+            {
                 this.aIFIdentifierCUSIPField = value;
             }
         }
-        
-        public string AIFIdentifierSEDOL {
-            get {
+
+        public string AIFIdentifierSEDOL
+        {
+            get
+            {
                 return this.aIFIdentifierSEDOLField;
             }
-            set {
+            set
+            {
                 this.aIFIdentifierSEDOLField = value;
             }
         }
-        
-        public string AIFIdentifierTicker {
-            get {
+
+        public string AIFIdentifierTicker
+        {
+            get
+            {
                 return this.aIFIdentifierTickerField;
             }
-            set {
+            set
+            {
                 this.aIFIdentifierTickerField = value;
             }
         }
-        
-        public string AIFIdentifierRIC {
-            get {
+
+        public string AIFIdentifierRIC
+        {
+            get
+            {
                 return this.aIFIdentifierRICField;
             }
-            set {
+            set
+            {
                 this.aIFIdentifierRICField = value;
             }
         }
-        
-        public string AIFIdentifierECB {
-            get {
+
+        public string AIFIdentifierECB
+        {
+            get
+            {
                 return this.aIFIdentifierECBField;
             }
-            set {
+            set
+            {
                 this.aIFIdentifierECBField = value;
             }
         }
-        
-        public ComplexAIFNationalIdentifierType OldAIFIdentifierNCA {
-            get {
+
+        public ComplexAIFNationalIdentifierType OldAIFIdentifierNCA
+        {
+            get
+            {
                 return this.oldAIFIdentifierNCAField;
             }
-            set {
+            set
+            {
                 this.oldAIFIdentifierNCAField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexAIFPrincipalInfoType {
-        
+    public partial class ComplexAIFPrincipalInfoType
+    {
+
         private ComplexAIFIdentifierType aIFIdentificationField;
-        
+
         private bool shareClassFlagField;
-        
+
         private ComplexShareClassIdentifierType[] shareClassIdentificationField;
-        
+
         private ComplexAIFDescriptionType aIFDescriptionField;
-        
+
         private ComplexMainInstrumentTradedType[] mainInstrumentsTradedField;
-        
+
         private ComplexNAVGeographicalFocusType nAVGeographicalFocusField;
-        
+
         private ComplexAUMGeographicalFocusType aUMGeographicalFocusField;
-        
+
         private ComplexPrincipalExposureType[] principalExposuresField;
-        
+
         private ComplexMostImportantConcentrationType mostImportantConcentrationField;
-        
-        public ComplexAIFIdentifierType AIFIdentification {
-            get {
+
+        public ComplexAIFIdentifierType AIFIdentification
+        {
+            get
+            {
                 return this.aIFIdentificationField;
             }
-            set {
+            set
+            {
                 this.aIFIdentificationField = value;
             }
         }
-        
-        public bool ShareClassFlag {
-            get {
+
+        public bool ShareClassFlag
+        {
+            get
+            {
                 return this.shareClassFlagField;
             }
-            set {
+            set
+            {
                 this.shareClassFlagField = value;
             }
         }
-        
-        [XmlArrayItem("ShareClassIdentifier", IsNullable=false)]
-        public ComplexShareClassIdentifierType[] ShareClassIdentification {
-            get {
+
+        [XmlArrayItem("ShareClassIdentifier", IsNullable = false)]
+        public ComplexShareClassIdentifierType[] ShareClassIdentification
+        {
+            get
+            {
                 return this.shareClassIdentificationField;
             }
-            set {
+            set
+            {
                 this.shareClassIdentificationField = value;
             }
         }
-        
-        public ComplexAIFDescriptionType AIFDescription {
-            get {
+
+        public ComplexAIFDescriptionType AIFDescription
+        {
+            get
+            {
                 return this.aIFDescriptionField;
             }
-            set {
+            set
+            {
                 this.aIFDescriptionField = value;
             }
         }
-        
-        [XmlArrayItem("MainInstrumentTraded", IsNullable=false)]
-        public ComplexMainInstrumentTradedType[] MainInstrumentsTraded {
-            get {
+
+        [XmlArrayItem("MainInstrumentTraded", IsNullable = false)]
+        public ComplexMainInstrumentTradedType[] MainInstrumentsTraded
+        {
+            get
+            {
                 return this.mainInstrumentsTradedField;
             }
-            set {
+            set
+            {
                 this.mainInstrumentsTradedField = value;
             }
         }
-        
-        public ComplexNAVGeographicalFocusType NAVGeographicalFocus {
-            get {
+
+        public ComplexNAVGeographicalFocusType NAVGeographicalFocus
+        {
+            get
+            {
                 return this.nAVGeographicalFocusField;
             }
-            set {
+            set
+            {
                 this.nAVGeographicalFocusField = value;
             }
         }
-        
-        public ComplexAUMGeographicalFocusType AUMGeographicalFocus {
-            get {
+
+        public ComplexAUMGeographicalFocusType AUMGeographicalFocus
+        {
+            get
+            {
                 return this.aUMGeographicalFocusField;
             }
-            set {
+            set
+            {
                 this.aUMGeographicalFocusField = value;
             }
         }
-        
-        [XmlArrayItem("PrincipalExposure", IsNullable=false)]
-        public ComplexPrincipalExposureType[] PrincipalExposures {
-            get {
+
+        [XmlArrayItem("PrincipalExposure", IsNullable = false)]
+        public ComplexPrincipalExposureType[] PrincipalExposures
+        {
+            get
+            {
                 return this.principalExposuresField;
             }
-            set {
+            set
+            {
                 this.principalExposuresField = value;
             }
         }
-        
-        public ComplexMostImportantConcentrationType MostImportantConcentration {
-            get {
+
+        public ComplexMostImportantConcentrationType MostImportantConcentration
+        {
+            get
+            {
                 return this.mostImportantConcentrationField;
             }
-            set {
+            set
+            {
                 this.mostImportantConcentrationField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexAIFCompleteDescriptionType {
-        
+    public partial class ComplexAIFCompleteDescriptionType
+    {
+
         private ComplexAIFPrincipalInfoType aIFPrincipalInfoField;
-        
+
         private ComplexAIFIndividualInfoType aIFIndividualInfoField;
-        
+
         private ComplexAIFLeverageInfoType aIFLeverageInfoField;
-        
-        public ComplexAIFPrincipalInfoType AIFPrincipalInfo {
-            get {
+
+        public ComplexAIFPrincipalInfoType AIFPrincipalInfo
+        {
+            get
+            {
                 return this.aIFPrincipalInfoField;
             }
-            set {
+            set
+            {
                 this.aIFPrincipalInfoField = value;
             }
         }
-        
-        public ComplexAIFIndividualInfoType AIFIndividualInfo {
-            get {
+
+        public ComplexAIFIndividualInfoType AIFIndividualInfo
+        {
+            get
+            {
                 return this.aIFIndividualInfoField;
             }
-            set {
+            set
+            {
                 this.aIFIndividualInfoField = value;
             }
         }
-        
-        public ComplexAIFLeverageInfoType AIFLeverageInfo {
-            get {
+
+        public ComplexAIFLeverageInfoType AIFLeverageInfo
+        {
+            get
+            {
                 return this.aIFLeverageInfoField;
             }
-            set {
+            set
+            {
                 this.aIFLeverageInfoField = value;
             }
         }
     }
-    
+
     [Serializable]
-    public partial class ComplexCancellationAIFRecordInfoType {
-        
+    public partial class ComplexCancellationAIFRecordInfoType
+    {
+
         private string cancelledAIFNationalCodeField;
-        
+
         private string cancelledAIFMNationalCodeField;
-        
+
         private ReportingPeriodTypeType cancelledReportingPeriodTypeField;
-        
+
         private string cancelledReportingPeriodYearField;
-        
+
         private CancelledRecordFlagType cancelledRecordFlagField;
-        
-        public string CancelledAIFNationalCode {
-            get {
+
+        public string CancelledAIFNationalCode
+        {
+            get
+            {
                 return this.cancelledAIFNationalCodeField;
             }
-            set {
+            set
+            {
                 this.cancelledAIFNationalCodeField = value;
             }
         }
-        
-        public string CancelledAIFMNationalCode {
-            get {
+
+        public string CancelledAIFMNationalCode
+        {
+            get
+            {
                 return this.cancelledAIFMNationalCodeField;
             }
-            set {
+            set
+            {
                 this.cancelledAIFMNationalCodeField = value;
             }
         }
-        
-        public ReportingPeriodTypeType CancelledReportingPeriodType {
-            get {
+
+        public ReportingPeriodTypeType CancelledReportingPeriodType
+        {
+            get
+            {
                 return this.cancelledReportingPeriodTypeField;
             }
-            set {
+            set
+            {
                 this.cancelledReportingPeriodTypeField = value;
             }
         }
-        
-        [XmlElement(DataType="gYear")]
-        public string CancelledReportingPeriodYear {
-            get {
+
+        [XmlElement(DataType = "gYear")]
+        public string CancelledReportingPeriodYear
+        {
+            get
+            {
                 return this.cancelledReportingPeriodYearField;
             }
-            set {
+            set
+            {
                 this.cancelledReportingPeriodYearField = value;
             }
         }
-        
-        public CancelledRecordFlagType CancelledRecordFlag {
-            get {
+
+        public CancelledRecordFlagType CancelledRecordFlag
+        {
+            get
+            {
                 return this.cancelledRecordFlagField;
             }
-            set {
+            set
+            {
                 this.cancelledRecordFlagField = value;
             }
         }
     }
-    
-   
+
+
     [Serializable]
-    public enum AIFReportingCodeType {
-        
+    public enum AIFReportingCodeType
+    {
+
         [XmlEnum("1")]
         Item1,
-        
+
         [XmlEnum("2")]
         Item2,
-        
+
         [XmlEnum("3")]
         Item3,
-        
+
         [XmlEnum("4")]
         Item4,
-        
+
         [XmlEnum("5")]
         Item5,
-        
+
         [XmlEnum("6")]
         Item6,
-        
+
         [XmlEnum("7")]
         Item7,
-        
+
         [XmlEnum("8")]
         Item8,
-        
+
         [XmlEnum("9")]
         Item9,
-        
+
         [XmlEnum("10")]
         Item10,
-        
+
         [XmlEnum("11")]
         Item11,
-        
+
         [XmlEnum("12")]
         Item12,
-        
+
         [XmlEnum("13")]
         Item13,
-        
+
         [XmlEnum("14")]
         Item14,
-        
+
         [XmlEnum("15")]
         Item15,
-        
+
         [XmlEnum("16")]
         Item16,
-        
+
         [XmlEnum("17")]
         Item17,
-        
+
         [XmlEnum("18")]
         Item18,
-        
+
         [XmlEnum("19")]
         Item19,
-        
+
         [XmlEnum("20")]
         Item20,
-        
+
         [XmlEnum("21")]
         Item21,
-        
+
         [XmlEnum("22")]
         Item22,
-        
+
         [XmlEnum("23")]
         Item23,
-        
+
         [XmlEnum("24")]
         Item24,
-        
+
         [XmlEnum("25")]
         Item25,
-        
+
         [XmlEnum("26")]
         Item26,
-        
+
         [XmlEnum("27")]
         Item27,
-        
+
         [XmlEnum("28")]
         Item28,
-        
+
         [XmlEnum("29")]
         Item29,
-        
+
         [XmlEnum("30")]
         Item30,
-        
+
         [XmlEnum("31")]
         Item31,
-        
+
         [XmlEnum("32")]
         Item32,
-        
+
         [XmlEnum("33")]
         Item33,
-        
+
         [XmlEnum("34")]
         Item34,
-        
+
         [XmlEnum("35")]
         Item35,
-        
+
         [XmlEnum("36")]
         Item36,
-        
+
         [XmlEnum("37")]
         Item37,
-        
+
         [XmlEnum("38")]
         Item38,
-        
+
         [XmlEnum("39")]
         Item39,
-        
+
         [XmlEnum("40")]
         Item40,
-        
+
         [XmlEnum("41")]
         Item41,
-        
+
         [XmlEnum("42")]
         Item42,
-        
+
         [XmlEnum("43")]
         Item43,
-        
+
         [XmlEnum("44")]
         Item44,
-        
+
         [XmlEnum("45")]
         Item45,
     }
