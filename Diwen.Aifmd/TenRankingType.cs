@@ -2,9 +2,8 @@ namespace Schemas
 {
     using System;
     using System.Xml.Serialization;
-
     [Serializable]
-    public enum AIFMReportingCodeType
+    public enum TenRankingType
     {
 
         [XmlEnum("1")]
@@ -33,5 +32,8 @@ namespace Schemas
 
         [XmlEnum("9")]
         Item9,
+
+        [XmlEnum("10")]
+        Item10,
     }
 }

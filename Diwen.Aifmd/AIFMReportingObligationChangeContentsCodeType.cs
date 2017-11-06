@@ -2,9 +2,8 @@ namespace Schemas
 {
     using System;
     using System.Xml.Serialization;
-
     [Serializable]
-    public enum AIFMReportingCodeType
+    public enum AIFMReportingObligationChangeContentsCodeType
     {
 
         [XmlEnum("1")]
@@ -24,14 +23,5 @@ namespace Schemas
 
         [XmlEnum("6")]
         Item6,
-
-        [XmlEnum("7")]
-        Item7,
-
-        [XmlEnum("8")]
-        Item8,
-
-        [XmlEnum("9")]
-        Item9,
     }
 }

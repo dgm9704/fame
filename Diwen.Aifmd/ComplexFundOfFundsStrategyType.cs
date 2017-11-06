@@ -2,12 +2,11 @@ namespace Schemas
 {
     using System;
     using System.Xml.Serialization;
-
     [Serializable]
-    public partial class ComplexRealEstateFundStrategyType
+    public partial class ComplexFundOfFundsStrategyType
     {
 
-        public RealEstateFundStrategyTypeType RealEstateFundStrategyType { get; set; }
+        public FundOfFundsStrategyTypeType FundOfFundsStrategyType { get; set; }
 
         public bool PrimaryStrategyFlag { get; set; }
 
