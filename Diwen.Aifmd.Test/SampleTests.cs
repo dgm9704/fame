@@ -9,44 +9,18 @@ namespace Diwen.Aifmd.Test
     {
         [Fact]
         public void ExportManager()
-        {
-            var path = "manager_out.xml";
-            var manager = new AIFMReportingInfo();
-            var serializer = new XmlSerializer(typeof(AIFMReportingInfo));
-            using (var file = new FileStream(path, FileMode.Create))
-                serializer.Serialize(file, manager);
-        }
+            => new AIFMReportingInfo().ToFile("manager_out.xml");
 
         [Fact]
         public void ImportManager()
-        {
-            var path = "AIFMSample.xml";
-            var serializer = new XmlSerializer(typeof(AIFMReportingInfo));
-            AIFMReportingInfo manager = null;
-            using (var file = new FileStream(path, FileMode.Open))
-                manager = (AIFMReportingInfo)serializer.Deserialize(file);
-
-        }
+            => AIFMReportingInfo.FromFile("AIFMSample.xml");
 
         [Fact]
         public void ExportFund()
-        {
-            var path = "fund_out.xml";
-            var manager = new AIFReportingInfo();
-            var serializer = new XmlSerializer(typeof(AIFReportingInfo));
-            using (var file = new FileStream(path, FileMode.Create))
-                serializer.Serialize(file, manager);
-        }
+            => new AIFReportingInfo().ToFile("fund_out.xml");
 
         [Fact]
         public void ImportFund()
-        {
-            var path = "AIFSample.xml";
-            var serializer = new XmlSerializer(typeof(AIFReportingInfo));
-            AIFReportingInfo manager = null;
-            using (var file = new FileStream(path, FileMode.Open))
-                manager = (AIFReportingInfo)serializer.Deserialize(file);
-
-        }
-    }
+            => AIFReportingInfo.FromFile("AIFSample.xml");
+     }
 }
