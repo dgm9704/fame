@@ -1,12 +1,11 @@
 namespace Diwen.Aifmd.Test
 {
-    using System;
     using Xunit;
     using Diwen.Aifmd;
     using System.Xml.Serialization;
     using System.IO;
 
-    public class UnitTest1
+    public class Sampletests
     {
         [Fact]
         public void ExportManager()
@@ -26,6 +25,27 @@ namespace Diwen.Aifmd.Test
             AIFMReportingInfo manager = null;
             using (var file = new FileStream(path, FileMode.Open))
                 manager = (AIFMReportingInfo)serializer.Deserialize(file);
+
+        }
+
+        [Fact]
+        public void ExportFund()
+        {
+            var path = "fund_out.xml";
+            var manager = new AIFReportingInfo();
+            var serializer = new XmlSerializer(typeof(AIFReportingInfo));
+            using (var file = new FileStream(path, FileMode.Create))
+                serializer.Serialize(file, manager);
+        }
+
+        [Fact]
+        public void ImportFund()
+        {
+            var path = "AIFSample.xml";
+            var serializer = new XmlSerializer(typeof(AIFReportingInfo));
+            AIFReportingInfo manager = null;
+            using (var file = new FileStream(path, FileMode.Open))
+                manager = (AIFReportingInfo)serializer.Deserialize(file);
 
         }
     }
