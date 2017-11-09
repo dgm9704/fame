@@ -2,8 +2,6 @@ namespace Diwen.Aifmd.Test
 {
     using Xunit;
     using Diwen.Aifmd;
-    using System.Xml.Serialization;
-    using System.IO;
 
     public class Sampletests
     {
