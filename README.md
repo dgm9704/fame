@@ -5,9 +5,13 @@ plus any tests and tools around that.
 ## Specifications
 All specifications should be found on the website of the supervising or regulating organisation.
 
+eg.
+[ESMA Library 2013/1358](https://www.esma.europa.eu/databases-library/esma-library/2013%252F1358)
+(http://www.finanssivalvonta.fi/en/Regulation/International_Projects/AIFMD/reporting/Pages/Default.aspx)
+
 # Environment
 I use [Visual Studio Code](https://code.visualstudio.com/) 
-on [Ubuntu 17.10](https://www.ubuntu.com/desktop/1710)
+on [Arch Linux](https://www.archlinux.org/)
 
 Code is written in [C#](https://docs.microsoft.com/en-us/dotnet/csharp/index) 7.0, targeting 
 [.NET Standard 1.3](https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.3.md) / 

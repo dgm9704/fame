@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017 John Nordberg
+//  Copyright (c) 2017-2018 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -22,6 +22,7 @@
 namespace Diwen.Aifmd
 {
     using System;
+    using System.ComponentModel;
     using System.Xml.Serialization;
 
     [Serializable]
@@ -29,18 +30,23 @@ namespace Diwen.Aifmd
     {
 
         [XmlEnum("1")]
+        [Description("24(1) reporting obligation")]
         Item1,
 
         [XmlEnum("2")]
+        [Description("24(1) + 24(2) reporting obligation")]
         Item2,
 
         [XmlEnum("3")]
+        [Description("3(3) (d) reporting obligation")]
         Item3,
 
         [XmlEnum("4")]
+        [Description("24(1) + 24(2) + 24(4) reporting obligation")]
         Item4,
 
         [XmlEnum("5")]
+        [Description("24(1) + 24(4) reporting obligation")]
         Item5,
     }
 }
