@@ -22,14 +22,19 @@
 namespace Diwen.Aifmd
 {
     using System;
+    using System.ComponentModel;
+
     [Serializable]
     public enum FundOfFundsStrategyType
     {
 
+        [Description("Fund of hedge funds")]
         FOFS_FHFS,
 
+        [Description("Fund of private equity")]
         FOFS_PRIV,
 
+        [Description("Other fund of funds")]
         OTHR_FOFS,
     }
 }

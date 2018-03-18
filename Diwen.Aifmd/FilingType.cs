@@ -22,12 +22,16 @@
 namespace Diwen.Aifmd
 {
     using System;
+    using System.ComponentModel;
+
     [Serializable]
     public enum FilingType
     {
 
+        [Description("amendment to one previously submitted reporting")]
         AMND,
 
+        [Description("initial reporting for the reporting period")]
         INIT,
     }
 }

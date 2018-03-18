@@ -22,28 +22,40 @@
 namespace Diwen.Aifmd
 {
     using System;
+    using System.ComponentModel;
+
     [Serializable]
     public enum InvestorGroupType
     {
 
+        [Description("Non-financial corporations")]
         NFCO,
 
+        [Description("Banks")]
         BANK,
 
+        [Description("Insurance corporations")]
         INSC,
 
+        [Description("Other financial institutions")]
         OFIN,
 
+        [Description("Pension plans / funds")]
         PFND,
 
+        [Description("General government")]
         GENG,
 
+        [Description("Other collective investment undertakings (e.g. fund of funds or master)")]
         OCIU,
 
+        [Description("Households")]
         HHLD,
 
+        [Description("Unknown")]
         UNKN,
 
+        [Description("None")]
         NONE,
     }
 }

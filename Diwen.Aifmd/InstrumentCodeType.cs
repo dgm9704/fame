@@ -22,14 +22,19 @@
 namespace Diwen.Aifmd
 {
     using System;
+    using System.ComponentModel;
+
     [Serializable]
     public enum InstrumentCodeType
     {
 
+        [Description("ISIN code available")]
         ISIN,
 
+        [Description("AII code available")]
         AII,
 
+        [Description("no code available")]
         NONE,
     }
 }

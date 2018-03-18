@@ -22,12 +22,16 @@
 namespace Diwen.Aifmd
 {
     using System;
+    using System.ComponentModel;
+
     [Serializable]
     public enum FXEURReferenceRateType
     {
 
+        [Description("when the base currency is one of the currencies for which the exchange rates are euro reference rates published by the ECB")]
         ECB,
 
+        [Description("in other cases")]
         OTH,
     }
 }

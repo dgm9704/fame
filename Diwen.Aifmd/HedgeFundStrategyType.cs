@@ -22,42 +22,62 @@
 namespace Diwen.Aifmd
 {
     using System;
+    using System.ComponentModel;
+
     [Serializable]
+    
     public enum HedgeFundStrategyType
     {
 
+        [Description("Equity: Long Bias")]
         EQTY_LGBS,
 
+        [Description("Equity: Long / Short")]
         EQTY_LGST,
 
+        [Description("Equity: Market Neutral")]
         EQTY_MTNL,
 
+        [Description("Equity: Short Bias")]
         EQTY_STBS,
 
+        [Description("Relative Value: Fixed Income Arbitrage")]
         RELV_FXIA,
 
+        [Description("Relative Value: Convertible Bond Arbitrage")]
         RELV_CBAR,
 
+        [Description("Relative Value: Volatility Arbitrage")]
         RELV_VLAR,
 
+        [Description("Event Driven: Distressed / Restructuring")]
         EVDR_DSRS,
 
+        [Description("Event Driven: Risk Arbitrage / Merger Arbitrage")]
         EVDR_RAMA,
 
+        [Description("Event Driven: Equity Special Situations")]
         EVDR_EYSS,
 
+        [Description("Credit Long / Short")]
         CRED_LGST,
 
+        [Description("Credit Asset Based Lending")]
         CRED_ABLG,
 
+        [Description("Macro")]
         MACR_MACR,
 
+        [Description("Managed Futures / CTA: Fundamental")]
         MANF_CTAF,
 
+        [Description("Managed Futures / CTA: Quantitative")]
         MANF_CTAQ,
 
+        [Description("Multi-strategy hedge fund")]
         MULT_HFND,
 
+        [Description("Other hedge fund strategy")]
         OTHR_HFND,
     }
 }
