@@ -14,7 +14,7 @@ I use [Visual Studio Code](https://code.visualstudio.com/)
 on [Arch Linux](https://www.archlinux.org/)
 
 Code is written in [C#](https://docs.microsoft.com/en-us/dotnet/csharp/index) 7.0, targeting 
-[.NET Standard 1.3](https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.3.md) / 
+[.NET Standard 2.0](https://github.com/dotnet/standard/blob/master/docs/versions/netstandard2.0.md) / 
 [.NET Core 2.0](https://docs.microsoft.com/en-us/dotnet/core/)
 
 Test framework is [xUnit.net](https://xunit.github.io/)
