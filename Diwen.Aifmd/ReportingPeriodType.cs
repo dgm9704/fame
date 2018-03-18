@@ -22,26 +22,37 @@
 namespace Diwen.Aifmd
 {
     using System;
+    using System.ComponentModel;
+
     [Serializable]
     public enum ReportingPeriodType
     {
 
+        [Description("1st quarter")]
         Q1,
 
+        [Description("2nd quarter")]
         Q2,
 
+        [Description("3rd quarter")]
         Q3,
 
+        [Description("4th quarter")]
         Q4,
 
+        [Description("1st half of calendar year")]
         H1,
 
+        [Description("2nd half of calendar year")]
         H2,
 
+        [Description("1st year")]
         Y1,
 
+        [Description("period from 1st quarter to 3rd quarter")]
         X1,
 
+        [Description("period from 2nd quarter to 4th quarter")]
         X2,
     }
 }

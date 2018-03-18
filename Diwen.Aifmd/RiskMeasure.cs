@@ -22,22 +22,31 @@
 namespace Diwen.Aifmd
 {
     using System;
+    using System.ComponentModel;
+
     [Serializable]
     public enum RiskMeasure
     {
 
+        [Description("Net Equity Delta")]
         NET_EQTY_DELTA,
 
+        [Description("Net DV01")]
         NET_DV01,
 
+        [Description("Net CS01")]
         NET_CS01,
 
+        [Description("VAR")]
         VAR,
 
+        [Description("Net FX Delta")]
         VEGA_EXPO,
 
+        [Description("Net Commodity Delta")]
         NET_FX_DELTA,
 
+        [Description("Vega Exposure")]
         NET_CTY_DELTA,
     }
 }

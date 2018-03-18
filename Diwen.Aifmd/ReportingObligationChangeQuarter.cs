@@ -22,16 +22,22 @@
 namespace Diwen.Aifmd
 {
     using System;
+    using System.ComponentModel;
+
     [Serializable]
     public enum ReportingObligationChangeQuarter
     {
 
+        [Description("1st quarter of the calendar year")]
         Q1,
 
+        [Description("2nd quarter of the calendar year")]
         Q2,
 
+        [Description("3rd quarter of the calendar year")]
         Q3,
 
+        [Description("4th quarter of the calendar year")]
         Q4,
     }
 }

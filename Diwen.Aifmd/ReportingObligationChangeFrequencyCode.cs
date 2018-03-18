@@ -22,26 +22,37 @@
 namespace Diwen.Aifmd
 {
     using System;
+    using System.ComponentModel;
+
     [Serializable]
     public enum ReportingObligationChangeFrequencyCode
     {
 
+        [Description("Yearly to Half yearly reporting obligation")]
         YH,
 
+        [Description("Yearly to Quarterly reporting obligation")]
         YQ,
 
+        [Description("Half yearly to Yearly reporting obligation")]
         HY,
 
+        [Description("Half yearly to Quarterly reporting obligation")]
         HQ,
 
+        [Description("Quarterly to Yearly reporting obligation")]
         QY,
 
+        [Description("Quarterly to Half yearly reporting obligation")]
         QH,
 
+        [Description("No reporting to Quarterly reporting obligation")]
         NQ,
 
+        [Description("No reporting to Half yearly reporting obligation")]
         NH,
 
+        [Description("No reporting to Yearly reporting obligation")]
         NY,
     }
 }

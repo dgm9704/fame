@@ -22,18 +22,25 @@
 namespace Diwen.Aifmd
 {
     using System;
+    using System.ComponentModel;
+
     [Serializable]
     public enum RealEstateFundStrategyType
     {
 
+        [Description("Residential real estate")]
         RESL_REST,
 
+        [Description("Commercial real estate")]
         COML_REST,
 
+        [Description("Industrial real estate")]
         INDL_REST,
 
+        [Description("Multi-strategy real estate fund")]
         MULT_REST,
 
+        [Description("Other real estate strategy")]
         OTHR_REST,
     }
 }
