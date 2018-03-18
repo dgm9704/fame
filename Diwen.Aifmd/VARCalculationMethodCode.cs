@@ -22,14 +22,19 @@
 namespace Diwen.Aifmd
 {
     using System;
+    using System.ComponentModel;
+
     [Serializable]
     public enum VARCalculationMethodCode
     {
 
+        [Description("Historical simulation")]
         HISTO,
 
+        [Description("Monte Carlo simulation")]
         CARLO,
 
+        [Description("Parametric")]
         PARAM,
     }
 }

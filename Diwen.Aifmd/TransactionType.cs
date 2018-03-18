@@ -22,28 +22,40 @@
 namespace Diwen.Aifmd
 {
     using System;
+    using System.ComponentModel;
+
     [Serializable]
     public enum TransactionType
     {
 
+        [Description("Acquisition capital")]
         ACAP,
 
+        [Description("Buyouts")]
         BOUT,
 
+        [Description("Consolidations (industry roll-ups)")]
         CONS,
 
+        [Description("Corporate Divestitures")]
         CDIV,
 
+        [Description("Employee Stock Ownership Plans")]
         ESOP,
 
+        [Description("Growth Capital")]
         GCAP,
 
+        [Description("Recapitalisation")]
         RCAP,
 
+        [Description("Shareholder Liquidity")]
         SLIQ,
 
+        [Description("Turnarounds")]
         TURN,
 
+        [Description("Other transaction type")]
         OTHR,
     }
 }

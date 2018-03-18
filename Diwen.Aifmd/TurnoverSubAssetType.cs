@@ -22,64 +22,94 @@
 namespace Diwen.Aifmd
 {
     using System;
+    using System.ComponentModel;
+
     [Serializable]
     public enum TurnoverSubAssetType
     {
 
+        [Description("Cash and cash equivalent")]
         SEC_CSH_CSH,
 
+        [Description("Listed equities")]
         SEC_LEQ_LEQ,
 
+        [Description("Unlisted equities")]
         SEC_UEQ_UEQ,
 
+        [Description("Corporate bonds not issued by financial institutions-Investment grade")]
         SEC_CPN_IVG,
 
+        [Description("Corporate bonds not issued by financial institutions-Non-investment grade")]
         SEC_CPN_NIG,
 
+        [Description("Corporate bonds issued by financial institutions")]
         SEC_CPI_CPI,
 
+        [Description("EU Member State bonds")]
         SEC_SBD_EUB,
 
+        [Description("Non EU Member State bonds")]
         SEC_SBD_NEU,
 
+        [Description("Municipal bonds")]
         SEC_MUN_MUN,
 
+        [Description("Convertible bonds")]
         SEC_CBD_CBD,
 
+        [Description("Loans")]
         SEC_LON_LON,
 
+        [Description("Structured/securitised products")]
         SEC_SSP_SSP,
 
+        [Description("Equity derivatives")]
         DER_EQD_EQD,
 
+        [Description("Fixed income derivatives")]
         DER_FID_FID,
 
+        [Description("CDS")]
         DER_CDS_CDS,
 
+        [Description("Foreign exchange (for investment purposes)")]
         DER_FEX_INV,
 
+        [Description("Foreign exchange (for hedging purposes)")]
         DER_FEX_HED,
 
+        [Description("Interest rate derivatives")]
         DER_IRD_IRD,
 
+        [Description("Commodity derivatives")]
         DER_CTY_CTY,
 
+        [Description("Other derivatives")]
         DER_OTH_OTH,
 
+        [Description("Physical: Real estate")]
         PHY_RES_RES,
 
+        [Description("Physical: Commodities")]
         PHY_CTY_CTY,
 
+        [Description("Physical: Timber")]
         PHY_TIM_TIM,
 
+        [Description("Physical: Art and collectables")]
         PHY_ART_ART,
 
+        [Description("Physical: Transportation assets")]
         PHY_TPT_TPT,
 
+        [Description("Physical: Other")]
         PHY_OTH_OTH,
 
+        [Description("Collective Investment Undertakings")]
         CIU_CIU_CIU,
 
+        [Description("Total Other")]
         OTH_OTH_OTH,
     }
 }

@@ -22,20 +22,28 @@
 namespace Diwen.Aifmd
 {
     using System;
+    using System.ComponentModel;
+
     [Serializable]
     public enum TypicalPositionSize
     {
 
+        [Description("Very small less than €5m")]
         V_SMALL,
 
+        [Description("Small (€5m to €25m)")]
         SMALL,
 
+        [Description("Low/mid-market (€25m to €150m)")]
         LOW_MID_MKT,
 
+        [Description("Upper mid-market (€150m to €500m)")]
         UP_MID_MKT,
 
+        [Description("Large cap (€500m to €1bn)")]
         L_CAP,
 
+        [Description("Mega cap (€1bn and greater)")]
         M_CAP,
     }
 }
