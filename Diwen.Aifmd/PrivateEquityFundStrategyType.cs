@@ -22,18 +22,25 @@
 namespace Diwen.Aifmd
 {
     using System;
+    using System.ComponentModel;
+
     [Serializable]
     public enum PrivateEquityFundStrategyType
     {
 
+        [Description("Venture Capital")]
         VENT_CAPL,
 
+        [Description("Growth Capital")]
         GRTH_CAPL,
 
+        [Description("Mezzanine Capital")]
         MZNE_CAPL,
 
+        [Description("Multi-strategy private equity fund")]
         MULT_PEQF,
 
+        [Description("Other private equity fund strategy")]
         OTHR_PEQF,
     }
 }

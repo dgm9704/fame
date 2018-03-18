@@ -22,14 +22,19 @@
 namespace Diwen.Aifmd
 {
     using System;
+    using System.ComponentModel;
+
     [Serializable]
     public enum MarketCodeTypeWithoutNOT
     {
 
+        [Description("markets with MIC codes")]
         MIC,
 
+        [Description("OTC transactions")]
         OTC,
 
+        [Description("instruments that are not traded on a specific market")]
         XXX,
     }
 }

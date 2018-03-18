@@ -22,26 +22,37 @@
 namespace Diwen.Aifmd
 {
     using System;
+    using System.ComponentModel;
+
     [Serializable]
     public enum InvestorRedemptionFrequency
     {
 
+        [Description("Daily")]
         D,
 
+        [Description("Weekly")]
         W,
 
+        [Description("Fortnightly")]
         F,
 
+        [Description("Monthly")]
         M,
 
+        [Description("Quarterly")]
         Q,
 
+        [Description("Half-yearly")]
         H,
 
+        [Description("Yearly")]
         Y,
 
+        [Description("Other")]
         O,
 
+        [Description("None")]
         N,
     }
 }

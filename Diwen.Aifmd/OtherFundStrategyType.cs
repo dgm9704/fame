@@ -22,18 +22,25 @@
 namespace Diwen.Aifmd
 {
     using System;
+    using System.ComponentModel;
+
     [Serializable]
     public enum OtherFundStrategyType
     {
 
+        [Description("Commodity Fund")]
         OTHR_COMF,
 
+        [Description("Equity fund")]
         OTHR_EQYF,
 
+        [Description("Fixed income fund")]
         OTHR_FXIF,
 
+        [Description("Infrastructure fund")]
         OTHR_INFF,
 
+        [Description("Other fund")]
         OTHR_OTHF,
     }
 }
