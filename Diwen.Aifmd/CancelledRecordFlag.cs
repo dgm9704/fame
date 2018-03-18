@@ -22,12 +22,16 @@
 namespace Diwen.Aifmd
 {
     using System;
+    using System.ComponentModel;
+
     [Serializable]
     public enum CancelledRecordFlag
     {
 
+        [Description("cancelled by the AIFM")]
         C,
 
+        [Description("cancelled by the CA")]
         D,
     }
 }

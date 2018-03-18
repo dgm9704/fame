@@ -22,20 +22,28 @@
 namespace Diwen.Aifmd
 {
     using System;
+    using System.ComponentModel;
+
     [Serializable]
     public enum AIFType
     {
 
+        [Description("Hedge Fund")]
         HFND,
 
+        [Description("Private Equity Fund")]
         PEQF,
 
+        [Description("Real estate Fund")]
         REST,
 
+        [Description("Fund of Funds")]
         FOFS,
 
+        [Description("Other Fund")]
         OTHR,
 
+        [Description("None")]
         NONE,
     }
 }

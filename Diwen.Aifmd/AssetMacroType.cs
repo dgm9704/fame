@@ -22,20 +22,28 @@
 namespace Diwen.Aifmd
 {
     using System;
+    using System.ComponentModel;
+
     [Serializable]
     public enum AssetMacroType
     {
 
+        [Description("Securities")]
         SEC,
 
+        [Description("Derivatives")]
         DER,
 
+        [Description("Collective Investment unit")]
         CIU,
 
+        [Description("Physical")]
         PHY,
 
+        [Description("Other assets")]
         OTH,
 
+        [Description("No assets to report")]
         NTA,
     }
 }

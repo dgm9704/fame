@@ -22,14 +22,19 @@
 namespace Diwen.Aifmd
 {
     using System;
+    using System.ComponentModel;
+
     [Serializable]
     public enum AIIPutCallIdentifier
     {
 
+        [Description("Put")]
         P,
 
+        [Description("Call")]
         C,
 
+        [Description("Future")]
         F,
     }
 }

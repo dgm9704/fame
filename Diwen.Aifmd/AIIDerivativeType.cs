@@ -22,12 +22,16 @@
 namespace Diwen.Aifmd
 {
     using System;
+    using System.ComponentModel;
+
     [Serializable]
     public enum AIIDerivativeType
     {
 
+        [Description("Option")]
         O,
 
+        [Description("Future")]
         F,
     }
 }

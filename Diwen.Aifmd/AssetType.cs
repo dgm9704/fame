@@ -22,64 +22,94 @@
 namespace Diwen.Aifmd
 {
     using System;
+    using System.ComponentModel;
+
     [Serializable]
     public enum AssetType
     {
 
+        [Description("Cash and cash equivalent")]
         SEC_CSH,
 
+        [Description("Listed equities")]
         SEC_LEQ,
 
+        [Description("Unlisted equities")]
         SEC_UEQ,
 
+        [Description("Corporate bonds not issued by financial institutions")]
         SEC_CPN,
 
+        [Description("Corporate bonds issued by financial institutions")]
         SEC_CPI,
 
+        [Description("Sovereign bonds")]
         SEC_SBD,
 
+        [Description("Municipal bonds")]
         SEC_MBN,
 
+        [Description("Convertible bonds not issued by financial institutions")]
         SEC_CBN,
 
+        [Description("Convertible bonds issued by financial institutions")]
         SEC_CBI,
 
+        [Description("Loans")]
         SEC_LON,
 
+        [Description("Structured/securitised products")]
         SEC_SSP,
 
+        [Description("Equity derivatives")]
         DER_EQD,
 
+        [Description("Fixed income derivatives")]
         DER_FID,
 
+        [Description("CDS")]
         DER_CDS,
 
+        [Description("Foreign exchange")]
         DER_FEX,
 
+        [Description("Interest rate derivatives")]
         DER_IRD,
 
+        [Description("Commodity derivatives")]
         DER_CTY,
 
+        [Description("Other derivatives")]
         DER_OTH,
 
+        [Description("Physical: real estate")]
         PHY_RES,
 
+        [Description("Physical: Commodities")]
         PHY_CTY,
 
+        [Description("Physical: Timber")]
         PHY_TIM,
 
+        [Description("Physical: Art and collectablesPhysical: Art and collectables")]
         PHY_ART,
 
+        [Description("Physical: Transportation assets")]
         PHY_TPT,
 
+        [Description("Physical: Other")]
         PHY_OTH,
 
+        [Description("Investment in CIU operated/managed by the AIFM")]
         CIU_OAM,
 
+        [Description("Investment in CIU not operated/managed by the AIFM")]
         CIU_NAM,
 
+        [Description("Total Other")]
         OTH_OTH,
 
+        [Description("N/A")]
         NTA_NTA,
     }
 }
