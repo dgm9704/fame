@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>Diwen.Aifmd</id>
-    <version>0.1.0.0</version>
+    <version>0.1.0.0-beta</version>
     <title>Diwen.Aifmd</title>
     <authors>John Nordberg</authors>
     <owners>diwen</owners>
