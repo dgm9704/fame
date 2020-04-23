@@ -22,24 +22,16 @@
 namespace Diwen.Aifmd
 {
     using System;
-    using System.Xml.Serialization;
     [Serializable]
-    [XmlType(AnonymousType = true)]
-    [XmlRoot(Namespace = "", IsNullable = false)]
-    public partial class AIFReportingInfo
+    public partial class TradingClearingMechanism
     {
 
-        [XmlElement("AIFRecordInfo", typeof(AIFRecordInfo))]
-        [XmlElement("CancellationAIFRecordInfo", typeof(CancellationAIFRecordInfo))]
-        public object[] Items { get; set; }
+        public MarketRate3p2 TradedSecurities { get; set; }
 
-        [XmlAttribute]
-        public string ReportingMemberState { get; set; }
+        public MarketRate3p2 TradedDerivatives { get; set; }
 
-        [XmlAttribute]
-        public string Version { get; set; }
+        public ClearedDerivativesRate ClearedDerivativesRate { get; set; }
 
-        [XmlAttribute]
-        public DateTime CreationDateAndTime { get; set; }
+        public ClearedReposRate ClearedReposRate { get; set; }
     }
 }

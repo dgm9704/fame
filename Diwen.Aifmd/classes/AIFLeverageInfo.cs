@@ -24,22 +24,13 @@ namespace Diwen.Aifmd
     using System;
     using System.Xml.Serialization;
     [Serializable]
-    [XmlType(AnonymousType = true)]
-    [XmlRoot(Namespace = "", IsNullable = false)]
-    public partial class AIFReportingInfo
+    public partial class AIFLeverageInfo
     {
+        [XmlElement("AIFLeverageArticle24-2")]
+        public AIFLeverageArticle242 AIFLeverageArticle242 { get; set; }
 
-        [XmlElement("AIFRecordInfo", typeof(AIFRecordInfo))]
-        [XmlElement("CancellationAIFRecordInfo", typeof(CancellationAIFRecordInfo))]
-        public object[] Items { get; set; }
-
-        [XmlAttribute]
-        public string ReportingMemberState { get; set; }
-
-        [XmlAttribute]
-        public string Version { get; set; }
-
-        [XmlAttribute]
-        public DateTime CreationDateAndTime { get; set; }
+        [XmlArray("AIFLeverageArticle24-4")]
+        [XmlArrayItem("BorrowingSource", IsNullable = false)]
+        public BorrowingSource[] AIFLeverageArticle244 { get; set; }
     }
 }

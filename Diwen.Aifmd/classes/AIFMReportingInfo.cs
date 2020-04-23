@@ -30,8 +30,8 @@ namespace Diwen.Aifmd
     public partial class AIFMReportingInfo
     {
 
-        [XmlElement("AIFMRecordInfo", typeof(ComplexAIFMRecordInfo))]
-        [XmlElement("CancellationAIFMRecordInfo", typeof(ComplexCancellationAIFMRecordInfo))]
+        [XmlElement("AIFMRecordInfo", typeof(AIFMRecordInfo))]
+        [XmlElement("CancellationAIFMRecordInfo", typeof(CancellationAIFMRecordInfo))]
         public object[] Items { get; set; }
 
         [XmlAttribute]

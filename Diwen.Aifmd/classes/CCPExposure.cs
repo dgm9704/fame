@@ -24,22 +24,14 @@ namespace Diwen.Aifmd
     using System;
     using System.Xml.Serialization;
     [Serializable]
-    [XmlType(AnonymousType = true)]
-    [XmlRoot(Namespace = "", IsNullable = false)]
-    public partial class AIFReportingInfo
+    public partial class CCPExposure
     {
 
-        [XmlElement("AIFRecordInfo", typeof(AIFRecordInfo))]
-        [XmlElement("CancellationAIFRecordInfo", typeof(CancellationAIFRecordInfo))]
-        public object[] Items { get; set; }
+        public ThreeRanking Ranking { get; set; }
 
-        [XmlAttribute]
-        public string ReportingMemberState { get; set; }
+        public EntityIdentification CCPIdentification { get; set; }
 
-        [XmlAttribute]
-        public string Version { get; set; }
-
-        [XmlAttribute]
-        public DateTime CreationDateAndTime { get; set; }
+        [XmlElement(DataType = "integer")]
+        public string CCPExposureValue { get; set; }
     }
 }

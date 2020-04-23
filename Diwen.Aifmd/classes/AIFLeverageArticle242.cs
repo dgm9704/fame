@@ -24,22 +24,26 @@ namespace Diwen.Aifmd
     using System;
     using System.Xml.Serialization;
     [Serializable]
-    [XmlType(AnonymousType = true)]
-    [XmlRoot(Namespace = "", IsNullable = false)]
-    public partial class AIFReportingInfo
+    [XmlType(TypeName = "AIFLeverageArticle24-2Type")]
+    public partial class AIFLeverageArticle242
     {
+        public bool AllCounterpartyCollateralRehypothecationFlag { get; set; }
 
-        [XmlElement("AIFRecordInfo", typeof(AIFRecordInfo))]
-        [XmlElement("CancellationAIFRecordInfo", typeof(CancellationAIFRecordInfo))]
-        public object[] Items { get; set; }
+        public decimal AllCounterpartyCollateralRehypothecatedRate { get; set; }
 
-        [XmlAttribute]
-        public string ReportingMemberState { get; set; }
+        [XmlIgnore]
+        public bool AllCounterpartyCollateralRehypothecatedRateSpecified { get; set; }
 
-        [XmlAttribute]
-        public string Version { get; set; }
+        public SecuritiesCashBorrowing SecuritiesCashBorrowing { get; set; }
 
-        [XmlAttribute]
-        public DateTime CreationDateAndTime { get; set; }
+        public FinancialInstrumentBorrowing FinancialInstrumentBorrowing { get; set; }
+
+        [XmlElement(DataType = "integer")]
+        public string ShortPositionBorrowedSecuritiesValue { get; set; }
+
+        [XmlArrayItem("ControlledStructure", IsNullable = false)]
+        public ControlledStructure[] ControlledStructures { get; set; }
+
+        public LeverageAIF LeverageAIF { get; set; }
     }
 }

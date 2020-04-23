@@ -24,22 +24,20 @@ namespace Diwen.Aifmd
     using System;
     using System.Xml.Serialization;
     [Serializable]
-    [XmlType(AnonymousType = true)]
-    [XmlRoot(Namespace = "", IsNullable = false)]
-    public partial class AIFReportingInfo
+    public partial class MostImportantConcentration
     {
 
-        [XmlElement("AIFRecordInfo", typeof(AIFRecordInfo))]
-        [XmlElement("CancellationAIFRecordInfo", typeof(CancellationAIFRecordInfo))]
-        public object[] Items { get; set; }
+        [XmlArrayItem("PortfolioConcentration", IsNullable = false)]
+        public PortfolioConcentration[] PortfolioConcentrations { get; set; }
 
-        [XmlAttribute]
-        public string ReportingMemberState { get; set; }
+        public TypicalPositionSize TypicalPositionSize { get; set; }
 
-        [XmlAttribute]
-        public string Version { get; set; }
+        [XmlIgnore]
+        public bool TypicalPositionSizeSpecified { get; set; }
 
-        [XmlAttribute]
-        public DateTime CreationDateAndTime { get; set; }
+        [XmlArrayItem("AIFPrincipalMarket", IsNullable = false)]
+        public ThreePrincipalMarket[] AIFPrincipalMarkets { get; set; }
+
+        public InvestorConcentration InvestorConcentration { get; set; }
     }
 }

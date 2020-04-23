@@ -24,22 +24,20 @@ namespace Diwen.Aifmd
     using System;
     using System.Xml.Serialization;
     [Serializable]
-    [XmlType(AnonymousType = true)]
-    [XmlRoot(Namespace = "", IsNullable = false)]
-    public partial class AIFReportingInfo
+    public partial class LiquidityRiskProfile
     {
 
-        [XmlElement("AIFRecordInfo", typeof(AIFRecordInfo))]
-        [XmlElement("CancellationAIFRecordInfo", typeof(CancellationAIFRecordInfo))]
-        public object[] Items { get; set; }
+        public PortfolioLiquidityProfile PortfolioLiquidityProfile { get; set; }
 
-        [XmlAttribute]
-        public string ReportingMemberState { get; set; }
+        public InvestorLiquidityProfile InvestorLiquidityProfile { get; set; }
 
-        [XmlAttribute]
-        public string Version { get; set; }
+        public InvestorRedemption InvestorRedemption { get; set; }
 
-        [XmlAttribute]
-        public DateTime CreationDateAndTime { get; set; }
+        public InvestorArrangement InvestorArrangement { get; set; }
+
+        [XmlArrayItem("InvestorGroup", IsNullable = false)]
+        public InvestorGroup[] InvestorGroups { get; set; }
+
+        public FinancingLiquidityProfile FinancingLiquidityProfile { get; set; }
     }
 }

@@ -24,22 +24,24 @@ namespace Diwen.Aifmd
     using System;
     using System.Xml.Serialization;
     [Serializable]
-    [XmlType(AnonymousType = true)]
-    [XmlRoot(Namespace = "", IsNullable = false)]
-    public partial class AIFReportingInfo
+    public partial class BaseCurrencyDescription
     {
 
-        [XmlElement("AIFRecordInfo", typeof(AIFRecordInfo))]
-        [XmlElement("CancellationAIFRecordInfo", typeof(CancellationAIFRecordInfo))]
-        public object[] Items { get; set; }
+        public string BaseCurrency { get; set; }
 
-        [XmlAttribute]
-        public string ReportingMemberState { get; set; }
+        [XmlElement(DataType = "integer")]
+        public string AUMAmountInBaseCurrency { get; set; }
 
-        [XmlAttribute]
-        public string Version { get; set; }
+        public FXEURReferenceRateType FXEURReferenceRateType { get; set; }
 
-        [XmlAttribute]
-        public DateTime CreationDateAndTime { get; set; }
+        [XmlIgnore]
+        public bool FXEURReferenceRateTypeSpecified { get; set; }
+
+        public decimal FXEURRate { get; set; }
+
+        [XmlIgnore]
+        public bool FXEURRateSpecified { get; set; }
+
+        public string FXEUROtherReferenceRateDescription { get; set; }
     }
 }

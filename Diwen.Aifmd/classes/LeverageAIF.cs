@@ -22,24 +22,11 @@
 namespace Diwen.Aifmd
 {
     using System;
-    using System.Xml.Serialization;
     [Serializable]
-    [XmlType(AnonymousType = true)]
-    [XmlRoot(Namespace = "", IsNullable = false)]
-    public partial class AIFReportingInfo
+    public partial class LeverageAIF
     {
+        public decimal GrossMethodRate { get; set; }
 
-        [XmlElement("AIFRecordInfo", typeof(AIFRecordInfo))]
-        [XmlElement("CancellationAIFRecordInfo", typeof(CancellationAIFRecordInfo))]
-        public object[] Items { get; set; }
-
-        [XmlAttribute]
-        public string ReportingMemberState { get; set; }
-
-        [XmlAttribute]
-        public string Version { get; set; }
-
-        [XmlAttribute]
-        public DateTime CreationDateAndTime { get; set; }
+        public decimal CommitmentMethodRate { get; set; }
     }
 }

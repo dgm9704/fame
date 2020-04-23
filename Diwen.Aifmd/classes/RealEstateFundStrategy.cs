@@ -23,23 +23,20 @@ namespace Diwen.Aifmd
 {
     using System;
     using System.Xml.Serialization;
+
     [Serializable]
-    [XmlType(AnonymousType = true)]
-    [XmlRoot(Namespace = "", IsNullable = false)]
-    public partial class AIFReportingInfo
+    public partial class RealEstateFundStrategy
     {
 
-        [XmlElement("AIFRecordInfo", typeof(AIFRecordInfo))]
-        [XmlElement("CancellationAIFRecordInfo", typeof(CancellationAIFRecordInfo))]
-        public object[] Items { get; set; }
+        public RealEstateFundStrategyType RealEstateFundStrategyType { get; set; }
 
-        [XmlAttribute]
-        public string ReportingMemberState { get; set; }
+        public bool PrimaryStrategyFlag { get; set; }
 
-        [XmlAttribute]
-        public string Version { get; set; }
+        public decimal StrategyNAVRate { get; set; }
 
-        [XmlAttribute]
-        public DateTime CreationDateAndTime { get; set; }
+        [XmlIgnore]
+        public bool StrategyNAVRateSpecified { get; set; }
+
+        public string StrategyTypeOtherDescription { get; set; }
     }
 }

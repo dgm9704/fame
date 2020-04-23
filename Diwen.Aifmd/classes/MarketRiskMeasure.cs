@@ -24,22 +24,17 @@ namespace Diwen.Aifmd
     using System;
     using System.Xml.Serialization;
     [Serializable]
-    [XmlType(AnonymousType = true)]
-    [XmlRoot(Namespace = "", IsNullable = false)]
-    public partial class AIFReportingInfo
+    public partial class MarketRiskMeasure
     {
 
-        [XmlElement("AIFRecordInfo", typeof(AIFRecordInfo))]
-        [XmlElement("CancellationAIFRecordInfo", typeof(CancellationAIFRecordInfo))]
-        public object[] Items { get; set; }
+        public RiskMeasure RiskMeasureType { get; set; }
 
-        [XmlAttribute]
-        public string ReportingMemberState { get; set; }
+        [XmlElement("BucketRiskMeasureValues", typeof(BucketRiskMeasureValues))]
+        [XmlElement("RiskMeasureValue", typeof(decimal))]
+        [XmlElement("VARRiskMeasureValues", typeof(VARRiskMeasureValues))]
+        [XmlElement("VegaRiskMeasureValues", typeof(VegaRiskMeasureValues))]
+        public object Item { get; set; }
 
-        [XmlAttribute]
-        public string Version { get; set; }
-
-        [XmlAttribute]
-        public DateTime CreationDateAndTime { get; set; }
+        public string RiskMeasureDescription { get; set; }
     }
 }

@@ -22,24 +22,21 @@
 namespace Diwen.Aifmd
 {
     using System;
-    using System.Xml.Serialization;
     [Serializable]
-    [XmlType(AnonymousType = true)]
-    [XmlRoot(Namespace = "", IsNullable = false)]
-    public partial class AIFReportingInfo
+    public partial class ShareClassIdentifier
     {
+        public string ShareClassNationalCode { get; set; }
 
-        [XmlElement("AIFRecordInfo", typeof(AIFRecordInfo))]
-        [XmlElement("CancellationAIFRecordInfo", typeof(CancellationAIFRecordInfo))]
-        public object[] Items { get; set; }
+        public string ShareClassIdentifierISIN { get; set; }
 
-        [XmlAttribute]
-        public string ReportingMemberState { get; set; }
+        public string ShareClassIdentifierCUSIP { get; set; }
 
-        [XmlAttribute]
-        public string Version { get; set; }
+        public string ShareClassIdentifierSEDOL { get; set; }
 
-        [XmlAttribute]
-        public DateTime CreationDateAndTime { get; set; }
+        public string ShareClassIdentifierTicker { get; set; }
+
+        public string ShareClassIdentifierRIC { get; set; }
+
+        public string ShareClassName { get; set; }
     }
 }

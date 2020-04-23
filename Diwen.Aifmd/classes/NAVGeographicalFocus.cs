@@ -22,24 +22,24 @@
 namespace Diwen.Aifmd
 {
     using System;
-    using System.Xml.Serialization;
     [Serializable]
-    [XmlType(AnonymousType = true)]
-    [XmlRoot(Namespace = "", IsNullable = false)]
-    public partial class AIFReportingInfo
+    public partial class NAVGeographicalFocus
     {
 
-        [XmlElement("AIFRecordInfo", typeof(AIFRecordInfo))]
-        [XmlElement("CancellationAIFRecordInfo", typeof(CancellationAIFRecordInfo))]
-        public object[] Items { get; set; }
+        public decimal AfricaNAVRate { get; set; }
 
-        [XmlAttribute]
-        public string ReportingMemberState { get; set; }
+        public decimal AsiaPacificNAVRate { get; set; }
 
-        [XmlAttribute]
-        public string Version { get; set; }
+        public decimal EuropeNAVRate { get; set; }
 
-        [XmlAttribute]
-        public DateTime CreationDateAndTime { get; set; }
+        public decimal EEANAVRate { get; set; }
+
+        public decimal MiddleEastNAVRate { get; set; }
+
+        public decimal NorthAmericaNAVRate { get; set; }
+
+        public decimal SouthAmericaNAVRate { get; set; }
+
+        public decimal SupraNationalNAVRate { get; set; }
     }
 }

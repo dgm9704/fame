@@ -35,10 +35,10 @@ And three attributes:
 		<xs:annotation>
 			<xs:documentation>AIF Report Document XML Schema</xs:documentation>
 		</xs:annotation>
-		<xs:complexType>
+		<xs:Type>
 			<xs:choice maxOccurs="unbounded">
-				<xs:element name="CancellationAIFRecordInfo" type="ComplexCancellationAIFRecordInfoType"/>
-				<xs:element name="AIFRecordInfo" type="ComplexAIFRecordInfoType"/>
+				<xs:element name="CancellationAIFRecordInfo" type="CancellationAIFRecordInfoType"/>
+				<xs:element name="AIFRecordInfo" type="AIFRecordInfoType"/>
 			</xs:choice>
 			<xs:attribute name="ReportingMemberState" type="CountryCodeType" use="required">
 				<xs:annotation>
@@ -55,7 +55,7 @@ And three attributes:
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 3 - The date (ISO 8601 extended Date Format yyyy-mm-ddThh:mm:ss) at which the file was created. It shall be expressed as Coordinated Universal Time (UTC).</xs:documentation>
 				</xs:annotation>
 			</xs:attribute>
-		</xs:complexType>
+		</xs:Type>
 	</xs:element>
 	<!-- 
 ********************************************************************
@@ -63,7 +63,7 @@ AIF RECORD TYPE
 
 ************************************************************************
 -->
-	<xs:complexType name="ComplexAIFRecordInfoType">
+	<xs:Type name="AIFRecordInfoType">
 		<xs:sequence>
 			<xs:element name="FilingType" type="FilingTypeType">
 				<xs:annotation>
@@ -145,7 +145,7 @@ true for last reporting file.
 false otherwise</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Assumptions" type="ComplexAssumptionsType" minOccurs="0">
+			<xs:element name="Assumptions" type="AssumptionsType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Assumptions.</xs:documentation>
 				</xs:annotation>
@@ -242,9 +242,9 @@ true when no information to report for the reporting period
 false otherwise</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="AIFCompleteDescription" type="ComplexAIFCompleteDescriptionType" minOccurs="0"/>
+			<xs:element name="AIFCompleteDescription" type="AIFCompleteDescriptionType" minOccurs="0"/>
 		</xs:sequence>
-	</xs:complexType>
+	</xs:Type>
 	<!--	
 **********************************************************************************
 	CANCELLATION RECORD INFO TYPE
@@ -257,7 +257,7 @@ false otherwise</xs:documentation>
 
 **********************************************************************************
 -->
-	<xs:complexType name="ComplexCancellationAIFRecordInfoType">
+	<xs:Type name="CancellationAIFRecordInfoType">
 		<xs:sequence>
 			<xs:element name="CancelledAIFNationalCode" type="AIFNationalCodeType">
 				<xs:annotation>
@@ -295,5 +295,5 @@ false otherwise</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:complexType>
+	</xs:Type>
 </xs:schema>

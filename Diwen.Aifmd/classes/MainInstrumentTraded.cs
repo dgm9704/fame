@@ -24,22 +24,35 @@ namespace Diwen.Aifmd
     using System;
     using System.Xml.Serialization;
     [Serializable]
-    [XmlType(AnonymousType = true)]
-    [XmlRoot(Namespace = "", IsNullable = false)]
-    public partial class AIFReportingInfo
+    public partial class MainInstrumentTraded
     {
 
-        [XmlElement("AIFRecordInfo", typeof(AIFRecordInfo))]
-        [XmlElement("CancellationAIFRecordInfo", typeof(CancellationAIFRecordInfo))]
-        public object[] Items { get; set; }
+        public FiveRanking Ranking { get; set; }
 
-        [XmlAttribute]
-        public string ReportingMemberState { get; set; }
+        public SubAssetType SubAssetType { get; set; }
 
-        [XmlAttribute]
-        public string Version { get; set; }
+        public InstrumentCodeType InstrumentCodeType { get; set; }
 
-        [XmlAttribute]
-        public DateTime CreationDateAndTime { get; set; }
+        [XmlIgnore]
+        public bool InstrumentCodeTypeSpecified { get; set; }
+
+        public string InstrumentName { get; set; }
+
+        [XmlElement("AIIInstrumentIdentification", typeof(AIIInstrumentIdentification))]
+        [XmlElement("ISINInstrumentIdentification", typeof(string))]
+        public object Item { get; set; }
+
+        [XmlElement(DataType = "integer")]
+        public string PositionValue { get; set; }
+
+        public PositionType PositionType { get; set; }
+
+        [XmlIgnore]
+        public bool PositionTypeSpecified { get; set; }
+
+        public decimal ShortPositionHedgingRate { get; set; }
+
+        [XmlIgnore]
+        public bool ShortPositionHedgingRateSpecified { get; set; }
     }
 }

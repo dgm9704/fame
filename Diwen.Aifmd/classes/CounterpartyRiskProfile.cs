@@ -24,22 +24,22 @@ namespace Diwen.Aifmd
     using System;
     using System.Xml.Serialization;
     [Serializable]
-    [XmlType(AnonymousType = true)]
-    [XmlRoot(Namespace = "", IsNullable = false)]
-    public partial class AIFReportingInfo
+    public partial class CounterpartyRiskProfile
     {
 
-        [XmlElement("AIFRecordInfo", typeof(AIFRecordInfo))]
-        [XmlElement("CancellationAIFRecordInfo", typeof(CancellationAIFRecordInfo))]
-        public object[] Items { get; set; }
+        public TradingClearingMechanism TradingClearingMechanism { get; set; }
 
-        [XmlAttribute]
-        public string ReportingMemberState { get; set; }
+        public AllCounterpartyCollateral AllCounterpartyCollateral { get; set; }
 
-        [XmlAttribute]
-        public string Version { get; set; }
+        [XmlArrayItem("FundToCounterpartyExposure", IsNullable = false)]
+        public CounterpartyExposure[] FundToCounterpartyExposures { get; set; }
 
-        [XmlAttribute]
-        public DateTime CreationDateAndTime { get; set; }
+        [XmlArrayItem("CounterpartyToFundExposure", IsNullable = false)]
+        public CounterpartyExposure[] CounterpartyToFundExposures { get; set; }
+
+        public bool ClearTransactionsThroughCCPFlag { get; set; }
+
+        [XmlArrayItem("CCPExposure", IsNullable = false)]
+        public CCPExposure[] CCPExposures { get; set; }
     }
 }

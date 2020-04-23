@@ -24,22 +24,29 @@ namespace Diwen.Aifmd
     using System;
     using System.Xml.Serialization;
     [Serializable]
-    [XmlType(AnonymousType = true)]
-    [XmlRoot(Namespace = "", IsNullable = false)]
-    public partial class AIFReportingInfo
+    public partial class InvestorPreferentialTreatment
     {
 
-        [XmlElement("AIFRecordInfo", typeof(AIFRecordInfo))]
-        [XmlElement("CancellationAIFRecordInfo", typeof(CancellationAIFRecordInfo))]
-        public object[] Items { get; set; }
+        public bool InvestorPreferentialTreatmentFlag { get; set; }
 
-        [XmlAttribute]
-        public string ReportingMemberState { get; set; }
+        public bool DisclosureTermsPreferentialTreatmentFlag { get; set; }
 
-        [XmlAttribute]
-        public string Version { get; set; }
+        [XmlIgnore]
+        public bool DisclosureTermsPreferentialTreatmentFlagSpecified { get; set; }
 
-        [XmlAttribute]
-        public DateTime CreationDateAndTime { get; set; }
+        public bool LiquidityTermsPreferentialTreatmentFlag { get; set; }
+
+        [XmlIgnore]
+        public bool LiquidityTermsPreferentialTreatmentFlagSpecified { get; set; }
+
+        public bool FeeTermsPreferentialTreatmentFlag { get; set; }
+
+        [XmlIgnore]
+        public bool FeeTermsPreferentialTreatmentFlagSpecified { get; set; }
+
+        public bool OtherTermsPreferentialTreatmentFlag { get; set; }
+
+        [XmlIgnore]
+        public bool OtherTermsPreferentialTreatmentFlagSpecified { get; set; }
     }
 }

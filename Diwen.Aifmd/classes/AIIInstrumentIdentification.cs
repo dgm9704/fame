@@ -24,22 +24,20 @@ namespace Diwen.Aifmd
     using System;
     using System.Xml.Serialization;
     [Serializable]
-    [XmlType(AnonymousType = true)]
-    [XmlRoot(Namespace = "", IsNullable = false)]
-    public partial class AIFReportingInfo
+    public partial class AIIInstrumentIdentification
     {
 
-        [XmlElement("AIFRecordInfo", typeof(AIFRecordInfo))]
-        [XmlElement("CancellationAIFRecordInfo", typeof(CancellationAIFRecordInfo))]
-        public object[] Items { get; set; }
+        public string AIIExchangeCode { get; set; }
 
-        [XmlAttribute]
-        public string ReportingMemberState { get; set; }
+        public string AIIProductCode { get; set; }
 
-        [XmlAttribute]
-        public string Version { get; set; }
+        public AIIDerivativeType AIIDerivativeType { get; set; }
 
-        [XmlAttribute]
-        public DateTime CreationDateAndTime { get; set; }
+        public AIIPutCallIdentifier AIIPutCallIdentifier { get; set; }
+
+        [XmlElement(DataType = "date")]
+        public DateTime AIIExpiryDate { get; set; }
+
+        public decimal AIIStrikePrice { get; set; }
     }
 }
