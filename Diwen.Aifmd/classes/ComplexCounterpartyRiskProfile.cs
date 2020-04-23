@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -27,19 +27,19 @@ namespace Diwen.Aifmd
     public partial class ComplexCounterpartyRiskProfile
     {
 
-        public ComplexTradingClearingMechanism TradingClearingMechanism {get; set;}
+        public ComplexTradingClearingMechanism TradingClearingMechanism { get; set; }
 
-        public ComplexAllCounterpartyCollateral AllCounterpartyCollateral {get; set;}
+        public ComplexAllCounterpartyCollateral AllCounterpartyCollateral { get; set; }
 
         [XmlArrayItem("FundToCounterpartyExposure", IsNullable = false)]
-        public ComplexCounterpartyExposure[] FundToCounterpartyExposures {get; set;}
+        public ComplexCounterpartyExposure[] FundToCounterpartyExposures { get; set; }
 
         [XmlArrayItem("CounterpartyToFundExposure", IsNullable = false)]
-        public ComplexCounterpartyExposure[] CounterpartyToFundExposures {get; set;}
+        public ComplexCounterpartyExposure[] CounterpartyToFundExposures { get; set; }
 
-        public bool ClearTransactionsThroughCCPFlag {get; set;}
+        public bool ClearTransactionsThroughCCPFlag { get; set; }
 
         [XmlArrayItem("CCPExposure", IsNullable = false)]
-        public ComplexCCPExposure[] CCPExposures {get; set;}
+        public ComplexCCPExposure[] CCPExposures { get; set; }
     }
 }

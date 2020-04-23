@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -26,12 +26,12 @@ namespace Diwen.Aifmd
     public partial class ComplexRiskProfile
     {
 
-        public ComplexMarketRiskProfile MarketRiskProfile {get; set;}
+        public ComplexMarketRiskProfile MarketRiskProfile { get; set; }
 
-        public ComplexCounterpartyRiskProfile CounterpartyRiskProfile {get; set;}
+        public ComplexCounterpartyRiskProfile CounterpartyRiskProfile { get; set; }
 
-        public ComplexLiquidityRiskProfile LiquidityRiskProfile {get; set;}
+        public ComplexLiquidityRiskProfile LiquidityRiskProfile { get; set; }
 
-        public ComplexOperationalRisk OperationalRisk {get; set;}
+        public ComplexOperationalRisk OperationalRisk { get; set; }
     }
 }

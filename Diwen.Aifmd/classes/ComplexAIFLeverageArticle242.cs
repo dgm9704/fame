@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -27,23 +27,23 @@ namespace Diwen.Aifmd
     [XmlType(TypeName = "ComplexAIFLeverageArticle24-2Type")]
     public partial class ComplexAIFLeverageArticle242
     {
-        public bool AllCounterpartyCollateralRehypothecationFlag {get; set;}
+        public bool AllCounterpartyCollateralRehypothecationFlag { get; set; }
 
-        public decimal AllCounterpartyCollateralRehypothecatedRate {get; set;}
+        public decimal AllCounterpartyCollateralRehypothecatedRate { get; set; }
 
         [XmlIgnore]
-        public bool AllCounterpartyCollateralRehypothecatedRateSpecified {get; set;}
+        public bool AllCounterpartyCollateralRehypothecatedRateSpecified { get; set; }
 
-        public ComplexSecuritiesCashBorrowing SecuritiesCashBorrowing {get; set;}
+        public ComplexSecuritiesCashBorrowing SecuritiesCashBorrowing { get; set; }
 
-        public ComplexFinancialInstrumentBorrowing FinancialInstrumentBorrowing {get; set;}
+        public ComplexFinancialInstrumentBorrowing FinancialInstrumentBorrowing { get; set; }
 
         [XmlElement(DataType = "integer")]
-        public string ShortPositionBorrowedSecuritiesValue {get; set;}
+        public string ShortPositionBorrowedSecuritiesValue { get; set; }
 
         [XmlArrayItem("ControlledStructure", IsNullable = false)]
-        public ComplexControlledStructure[] ControlledStructures {get; set;}
+        public ComplexControlledStructure[] ControlledStructures { get; set; }
 
-        public ComplexLeverageAIF LeverageAIF {get; set;}
+        public ComplexLeverageAIF LeverageAIF { get; set; }
     }
 }

@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -28,15 +28,15 @@ namespace Diwen.Aifmd
     {
 
         [XmlArrayItem("AssetTypeExposure", IsNullable = false)]
-        public ComplexAssetTypeExposure[] AssetTypeExposures {get; set;}
+        public ComplexAssetTypeExposure[] AssetTypeExposures { get; set; }
 
         [XmlArrayItem("AssetTypeTurnover", IsNullable = false)]
-        public ComplexAssetTypeTurnover[] AssetTypeTurnovers {get; set;}
+        public ComplexAssetTypeTurnover[] AssetTypeTurnovers { get; set; }
 
         [XmlArrayItem("CurrencyExposure", IsNullable = false)]
-        public ComplexCurrencyExposure[] CurrencyExposures {get; set;}
+        public ComplexCurrencyExposure[] CurrencyExposures { get; set; }
 
         [XmlArrayItem("CompanyDominantInfluence", IsNullable = false)]
-        public ComplexCompanyDominantInfluence[] CompaniesDominantInfluence {get; set;}
+        public ComplexCompanyDominantInfluence[] CompaniesDominantInfluence { get; set; }
     }
 }

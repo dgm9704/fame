@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -25,19 +25,19 @@ namespace Diwen.Aifmd
     [Serializable]
     public partial class ComplexAIFIdentifier
     {
-        public string AIFIdentifierLEI {get; set;}
+        public string AIFIdentifierLEI { get; set; }
 
-        public string AIFIdentifierISIN {get; set;}
+        public string AIFIdentifierISIN { get; set; }
 
-        public string AIFIdentifierCUSIP {get; set;}
-        public string AIFIdentifierSEDOL {get; set;}
+        public string AIFIdentifierCUSIP { get; set; }
+        public string AIFIdentifierSEDOL { get; set; }
 
-        public string AIFIdentifierTicker {get; set;}
+        public string AIFIdentifierTicker { get; set; }
 
-        public string AIFIdentifierRIC {get; set;}
+        public string AIFIdentifierRIC { get; set; }
 
-        public string AIFIdentifierECB {get; set;}
+        public string AIFIdentifierECB { get; set; }
 
-        public ComplexAIFNationalIdentifier OldAIFIdentifierNCA {get; set;}
+        public ComplexAIFNationalIdentifier OldAIFIdentifierNCA { get; set; }
     }
 }

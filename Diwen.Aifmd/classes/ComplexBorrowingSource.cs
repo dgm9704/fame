@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -26,13 +26,13 @@ namespace Diwen.Aifmd
     [Serializable]
     public partial class ComplexBorrowingSource
     {
-        public FiveRanking Ranking {get; set;}
+        public FiveRanking Ranking { get; set; }
 
-        public bool BorrowingSourceFlag {get; set;}
+        public bool BorrowingSourceFlag { get; set; }
 
-        public ComplexEntityIdentification SourceIdentification {get; set;}
+        public ComplexEntityIdentification SourceIdentification { get; set; }
 
         [XmlElement(DataType = "integer")]
-        public string LeverageAmount {get; set;}
+        public string LeverageAmount { get; set; }
     }
 }

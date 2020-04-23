@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -27,26 +27,26 @@ namespace Diwen.Aifmd
     public partial class ComplexInvestorPreferentialTreatment
     {
 
-        public bool InvestorPreferentialTreatmentFlag {get; set;}
+        public bool InvestorPreferentialTreatmentFlag { get; set; }
 
-        public bool DisclosureTermsPreferentialTreatmentFlag {get; set;}
-
-        [XmlIgnore]
-        public bool DisclosureTermsPreferentialTreatmentFlagSpecified {get; set;}
-
-        public bool LiquidityTermsPreferentialTreatmentFlag {get; set;}
+        public bool DisclosureTermsPreferentialTreatmentFlag { get; set; }
 
         [XmlIgnore]
-        public bool LiquidityTermsPreferentialTreatmentFlagSpecified {get; set;}
+        public bool DisclosureTermsPreferentialTreatmentFlagSpecified { get; set; }
 
-        public bool FeeTermsPreferentialTreatmentFlag {get; set;}
-
-        [XmlIgnore]
-        public bool FeeTermsPreferentialTreatmentFlagSpecified {get; set;}
-
-        public bool OtherTermsPreferentialTreatmentFlag {get; set;}
+        public bool LiquidityTermsPreferentialTreatmentFlag { get; set; }
 
         [XmlIgnore]
-        public bool OtherTermsPreferentialTreatmentFlagSpecified {get; set;}
+        public bool LiquidityTermsPreferentialTreatmentFlagSpecified { get; set; }
+
+        public bool FeeTermsPreferentialTreatmentFlag { get; set; }
+
+        [XmlIgnore]
+        public bool FeeTermsPreferentialTreatmentFlagSpecified { get; set; }
+
+        public bool OtherTermsPreferentialTreatmentFlag { get; set; }
+
+        [XmlIgnore]
+        public bool OtherTermsPreferentialTreatmentFlagSpecified { get; set; }
     }
 }

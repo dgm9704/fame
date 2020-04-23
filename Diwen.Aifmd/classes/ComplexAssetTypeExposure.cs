@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -27,15 +27,15 @@ namespace Diwen.Aifmd
     public partial class ComplexAssetTypeExposure
     {
 
-        public SubAssetType SubAssetType {get; set;}
+        public SubAssetType SubAssetType { get; set; }
 
         [XmlElement(DataType = "integer")]
-        public string GrossValue {get; set;}
+        public string GrossValue { get; set; }
 
         [XmlElement(DataType = "integer")]
-        public string LongValue {get; set;}
+        public string LongValue { get; set; }
 
         [XmlElement(DataType = "integer")]
-        public string ShortValue {get; set;}
+        public string ShortValue { get; set; }
     }
 }

@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -27,28 +27,28 @@ namespace Diwen.Aifmd
     public partial class ComplexPrincipalExposure
     {
 
-        public TenRanking Ranking {get; set;}
+        public TenRanking Ranking { get; set; }
 
-        public AssetMacroType AssetMacroType {get; set;}
+        public AssetMacroType AssetMacroType { get; set; }
 
-        public SubAssetType SubAssetType {get; set;}
-
-        [XmlIgnore]
-        public bool SubAssetTypeSpecified {get; set;}
-
-        public PositionType PositionType {get; set;}
+        public SubAssetType SubAssetType { get; set; }
 
         [XmlIgnore]
-        public bool PositionTypeSpecified {get; set;}
+        public bool SubAssetTypeSpecified { get; set; }
+
+        public PositionType PositionType { get; set; }
+
+        [XmlIgnore]
+        public bool PositionTypeSpecified { get; set; }
 
         [XmlElement(DataType = "integer")]
-        public string AggregatedValueAmount {get; set;}
+        public string AggregatedValueAmount { get; set; }
 
-        public decimal AggregatedValueRate {get; set;}
+        public decimal AggregatedValueRate { get; set; }
 
         [XmlIgnore]
-        public bool AggregatedValueRateSpecified {get; set;}
+        public bool AggregatedValueRateSpecified { get; set; }
 
-        public ComplexEntityIdentification CounterpartyIdentification {get; set;}
+        public ComplexEntityIdentification CounterpartyIdentification { get; set; }
     }
 }

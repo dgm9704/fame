@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -31,15 +31,15 @@ namespace Diwen.Aifmd
 
         [XmlElement("AIFRecordInfo", typeof(ComplexAIFRecordInfo))]
         [XmlElement("CancellationAIFRecordInfo", typeof(ComplexCancellationAIFRecordInfo))]
-        public object[] Items {get; set;}
+        public object[] Items { get; set; }
 
         [XmlAttribute]
-        public string ReportingMemberState {get; set;}
+        public string ReportingMemberState { get; set; }
 
         [XmlAttribute]
-        public string Version {get; set;}
+        public string Version { get; set; }
 
         [XmlAttribute]
-        public DateTime CreationDateAndTime {get; set;}
+        public DateTime CreationDateAndTime { get; set; }
     }
 }

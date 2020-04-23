@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -27,15 +27,15 @@ namespace Diwen.Aifmd
     public partial class ComplexCounterpartyExposure
     {
 
-        public FiveRanking Ranking {get; set;}
+        public FiveRanking Ranking { get; set; }
 
-        public bool CounterpartyExposureFlag {get; set;}
+        public bool CounterpartyExposureFlag { get; set; }
 
-        public ComplexEntityIdentification CounterpartyIdentification {get; set;}
+        public ComplexEntityIdentification CounterpartyIdentification { get; set; }
 
-        public decimal CounterpartyTotalExposureRate {get; set;}
+        public decimal CounterpartyTotalExposureRate { get; set; }
 
         [XmlIgnore]
-        public bool CounterpartyTotalExposureRateSpecified {get; set;}
+        public bool CounterpartyTotalExposureRateSpecified { get; set; }
     }
 }

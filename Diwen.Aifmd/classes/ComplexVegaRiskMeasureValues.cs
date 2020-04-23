@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -27,19 +27,19 @@ namespace Diwen.Aifmd
     public partial class ComplexVegaRiskMeasureValues
     {
 
-        public decimal CurrentMarketRiskMeasureValue {get; set;}
+        public decimal CurrentMarketRiskMeasureValue { get; set; }
 
         [XmlIgnore]
-        public bool CurrentMarketRiskMeasureValueSpecified {get; set;}
+        public bool CurrentMarketRiskMeasureValueSpecified { get; set; }
 
-        public decimal LowerMarketRiskMeasureValue {get; set;}
-
-        [XmlIgnore]
-        public bool LowerMarketRiskMeasureValueSpecified {get; set;}
-
-        public decimal HigherMarketRiskMeasureValue {get; set;}
+        public decimal LowerMarketRiskMeasureValue { get; set; }
 
         [XmlIgnore]
-        public bool HigherMarketRiskMeasureValueSpecified {get; set;}
+        public bool LowerMarketRiskMeasureValueSpecified { get; set; }
+
+        public decimal HigherMarketRiskMeasureValue { get; set; }
+
+        [XmlIgnore]
+        public bool HigherMarketRiskMeasureValueSpecified { get; set; }
     }
 }

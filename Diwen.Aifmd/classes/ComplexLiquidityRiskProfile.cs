@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -27,17 +27,17 @@ namespace Diwen.Aifmd
     public partial class ComplexLiquidityRiskProfile
     {
 
-        public ComplexPortfolioLiquidityProfile PortfolioLiquidityProfile {get; set;}
+        public ComplexPortfolioLiquidityProfile PortfolioLiquidityProfile { get; set; }
 
-        public ComplexInvestorLiquidityProfile InvestorLiquidityProfile {get; set;}
+        public ComplexInvestorLiquidityProfile InvestorLiquidityProfile { get; set; }
 
-        public ComplexInvestorRedemption InvestorRedemption {get; set;}
+        public ComplexInvestorRedemption InvestorRedemption { get; set; }
 
-        public ComplexInvestorArrangement InvestorArrangement {get; set;}
+        public ComplexInvestorArrangement InvestorArrangement { get; set; }
 
         [XmlArrayItem("InvestorGroup", IsNullable = false)]
-        public ComplexInvestorGroup[] InvestorGroups {get; set;}
+        public ComplexInvestorGroup[] InvestorGroups { get; set; }
 
-        public ComplexFinancingLiquidityProfile FinancingLiquidityProfile {get; set;}
+        public ComplexFinancingLiquidityProfile FinancingLiquidityProfile { get; set; }
     }
 }

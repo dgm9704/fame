@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -26,24 +26,24 @@ namespace Diwen.Aifmd
     [Serializable]
     public partial class ComplexAIFPrincipalInfo
     {
-        public ComplexAIFIdentifier AIFIdentification {get; set;}
-        public bool ShareClassFlag {get; set;}
+        public ComplexAIFIdentifier AIFIdentification { get; set; }
+        public bool ShareClassFlag { get; set; }
 
         [XmlArrayItem("ShareClassIdentifier", IsNullable = false)]
-        public ComplexShareClassIdentifier[] ShareClassIdentification {get; set;}
+        public ComplexShareClassIdentifier[] ShareClassIdentification { get; set; }
 
-        public ComplexAIFDescription AIFDescription {get; set;}
+        public ComplexAIFDescription AIFDescription { get; set; }
 
         [XmlArrayItem("MainInstrumentTraded", IsNullable = false)]
-        public ComplexMainInstrumentTraded[] MainInstrumentsTraded {get; set;}
+        public ComplexMainInstrumentTraded[] MainInstrumentsTraded { get; set; }
 
-        public ComplexNAVGeographicalFocus NAVGeographicalFocus {get; set;}
+        public ComplexNAVGeographicalFocus NAVGeographicalFocus { get; set; }
 
-        public ComplexAUMGeographicalFocus AUMGeographicalFocus {get; set;}
+        public ComplexAUMGeographicalFocus AUMGeographicalFocus { get; set; }
 
         [XmlArrayItem("PrincipalExposure", IsNullable = false)]
-        public ComplexPrincipalExposure[] PrincipalExposures {get; set;}
+        public ComplexPrincipalExposure[] PrincipalExposures { get; set; }
 
-        public ComplexMostImportantConcentration MostImportantConcentration {get; set;}
+        public ComplexMostImportantConcentration MostImportantConcentration { get; set; }
     }
 }

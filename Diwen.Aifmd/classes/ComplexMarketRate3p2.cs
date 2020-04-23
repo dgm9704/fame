@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -27,14 +27,14 @@ namespace Diwen.Aifmd
     public partial class ComplexMarketRate3p2
     {
 
-        public decimal RegulatedMarketRate {get; set;}
+        public decimal RegulatedMarketRate { get; set; }
 
         [XmlIgnore]
-        public bool RegulatedMarketRateSpecified {get; set;}
+        public bool RegulatedMarketRateSpecified { get; set; }
 
-        public decimal OTCRate {get; set;}
+        public decimal OTCRate { get; set; }
 
         [XmlIgnore]
-        public bool OTCRateSpecified {get; set;}
+        public bool OTCRateSpecified { get; set; }
     }
 }

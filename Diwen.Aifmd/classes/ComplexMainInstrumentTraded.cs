@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -27,32 +27,32 @@ namespace Diwen.Aifmd
     public partial class ComplexMainInstrumentTraded
     {
 
-        public FiveRanking Ranking {get; set;}
+        public FiveRanking Ranking { get; set; }
 
-        public SubAssetType SubAssetType {get; set;}
+        public SubAssetType SubAssetType { get; set; }
 
-        public InstrumentCodeType InstrumentCodeType {get; set;}
+        public InstrumentCodeType InstrumentCodeType { get; set; }
 
         [XmlIgnore]
-        public bool InstrumentCodeTypeSpecified {get; set;}
+        public bool InstrumentCodeTypeSpecified { get; set; }
 
-        public string InstrumentName {get; set;}
+        public string InstrumentName { get; set; }
 
         [XmlElement("AIIInstrumentIdentification", typeof(ComplexAIIInstrumentIdentification))]
         [XmlElement("ISINInstrumentIdentification", typeof(string))]
-        public object Item {get; set;}
+        public object Item { get; set; }
 
         [XmlElement(DataType = "integer")]
-        public string PositionValue {get; set;}
+        public string PositionValue { get; set; }
 
-        public PositionType PositionType {get; set;}
-
-        [XmlIgnore]
-        public bool PositionTypeSpecified {get; set;}
-
-        public decimal ShortPositionHedgingRate {get; set;}
+        public PositionType PositionType { get; set; }
 
         [XmlIgnore]
-        public bool ShortPositionHedgingRateSpecified {get; set;}
+        public bool PositionTypeSpecified { get; set; }
+
+        public decimal ShortPositionHedgingRate { get; set; }
+
+        [XmlIgnore]
+        public bool ShortPositionHedgingRateSpecified { get; set; }
     }
 }

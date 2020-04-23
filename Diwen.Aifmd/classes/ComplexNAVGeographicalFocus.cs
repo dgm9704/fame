@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -26,20 +26,20 @@ namespace Diwen.Aifmd
     public partial class ComplexNAVGeographicalFocus
     {
 
-        public decimal AfricaNAVRate {get; set;}
+        public decimal AfricaNAVRate { get; set; }
 
-        public decimal AsiaPacificNAVRate {get; set;}
+        public decimal AsiaPacificNAVRate { get; set; }
 
-        public decimal EuropeNAVRate {get; set;}
+        public decimal EuropeNAVRate { get; set; }
 
-        public decimal EEANAVRate {get; set;}
+        public decimal EEANAVRate { get; set; }
 
-        public decimal MiddleEastNAVRate {get; set;}
+        public decimal MiddleEastNAVRate { get; set; }
 
-        public decimal NorthAmericaNAVRate {get; set;}
+        public decimal NorthAmericaNAVRate { get; set; }
 
-        public decimal SouthAmericaNAVRate {get; set;}
+        public decimal SouthAmericaNAVRate { get; set; }
 
-        public decimal SupraNationalNAVRate {get; set;}
+        public decimal SupraNationalNAVRate { get; set; }
     }
 }

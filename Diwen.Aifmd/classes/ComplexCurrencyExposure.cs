@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -27,12 +27,12 @@ namespace Diwen.Aifmd
     public partial class ComplexCurrencyExposure
     {
 
-        public string ExposureCurrency {get; set;}
+        public string ExposureCurrency { get; set; }
 
         [XmlElement(DataType = "integer")]
-        public string LongPositionValue {get; set;}
+        public string LongPositionValue { get; set; }
 
         [XmlElement(DataType = "integer")]
-        public string ShortPositionValue {get; set;}
+        public string ShortPositionValue { get; set; }
     }
 }

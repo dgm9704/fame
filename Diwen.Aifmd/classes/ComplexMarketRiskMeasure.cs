@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -27,14 +27,14 @@ namespace Diwen.Aifmd
     public partial class ComplexMarketRiskMeasure
     {
 
-        public RiskMeasure RiskMeasureType {get; set;}
+        public RiskMeasure RiskMeasureType { get; set; }
 
         [XmlElement("BucketRiskMeasureValues", typeof(ComplexBucketRiskMeasureValues))]
         [XmlElement("RiskMeasureValue", typeof(decimal))]
         [XmlElement("VARRiskMeasureValues", typeof(ComplexVARRiskMeasureValues))]
         [XmlElement("VegaRiskMeasureValues", typeof(ComplexVegaRiskMeasureValues))]
-        public object Item {get; set;}
+        public object Item { get; set; }
 
-        public string RiskMeasureDescription {get; set;}
+        public string RiskMeasureDescription { get; set; }
     }
 }

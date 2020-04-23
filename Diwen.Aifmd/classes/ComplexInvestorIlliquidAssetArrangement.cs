@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -27,26 +27,26 @@ namespace Diwen.Aifmd
     public partial class ComplexInvestorIlliquidAssetArrangement
     {
 
-        public decimal SidePocketRate {get; set;}
+        public decimal SidePocketRate { get; set; }
 
         [XmlIgnore]
-        public bool SidePocketRateSpecified {get; set;}
+        public bool SidePocketRateSpecified { get; set; }
 
-        public decimal GatesRate {get; set;}
-
-        [XmlIgnore]
-        public bool GatesRateSpecified {get; set;}
-
-        public decimal DealingSuspensionRate {get; set;}
+        public decimal GatesRate { get; set; }
 
         [XmlIgnore]
-        public bool DealingSuspensionRateSpecified {get; set;}
+        public bool GatesRateSpecified { get; set; }
 
-        public ComplexOtherArrangement OtherArrangement {get; set;}
-
-        public decimal TotalArrangementRate {get; set;}
+        public decimal DealingSuspensionRate { get; set; }
 
         [XmlIgnore]
-        public bool TotalArrangementRateSpecified {get; set;}
+        public bool DealingSuspensionRateSpecified { get; set; }
+
+        public ComplexOtherArrangement OtherArrangement { get; set; }
+
+        public decimal TotalArrangementRate { get; set; }
+
+        [XmlIgnore]
+        public bool TotalArrangementRateSpecified { get; set; }
     }
 }

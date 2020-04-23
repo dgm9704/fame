@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -27,10 +27,10 @@ namespace Diwen.Aifmd
     public partial class ComplexAIFLeverageInfo
     {
         [XmlElement("AIFLeverageArticle24-2")]
-        public ComplexAIFLeverageArticle242 AIFLeverageArticle242 {get; set;}
+        public ComplexAIFLeverageArticle242 AIFLeverageArticle242 { get; set; }
 
         [XmlArray("AIFLeverageArticle24-4")]
         [XmlArrayItem("BorrowingSource", IsNullable = false)]
-        public ComplexBorrowingSource[] AIFLeverageArticle244 {get; set;}
+        public ComplexBorrowingSource[] AIFLeverageArticle244 { get; set; }
     }
 }

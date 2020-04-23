@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -27,17 +27,17 @@ namespace Diwen.Aifmd
     public partial class ComplexAIFMCompleteDescription
     {
 
-        public ComplexAIFMIdentifier AIFMIdentifier {get; set;}
+        public ComplexAIFMIdentifier AIFMIdentifier { get; set; }
 
         [XmlArrayItem("AIFMFivePrincipalMarket", IsNullable = false)]
-        public ComplexFivePrincipalMarket[] AIFMPrincipalMarkets {get; set;}
+        public ComplexFivePrincipalMarket[] AIFMPrincipalMarkets { get; set; }
 
         [XmlArrayItem("AIFMPrincipalInstrument", IsNullable = false)]
-        public ComplexPrincipalInstrument[] AIFMPrincipalInstruments {get; set;}
+        public ComplexPrincipalInstrument[] AIFMPrincipalInstruments { get; set; }
 
         [XmlElement(DataType = "integer")]
-        public string AUMAmountInEuro {get; set;}
+        public string AUMAmountInEuro { get; set; }
 
-        public ComplexBaseCurrencyDescription AIFMBaseCurrencyDescription {get; set;}
+        public ComplexBaseCurrencyDescription AIFMBaseCurrencyDescription { get; set; }
     }
 }

@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -26,15 +26,15 @@ namespace Diwen.Aifmd
     [Serializable]
     public partial class ComplexPrivateEquityFundStrategy
     {
-        public PrivateEquityFundStrategyType PrivateEquityFundStrategyType {get; set;}
+        public PrivateEquityFundStrategyType PrivateEquityFundStrategyType { get; set; }
 
-        public bool PrimaryStrategyFlag {get; set;}
+        public bool PrimaryStrategyFlag { get; set; }
 
-        public decimal StrategyNAVRate {get; set;}
+        public decimal StrategyNAVRate { get; set; }
 
         [XmlIgnore]
-        public bool StrategyNAVRateSpecified {get; set;}
+        public bool StrategyNAVRateSpecified { get; set; }
 
-        public string StrategyTypeOtherDescription {get; set;}
+        public string StrategyTypeOtherDescription { get; set; }
     }
 }

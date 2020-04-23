@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -27,21 +27,21 @@ namespace Diwen.Aifmd
     public partial class ComplexPortfolioLiquidityProfile
     {
 
-        public decimal PortfolioLiquidityInDays0to1Rate {get; set;}
+        public decimal PortfolioLiquidityInDays0to1Rate { get; set; }
 
-        public decimal PortfolioLiquidityInDays2to7Rate {get; set;}
+        public decimal PortfolioLiquidityInDays2to7Rate { get; set; }
 
-        public decimal PortfolioLiquidityInDays8to30Rate {get; set;}
+        public decimal PortfolioLiquidityInDays8to30Rate { get; set; }
 
-        public decimal PortfolioLiquidityInDays31to90Rate {get; set;}
+        public decimal PortfolioLiquidityInDays31to90Rate { get; set; }
 
-        public decimal PortfolioLiquidityInDays91to180Rate {get; set;}
+        public decimal PortfolioLiquidityInDays91to180Rate { get; set; }
 
-        public decimal PortfolioLiquidityInDays181to365Rate {get; set;}
+        public decimal PortfolioLiquidityInDays181to365Rate { get; set; }
 
-        public decimal PortfolioLiquidityInDays365MoreRate {get; set;}
+        public decimal PortfolioLiquidityInDays365MoreRate { get; set; }
 
         [XmlElement(DataType = "integer")]
-        public string UnencumberedCash {get; set;}
+        public string UnencumberedCash { get; set; }
     }
 }

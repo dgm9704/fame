@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -27,15 +27,15 @@ namespace Diwen.Aifmd
     public partial class ComplexSecuritiesCashBorrowing
     {
         [XmlElement(DataType = "integer")]
-        public string UnsecuredBorrowingAmount {get; set;}
+        public string UnsecuredBorrowingAmount { get; set; }
 
         [XmlElement(DataType = "integer")]
-        public string SecuredBorrowingPrimeBrokerageAmount {get; set;}
+        public string SecuredBorrowingPrimeBrokerageAmount { get; set; }
 
         [XmlElement(DataType = "integer")]
-        public string SecuredBorrowingReverseRepoAmount {get; set;}
+        public string SecuredBorrowingReverseRepoAmount { get; set; }
 
         [XmlElement(DataType = "integer")]
-        public string SecuredBorrowingOtherAmount {get; set;}
+        public string SecuredBorrowingOtherAmount { get; set; }
     }
 }

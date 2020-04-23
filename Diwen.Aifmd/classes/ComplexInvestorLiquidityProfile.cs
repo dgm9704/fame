@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -26,18 +26,18 @@ namespace Diwen.Aifmd
     public partial class ComplexInvestorLiquidityProfile
     {
 
-        public decimal InvestorLiquidityInDays0to1Rate {get; set;}
+        public decimal InvestorLiquidityInDays0to1Rate { get; set; }
 
-        public decimal InvestorLiquidityInDays2to7Rate {get; set;}
+        public decimal InvestorLiquidityInDays2to7Rate { get; set; }
 
-        public decimal InvestorLiquidityInDays8to30Rate {get; set;}
+        public decimal InvestorLiquidityInDays8to30Rate { get; set; }
 
-        public decimal InvestorLiquidityInDays31to90Rate {get; set;}
+        public decimal InvestorLiquidityInDays31to90Rate { get; set; }
 
-        public decimal InvestorLiquidityInDays91to180Rate {get; set;}
+        public decimal InvestorLiquidityInDays91to180Rate { get; set; }
 
-        public decimal InvestorLiquidityInDays181to365Rate {get; set;}
+        public decimal InvestorLiquidityInDays181to365Rate { get; set; }
 
-        public decimal InvestorLiquidityInDays365MoreRate {get; set;}
+        public decimal InvestorLiquidityInDays365MoreRate { get; set; }
     }
 }

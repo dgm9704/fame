@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -27,40 +27,40 @@ namespace Diwen.Aifmd
     public partial class ComplexQuantityMonthPeriodType
     {
         [XmlElement(DataType = "integer")]
-        public string QuantityJanuary {get; set;}
+        public string QuantityJanuary { get; set; }
 
         [XmlElement(DataType = "integer")]
-        public string QuantityFebruary {get; set;}
+        public string QuantityFebruary { get; set; }
 
         [XmlElement(DataType = "integer")]
-        public string QuantityMarch {get; set;}
+        public string QuantityMarch { get; set; }
 
         [XmlElement(DataType = "integer")]
-        public string QuantityApril {get; set;}
+        public string QuantityApril { get; set; }
 
         [XmlElement(DataType = "integer")]
-        public string QuantityMay {get; set;}
+        public string QuantityMay { get; set; }
 
         [XmlElement(DataType = "integer")]
-        public string QuantityJune {get; set;}
+        public string QuantityJune { get; set; }
 
         [XmlElement(DataType = "integer")]
-        public string QuantityJuly {get; set;}
+        public string QuantityJuly { get; set; }
 
         [XmlElement(DataType = "integer")]
-        public string QuantityAugust {get; set;}
+        public string QuantityAugust { get; set; }
 
         [XmlElement(DataType = "integer")]
-        public string QuantitySeptember {get; set;}
+        public string QuantitySeptember { get; set; }
 
         [XmlElement(DataType = "integer")]
-        public string QuantityOctober {get; set;}
+        public string QuantityOctober { get; set; }
 
         [XmlElement(DataType = "integer")]
-        public string QuantityNovember {get; set;}
+        public string QuantityNovember { get; set; }
 
         [XmlElement(DataType = "integer")]
-        public string QuantityDecember {get; set;}
-        
+        public string QuantityDecember { get; set; }
+
     }
 }

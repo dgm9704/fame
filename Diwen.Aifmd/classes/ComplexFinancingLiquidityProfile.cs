@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -28,20 +28,20 @@ namespace Diwen.Aifmd
     {
 
         [XmlElement(DataType = "integer")]
-        public string TotalFinancingAmount {get; set;}
+        public string TotalFinancingAmount { get; set; }
 
-        public decimal TotalFinancingInDays0to1Rate {get; set;}
+        public decimal TotalFinancingInDays0to1Rate { get; set; }
 
-        public decimal TotalFinancingInDays2to7Rate {get; set;}
+        public decimal TotalFinancingInDays2to7Rate { get; set; }
 
-        public decimal TotalFinancingInDays8to30Rate {get; set;}
+        public decimal TotalFinancingInDays8to30Rate { get; set; }
 
-        public decimal TotalFinancingInDays31to90Rate {get; set;}
+        public decimal TotalFinancingInDays31to90Rate { get; set; }
 
-        public decimal TotalFinancingInDays91to180Rate {get; set;}
+        public decimal TotalFinancingInDays91to180Rate { get; set; }
 
-        public decimal TotalFinancingInDays181to365Rate {get; set;}
+        public decimal TotalFinancingInDays181to365Rate { get; set; }
 
-        public decimal TotalFinancingInDays365MoreRate {get; set;}
+        public decimal TotalFinancingInDays365MoreRate { get; set; }
     }
 }

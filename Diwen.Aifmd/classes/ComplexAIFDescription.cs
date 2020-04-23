@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -26,42 +26,42 @@ namespace Diwen.Aifmd
     [Serializable]
     public partial class ComplexAIFDescription
     {
-        public AIFMasterFeederStatus AIFMasterFeederStatus {get; set;}
+        public AIFMasterFeederStatus AIFMasterFeederStatus { get; set; }
 
         [XmlArrayItem("MasterAIFIdentification", IsNullable = false)]
-        public ComplexMasterAIFIdentification[] MasterAIFsIdentification {get; set;}
+        public ComplexMasterAIFIdentification[] MasterAIFsIdentification { get; set; }
 
         [XmlArrayItem("PrimeBrokerIdentification", IsNullable = false)]
-        public ComplexEntityIdentification[] PrimeBrokers {get; set;}
+        public ComplexEntityIdentification[] PrimeBrokers { get; set; }
 
-        public ComplexBaseCurrencyDescription AIFBaseCurrencyDescription {get; set;}
+        public ComplexBaseCurrencyDescription AIFBaseCurrencyDescription { get; set; }
         [XmlElement(DataType = "integer")]
-        public string AIFNetAssetValue {get; set;}
+        public string AIFNetAssetValue { get; set; }
 
-        public string FirstFundingSourceCountry {get; set;}
+        public string FirstFundingSourceCountry { get; set; }
 
-        public string SecondFundingSourceCountry {get; set;}
-        public string ThirdFundingSourceCountry {get; set;}
+        public string SecondFundingSourceCountry { get; set; }
+        public string ThirdFundingSourceCountry { get; set; }
 
-        public AIFType PredominantAIFType {get; set;}
+        public AIFType PredominantAIFType { get; set; }
         [XmlArrayItem("HedgeFundStrategy", IsNullable = false)]
-        public ComplexHedgeFundStrategy[] HedgeFundInvestmentStrategies {get; set;}
+        public ComplexHedgeFundStrategy[] HedgeFundInvestmentStrategies { get; set; }
 
         [XmlArrayItem("PrivateEquityFundInvestmentStrategy", IsNullable = false)]
-        public ComplexPrivateEquityFundStrategy[] PrivateEquityFundInvestmentStrategies {get; set;}
+        public ComplexPrivateEquityFundStrategy[] PrivateEquityFundInvestmentStrategies { get; set; }
 
         [XmlArrayItem("RealEstateFundStrategy", IsNullable = false)]
-        public ComplexRealEstateFundStrategy[] RealEstateFundInvestmentStrategies {get; set;}
+        public ComplexRealEstateFundStrategy[] RealEstateFundInvestmentStrategies { get; set; }
 
         [XmlArrayItem("FundOfFundsStrategy", IsNullable = false)]
-        public ComplexFundOfFundsStrategy[] FundOfFundsInvestmentStrategies {get; set;}
+        public ComplexFundOfFundsStrategy[] FundOfFundsInvestmentStrategies { get; set; }
 
         [XmlArrayItem("OtherFundStrategy", IsNullable = false)]
-        public ComplexOtherFundStrategy[] OtherFundInvestmentStrategies {get; set;}
+        public ComplexOtherFundStrategy[] OtherFundInvestmentStrategies { get; set; }
         [XmlElement(DataType = "integer")]
-        public string HFTTransactionNumber {get; set;}
+        public string HFTTransactionNumber { get; set; }
 
         [XmlElement(DataType = "integer")]
-        public string HFTBuySellMarketValue {get; set;}
+        public string HFTBuySellMarketValue { get; set; }
     }
 }

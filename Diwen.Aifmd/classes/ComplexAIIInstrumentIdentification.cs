@@ -4,7 +4,7 @@
 //  Author:
 //       John Nordberg <john.nordberg@gmail.com>
 //
-//  Copyright (c) 2017-2018 John Nordberg
+//  Copyright (c) 2017-2020 John Nordberg
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Lesser General Public License as published by
@@ -27,17 +27,17 @@ namespace Diwen.Aifmd
     public partial class ComplexAIIInstrumentIdentification
     {
 
-        public string AIIExchangeCode {get; set;}
+        public string AIIExchangeCode { get; set; }
 
-        public string AIIProductCode {get; set;}
+        public string AIIProductCode { get; set; }
 
-        public AIIDerivativeType AIIDerivativeType {get; set;}
+        public AIIDerivativeType AIIDerivativeType { get; set; }
 
-        public AIIPutCallIdentifier AIIPutCallIdentifier {get; set;}
+        public AIIPutCallIdentifier AIIPutCallIdentifier { get; set; }
 
         [XmlElement(DataType = "date")]
-        public DateTime AIIExpiryDate {get; set;}
+        public DateTime AIIExpiryDate { get; set; }
 
-        public decimal AIIStrikePrice {get; set;}
+        public decimal AIIStrikePrice { get; set; }
     }
 }
