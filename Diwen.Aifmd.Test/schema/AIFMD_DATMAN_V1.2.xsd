@@ -33,10 +33,10 @@ And three attributes:
 		<xs:annotation>
 			<xs:documentation>AIFM Report Document XML Schema</xs:documentation>
 		</xs:annotation>
-		<xs:Type>
+		<xs:complexType>
 			<xs:choice maxOccurs="unbounded">
-				<xs:element name="CancellationAIFMRecordInfo" type="CancellationAIFMRecordInfoType"/>
-				<xs:element name="AIFMRecordInfo" type="AIFMRecordInfoType"/>
+				<xs:element name="CancellationAIFMRecordInfo" type="ComplexCancellationAIFMRecordInfoType"/>
+				<xs:element name="AIFMRecordInfo" type="ComplexAIFMRecordInfoType"/>
 			</xs:choice>
 			<xs:attribute name="ReportingMemberState" type="CountryCodeType" use="required">
 				<xs:annotation>
@@ -53,9 +53,9 @@ And three attributes:
 					<xs:documentation>Articles 24(1) and 3(3)d) - AIFM - Item 3 - The date (ISO 8601 extended Date Format yyyy-mm-ddThh:mm:ss) at which the file was created. It shall be expressed as Coordinated Universal Time (UTC).</xs:documentation>
 				</xs:annotation>
 			</xs:attribute>
-		</xs:Type>
+		</xs:complexType>
 	</xs:element>
-	<xs:Type name="AIFMRecordInfoType">
+	<xs:complexType name="ComplexAIFMRecordInfoType">
 		<xs:sequence>
 			<xs:element name="FilingType" type="FilingTypeType">
 				<xs:annotation>
@@ -135,7 +135,7 @@ true for last reporting file
 false otherwise</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Assumptions" type="AssumptionsType" minOccurs="0">
+			<xs:element name="Assumptions" type="ComplexAssumptionsType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Assumptions.</xs:documentation>
 				</xs:annotation>
@@ -184,9 +184,9 @@ true when no information to report for the reporting period
 false otherwise</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="AIFMCompleteDescription" type="AIFMCompleteDescriptionType" minOccurs="0"/>
+			<xs:element name="AIFMCompleteDescription" type="ComplexAIFMCompleteDescriptionType" minOccurs="0"/>
 		</xs:sequence>
-	</xs:Type>
+	</xs:complexType>
 	<!--	
 **********************************************************************************
 	CANCELLATION RECORD INFO TYPE
@@ -199,7 +199,7 @@ false otherwise</xs:documentation>
 
 **********************************************************************************
 -->
-	<xs:Type name="CancellationAIFMRecordInfoType">
+	<xs:complexType name="ComplexCancellationAIFMRecordInfoType">
 		<xs:sequence>
 			<xs:element name="CancelledAIFMNationalCode" type="AIFMNationalCodeType">
 				<xs:annotation>
@@ -232,5 +232,5 @@ false otherwise</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
+	</xs:complexType>
 </xs:schema>

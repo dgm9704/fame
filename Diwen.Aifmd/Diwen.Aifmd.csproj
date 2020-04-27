@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
-    <Version>0.2.0</Version>
+    <Version>0.3.0</Version>
     <Id>Diwen.Aifmd</Id>
     <Title>Diwen.Aifmd</Title>
     <Authors>John Nordberg</Authors>
@@ -9,7 +9,6 @@
     <PackageProjectUrl>https://github.com/dgm9704/fame</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Description>library to help read and write AIFMD XML reports</Description>
-    <PackageReleaseNotes>Remove support for net452</PackageReleaseNotes>
     <Copyright>Copyright 2017-2020 John Nordberg</Copyright>
     <PackageTags>AIFMD XML ESMA</PackageTags>
   </PropertyGroup>

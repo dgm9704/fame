@@ -12,7 +12,7 @@
 	AIFM DESCRIPTION
 **********************************************************************************
 -->
-	<xs:Type name="AIFMIdentifierType">
+	<xs:complexType name="ComplexAIFMIdentifierType">
 		<xs:sequence>
 			<xs:element name="AIFMIdentifierLEI" type="LEICodeType" minOccurs="0">
 				<xs:annotation>
@@ -28,22 +28,22 @@
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIFM - Item 23 - BIC code of the entity (ISO 9362 standard)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="OldAIFMIdentifierNCA" type="AIFMNationalIdentifierType" minOccurs="0">
+			<xs:element name="OldAIFMIdentifierNCA" type="ComplexAIFMNationalIdentifierType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>- Articles 24(1) and 3(3)(d) - Item 24, 25 - Former national identification code to provide when the national identification code changes (for the first reporting following the change of the national code and any subsequent reporting).</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="AIFMCompleteDescriptionType">
+	</xs:complexType>
+	<xs:complexType name="ComplexAIFMCompleteDescriptionType">
 		<xs:sequence>
-			<xs:element name="AIFMIdentifier" type="AIFMIdentifierType" minOccurs="0"/>
-			<xs:element name="AIFMPrincipalMarkets" type="AIFMPrincipalMarketsType">
+			<xs:element name="AIFMIdentifier" type="ComplexAIFMIdentifierType" minOccurs="0"/>
+			<xs:element name="AIFMPrincipalMarkets" type="ComplexAIFMPrincipalMarketsType">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIFM - Item 26, 27, 28, 29 - Principal markets in which it trades on behalf of the AIF it manages.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="AIFMPrincipalInstruments" type="AIFMPrincipalInstrumentsType">
+			<xs:element name="AIFMPrincipalInstruments" type="ComplexAIFMPrincipalInstrumentsType">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIFM - Item 30, 31, 32 - Principal instruments in which it trades on behalf of the AIF it manages.</xs:documentation>
 				</xs:annotation>
@@ -53,30 +53,30 @@
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIFM - Item 33 - Values in Euros of assets under management (AuM) for all AIFs managed using the method set out in Articles 2 and 10 of the Regulation 231/2013. AuM amount expressed in Euro is filled in without decimal places.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="AIFMBaseCurrencyDescription" type="BaseCurrencyDescriptionType" minOccurs="0">
+			<xs:element name="AIFMBaseCurrencyDescription" type="ComplexBaseCurrencyDescriptionType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIFM - Item 35, 36, 37, 38 - Base currency description.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
+	</xs:complexType>
 	<!--
 
 **********************************************************************************
 	AIFM GENERIC TYPES
 **********************************************************************************
 -->
-	<xs:Type name="AIFMPrincipalMarketsType">
+	<xs:complexType name="ComplexAIFMPrincipalMarketsType">
 		<xs:sequence>
-			<xs:element name="AIFMFivePrincipalMarket" type="FivePrincipalMarketType" minOccurs="5" maxOccurs="5"/>
+			<xs:element name="AIFMFivePrincipalMarket" type="ComplexFivePrincipalMarketType" minOccurs="5" maxOccurs="5"/>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="AIFMPrincipalInstrumentsType">
+	</xs:complexType>
+	<xs:complexType name="ComplexAIFMPrincipalInstrumentsType">
 		<xs:sequence>
-			<xs:element name="AIFMPrincipalInstrument" type="PrincipalInstrumentType" minOccurs="5" maxOccurs="5"/>
+			<xs:element name="AIFMPrincipalInstrument" type="ComplexPrincipalInstrumentType" minOccurs="5" maxOccurs="5"/>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="BaseCurrencyDescriptionType">
+	</xs:complexType>
+	<xs:complexType name="ComplexBaseCurrencyDescriptionType">
 		<xs:sequence>
 			<xs:element name="BaseCurrency" type="CurrencyCodeType">
 				<xs:annotation>
@@ -123,15 +123,15 @@ The field is mandatory for Base currency / EUR FX reference rate type equal to "
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="FivePrincipalMarketType">
+	</xs:complexType>
+	<xs:complexType name="ComplexFivePrincipalMarketType">
 		<xs:sequence>
 			<xs:element name="Ranking" type="FiveRankingType">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIFM - Item 26 – Ranking of the five most important markets in which it trades on behalf of the AIF it manages.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="MarketIdentification" type="MarketIdentificationWithNOTType">
+			<xs:element name="MarketIdentification" type="ComplexMarketIdentificationWithNOTType">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIFM - Item 27, 28 – The identification of the five most important markets in which it trades on behalf of the AIF it manages.</xs:documentation>
 				</xs:annotation>
@@ -142,8 +142,8 @@ The field is mandatory for Base currency / EUR FX reference rate type equal to "
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="PrincipalInstrumentType">
+	</xs:complexType>
+	<xs:complexType name="ComplexPrincipalInstrumentType">
 		<xs:sequence>
 			<xs:element name="Ranking" type="FiveRankingType">
 				<xs:annotation>
@@ -167,7 +167,7 @@ The ranking admitted are:
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
+	</xs:complexType>
 	<!--
 **********************************************************************************
 	AIF REPORTING FILE
@@ -178,21 +178,21 @@ The ranking admitted are:
 
 **********************************************************************************
 -->
-	<xs:Type name="AIFCompleteDescriptionType">
+	<xs:complexType name="ComplexAIFCompleteDescriptionType">
 		<xs:sequence>
-			<xs:element name="AIFPrincipalInfo" type="AIFPrincipalInfoType"/>
-			<xs:element name="AIFIndividualInfo" type="AIFIndividualInfoType" minOccurs="0"/>
-			<xs:element name="AIFLeverageInfo" type="AIFLeverageInfoType" minOccurs="0"/>
+			<xs:element name="AIFPrincipalInfo" type="ComplexAIFPrincipalInfoType"/>
+			<xs:element name="AIFIndividualInfo" type="ComplexAIFIndividualInfoType" minOccurs="0"/>
+			<xs:element name="AIFLeverageInfo" type="ComplexAIFLeverageInfoType" minOccurs="0"/>
 		</xs:sequence>
-	</xs:Type>
+	</xs:complexType>
 	<!--
 **********************************************************************************
 	AIF PRINCIPAL INFO (under Article 3(3)(d) and 24(1))
 **********************************************************************************
 -->
-	<xs:Type name="AIFPrincipalInfoType">
+	<xs:complexType name="ComplexAIFPrincipalInfoType">
 		<xs:sequence>
-			<xs:element name="AIFIdentification" type="AIFIdentifierType" minOccurs="0">
+			<xs:element name="AIFIdentification" type="ComplexAIFIdentifierType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 24, 25, 26, 27, 28, 29, 30 - International Identifiers of the AIF.</xs:documentation>
 				</xs:annotation>
@@ -204,36 +204,36 @@ true for AIF with several share classes
 false otherwise</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ShareClassIdentification" type="ShareClassIdentificationType" minOccurs="0">
+			<xs:element name="ShareClassIdentification" type="ComplexShareClassIdentificationType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 34, 35, 36, 37, 38, 39 - Identification of each share class of the AIF.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="AIFDescription" type="AIFDescriptionType"/>
-			<xs:element name="MainInstrumentsTraded" type="MainInstrumentsTradedType">
+			<xs:element name="AIFDescription" type="ComplexAIFDescriptionType"/>
+			<xs:element name="MainInstrumentsTraded" type="ComplexMainInstrumentsTradedType">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77 - Five main instruments in which the AIF is trading.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="NAVGeographicalFocus" type="NAVGeographicalFocusType">
+			<xs:element name="NAVGeographicalFocus" type="ComplexNAVGeographicalFocusType">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 78, 79, 80, 81, 82, 83, 84, 85 - Geographical breakdown of the investments held by the AIF as a percentage of the total NAV of the AIF. The geographical regions are Africa, Asia and Pacific (other than Middle East), Europe (EEA), Europe (other than EEA), Middle East, North America, South America, Supranational / multiple region.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="AUMGeographicalFocus" type="AUMGeographicalFocusType" minOccurs="0">
+			<xs:element name="AUMGeographicalFocus" type="ComplexAUMGeographicalFocusType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 86, 87, 88, 89, 90, 91, 92, 93 - Geographical breakdown of the investments held by the AIF as a percentage of the total AuM of the AIF. The geographical regions are Africa, Asia and Pacific (other than Middle East), Europe (EEA), Europe (other than EEA), Middle East, North America, South America, Supranational / multiple region.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="PrincipalExposures" type="PrincipalExposuresType">
+			<xs:element name="PrincipalExposures" type="ComplexPrincipalExposuresType">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 94, 95, 96, 97, 98, 99, 100, 101, 102 - Ten principal exposures of the AIF at the reporting date.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="MostImportantConcentration" type="MostImportantConcentrationType"/>
+			<xs:element name="MostImportantConcentration" type="ComplexMostImportantConcentrationType"/>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="AIFIdentifierType">
+	</xs:complexType>
+	<xs:complexType name="ComplexAIFIdentifierType">
 		<xs:sequence>
 			<xs:element name="AIFIdentifierLEI" type="LEICodeType" minOccurs="0">
 				<xs:annotation>
@@ -274,14 +274,14 @@ false otherwise</xs:documentation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 30 - European Central Bank code of the AIF.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="OldAIFIdentifierNCA" type="AIFNationalIdentifierType" minOccurs="0">
+			<xs:element name="OldAIFIdentifierNCA" type="ComplexAIFNationalIdentifierType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 31, 32 - Former national identification code and country code to provide when the national identification code changes (for the first reporting following the change of the national code and any subsequent reporting).</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="ShareClassIdentifierType">
+	</xs:complexType>
+	<xs:complexType name="ComplexShareClassIdentifierType">
 		<xs:sequence>
 			<xs:element name="ShareClassNationalCode" type="ShareClassNationalCodeType" minOccurs="0">
 				<xs:annotation>
@@ -319,16 +319,16 @@ false otherwise</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="ShareClassIdentificationType">
+	</xs:complexType>
+	<xs:complexType name="ComplexShareClassIdentificationType">
 		<xs:sequence>
-			<xs:element name="ShareClassIdentifier" type="ShareClassIdentifierType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="ShareClassIdentifier" type="ComplexShareClassIdentifierType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 34, 35, 36, 37, 38, 39 – Identifiers of the share class.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
+	</xs:complexType>
 	<!--
 
 **********************************************************************************
@@ -336,7 +336,7 @@ false otherwise</xs:documentation>
 **********************************************************************************
 
 -->
-	<xs:Type name="AIFDescriptionType">
+	<xs:complexType name="ComplexAIFDescriptionType">
 		<xs:sequence>
 			<xs:element name="AIFMasterFeederStatus" type="AIFMasterFeederStatusType">
 				<xs:annotation>
@@ -346,13 +346,13 @@ false otherwise</xs:documentation>
 						 - neither a master, nor a feeder.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="MasterAIFsIdentification" type="MasterAIFsIdentificationType" minOccurs="0"/>
-			<xs:element name="PrimeBrokers" type="PrimeBrokersType" minOccurs="0">
+			<xs:element name="MasterAIFsIdentification" type="ComplexMasterAIFsIdentificationType" minOccurs="0"/>
+			<xs:element name="PrimeBrokers" type="ComplexPrimeBrokersType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 45, 46, 47 - Identification of the prime brokers of the AIF.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="AIFBaseCurrencyDescription" type="BaseCurrencyDescriptionType">
+			<xs:element name="AIFBaseCurrencyDescription" type="ComplexBaseCurrencyDescriptionType">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 49, 50, 51, 52 - Base currency description.</xs:documentation>
 				</xs:annotation>
@@ -388,29 +388,29 @@ false otherwise</xs:documentation>
 -          “NONE” for “None”</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="HedgeFundInvestmentStrategies" type="HedgeFundInvestmentStrategiesType" minOccurs="0">
+			<xs:element name="HedgeFundInvestmentStrategies" type="ComplexHedgeFundInvestmentStrategiesType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 58, 59, 60, 61 - Breakdown of hedge funds investment strategies. Since predominant AIF types are mutually exclusive, AIFMs should not allocate the strategies across the different group of strategies (hedge fund strategies, private equity strategy, real estate, fund of fund and other strategy). For predominant AIF type "Hedge Fund", the investment strategies can only be in the list of strategies corresponding to Hedge Funds (Equity: Long Bias, Equity: Long / Short, Equity: Market Neutral, Equity: Short Bias, Relative Value: Fixed Income Arbitrage, Relative Value: Convertible Bond Arbitrage, Relative Value: Volatility Arbitrage, Event Driven: Distressed / Restructuring, Event Driven: Risk Arbitrage / Merger Arbitrage, Event Driven: Equity Special Situations, Credit Long / Short, Credit Asset Based Lending, Macro, Managed Futures / CTA: Fundamental, Managed Futures / CTA: Quantitative, Multi-strategy hedge fund, Other hedge fund strategy)
 						The reported primary hedge fund investment strategy is the most appropriate primary investment strategy which best describes the AIF according to the predominate AIF type even though the AIF may invest in other strategies.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="PrivateEquityFundInvestmentStrategies" type="PrivateEquityFundInvestmentStrategiesType" minOccurs="0">
+			<xs:element name="PrivateEquityFundInvestmentStrategies" type="ComplexPrivateEquityFundInvestmentStrategiesType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 58, 59, 60, 61 - Breakdown of private equity funds investment strategies. Since predominant AIF types are mutually exclusive, AIFMs should not allocate the strategies across the different group of strategies (hedge fund strategies, private equity strategy, real estate, fund of fund and other strategy). For predominant AIF type "private equity fund", the investment strategies can only be in the list of strategies corresponding to private equity funds (Venture Capital, Growth Capital, Mezzanine Capital, Multi-strategy private equity fund, Other private equity fund strategy)
 						The reported primary private equity fund investment strategy is the most appropriate primary investment strategy which best describes the AIF according to the predominate AIF type even though the AIF may invest in other strategies.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="RealEstateFundInvestmentStrategies" type="RealEstateFundInvestmentStrategiesType" minOccurs="0">
+			<xs:element name="RealEstateFundInvestmentStrategies" type="ComplexRealEstateFundInvestmentStrategiesType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 58, 59, 60, 61 - The most appropriate primary investment strategy which best describes the AIF according to the predominate AIF type even though the AIF may invest in other strategies. The possible real estate fund strategies are Residential real estate, Commercial Real estate, Industrial real estate, Multi-strategy real estate fund, Other real estate.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="FundOfFundsInvestmentStrategies" type="FundOfFundsInvestmentStrategiesType" minOccurs="0">
+			<xs:element name="FundOfFundsInvestmentStrategies" type="ComplexFundOfFundsInvestmentStrategiesType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 58, 59, 60, 61 - The most appropriate primary investment strategy which best describes the AIF according to the predominate AIF type even though the AIF may invest in other strategies. The possible fund of funds strategies are Fund of hedge funds, Fund of private equity, Other fund of funds.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="OtherFundInvestmentStrategies" type="OtherFundInvestmentStrategiesType" minOccurs="0">
+			<xs:element name="OtherFundInvestmentStrategies" type="ComplexOtherFundInvestmentStrategiesType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 58, 59, 60, 61 - The most appropriate primary investment strategy which best describes the AIF according to the predominate AIF type even though the AIF may invest in other strategies. The possible other strategies are Commodity Fund, Equity fund, Fixed income fund, Infrastructure fund, Other fund.</xs:documentation>
 				</xs:annotation>
@@ -426,37 +426,37 @@ false otherwise</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="MasterAIFsIdentificationType">
+	</xs:complexType>
+	<xs:complexType name="ComplexMasterAIFsIdentificationType">
 		<xs:sequence>
-			<xs:element name="MasterAIFIdentification" type="MasterAIFIdentificationType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="MasterAIFIdentification" type="ComplexMasterAIFIdentificationType" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="MasterAIFIdentificationType">
+	</xs:complexType>
+	<xs:complexType name="ComplexMasterAIFIdentificationType">
 		<xs:sequence>
 			<xs:element name="AIFName" type="StringRestricted300Type">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 41 - When available, unique the legal name of the master AIF of the feeder AIF as reported by the AIFM to the national competent authority of the reporting Member State.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="AIFIdentifierNCA" type="AIFNationalIdentifierType" minOccurs="0">
+			<xs:element name="AIFIdentifierNCA" type="ComplexAIFNationalIdentifierType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 43, 44 - When available, unique reference identifying master AIF of the feeder AIF as allocated by the national competent authority of the reporting Member State of the AIFM of the master AIF.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="PrimeBrokersType">
+	</xs:complexType>
+	<xs:complexType name="ComplexPrimeBrokersType">
 		<xs:sequence>
-			<xs:element name="PrimeBrokerIdentification" type="EntityIdentificationType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="PrimeBrokerIdentification" type="ComplexEntityIdentificationType" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="RealEstateFundInvestmentStrategiesType">
+	</xs:complexType>
+	<xs:complexType name="ComplexRealEstateFundInvestmentStrategiesType">
 		<xs:sequence>
-			<xs:element name="RealEstateFundStrategy" type="RealEstateFundStrategyType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="RealEstateFundStrategy" type="ComplexRealEstateFundStrategyType" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="RealEstateFundStrategyType">
+	</xs:complexType>
+	<xs:complexType name="ComplexRealEstateFundStrategyType">
 		<xs:sequence>
 			<xs:element name="RealEstateFundStrategyType" type="RealEstateFundStrategyTypeType">
 				<xs:annotation>
@@ -479,13 +479,13 @@ false otherwise</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="OtherFundInvestmentStrategiesType">
+	</xs:complexType>
+	<xs:complexType name="ComplexOtherFundInvestmentStrategiesType">
 		<xs:sequence>
-			<xs:element name="OtherFundStrategy" type="OtherFundStrategyType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="OtherFundStrategy" type="ComplexOtherFundStrategyType" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="OtherFundStrategyType">
+	</xs:complexType>
+	<xs:complexType name="ComplexOtherFundStrategyType">
 		<xs:sequence>
 			<xs:element name="OtherFundStrategyType" type="OtherFundStrategyTypeType">
 				<xs:annotation>
@@ -508,13 +508,13 @@ false otherwise</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="HedgeFundInvestmentStrategiesType">
+	</xs:complexType>
+	<xs:complexType name="ComplexHedgeFundInvestmentStrategiesType">
 		<xs:sequence>
-			<xs:element name="HedgeFundStrategy" type="HedgeFundStrategyType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="HedgeFundStrategy" type="ComplexHedgeFundStrategyType" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="HedgeFundStrategyType">
+	</xs:complexType>
+	<xs:complexType name="ComplexHedgeFundStrategyType">
 		<xs:sequence>
 			<xs:element name="HedgeFundStrategyType" type="HedgeFundStrategyTypeType">
 				<xs:annotation>
@@ -537,13 +537,13 @@ false otherwise</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="PrivateEquityFundInvestmentStrategiesType">
+	</xs:complexType>
+	<xs:complexType name="ComplexPrivateEquityFundInvestmentStrategiesType">
 		<xs:sequence>
-			<xs:element name="PrivateEquityFundInvestmentStrategy" type="PrivateEquityFundStrategyType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="PrivateEquityFundInvestmentStrategy" type="ComplexPrivateEquityFundStrategyType" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="PrivateEquityFundStrategyType">
+	</xs:complexType>
+	<xs:complexType name="ComplexPrivateEquityFundStrategyType">
 		<xs:sequence>
 			<xs:element name="PrivateEquityFundStrategyType" type="PrivateEquityFundStrategyTypeType">
 				<xs:annotation>
@@ -566,13 +566,13 @@ false otherwise</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="FundOfFundsInvestmentStrategiesType">
+	</xs:complexType>
+	<xs:complexType name="ComplexFundOfFundsInvestmentStrategiesType">
 		<xs:sequence>
-			<xs:element name="FundOfFundsStrategy" type="FundOfFundsStrategyType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="FundOfFundsStrategy" type="ComplexFundOfFundsStrategyType" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="FundOfFundsStrategyType">
+	</xs:complexType>
+	<xs:complexType name="ComplexFundOfFundsStrategyType">
 		<xs:sequence>
 			<xs:element name="FundOfFundsStrategyType" type="FundOfFundsStrategyTypeType">
 				<xs:annotation>
@@ -595,7 +595,7 @@ false otherwise</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
+	</xs:complexType>
 	<!--
 
 **********************************************************************************
@@ -603,16 +603,16 @@ false otherwise</xs:documentation>
 **********************************************************************************
 
 -->
-	<xs:Type name="MainInstrumentsTradedType">
+	<xs:complexType name="ComplexMainInstrumentsTradedType">
 		<xs:sequence>
-			<xs:element name="MainInstrumentTraded" type="MainInstrumentTradedType" minOccurs="5" maxOccurs="5">
+			<xs:element name="MainInstrumentTraded" type="ComplexMainInstrumentTradedType" minOccurs="5" maxOccurs="5">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 64 - The five most important individual instruments of an AIF. The ranking should be based on the value of individual instruments.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="MainInstrumentTradedType">
+	</xs:complexType>
+	<xs:complexType name="ComplexMainInstrumentTradedType">
 		<xs:sequence>
 			<xs:element name="Ranking" type="FiveRankingType">
 				<xs:annotation>
@@ -650,7 +650,7 @@ It is strongly recommended to provide the instrument short name as provided by S
 						<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 68 - The ISIN code of the instrument (ISO 6166 standard) when available</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="AIIInstrumentIdentification" type="AIIInstrumentIdentificationType">
+				<xs:element name="AIIInstrumentIdentification" type="ComplexAIIInstrumentIdentificationType">
 					<xs:annotation>
 						<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 69, 70, 71, 72, 73, 74 - Instrument Identifier for option and future exchanges which do not have ISIN codes for their instruments, when available</xs:documentation>
 					</xs:annotation>
@@ -677,8 +677,8 @@ The field is mandatory for Asset sub type code different from “NTA_NTA_NOTA”
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="AIIInstrumentIdentificationType">
+	</xs:complexType>
+	<xs:complexType name="ComplexAIIInstrumentIdentificationType">
 		<xs:sequence>
 			<xs:element name="AIIExchangeCode" type="MICCodeType">
 				<xs:annotation>
@@ -711,7 +711,7 @@ The field is mandatory for Asset sub type code different from “NTA_NTA_NOTA”
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
+	</xs:complexType>
 	<!--
 
 **********************************************************************************
@@ -719,7 +719,7 @@ The field is mandatory for Asset sub type code different from “NTA_NTA_NOTA”
 **********************************************************************************
 
 -->
-	<xs:Type name="NAVGeographicalFocusType">
+	<xs:complexType name="ComplexNAVGeographicalFocusType">
 		<xs:sequence>
 			<xs:element name="AfricaNAVRate" type="SignedRate15p2Type">
 				<xs:annotation>
@@ -762,8 +762,8 @@ The field is mandatory for Asset sub type code different from “NTA_NTA_NOTA”
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="AUMGeographicalFocusType">
+	</xs:complexType>
+	<xs:complexType name="ComplexAUMGeographicalFocusType">
 		<xs:sequence>
 			<xs:element name="AfricaAUMRate" type="UnsignedPercentType">
 				<xs:annotation>
@@ -806,22 +806,22 @@ The field is mandatory for Asset sub type code different from “NTA_NTA_NOTA”
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
+	</xs:complexType>
 	<!--
 **********************************************************************************
 	PRINCIPAL EXPOSURES
 **********************************************************************************
 -->
-	<xs:Type name="PrincipalExposuresType">
+	<xs:complexType name="ComplexPrincipalExposuresType">
 		<xs:sequence>
-			<xs:element name="PrincipalExposure" type="PrincipalExposureType" minOccurs="10" maxOccurs="10">
+			<xs:element name="PrincipalExposure" type="ComplexPrincipalExposureType" minOccurs="10" maxOccurs="10">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 94, 95, 96, 97, 98, 99, 100, 101, 102 - Ten principal exposures of the AIF at the reporting date.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="PrincipalExposureType">
+	</xs:complexType>
+	<xs:complexType name="ComplexPrincipalExposureType">
 		<xs:sequence>
 			<xs:element name="Ranking" type="TenRankingType">
 				<xs:annotation>
@@ -872,13 +872,13 @@ This field must be filled in systematically with 2 decimal places.
 The field is mandatory for macro asset type code different from “NTA” and forbidden otherwise.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="CounterpartyIdentification" type="EntityIdentificationType" minOccurs="0">
+			<xs:element name="CounterpartyIdentification" type="ComplexEntityIdentificationType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 100, 101, 102 -  Counterparty name, LEI and BIC.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
+	</xs:complexType>
 	<!--
 
 **********************************************************************************
@@ -886,9 +886,9 @@ The field is mandatory for macro asset type code different from “NTA” and fo
 **********************************************************************************
 
 -->
-	<xs:Type name="MostImportantConcentrationType">
+	<xs:complexType name="ComplexMostImportantConcentrationType">
 		<xs:sequence>
-			<xs:element name="PortfolioConcentrations" type="PortfolioConcentrationsType">
+			<xs:element name="PortfolioConcentrations" type="ComplexPortfolioConcentrationsType">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 103, 104, 105, 106, 107, 108, 109, 110, 111, 112 - Five most important portfolio concentrations.</xs:documentation>
 				</xs:annotation>
@@ -906,28 +906,28 @@ See Annex II - Table 4.
 The field is mandatory for AIF predominant type “Private Equity funds” and forbidden otherwise.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="AIFPrincipalMarkets" type="AIFPrincipalMarketsType">
+			<xs:element name="AIFPrincipalMarkets" type="ComplexAIFPrincipalMarketsType">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 114, 115, 116, 117 - The three principal markets with greatest exposure in which AIF trades.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="InvestorConcentration" type="InvestorConcentrationType">
+			<xs:element name="InvestorConcentration" type="ComplexInvestorConcentrationType">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 118, 119, 120 - Investor concentration.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="PortfolioConcentrationsType">
+	</xs:complexType>
+	<xs:complexType name="ComplexPortfolioConcentrationsType">
 		<xs:sequence>
-			<xs:element name="PortfolioConcentration" type="PortfolioConcentrationType" minOccurs="5" maxOccurs="5">
+			<xs:element name="PortfolioConcentration" type="ComplexPortfolioConcentrationType" minOccurs="5" maxOccurs="5">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 103, 104, 105, 106, 107, 108, 109, 110, 111, 112 - Five most important portfolio concentrations by asset type, market where the trade occurred and position type.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="PortfolioConcentrationType">
+	</xs:complexType>
+	<xs:complexType name="ComplexPortfolioConcentrationType">
 		<xs:sequence>
 			<xs:element name="Ranking" type="FiveRankingType">
 				<xs:annotation>
@@ -954,7 +954,7 @@ If the AIF has less than five different concentrations, the code “NTA_NTA” s
 The field is mandatory for asset type code different from “NTA_NTA” and forbidden otherwise.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="MarketIdentification" type="MarketIdentificationWithoutNOTType" minOccurs="0">
+			<xs:element name="MarketIdentification" type="ComplexMarketIdentificationWithoutNOTType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 106, 107 - Market identification.</xs:documentation>
 				</xs:annotation>
@@ -972,26 +972,26 @@ This field must be filled in systematically with 2 decimal places.
 The field is mandatory for asset type code different from “NTA_NTA” and forbidden otherwise.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="CounterpartyIdentification" type="EntityIdentificationType" minOccurs="0">
+			<xs:element name="CounterpartyIdentification" type="ComplexEntityIdentificationType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 110, 111, 112 -  Counterparty name, LEI and BIC. Counterparty data is not allowed when reported market type is different from “OTC".</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="AIFPrincipalMarketsType">
+	</xs:complexType>
+	<xs:complexType name="ComplexAIFPrincipalMarketsType">
 		<xs:sequence>
-			<xs:element name="AIFPrincipalMarket" type="ThreePrincipalMarketType" minOccurs="3" maxOccurs="3"/>
+			<xs:element name="AIFPrincipalMarket" type="ComplexThreePrincipalMarketType" minOccurs="3" maxOccurs="3"/>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="ThreePrincipalMarketType">
+	</xs:complexType>
+	<xs:complexType name="ComplexThreePrincipalMarketType">
 		<xs:sequence>
 			<xs:element name="Ranking" type="ThreeRankingType">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 114 - Ranking of the three principal markets in which the AIF trades.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="MarketIdentification" type="MarketIdentificationWithNOTType">
+			<xs:element name="MarketIdentification" type="ComplexMarketIdentificationWithNOTType">
 				<xs:annotation>
 					<xs:documentation>Articles 24(1) and 3(3)(d) - AIF - Item 115, 116 - The identification of the three principal markets in which the AIF trades.</xs:documentation>
 				</xs:annotation>
@@ -1003,8 +1003,8 @@ Aggregated value expressed in base currency filled in without decimal places.The
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="InvestorConcentrationType">
+	</xs:complexType>
+	<xs:complexType name="ComplexInvestorConcentrationType">
 		<xs:sequence>
 			<xs:element name="MainBeneficialOwnersRate" type="UnsignedPercentType">
 				<xs:annotation>
@@ -1022,63 +1022,63 @@ Aggregated value expressed in base currency filled in without decimal places.The
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
+	</xs:complexType>
 	<!--
 
 **********************************************************************************
 	AIF ARTICLE 24(2)
 **********************************************************************************
 -->
-	<xs:Type name="AIFIndividualInfoType">
+	<xs:complexType name="ComplexAIFIndividualInfoType">
 		<xs:sequence>
-			<xs:element name="IndividualExposure" type="IndividualExposureType"/>
-			<xs:element name="RiskProfile" type="RiskProfileType"/>
-			<xs:element name="StressTests" type="StressTestsType">
+			<xs:element name="IndividualExposure" type="ComplexIndividualExposureType"/>
+			<xs:element name="RiskProfile" type="ComplexRiskProfileType"/>
+			<xs:element name="StressTests" type="ComplexStressTestsType">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 279, 280 - Stress Tests -  Description of the stress tests.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
+	</xs:complexType>
 	<!--
 **********************************************************************************
 	AIF INDIVIDUAL EXPOSURE
 **********************************************************************************
 -->
-	<xs:Type name="IndividualExposureType">
+	<xs:complexType name="ComplexIndividualExposureType">
 		<xs:sequence>
-			<xs:element name="AssetTypeExposures" type="AssetTypeExposuresType">
+			<xs:element name="AssetTypeExposures" type="ComplexAssetTypeExposuresType">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 121, 122, 123, 124 - The individual exposures by asset and sub-asset categories in which the AIF invested as of the reporting date. Depending on the asset category, the exposures are expressed in long/short value or gross value.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="AssetTypeTurnovers" type="AssetTypeTurnoversType">
+			<xs:element name="AssetTypeTurnovers" type="ComplexAssetTypeTurnoversType">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 125 - The value of turnover over the reporting period, whether yearly, half-yearly or quarterly as the sum of the absolute value of buys and sells that occur during the period. Derivatives turnover should be provided on a total gross notional basis except for options where premium should be used whereas other turnover is expressed in market value.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="CurrencyExposures" type="CurrencyExposuresType" minOccurs="0">
+			<xs:element name="CurrencyExposures" type="ComplexCurrencyExposuresType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item  - The total long and short value of exposures (before currency hedging) by currency.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="CompaniesDominantInfluence" type="CompaniesDominantInfluenceType" minOccurs="0">
+			<xs:element name="CompaniesDominantInfluence" type="ComplexCompaniesDominantInfluenceType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 131, 132, 133, 134, 135, 136 - For private equity funds, the identification of each company in which the AIF has a controlling influence (as defined in Article 1 of directive 83/349/EEC), together with the percentage of voting rights and the type of transaction.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="AssetTypeExposuresType">
+	</xs:complexType>
+	<xs:complexType name="ComplexAssetTypeExposuresType">
 		<xs:sequence>
-			<xs:element name="AssetTypeExposure" type="AssetTypeExposureType" minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="AssetTypeExposure" type="ComplexAssetTypeExposureType" minOccurs="1" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 121, 122, 123, 124 - The individual exposures by asset and sub-asset categories in which the AIF invested as of the reporting date. Depending on the asset category, the exposures are expressed in long/short value or gross value.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="AssetTypeExposureType">
+	</xs:complexType>
+	<xs:complexType name="ComplexAssetTypeExposureType">
 		<xs:sequence>
 			<xs:element name="SubAssetType" type="SubAssetTypeType">
 				<xs:annotation>
@@ -1103,17 +1103,17 @@ The sub-asset types admitted are listed in Annex II - Table 1  (i.e. highest lev
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="AssetTypeTurnoversType">
+	</xs:complexType>
+	<xs:complexType name="ComplexAssetTypeTurnoversType">
 		<xs:sequence>
-			<xs:element name="AssetTypeTurnover" type="AssetTypeTurnoverType" minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="AssetTypeTurnover" type="ComplexAssetTypeTurnoverType" minOccurs="1" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 125, 126, 127 - The value of the turnover in the reporting period (sum of the absolute values of buys and sells that occur during the reporting period).</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="AssetTypeTurnoverType">
+	</xs:complexType>
+	<xs:complexType name="ComplexAssetTypeTurnoverType">
 		<xs:sequence>
 			<xs:element name="TurnoverSubAssetType" type="TurnoverSubAssetTypeType">
 				<xs:annotation>
@@ -1131,17 +1131,17 @@ The sub-asset types admitted are listed in Annex II - Table 1  (i.e. highest lev
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="CurrencyExposuresType">
+	</xs:complexType>
+	<xs:complexType name="ComplexCurrencyExposuresType">
 		<xs:sequence>
-			<xs:element name="CurrencyExposure" type="CurrencyExposureType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="CurrencyExposure" type="ComplexCurrencyExposureType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 128, 129, 130 – The exposure by each relevant currency denominated in the base currency of the AIF.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="CurrencyExposureType">
+	</xs:complexType>
+	<xs:complexType name="ComplexCurrencyExposureType">
 		<xs:sequence>
 			<xs:element name="ExposureCurrency" type="CurrencyCodeType">
 				<xs:annotation>
@@ -1159,19 +1159,19 @@ The sub-asset types admitted are listed in Annex II - Table 1  (i.e. highest lev
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="CompaniesDominantInfluenceType">
+	</xs:complexType>
+	<xs:complexType name="ComplexCompaniesDominantInfluenceType">
 		<xs:sequence>
-			<xs:element name="CompanyDominantInfluence" type="CompanyDominantInfluenceType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="CompanyDominantInfluence" type="ComplexCompanyDominantInfluenceType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 131, 132, 133, 134, 135, 136 - For private equity funds, the identification of each company in which the AIF has a controlling influence (as defined in Article 1 of directive 83/349/EEC), together with the percentage of voting rights and the type of transaction.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="CompanyDominantInfluenceType">
+	</xs:complexType>
+	<xs:complexType name="ComplexCompanyDominantInfluenceType">
 		<xs:sequence>
-			<xs:element name="CompanyIdentification" type="EntityIdentificationType">
+			<xs:element name="CompanyIdentification" type="ComplexEntityIdentificationType">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 131, 132, 133 - Entity name. (no standard)
 It is strongly recommended to provide the full name corresponding to the allocated LEI code (or BIC code if any and LEI not available). The fields are forbidden for AIF predominant type different from “Private Equity funds.</xs:documentation>
@@ -1208,28 +1208,28 @@ The field is mandatory for AIF predominant type “Private Equity funds” and f
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
+	</xs:complexType>
 	<!--	
 
 **********************************************************************************
 	AIF RISK INFO
 **********************************************************************************
 -->
-	<xs:Type name="RiskProfileType">
+	<xs:complexType name="ComplexRiskProfileType">
 		<xs:sequence>
-			<xs:element name="MarketRiskProfile" type="MarketRiskProfileType"/>
-			<xs:element name="CounterpartyRiskProfile" type="CounterpartyRiskProfileType" minOccurs="0"/>
-			<xs:element name="LiquidityRiskProfile" type="LiquidityRiskProfileType" minOccurs="0"/>
-			<xs:element name="OperationalRisk" type="OperationalRiskType" minOccurs="0"/>
+			<xs:element name="MarketRiskProfile" type="ComplexMarketRiskProfileType"/>
+			<xs:element name="CounterpartyRiskProfile" type="ComplexCounterpartyRiskProfileType" minOccurs="0"/>
+			<xs:element name="LiquidityRiskProfile" type="ComplexLiquidityRiskProfileType" minOccurs="0"/>
+			<xs:element name="OperationalRisk" type="ComplexOperationalRiskType" minOccurs="0"/>
 		</xs:sequence>
-	</xs:Type>
+	</xs:complexType>
 	<!--	
 
 **********************************************************************************
 	MARKET RISKS
 **********************************************************************************
 -->
-	<xs:Type name="MarketRiskProfileType">
+	<xs:complexType name="ComplexMarketRiskProfileType">
 		<xs:sequence>
 			<xs:element name="AnnualInvestmentReturnRate" type="SignedRateNA15p2Type">
 				<xs:annotation>
@@ -1237,23 +1237,23 @@ The field is mandatory for AIF predominant type “Private Equity funds” and f
 Rate that must be filled in systematically with 2 decimal places.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="MarketRiskMeasures" type="MarketRiskMeasuresType" minOccurs="0">
+			<xs:element name="MarketRiskMeasures" type="ComplexMarketRiskMeasuresType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 138, 139, 140, 141, 142, 143, 144, 145, 146, 147 - The risk measures information.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="MarketRiskMeasuresType">
+	</xs:complexType>
+	<xs:complexType name="ComplexMarketRiskMeasuresType">
 		<xs:sequence>
-			<xs:element name="MarketRiskMeasure" type="MarketRiskMeasureType" maxOccurs="unbounded">
+			<xs:element name="MarketRiskMeasure" type="ComplexMarketRiskMeasureType" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 138, 139, 140, 141, 142, 143, 144, 145, 146, 147 - The risk measures information.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="MarketRiskMeasureType">
+	</xs:complexType>
+	<xs:complexType name="ComplexMarketRiskMeasureType">
 		<xs:sequence>
 			<xs:element name="RiskMeasureType" type="RiskMeasureTypeType">
 				<xs:annotation>
@@ -1273,17 +1273,17 @@ Rate that must be filled in systematically with 2 decimal places.</xs:documentat
 						<xs:documentation>Articles 24(2) - AIF - Item 139 -  This field is only authorised for risk measure type equal to "NET_EQTY_DELTA" and "NET_FX_DELTA" and "NET_CTY_DELTA" and forbidden otherwise.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="BucketRiskMeasureValues" type="BucketRiskMeasureValuesType">
+				<xs:element name="BucketRiskMeasureValues" type="ComplexBucketRiskMeasureValuesType">
 					<xs:annotation>
 						<xs:documentation>Articles 24(2) - AIF - Item 140, 141, 142 - These fields are only authorised for risk measure type equal to "NET_DV01" and "NET_CS01" and forbidden otherwise</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="VegaRiskMeasureValues" type="VegaRiskMeasureValuesType">
+				<xs:element name="VegaRiskMeasureValues" type="ComplexVegaRiskMeasureValuesType">
 					<xs:annotation>
 						<xs:documentation>Articles 24(2) - AIF - Item 143, 144, 145 - These fields are only authorised for risk measure type equal to "VEGA_EXPO" and forbidden otherwise.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="VARRiskMeasureValues" type="VARRiskMeasureValuesType">
+				<xs:element name="VARRiskMeasureValues" type="ComplexVARRiskMeasureValuesType">
 					<xs:annotation>
 						<xs:documentation>Articles 24(2) - AIF - Item 146, 302 - These fields are only authorised for risk measure type equal to "VAR" and forbidden otherwise.</xs:documentation>
 					</xs:annotation>
@@ -1295,8 +1295,8 @@ Rate that must be filled in systematically with 2 decimal places.</xs:documentat
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="BucketRiskMeasureValuesType">
+	</xs:complexType>
+	<xs:complexType name="ComplexBucketRiskMeasureValuesType">
 		<xs:sequence>
 			<xs:element name="LessFiveYearsRiskMeasureValue" type="SignedRate15p2Type" minOccurs="0">
 				<xs:annotation>
@@ -1314,8 +1314,8 @@ Rate that must be filled in systematically with 2 decimal places.</xs:documentat
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="VegaRiskMeasureValuesType">
+	</xs:complexType>
+	<xs:complexType name="ComplexVegaRiskMeasureValuesType">
 		<xs:sequence>
 			<xs:element name="CurrentMarketRiskMeasureValue" type="SignedRate15p2Type" minOccurs="0">
 				<xs:annotation>
@@ -1333,8 +1333,8 @@ Rate that must be filled in systematically with 2 decimal places.</xs:documentat
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="VARRiskMeasureValuesType">
+	</xs:complexType>
+	<xs:complexType name="ComplexVARRiskMeasureValuesType">
 		<xs:sequence>
 			<xs:element name="VARValue" type="UnsignedPercentType" minOccurs="0">
 				<xs:annotation>
@@ -1351,31 +1351,31 @@ Allowed values are:
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
+	</xs:complexType>
 	<!--
 
 **********************************************************************************
 	COUNTERPARTY RISKS
 **********************************************************************************
 -->
-	<xs:Type name="CounterpartyRiskProfileType">
+	<xs:complexType name="ComplexCounterpartyRiskProfileType">
 		<xs:sequence>
-			<xs:element name="TradingClearingMechanism" type="TradingClearingMechanismType" minOccurs="0">
+			<xs:element name="TradingClearingMechanism" type="ComplexTradingClearingMechanismType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 148, 149, 150, 151, 152, 153, 154, 155, 156 - Trading and clearing mechanisms description.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="AllCounterpartyCollateral" type="AllCounterpartyCollateralType" minOccurs="0">
+			<xs:element name="AllCounterpartyCollateral" type="ComplexAllCounterpartyCollateralType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 157, 158, 159 - Aggregated value of collateral and other credit support that the fund has posted to all counterparties</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="FundToCounterpartyExposures" type="FundToCounterpartyExposuresType">
+			<xs:element name="FundToCounterpartyExposures" type="ComplexFundToCounterpartyExposuresType">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 160, 161, 162, 163, 164, 165 - The top five counterparties (excluding CCP) to which the AIF has the greatest mark-to-market net counterparty credit exposure, measured as a percentage of the NAV of the AIF.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="CounterpartyToFundExposures" type="CounterpartyToFundExposuresType">
+			<xs:element name="CounterpartyToFundExposures" type="ComplexCounterpartyToFundExposuresType">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 166, 167, 168, 169, 170, 171 - The top five counterparties (excluding CCP) that have the greatest mark-to-market net counterparty credit exposure to the AIF, measured as a percentage of the NAV of the AIF.</xs:documentation>
 				</xs:annotation>
@@ -1385,38 +1385,38 @@ Allowed values are:
 					<xs:documentation>Articles 24(2) - AIF - Item 172 - Flag indicating that the AIF has directly cleared through central clearing counterparties.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="CCPExposures" type="CCPExposuresType" minOccurs="0">
+			<xs:element name="CCPExposures" type="ComplexCCPExposuresType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 173, 174, 175, 176, 177 - Top three central clearing counterparties in terms of net exposure</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="TradingClearingMechanismType">
+	</xs:complexType>
+	<xs:complexType name="ComplexTradingClearingMechanismType">
 		<xs:sequence>
-			<xs:element name="TradedSecurities" type="MarketRate3p2Type" minOccurs="0">
+			<xs:element name="TradedSecurities" type="ComplexMarketRate3p2Type" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 148, 149 - Estimated % in terms of market value of securities traded on regulated exchange markets or OTC markets.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="TradedDerivatives" type="MarketRate3p2Type" minOccurs="0">
+			<xs:element name="TradedDerivatives" type="ComplexMarketRate3p2Type" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 150, 151 - Estimated % in terms of trade volumes of derivatives that are traded on regulated exchange markets or OTC markets.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ClearedDerivativesRate" type="ClearedDerivativesRateType" minOccurs="0">
+			<xs:element name="ClearedDerivativesRate" type="ComplexClearedDerivativesRateType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 152, 153 - Estimated % in terms of trade volumes of derivatives transactions that are cleared by a CCP or bilateraly.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ClearedReposRate" type="ClearedReposRateType" minOccurs="0">
+			<xs:element name="ClearedReposRate" type="ComplexClearedReposRateType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 154, 155, 156 - Estimated % in terms of market value of repo trades that are cleared by a CCP, bilateraly or via tri party repos.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="MarketRate3p2Type">
+	</xs:complexType>
+	<xs:complexType name="ComplexMarketRate3p2Type">
 		<xs:sequence>
 			<xs:element name="RegulatedMarketRate" type="UnsignedPercentType" minOccurs="0">
 				<xs:annotation>
@@ -1431,8 +1431,8 @@ Articles 24(2) - AIF - Item 151 - Estimated % in terms of trade volumes of deriv
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="ClearedReposRateType">
+	</xs:complexType>
+	<xs:complexType name="ComplexClearedReposRateType">
 		<xs:sequence>
 			<xs:element name="CCPRate" type="UnsignedPercentType" minOccurs="0">
 				<xs:annotation>
@@ -1452,8 +1452,8 @@ Articles 24(2) - AIF - Item 155 - Estimated % in terms of market value of repo t
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="ClearedDerivativesRateType">
+	</xs:complexType>
+	<xs:complexType name="ComplexClearedDerivativesRateType">
 		<xs:sequence>
 			<xs:element name="CCPRate" type="UnsignedPercentType" minOccurs="0">
 				<xs:annotation>
@@ -1468,8 +1468,8 @@ Articles 24(2) - AIF - Item 155 - Estimated % in terms of market value of repo t
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="AllCounterpartyCollateralType">
+	</xs:complexType>
+	<xs:complexType name="ComplexAllCounterpartyCollateralType">
 		<xs:sequence>
 			<xs:element name="AllCounterpartyCollateralCash" type="UnsignedInteger15pType" minOccurs="0">
 				<xs:annotation>
@@ -1487,18 +1487,18 @@ Articles 24(2) - AIF - Item 155 - Estimated % in terms of market value of repo t
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="FundToCounterpartyExposuresType">
+	</xs:complexType>
+	<xs:complexType name="ComplexFundToCounterpartyExposuresType">
 		<xs:sequence>
-			<xs:element name="FundToCounterpartyExposure" type="CounterpartyExposureType" minOccurs="5" maxOccurs="5"/>
+			<xs:element name="FundToCounterpartyExposure" type="ComplexCounterpartyExposureType" minOccurs="5" maxOccurs="5"/>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="CounterpartyToFundExposuresType">
+	</xs:complexType>
+	<xs:complexType name="ComplexCounterpartyToFundExposuresType">
 		<xs:sequence>
-			<xs:element name="CounterpartyToFundExposure" type="CounterpartyExposureType" minOccurs="5" maxOccurs="5"/>
+			<xs:element name="CounterpartyToFundExposure" type="ComplexCounterpartyExposureType" minOccurs="5" maxOccurs="5"/>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="CounterpartyExposureType">
+	</xs:complexType>
+	<xs:complexType name="ComplexCounterpartyExposureType">
 		<xs:sequence>
 			<xs:element name="Ranking" type="FiveRankingType">
 				<xs:annotation>
@@ -1523,7 +1523,7 @@ false otherwise. Articles 24(2) - AIF - Item 167 - true when the AIF has exposur
 false otherwise.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="CounterpartyIdentification" type="EntityIdentificationType" minOccurs="0">
+			<xs:element name="CounterpartyIdentification" type="ComplexEntityIdentificationType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 162, 163, 164 – Counterparty identification of each 5 greatest counterparty exposures to which the AIF has the greatest exposure.
 Articles 24(2) - AIF - Item 168, 169, 170 - Counterparty identification of each 5 greatest counterparty exposures that have the greatest exposure to the AIF.</xs:documentation>
@@ -1536,13 +1536,13 @@ Articles 24(2) - AIF - Item 171 - Percentage of the NAV corresponding to the tot
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="CCPExposuresType">
+	</xs:complexType>
+	<xs:complexType name="ComplexCCPExposuresType">
 		<xs:sequence>
-			<xs:element name="CCPExposure" type="CCPExposureType" minOccurs="0" maxOccurs="3"/>
+			<xs:element name="CCPExposure" type="ComplexCCPExposureType" minOccurs="0" maxOccurs="3"/>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="CCPExposureType">
+	</xs:complexType>
+	<xs:complexType name="ComplexCCPExposureType">
 		<xs:sequence>
 			<xs:element name="Ranking" type="ThreeRankingType">
 				<xs:annotation>
@@ -1553,7 +1553,7 @@ Articles 24(2) - AIF - Item 171 - Percentage of the NAV corresponding to the tot
 If the Direct clearing flag is equal to “true”, at least rank “1” has to be reported.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="CCPIdentification" type="EntityIdentificationType">
+			<xs:element name="CCPIdentification" type="ComplexEntityIdentificationType">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 174, 175, 176 – Counterparty identification of each 3 CCPs with greatest exposure.</xs:documentation>
 				</xs:annotation>
@@ -1564,47 +1564,47 @@ If the Direct clearing flag is equal to “true”, at least rank “1” has to
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
+	</xs:complexType>
 	<!--
 **********************************************************************************
 	LIQUIDITY RISKS
 **********************************************************************************
 -->
-	<xs:Type name="LiquidityRiskProfileType">
+	<xs:complexType name="ComplexLiquidityRiskProfileType">
 		<xs:sequence>
-			<xs:element name="PortfolioLiquidityProfile" type="PortfolioLiquidityProfileType" minOccurs="0">
+			<xs:element name="PortfolioLiquidityProfile" type="ComplexPortfolioLiquidityProfileType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 178,179, 180, 181, 182, 183, 184, 185  - Breakdown of the percentage of the AIF’s portfolio that is capable of being liquidated within eqch of the liquidity periods specified: 1 day or less, 2-7 days, 8-30 days, 31-90 days, 91-180 days, 181-365 days and longer than 365 days. Each investment should be assigned to one period only based on the shortest period during which such a position could reasonably be liquidated at or near its carrying value. The total should equal 100%.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="InvestorLiquidityProfile" type="InvestorLiquidityProfileType" minOccurs="0">
+			<xs:element name="InvestorLiquidityProfile" type="ComplexInvestorLiquidityProfileType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 186, 187, 188, 189, 190, 191, 192 - Breakdown of the NAV divided among the periods specified depending on  the shortest period within which the insvested funds could be withdrawn or investors could receive redemption payments. The total should equal 100%.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="InvestorRedemption" type="InvestorRedemptionType" minOccurs="0">
+			<xs:element name="InvestorRedemption" type="ComplexInvestorRedemptionType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 193, 194, 195, 196 - Investor redemptions</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="InvestorArrangement" type="InvestorArrangementType" minOccurs="0">
+			<xs:element name="InvestorArrangement" type="ComplexInvestorArrangementType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207 - Special arrangements and preferential treatment.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="InvestorGroups" type="InvestorGroupsType">
+			<xs:element name="InvestorGroups" type="ComplexInvestorGroupsType">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 208, 209 - The breakdown of the ownership of units in the AIF beneficially owned by each investor group (as % of NAV of the AIF assets). The possible groups of investors are: "Employees and staff of the AIFM", "High net worth individual and family offices", "Banks, insurance companies and other financial institutions", "Pension plans / funds", "Endowments / foundations and charitable organisations", "State, municipal and other government entities", "Sovereign wealth funds", "Other collective investment undertakings (eg fund of funds)", "Other types of investors".</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="FinancingLiquidityProfile" type="FinancingLiquidityProfileType" minOccurs="0">
+			<xs:element name="FinancingLiquidityProfile" type="ComplexFinancingLiquidityProfileType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 210, 211, 212, 213, 214, 215, 216, 217, 218 - The breakdown of the percentage of the total financing amount depending on the longest period for which the creditor is contractually committed to provide such financing within the specified time ranges: 1 day or less, 2-7 days, 8-30 days, 31-90 days, 91-180 days, 181-365 days and longer than 365 days.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="PortfolioLiquidityProfileType">
+	</xs:complexType>
+	<xs:complexType name="ComplexPortfolioLiquidityProfileType">
 		<xs:sequence>
 			<xs:element name="PortfolioLiquidityInDays0to1Rate" type="UnsignedDecimal15p4Type">
 				<xs:annotation>
@@ -1647,8 +1647,8 @@ If the Direct clearing flag is equal to “true”, at least rank “1” has to
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="InvestorLiquidityProfileType">
+	</xs:complexType>
+	<xs:complexType name="ComplexInvestorLiquidityProfileType">
 		<xs:sequence>
 			<xs:element name="InvestorLiquidityInDays0to1Rate" type="UnsignedDecimal15p4Type">
 				<xs:annotation>
@@ -1686,8 +1686,8 @@ If the Direct clearing flag is equal to “true”, at least rank “1” has to
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="InvestorRedemptionType">
+	</xs:complexType>
+	<xs:complexType name="ComplexInvestorRedemptionType">
 		<xs:sequence>
 			<xs:element name="ProvideWithdrawalRightsFlag" type="BooleanType">
 				<xs:annotation>
@@ -1724,22 +1724,22 @@ The number of days expressed without decimal places when weighted.</xs:documenta
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="InvestorArrangementType">
+	</xs:complexType>
+	<xs:complexType name="ComplexInvestorArrangementType">
 		<xs:sequence>
-			<xs:element name="InvestorIlliquidAssetArrangement" type="InvestorIlliquidAssetArrangementType" minOccurs="0">
+			<xs:element name="InvestorIlliquidAssetArrangement" type="ComplexInvestorIlliquidAssetArrangementType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 197, 198, 199, 200, 201, 202 - Percentage of the AIF NAV subject to arrangements among side pockets, Gates, suspension of dealing, other arrangements for managing illiquid assets.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="InvestorPreferentialTreatment" type="InvestorPreferentialTreatmentType" minOccurs="0">
+			<xs:element name="InvestorPreferentialTreatment" type="ComplexInvestorPreferentialTreatmentType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 203, 204, 205, 206, 207 - Preferential treatments.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="InvestorIlliquidAssetArrangementType">
+	</xs:complexType>
+	<xs:complexType name="ComplexInvestorIlliquidAssetArrangementType">
 		<xs:sequence>
 			<xs:element name="SidePocketRate" type="UnsignedPercentType" minOccurs="0">
 				<xs:annotation>
@@ -1762,7 +1762,7 @@ Rate expressed as a percentage.
 This field must be filled in systematically with 2 decimal places.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="OtherArrangement" type="OtherArrangementType" minOccurs="0">
+			<xs:element name="OtherArrangement" type="ComplexOtherArrangementType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 200, 201 -The NAV percentage of the AIF's assets that are currently subject to other arrangements for managing illiquid assets.
 </xs:documentation>
@@ -1776,8 +1776,8 @@ This field must be filled in systematically with 2 decimal places.</xs:documenta
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="OtherArrangementType">
+	</xs:complexType>
+	<xs:complexType name="ComplexOtherArrangementType">
 		<xs:sequence>
 			<xs:element name="OtherArrangementType" type="StringRestricted300Type">
 				<xs:annotation>
@@ -1790,8 +1790,8 @@ This field must be filled in systematically with 2 decimal places.</xs:documenta
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="InvestorPreferentialTreatmentType">
+	</xs:complexType>
+	<xs:complexType name="ComplexInvestorPreferentialTreatmentType">
 		<xs:sequence>
 			<xs:element name="InvestorPreferentialTreatmentFlag" type="BooleanType">
 				<xs:annotation>
@@ -1819,17 +1819,17 @@ This field must be filled in systematically with 2 decimal places.</xs:documenta
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="InvestorGroupsType">
+	</xs:complexType>
+	<xs:complexType name="ComplexInvestorGroupsType">
 		<xs:sequence>
-			<xs:element name="InvestorGroup" type="InvestorGroupType" maxOccurs="unbounded">
+			<xs:element name="InvestorGroup" type="ComplexInvestorGroupType" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 208, 209 - Breakdown of ownership.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="InvestorGroupType">
+	</xs:complexType>
+	<xs:complexType name="ComplexInvestorGroupType">
 		<xs:sequence>
 			<xs:element name="InvestorGroupType" type="InvestorGroupTypeType">
 				<xs:annotation>
@@ -1855,8 +1855,8 @@ This field must be filled in systematically with 2 decimal places.</xs:documenta
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="FinancingLiquidityProfileType">
+	</xs:complexType>
+	<xs:complexType name="ComplexFinancingLiquidityProfileType">
 		<xs:sequence>
 			<xs:element name="TotalFinancingAmount" type="UnsignedInteger15pType">
 				<xs:annotation>
@@ -1900,53 +1900,53 @@ Amount expressed in base currency filled in without decimal places.</xs:document
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
+	</xs:complexType>
 	<!--
 
 **********************************************************************************
 	OPERATIONAL RISKS
 **********************************************************************************
 -->
-	<xs:Type name="OperationalRiskType">
+	<xs:complexType name="ComplexOperationalRiskType">
 		<xs:sequence>
 			<xs:element name="TotalOpenPositions" type="UnsignedInteger15pType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 218 - Total number of open positions. Number filled in without decimal places.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="HistoricalRiskProfile" type="HistoricalRiskProfileType" minOccurs="0"/>
+			<xs:element name="HistoricalRiskProfile" type="ComplexHistoricalRiskProfileType" minOccurs="0"/>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="HistoricalRiskProfileType">
+	</xs:complexType>
+	<xs:complexType name="ComplexHistoricalRiskProfileType">
 		<xs:sequence>
-			<xs:element name="GrossInvestmentReturnsRate" type="SignedRateMonthPeriodType" minOccurs="0">
+			<xs:element name="GrossInvestmentReturnsRate" type="ComplexSignedRateMonthPeriodType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230 - Gross investment returns or IRR of the AIF over the reporting period (in %, gross of management and performance fees).</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="NetInvestmentReturnsRate" type="SignedRateMonthPeriodType" minOccurs="0">
+			<xs:element name="NetInvestmentReturnsRate" type="ComplexSignedRateMonthPeriodType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242 - Net investment returns or IRR of the AIF over the reporting period (in %, gross of management and performance fees).</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="NAVChangeRate" type="SignedRateMonthPeriodType" minOccurs="0">
+			<xs:element name="NAVChangeRate" type="ComplexSignedRateMonthPeriodType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254 - Month-to-month changes in NAV for each month in the reporting period including the impact of subscriptions and redemptions.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Subscription" type="QuantityMonthPeriodType" minOccurs="0">
+			<xs:element name="Subscription" type="ComplexQuantityMonthPeriodType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266 - Quantity of subcriptions during each month of the reporting period.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Redemption" type="QuantityMonthPeriodType" minOccurs="0">
+			<xs:element name="Redemption" type="ComplexQuantityMonthPeriodType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) - AIF - Item 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278 - Quantity of redemptions during each month of the reporting period.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="SignedRateMonthPeriodType">
+	</xs:complexType>
+	<xs:complexType name="ComplexSignedRateMonthPeriodType">
 		<xs:sequence>
 			<xs:element name="RateJanuary" type="SignedRate15p2Type" minOccurs="0"/>
 			<xs:element name="RateFebruary" type="SignedRate15p2Type" minOccurs="0"/>
@@ -1961,8 +1961,8 @@ Amount expressed in base currency filled in without decimal places.</xs:document
 			<xs:element name="RateNovember" type="SignedRate15p2Type" minOccurs="0"/>
 			<xs:element name="RateDecember" type="SignedRate15p2Type" minOccurs="0"/>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="QuantityMonthPeriodType">
+	</xs:complexType>
+	<xs:complexType name="ComplexQuantityMonthPeriodType">
 		<xs:sequence>
 			<xs:element name="QuantityJanuary" type="UnsignedInteger15pType" minOccurs="0"/>
 			<xs:element name="QuantityFebruary" type="UnsignedInteger15pType" minOccurs="0"/>
@@ -1977,14 +1977,14 @@ Amount expressed in base currency filled in without decimal places.</xs:document
 			<xs:element name="QuantityNovember" type="UnsignedInteger15pType" minOccurs="0"/>
 			<xs:element name="QuantityDecember" type="UnsignedInteger15pType" minOccurs="0"/>
 		</xs:sequence>
-	</xs:Type>
+	</xs:complexType>
 	<!--
 
 **********************************************************************************
 	AIF STRESS TESTS
 **********************************************************************************
 -->
-	<xs:Type name="StressTestsType">
+	<xs:complexType name="ComplexStressTestsType">
 		<xs:sequence>
 			<xs:element name="StressTestsResultArticle15" type="StressTestsResultType">
 				<xs:annotation>
@@ -1998,34 +1998,34 @@ Amount expressed in base currency filled in without decimal places.</xs:document
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
+	</xs:complexType>
 	<!--
 
 **********************************************************************************
 	LEVERAGE INFO 
 **********************************************************************************
 -->
-	<xs:Type name="AIFLeverageInfoType">
+	<xs:complexType name="ComplexAIFLeverageInfoType">
 		<xs:sequence>
-			<xs:element name="AIFLeverageArticle24-2" type="AIFLeverageArticle24-2Type">
+			<xs:element name="AIFLeverageArticle24-2" type="ComplexAIFLeverageArticle24-2Type">
 				<xs:annotation>
 					<xs:documentation>Article 24(2) - AIF - Item 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 293, 294, 295 -  Borrowing risk and exposure.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="AIFLeverageArticle24-4" type="AIFLeverageArticle24-4Type" minOccurs="0">
+			<xs:element name="AIFLeverageArticle24-4" type="ComplexAIFLeverageArticle24-4Type" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Article 24(4) - AIF - Item 296, 297, 298, 299, 300, 301 - Five largest sources of borrowed cash or securities (short positions).</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
+	</xs:complexType>
 	<!--
 
 **********************************************************************************
 	LEVERAGE INFO - AIF ARTICLE 24(2) and 24(4)
 **********************************************************************************
 -->
-	<xs:Type name="AIFLeverageArticle24-2Type">
+	<xs:complexType name="ComplexAIFLeverageArticle24-2Type">
 		<xs:sequence>
 			<xs:element name="AllCounterpartyCollateralRehypothecationFlag" type="BooleanType">
 				<xs:annotation>
@@ -2040,12 +2040,12 @@ false otherwise</xs:documentation>
 Rate expressed as a percentage that must be filled in systematically with 2 decimal places.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="SecuritiesCashBorrowing" type="SecuritiesCashBorrowingType" minOccurs="0">
+			<xs:element name="SecuritiesCashBorrowing" type="ComplexSecuritiesCashBorrowingType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) and 24(4) - AIF - Item 283, 284, 285, 286 - Value of borrowings of cash or securities by unsecured cash borrowing, collateralised/secured cash borrowing - via prime broker, collateralised/secured cash borrowing - via reverse repo, collateralised/secured cash borrowing - via other.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="FinancialInstrumentBorrowing" type="FinancialInstrumentBorrowingType" minOccurs="0">
+			<xs:element name="FinancialInstrumentBorrowing" type="ComplexFinancialInstrumentBorrowingType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) and 24(4) - AIF - Item 287, 288 - Value of borrowing embedded in financial instruments by exchange traded derivatives (gross exposure less margin posted) and OTC derivatives (gross exposure less margin posted).</xs:documentation>
 				</xs:annotation>
@@ -2056,19 +2056,19 @@ Rate expressed as a percentage that must be filled in systematically with 2 deci
 Amount expressed in base currency filled in without decimal places.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ControlledStructures" type="ControlledStructuresType" minOccurs="0">
+			<xs:element name="ControlledStructures" type="ComplexControlledStructuresType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) and 24(4) - AIF - Item 290, 291, 292, 293 - Gross exposure of financial and/or legal structures controlled by the AIF as defined in Recital 78 of the AIFMD.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="LeverageAIF" type="LeverageAIFType">
+			<xs:element name="LeverageAIF" type="ComplexLeverageAIFType">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) and 24(4) - AIF - Item 294, 295 - Leverage of the AIF.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="SecuritiesCashBorrowingType">
+	</xs:complexType>
+	<xs:complexType name="ComplexSecuritiesCashBorrowingType">
 		<xs:sequence>
 			<xs:element name="UnsecuredBorrowingAmount" type="UnsignedInteger15pType" minOccurs="0">
 				<xs:annotation>
@@ -2092,8 +2092,8 @@ Amount expressed in base currency filled in without decimal places.</xs:document
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="FinancialInstrumentBorrowingType">
+	</xs:complexType>
+	<xs:complexType name="ComplexFinancialInstrumentBorrowingType">
 		<xs:sequence>
 			<xs:element name="ExchangedTradedDerivativesExposureValue" type="UnsignedInteger15pType" minOccurs="0">
 				<xs:annotation>
@@ -2108,15 +2108,15 @@ Amount expressed in base currency filled in without decimal places.</xs:document
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="ControlledStructuresType">
+	</xs:complexType>
+	<xs:complexType name="ComplexControlledStructuresType">
 		<xs:sequence>
-			<xs:element name="ControlledStructure" type="ControlledStructureType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ControlledStructure" type="ComplexControlledStructureType" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="ControlledStructureType">
+	</xs:complexType>
+	<xs:complexType name="ComplexControlledStructureType">
 		<xs:sequence>
-			<xs:element name="ControlledStructureIdentification" type="EntityIdentificationType">
+			<xs:element name="ControlledStructureIdentification" type="ComplexEntityIdentificationType">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) and 24(4) - AIF - Item 290, 291, 292 - Identification of the financial and/or legal structures controlled by the AIF as defined in Recital 78 of the AIFMD.</xs:documentation>
 				</xs:annotation>
@@ -2127,8 +2127,8 @@ Amount expressed in base currency filled in without decimal places.</xs:document
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="LeverageAIFType">
+	</xs:complexType>
+	<xs:complexType name="ComplexLeverageAIFType">
 		<xs:sequence>
 			<xs:element name="GrossMethodRate" type="SignedRate15p2Type">
 				<xs:annotation>
@@ -2143,19 +2143,19 @@ This field must be filled in systematically with 2 decimal places.</xs:documenta
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
+	</xs:complexType>
 	<!--
 
 **********************************************************************************
 	LEVERAGE INFO - AIF ARTICLE 24(4)
 **********************************************************************************
 -->
-	<xs:Type name="AIFLeverageArticle24-4Type">
+	<xs:complexType name="ComplexAIFLeverageArticle24-4Type">
 		<xs:sequence>
-			<xs:element name="BorrowingSource" type="BorrowingSourceType" minOccurs="5" maxOccurs="5"/>
+			<xs:element name="BorrowingSource" type="ComplexBorrowingSourceType" minOccurs="5" maxOccurs="5"/>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="BorrowingSourceType">
+	</xs:complexType>
+	<xs:complexType name="ComplexBorrowingSourceType">
 		<xs:sequence>
 			<xs:element name="Ranking" type="FiveRankingType">
 				<xs:annotation>
@@ -2174,7 +2174,7 @@ true when the AIF has one source of borrowed cash or securities for the reported
 false otherwise</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="SourceIdentification" type="EntityIdentificationType" minOccurs="0">
+			<xs:element name="SourceIdentification" type="ComplexEntityIdentificationType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Articles 24(2) and 24(4) - AIF - Item 298, 299, 300 - Identification of each of the 5 largest sources of borrowed cash or securities.</xs:documentation>
 				</xs:annotation>
@@ -2185,14 +2185,14 @@ false otherwise</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
+	</xs:complexType>
 	<!--
 
 **********************************************************************************
 	AIF and AIFM GENERIC TYPES
 **********************************************************************************
 -->
-	<xs:Type name="MarketIdentificationWithoutNOTType">
+	<xs:complexType name="ComplexMarketIdentificationWithoutNOTType">
 		<xs:sequence>
 			<xs:element name="MarketCodeType" type="MarketCodeTypeWithoutNOTType">
 				<xs:annotation>
@@ -2209,8 +2209,8 @@ The field is mandatory for market type code equal to “MIC” and forbidden oth
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="MarketIdentificationWithNOTType">
+	</xs:complexType>
+	<xs:complexType name="ComplexMarketIdentificationWithNOTType">
 		<xs:sequence>
 			<xs:element name="MarketCodeType" type="MarketCodeTypeWithNOTType">
 				<xs:annotation>
@@ -2228,8 +2228,8 @@ The field is mandatory the market code type equal to "MIC".</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="EntityIdentificationType">
+	</xs:complexType>
+	<xs:complexType name="ComplexEntityIdentificationType">
 		<xs:sequence>
 			<xs:element name="EntityName" type="StringRestricted300Type">
 				<xs:annotation>
@@ -2252,8 +2252,8 @@ It is strongly recommended to provide the full name corresponding to the allocat
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="AIFNationalIdentifierType">
+	</xs:complexType>
+	<xs:complexType name="ComplexAIFNationalIdentifierType">
 		<xs:sequence>
 			<xs:element name="ReportingMemberState" type="CountryCodeType">
 				<xs:annotation>
@@ -2270,8 +2270,8 @@ Articles 24(1) and 3(3)(d) - AIF - Item 44 - National identification code of the
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="AIFMNationalIdentifierType">
+	</xs:complexType>
+	<xs:complexType name="ComplexAIFMNationalIdentifierType">
 		<xs:sequence>
 			<xs:element name="ReportingMemberState" type="CountryCodeType">
 				<xs:annotation>
@@ -2284,13 +2284,13 @@ Articles 24(1) and 3(3)(d) - AIF - Item 44 - National identification code of the
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="AssumptionsType">
+	</xs:complexType>
+	<xs:complexType name="ComplexAssumptionsType">
 		<xs:sequence>
-			<xs:element name="Assumption" type="AssumptionType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Assumption" type="ComplexAssumptionType" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
-	</xs:Type>
-	<xs:Type name="AssumptionType">
+	</xs:complexType>
+	<xs:complexType name="ComplexAssumptionType">
 		<xs:annotation>
 			<xs:documentation>
         Assumption for specific question.
@@ -2310,7 +2310,7 @@ Articles 24(1) and 3(3)(d) - AIF - Item 44 - National identification code of the
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:Type>
+	</xs:complexType>
 	<!--
 **********************************************************************************
 	SIMPLE TYPES

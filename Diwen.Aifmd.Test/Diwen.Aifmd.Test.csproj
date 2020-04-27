@@ -18,7 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="*.xml" CopyToOutputDirectory="PreserveNewest"/>
+    <Content Include="report/*" CopyToOutputDirectory="PreserveNewest"/>
+    <Content Include="schema/*" CopyToOutputDirectory="PreserveNewest"/>
   </ItemGroup>
 
 </Project>
