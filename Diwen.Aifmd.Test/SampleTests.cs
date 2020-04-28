@@ -126,5 +126,55 @@ namespace Diwen.Aifmd.Test
             Directory.CreateDirectory(Path.GetDirectoryName(path));
             File.WriteAllLines(path, records.Select(r => $"{r.Key};{r.Value}"));
         }
+
+        [Fact]
+        public void ExportAttributesTest()
+        {
+            var document = XDocument.Parse(@"<?xml version='1.0' encoding='utf-8' ?>
+<Customers>
+  <customer name='Steve John' Id='CUST0001' location='New York' country='United States' DOB='12/23/1960' Phone='+1 212 666 1111' />
+  <customer name='Sagar Mehta' Id='CUST0106' location='Bangalore' country='India' DOB='07/23/1978' Phone='+91 80 8888 1001' />
+  <customer name='Rahul Raj' Id='CUST0190' location='Delhi' country='India' DOB='01/31/1980' Phone='+91 11 6666 1111' />
+  <customer name='John Roderix' Id='CUST0301' location='Sydney' country='Australia' DOB='02/13/1956' Phone='+61 (0)2 8062 3999' />
+</Customers> ");
+
+            var attributes =
+                document.
+                Descendants().
+                SelectMany(d => d.Attributes());
+
+            var data =
+                attributes.
+                ToDictionary(
+                    a => Helper.GetPath(a),
+                    a => a.Value
+                );
+
+            output.WriteLine(string.Join("\n", data.Select(d => $"{d.Key};{d.Value}")));
+
+        }
+
+        [Fact]
+        public void ImportAttributesTest()
+        {
+            var data =
+            File.ReadAllLines("report/dummy_attr.txt").
+                Select(l => l.Split(';')).
+                ToDictionary(
+                    a => a.First(),
+                    a => a.Last()
+                );
+
+
+            var report = new XDocument();
+            foreach (var item in data)
+            {
+                var attribute = Helper.AttributeFromPath(report, item.Key);
+                attribute.Value = item.Value;
+            }
+
+            output.WriteLine(report.ToString());
+
+        }
     }
 }

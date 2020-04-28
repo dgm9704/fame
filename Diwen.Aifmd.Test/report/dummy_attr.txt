@@ -1,0 +1,24 @@
+Customers.customer[1]@name;Steve John
+Customers.customer[1]@Id;CUST0001
+Customers.customer[1]@location;New York
+Customers.customer[1]@country;United States
+Customers.customer[1]@DOB;12/23/1960
+Customers.customer[1]@Phone;+1 212 666 1111
+Customers.customer[2]@name;Sagar Mehta
+Customers.customer[2]@Id;CUST0106
+Customers.customer[2]@location;Bangalore
+Customers.customer[2]@country;India
+Customers.customer[2]@DOB;07/23/1978
+Customers.customer[2]@Phone;+91 80 8888 1001
+Customers.customer[3]@name;Rahul Raj
+Customers.customer[3]@Id;CUST0190
+Customers.customer[3]@location;Delhi
+Customers.customer[3]@country;India
+Customers.customer[3]@DOB;01/31/1980
+Customers.customer[3]@Phone;+91 11 6666 1111
+Customers.customer[4]@name;John Roderix
+Customers.customer[4]@Id;CUST0301
+Customers.customer[4]@location;Sydney
+Customers.customer[4]@country;Australia
+Customers.customer[4]@DOB;02/13/1956
+Customers.customer[4]@Phone;+61 (0)2 8062 3999
