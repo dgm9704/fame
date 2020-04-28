@@ -21,29 +21,30 @@
 
 namespace Diwen.Aifmd
 {
-    using System;
-    using System.IO;
-    using System.Xml.Serialization;
+    using System.Collections.Generic;
+    using System.Xml;
+    using System.Xml.Linq;
+    using Diwen.Aifmd.Extensions;
 
-    public partial class AIFMReportingInfo
+    public partial class AIFMReportingInfo : AifmdReporting
     {
-        private static Lazy<XmlSerializer> Serializer = new Lazy<XmlSerializer>(()
-            => new XmlSerializer(typeof(AIFMReportingInfo)));
-
         public static AIFMReportingInfo FromFile(string path)
-        {
-            using (var file = new FileStream(path, FileMode.Open))
-                return (AIFMReportingInfo)Serializer.Value.Deserialize(file);
-        }
+        => FromFile<AIFMReportingInfo>(path);
 
         public void ToFile(string path)
-            => ToFile(this, path);
+        => ToFile<AIFMReportingInfo>(this, path);
 
-        private void ToFile(AIFMReportingInfo report, string path)
+        public XmlDocument ToXmlDocument()
+        => ToXmlDocument<AIFMReportingInfo>(this);
+
+        public static AIFMReportingInfo FromData(Dictionary<string, string> data)
         {
-            using (var file = new FileStream(path, FileMode.Create))
-                Serializer.Value.Serialize(file, report);
+            var document = new XDocument();
+            document.ReadData(data);
+            return FromXDocument<AIFMReportingInfo>(document);
         }
 
+        public Dictionary<string, string> GetData()
+        => GetData<AIFMReportingInfo>(this);
     }
 }
