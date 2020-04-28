@@ -30,6 +30,7 @@ namespace Diwen.Aifmd
     using System.Xml;
     using System.Xml.Linq;
     using System.Xml.Serialization;
+    using Diwen.Aifmd.Extensions;
 
     public partial class AIFReportingInfo
     {
@@ -96,10 +97,10 @@ namespace Diwen.Aifmd
                 Where(d => !d.Descendants().Any());
 
             foreach (var attribute in attributes)
-                data[Helper.GetPath(attribute)] = attribute.Value;
+                data[attribute.GetPath()] = attribute.Value;
 
             foreach (var element in elements)
-                data[Helper.GetPath(element)] = element.Value;
+                data[element.GetPath()] = element.Value;
 
             return data;
         }
@@ -107,14 +108,8 @@ namespace Diwen.Aifmd
         public static AIFReportingInfo FromData(Dictionary<string, string> data)
         {
             var document = new XDocument();
-            foreach (var item in data)
-                if (item.Key.IndexOf("@") != -1)
-                    Helper.WriteAttribute(document, item.Key, item.Value);
-                else
-                    Helper.WriteElement(document, item.Key, item.Value);
-
+            document.ReadData(data);
             return AIFReportingInfo.FromXDocument(document);
-
         }
 
         public static AIFReportingInfo FromXDocument(XDocument document)

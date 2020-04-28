@@ -19,16 +19,27 @@
 //  You should have received a copy of the GNU Lesser General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace Diwen.Aifmd
+namespace Diwen.Aifmd.Extensions
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Xml.Linq;
     using System.Xml.XPath;
 
-    public partial class Helper
+    public static class XDocumentExtensions
     {
-        public static void WriteElement(XDocument document, string path, string value)
+
+        public static void ReadData(this XDocument document, Dictionary<string, string> data)
+        {
+            foreach (var item in data)
+                if (item.Key.IndexOf("@") != -1)
+                    document.WriteAttribute(item.Key, item.Value);
+                else
+                    document.WriteElement(item.Key, item.Value);
+        }
+
+        public static void WriteElement(this XDocument document, string path, string value)
         {
             if (document == null)
                 throw new ArgumentNullException(nameof(document));
@@ -74,7 +85,7 @@ namespace Diwen.Aifmd
             node.Value = value;
         }
 
-        public static void WriteAttribute(XDocument document, string path, string value)
+        public static void WriteAttribute(this XDocument document, string path, string value)
         {
             if (document == null)
                 throw new ArgumentNullException(nameof(document));
@@ -120,41 +131,5 @@ namespace Diwen.Aifmd
             var attribute = new XAttribute(parts.Last(), value);
             node.Add(attribute);
         }
-
-        public static string GetPath(XElement element)
-        {
-            if (element == null)
-                throw new ArgumentNullException(nameof(element));
-
-            var path = element.Name.LocalName;
-
-            if (element.Parent != null)
-            {
-                int idx;
-                var siblings = element.Parent.Elements(element.Name).ToList();
-                if (siblings.Count != 1)
-                {
-                    idx = siblings.IndexOf(element) + 1;
-                    if (idx != 0)
-                        path += $"[{idx}]";
-                }
-                path = $"{GetPath(element.Parent)}.{path}";
-            }
-            return path;
-        }
-
-        public static string GetPath(XAttribute attribute)
-        {
-            if (attribute == null)
-                throw new ArgumentNullException(nameof(attribute));
-
-            var path = attribute.Name.LocalName;
-
-            if (attribute.Parent != null)
-                path = $"{GetPath(attribute.Parent)}@{path}";
-
-            return path;
-        }
-
     }
 }
