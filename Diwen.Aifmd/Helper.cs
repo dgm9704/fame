@@ -22,24 +22,19 @@
 namespace Diwen.Aifmd
 {
     using System;
-    using System.Collections.Generic;
-    using System.IO;
     using System.Linq;
-    using System.Reflection;
-    using System.Xml;
     using System.Xml.Linq;
-    using System.Xml.Serialization;
     using System.Xml.XPath;
 
     public partial class Helper
     {
-        public static XElement ElementFromPath(XDocument document, string path)
+        public static void WriteElement(XDocument document, string path, string value)
         {
             if (document == null)
-                throw new ArgumentNullException("document");
+                throw new ArgumentNullException(nameof(document));
 
             if (path == null)
-                throw new ArgumentNullException("path");
+                throw new ArgumentNullException(nameof(path));
 
             var parts = path.Split('.');
 
@@ -76,10 +71,10 @@ namespace Diwen.Aifmd
                 }
                 node = next;
             }
-            return node;
+            node.Value = value;
         }
 
-        public static XAttribute AttributeFromPath(XDocument document, string path)
+        public static void WriteAttribute(XDocument document, string path, string value)
         {
             if (document == null)
                 throw new ArgumentNullException(nameof(document));
@@ -122,9 +117,8 @@ namespace Diwen.Aifmd
                 }
                 node = next;
             }
-            var attribute = new XAttribute(parts.Last(), string.Empty);
+            var attribute = new XAttribute(parts.Last(), value);
             node.Add(attribute);
-            return attribute;
         }
 
         public static string GetPath(XElement element)
@@ -142,9 +136,9 @@ namespace Diwen.Aifmd
                 {
                     idx = siblings.IndexOf(element) + 1;
                     if (idx != 0)
-                        path += "[" + idx + "]";
+                        path += $"[{idx}]";
                 }
-                path = GetPath(element.Parent) + "." + path;
+                path = $"{GetPath(element.Parent)}.{path}";
             }
             return path;
         }
@@ -157,7 +151,7 @@ namespace Diwen.Aifmd
             var path = attribute.Name.LocalName;
 
             if (attribute.Parent != null)
-                path = GetPath(attribute.Parent) + "@" + path;
+                path = $"{GetPath(attribute.Parent)}@{path}";
 
             return path;
         }

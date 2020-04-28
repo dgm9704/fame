@@ -26,10 +26,10 @@ namespace Diwen.Aifmd
     using System.IO;
     using System.Linq;
     using System.Reflection;
+    using System.Text;
     using System.Xml;
     using System.Xml.Linq;
     using System.Xml.Serialization;
-    using System.Xml.XPath;
 
     public partial class AIFReportingInfo
     {
@@ -41,48 +41,87 @@ namespace Diwen.Aifmd
         private static Lazy<XmlSerializer> Serializer = new Lazy<XmlSerializer>(()
             => new XmlSerializer(typeof(AIFReportingInfo)));
 
+        static XmlWriterSettings XmlWriterSettings = new XmlWriterSettings
+        {
+            Indent = true,
+            IndentChars = "\t",
+            NamespaceHandling = NamespaceHandling.OmitDuplicates,
+            Encoding = Encoding.UTF8
+        };
+
+        static XmlReaderSettings XmlReaderSettings = new XmlReaderSettings
+        {
+            IgnoreWhitespace = true,
+            IgnoreProcessingInstructions = true,
+            IgnoreComments = true,
+            XmlResolver = null,
+            ValidationType = ValidationType.None
+        };
+
         public static AIFReportingInfo FromFile(string path)
         {
             using (var file = new FileStream(path, FileMode.Open))
-                return (AIFReportingInfo)Serializer.Value.Deserialize(file);
+                return FromStream(file);
         }
 
-        public void ToFile(string path)
-            => ToFile(this, path);
-
-        private void ToFile(AIFReportingInfo report, string path)
+        public static AIFReportingInfo FromStream(Stream stream)
         {
-            using (var file = new FileStream(path, FileMode.Create))
-                Serializer.Value.Serialize(file, report);
-        }
+            AIFReportingInfo report;
+            using (var reader = XmlReader.Create(stream, XmlReaderSettings))
+                report = (AIFReportingInfo)Serializer.Value.Deserialize(reader);
 
-        public Dictionary<string, string> GetRecords()
-        {
-            var document = this.ToXDocument();
-            var result = new Dictionary<string, string>();
-            result =
-                document.
-                Descendants().
-                Where(d => !d.Descendants().Any()).
-                ToDictionary(
-                    l => Helper.GetPath(l),
-                    l => l.Value);
-
-            return result;
-        }
-
-        public static XDocument WriteReport(Dictionary<string, string> data)
-        {
-            var report = new XDocument();
-            foreach (var item in data)
-            {
-                var node = Helper.ElementFromPath(report, item.Key);
-                node.Value = item.Value;
-            }
             return report;
         }
 
+        public void ToFile(string path)
+        {
+            using (var writer = XmlWriter.Create(path, XmlWriterSettings))
+                ToXmlWriter(writer);
+        }
 
+        public Dictionary<string, string> GetData()
+        {
+            var document = this.ToXDocument();
+            var data = new Dictionary<string, string>();
+
+            var attributes =
+                document.
+                Descendants().
+                SelectMany(d => d.Attributes()).
+                Where(a => !a.IsNamespaceDeclaration);
+
+            var elements =
+                document.
+                Descendants().
+                Where(d => !d.Descendants().Any());
+
+            foreach (var attribute in attributes)
+                data[Helper.GetPath(attribute)] = attribute.Value;
+
+            foreach (var element in elements)
+                data[Helper.GetPath(element)] = element.Value;
+
+            return data;
+        }
+
+        public static AIFReportingInfo FromData(Dictionary<string, string> data)
+        {
+            var document = new XDocument();
+            foreach (var item in data)
+                if (item.Key.IndexOf("@") != -1)
+                    Helper.WriteAttribute(document, item.Key, item.Value);
+                else
+                    Helper.WriteElement(document, item.Key, item.Value);
+
+            return AIFReportingInfo.FromXDocument(document);
+
+        }
+
+        public static AIFReportingInfo FromXDocument(XDocument document)
+        {
+            using (var reader = document.CreateReader())
+                return (AIFReportingInfo)Serializer.Value.Deserialize(reader);
+        }
 
         public XDocument ToXDocument()
         => XDocument.Parse(this.ToXml());
