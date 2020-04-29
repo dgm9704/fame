@@ -3,7 +3,7 @@ fame is a project to help read and write AIFMD XML reports
 plus any tests and tools around that.
 
 ## Diwen.Aifmd
-.NET Standard 2.0 library
+.NET Standard 2.0 library for serializing AIFMD XML reports to and from XML or text files
 
 ### nuget
 [![nuget](https://img.shields.io/nuget/v/Diwen.Aifmd.svg)](https://www.nuget.org/packages/Diwen.Aifmd/)
