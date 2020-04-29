@@ -1,12 +1,13 @@
+[![.NET Core](https://github.com/dgm9704/fame/workflows/.NET%20Core/badge.svg)](https://github.com/dgm9704/fame/actions?query=workflow%3A%22.NET+Core%22)
+
+[![nuget](https://img.shields.io/nuget/v/Diwen.Aifmd.svg)](https://www.nuget.org/packages/Diwen.Aifmd/)
+
 # Introduction 
 fame is a project to help read and write AIFMD XML reports 
 plus any tests and tools around that.
 
 ## Diwen.Aifmd
 .NET Standard 2.0 library for serializing AIFMD XML reports to and from XML or text files
-
-### nuget
-[![nuget](https://img.shields.io/nuget/v/Diwen.Aifmd.svg)](https://www.nuget.org/packages/Diwen.Aifmd/)
 
 ### License:
 GNU Lesser General Public License v3.0
