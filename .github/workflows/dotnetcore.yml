@@ -18,8 +18,8 @@ jobs:
       with:
         dotnet-version: 3.1.101
     - name: Install dependencies
-      run: dotnet restore Diwen.Aifmd.Tests/Diwen.Aifmd.Tests.csproj
+      run: dotnet restore Diwen.Aifmd.Test/Diwen.Aifmd.Test.csproj
     - name: Build
-      run: dotnet build --configuration Release --no-restore Diwen.Aifmd.Tests/Diwen.Aifmd.Tests.csproj
+      run: dotnet build --configuration Release --no-restore Diwen.Aifmd.Test/Diwen.Aifmd.Test.csproj
     - name: Test
-      run: dotnet test --no-restore --verbosity normal Diwen.Aifmd.Tests/Diwen.Aifmd.Tests.csproj
+      run: dotnet test --no-restore --verbosity normal Diwen.Aifmd.Test/Diwen.Aifmd.Test.csproj
