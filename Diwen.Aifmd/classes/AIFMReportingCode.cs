@@ -24,6 +24,7 @@ namespace Diwen.Aifmd
     using System;
     using System.ComponentModel;
     using System.Xml.Serialization;
+
     [Serializable]
     public enum AIFMReportingCode
     {

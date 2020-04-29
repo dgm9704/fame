@@ -12,30 +12,30 @@ namespace Diwen.Aifmd.Test
     using System;
     using System.Collections.Generic;
 
-    public class SampleTests
+    public class ImportExportTests
     {
         private readonly ITestOutputHelper output;
 
-        public SampleTests(ITestOutputHelper output)
+        public ImportExportTests(ITestOutputHelper output)
         {
             this.output = output;
         }
 
         [Fact]
         public void ExportManager()
-            => new AIFMReportingInfo().ToFile("report/manager_out.xml");
+            => new AIFMReportingInfo().ToFile("output/manager_out.xml");
 
         [Fact]
         public void ImportManager()
-            => AIFMReportingInfo.FromFile("report/AIFMSample.xml");
+            => AIFMReportingInfo.FromFile("report/aifmsample.xml");
 
         [Fact]
         public void ExportFund()
-            => new AIFReportingInfo().ToFile("report/fund_out.xml");
+            => new AIFReportingInfo().ToFile("output/fund_out.xml");
 
         [Fact]
         public void ImportFund()
-            => AIFReportingInfo.FromFile("report/AIFSample.xml");
+            => AIFReportingInfo.FromFile("report/aifsample.xml");
 
         private static XmlSchemaSet GetSchemas()
         {

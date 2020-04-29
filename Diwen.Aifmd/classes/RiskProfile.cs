@@ -22,6 +22,7 @@
 namespace Diwen.Aifmd
 {
     using System;
+
     [Serializable]
     public partial class RiskProfile
     {

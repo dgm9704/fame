@@ -23,6 +23,7 @@ namespace Diwen.Aifmd
 {
     using System;
     using System.Xml.Serialization;
+
     [Serializable]
     [XmlType(TypeName = "AIFLeverageArticle24-2Type")]
     public partial class AIFLeverageArticle242
