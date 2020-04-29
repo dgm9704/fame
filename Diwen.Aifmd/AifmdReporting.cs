@@ -35,8 +35,6 @@ namespace Diwen.Aifmd
     public class AifmdReporting
     {
         static AssemblyName assembly = Assembly.GetExecutingAssembly().GetName();
-        static Version version = assembly.Version;
-        static string id = assembly.Name;
 
         static string VersionComment = $" {assembly.Name} {assembly.Version} ";
 
@@ -121,28 +119,6 @@ namespace Diwen.Aifmd
         => ToXmlDocument<T>(report).OuterXml;
 
         internal static Dictionary<string, string> GetData<T>(T report) where T : AifmdReporting
-        {
-            var document = ToXDocument(report);
-            var data = new Dictionary<string, string>();
-
-            var attributes =
-                document.
-                Descendants().
-                SelectMany(d => d.Attributes()).
-                Where(a => !a.IsNamespaceDeclaration);
-
-            var elements =
-                document.
-                Descendants().
-                Where(d => !d.Descendants().Any());
-
-            foreach (var attribute in attributes)
-                data[attribute.GetPath()] = attribute.Value;
-
-            foreach (var element in elements)
-                data[element.GetPath()] = element.Value;
-
-            return data;
-        }
+        => ToXDocument(report).GetData();
     }
 }

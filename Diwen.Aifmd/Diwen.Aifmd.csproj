@@ -5,7 +5,8 @@
     <Id>Diwen.Aifmd</Id>
     <Title>Diwen.Aifmd</Title>
     <Authors>John Nordberg</Authors>
-    <Owners>diwen</Owners>    <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
+    <Owners>diwen</Owners>    
+    <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/dgm9704/fame</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Description>library to help read and write AIFMD XML reports</Description>

@@ -52,8 +52,8 @@ namespace Diwen.Aifmd.Extensions
             var node = document.XPathSelectElement(parts[0]);
             if (node == null)
             {
-                document.Add(new XElement(parts[0]));
-                node = document.XPathSelectElement(parts[0]);
+                node = new XElement(parts[0]);
+                document.Add(node);
             }
 
             for (int i = 1; i < parts.Length; i++)
@@ -75,10 +75,9 @@ namespace Diwen.Aifmd.Extensions
                     }
                     else
                     {
-                        node.Add(new XElement(part));
+                        next = new XElement(part);
+                        node.Add(next);
                     }
-
-                    next = node.XPathSelectElement(part);
                 }
                 node = next;
             }
@@ -98,8 +97,8 @@ namespace Diwen.Aifmd.Extensions
             var node = document.XPathSelectElement(parts[0]);
             if (node == null)
             {
-                document.Add(new XElement(parts[0]));
-                node = document.XPathSelectElement(parts[0]);
+                node = new XElement(parts[0]);
+                document.Add(node);
             }
 
             for (int i = 1; i < parts.Length - 1; i++)
@@ -121,15 +120,38 @@ namespace Diwen.Aifmd.Extensions
                     }
                     else
                     {
-                        node.Add(new XElement(part));
+                        next = new XElement(part);
+                        node.Add(next);
                     }
-
-                    next = node.XPathSelectElement(part);
                 }
                 node = next;
             }
             var attribute = new XAttribute(parts.Last(), value);
             node.Add(attribute);
+        }
+
+        public static Dictionary<string, string> GetData(this XDocument document)
+        {
+            var data = new Dictionary<string, string>();
+
+            var attributes =
+                document.
+                Descendants().
+                SelectMany(d => d.Attributes()).
+                Where(a => !a.IsNamespaceDeclaration);
+
+            var elements =
+                document.
+                Descendants().
+                Where(d => !d.Descendants().Any());
+
+            foreach (var attribute in attributes)
+                data[attribute.GetPath()] = attribute.Value;
+
+            foreach (var element in elements)
+                data[element.GetPath()] = element.Value;
+
+            return data;
         }
     }
 }
