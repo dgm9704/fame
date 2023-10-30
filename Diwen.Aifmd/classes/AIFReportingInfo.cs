@@ -42,5 +42,8 @@ namespace Diwen.Aifmd
 
         [XmlAttribute]
         public DateTime CreationDateAndTime { get; set; }
+
+        [XmlAttribute("noNamespaceSchemaLocation", Namespace = "http://www.w3.org/2001/XMLSchema-instance")]
+        public string Schema = "AIFMD_DATAIF_V1.2.xsd";
     }
 }

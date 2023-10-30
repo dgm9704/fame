@@ -11,6 +11,7 @@ namespace Diwen.Aifmd.Test
     using System.Linq;
     using System;
     using System.Collections.Generic;
+    using System.Xml.Linq;
 
     public class ImportExportTests
     {
@@ -67,6 +68,36 @@ namespace Diwen.Aifmd.Test
 
             var second = AIFReportingInfo.FromData(shuffled);
             second.ToFile("output/aifroundtrip.xml");
+        }
+
+        [Fact]
+        public void OutputManagerSchema()
+        {
+            var outputFile = "output/manager_out.xml";
+            new AIFMReportingInfo().ToFile(outputFile);
+            var document = XDocument.Load(outputFile);
+            XNamespace schemaNamespace = "http://www.w3.org/2001/XMLSchema-instance";
+            var attributeName = "noNamespaceSchemaLocation";
+            XName schemaAttribute = schemaNamespace + attributeName;
+
+            var expected = "AIFMD_DATMAN_V1.2.xsd";
+            var actual = document.Root.Attribute(schemaAttribute)?.Value;
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void OutputFundSchema()
+        {
+            var outputFile = "output/fund_out.xml";
+            new AIFReportingInfo().ToFile(outputFile);
+            var document = XDocument.Load(outputFile);
+            XNamespace schemaNamespace = "http://www.w3.org/2001/XMLSchema-instance";
+            var attributeName = "noNamespaceSchemaLocation";
+            XName schemaAttribute = schemaNamespace + attributeName;
+
+            var expected = "AIFMD_DATAIF_V1.2.xsd";
+            var actual = document.Root.Attribute(schemaAttribute)?.Value;
+            Assert.Equal(expected, actual);
         }
 
         private void WriteRecords(Dictionary<string, string> records, string path)

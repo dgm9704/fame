@@ -39,4 +39,4 @@ Code is written in [C#](https://docs.microsoft.com/en-us/dotnet/csharp/index) 7.
 
 Test framework is [xUnit.net](https://xunit.github.io/)
 
-and test code is targeting [.NET Core 3.1](https://docs.microsoft.com/en-us/dotnet/core/)
+and test code is targeting [.NET 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)

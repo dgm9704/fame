@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
-    <Version>1.0.0</Version>
+    <Version>1.1.0</Version>
     <Id>Diwen.Aifmd</Id>
     <Title>Diwen.Aifmd</Title>
     <Authors>John Nordberg</Authors>
@@ -10,7 +10,7 @@
     <PackageProjectUrl>https://github.com/dgm9704/fame</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Description>library to help read and write AIFMD XML reports</Description>
-    <Copyright>Copyright 2017-2020 John Nordberg</Copyright>
+    <Copyright>Copyright 2017-2023 John Nordberg</Copyright>
     <PackageTags>AIFMD XML ESMA</PackageTags>
   </PropertyGroup>
 
